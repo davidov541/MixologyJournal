@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<style name="AppTheme.Base" parent="@style/Theme.AppCompat">
+		<!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+		<item name="windowNoTitle">true</item>
+		<!--We will be using the toolbar so no need to show ActionBar-->
+		<item name="windowActionBar">false</item>
+		<item name="android:colorPrimaryDark">#ff1b5e20</item>
+		<item name="android:colorPrimary">#ff388e3c</item>
+        <item name="android:colorAccent">#ff1e88e5</item>
+	</style>
+	<style name="AppTheme" parent="AppTheme.Base">
+	</style>
+	<style name="AppTheme.Splash" parent="android:Theme.Material.NoActionBar">
+		<item name="android:windowBackground">@drawable/splash_screen</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+	</style>
+</resources>

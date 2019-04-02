@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{F95EE3DC-ED8D-4DEA-B3EB-56925C07351E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MixologyJournalApp</RootNamespace>
+    <AssemblyName>MixologyJournalApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Persistence\BarDrinkEntryPersister.cs" />
+    <Compile Include="Persistence\BarDrinkPersister.cs" />
+    <Compile Include="Persistence\BaseAppPersister.cs" />
+    <Compile Include="Persistence\BaseRecipePersister.cs" />
+    <Compile Include="Persistence\IPersistenceSource.cs" />
+    <Compile Include="Persistence\NearbyPlacePersister.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SourceModel\Entry\IDrinkEntry.cs" />
+    <Compile Include="SourceModel\Entry\DrinkEntry.cs" />
+    <Compile Include="SourceModel\Recipe\Amount.cs" />
+    <Compile Include="SourceModel\Recipe\BarDrink.cs" />
+    <Compile Include="SourceModel\Entry\BarDrinkEntry.cs" />
+    <Compile Include="SourceModel\Recipe\BaseRecipe.cs" />
+    <Compile Include="SourceModel\Entry\IJournalEntry.cs" />
+    <Compile Include="SourceModel\Recipe\Ingredient.cs" />
+    <Compile Include="Persistence\ISettingsPersister.cs" />
+    <Compile Include="SourceModel\Journal.cs" />
+    <Compile Include="SourceModel\Entry\JournalEntry.cs" />
+    <Compile Include="Persistence\JournalEntryPersister.cs" />
+    <Compile Include="Persistence\JournalPersister.cs" />
+    <Compile Include="SourceModel\Recipe\HomemadeDrink.cs" />
+    <Compile Include="SourceModel\Entry\HomemadeDrinkEntry.cs" />
+    <Compile Include="Persistence\ModifiedRecipeEntryPersister.cs" />
+    <Compile Include="SourceModel\Recipe\Recipe.cs" />
+    <Compile Include="Persistence\RecipePersister.cs" />
+    <Compile Include="SourceModel\Entry\NoteEntry.cs" />
+    <Compile Include="Persistence\TextJournalEntryPersister.cs" />
+    <Compile Include="ViewModel\Entry\DrinkEntryViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\AmountDiff.cs" />
+    <Compile Include="ViewModel\Recipe\AmountViewModel.cs" />
+    <Compile Include="ViewModel\Entry\BarDrinkEntryViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\BarDrinkViewModel.cs" />
+    <Compile Include="ViewModel\App\BaseMixologyApp.cs" />
+    <Compile Include="ViewModel\Entry\BaseRecipePageViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\BaseRecipeViewModel.cs" />
+    <Compile Include="ViewModel\Entry\IJournalEntryViewModel.cs" />
+    <Compile Include="ViewModel\List\IListEntry.cs" />
+    <Compile Include="ViewModel\List\IListEntryHeader.cs" />
+    <Compile Include="ViewModel\Recipe\IngredientDiff.cs" />
+    <Compile Include="ViewModel\Recipe\AmountUnitViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\IngredientViewModel.cs" />
+    <Compile Include="ViewModel\Entry\IPageViewModel.cs" />
+    <Compile Include="ViewModel\Entry\ISaveablePageViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\IRecipeViewModel.cs" />
+    <Compile Include="ViewModel\List\IListableViewModel.cs" />
+    <Compile Include="ViewModel\Entry\JournalEntryViewModel.cs" />
+    <Compile Include="ViewModel\JournalViewModel.cs" />
+    <Compile Include="ViewModel\List\LetterHeader.cs" />
+    <Compile Include="ViewModel\LocationServices\INearbyPlace.cs" />
+    <Compile Include="ViewModel\LocationServices\INearbyPlacesProvider.cs" />
+    <Compile Include="ViewModel\LocationServices\NearbyPlace.cs" />
+    <Compile Include="ViewModel\Entry\HomemadeDrinkEntryViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\HomemadeDrinkViewModel.cs" />
+    <Compile Include="ViewModel\LocationServices\GooglePlacesProvider.cs" />
+    <Compile Include="ViewModel\Entry\OverviewPageViewModel.cs" />
+    <Compile Include="ViewModel\Entry\SettingsPageViewModel.cs" />
+    <Compile Include="ViewModel\SourceModelExtensions.cs" />
+    <Compile Include="ViewModel\Recipe\RecipeViewModel.cs" />
+    <Compile Include="ViewModel\Symbol.cs" />
+    <Compile Include="ViewModel\Entry\NotesEntryViewModel.cs" />
+    <Compile Include="ViewModel\ResourceLoader.cs" />
+    <Compile Include="ViewModel\Entry\IRecipePageViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\EditAmountViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\ViewAmountViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\EditIngredientViewModel.cs" />
+    <Compile Include="ViewModel\Recipe\ViewIngredientViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GeoCoordinatePortable, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MixologyJournal\packages\GeoCoordinate.1.1.0\lib\portable-net45+wp80+win+wpa81\GeoCoordinatePortable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MixologyJournal\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MixologyJournal\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RecipePacks\en-US\DefaultRecipes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>
