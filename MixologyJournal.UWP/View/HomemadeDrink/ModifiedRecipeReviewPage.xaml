@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="MixologyJournal.View.ModifiedRecipeReviewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MixologyJournal.View"
+    xmlns:viewModel="using:MixologyJournal.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="page">
+
+    <Page.Resources>
+        <local:RatingToStringConverter x:Name="RatingConverter" />
+        <local:BooleanToVisibilityConverter x:Name="VisibilityConverter" />
+    </Page.Resources>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Uid="AddPictureMenu" Icon="Pictures" Label="" Click="AddPictureButon_Click" />
+            <AppBarButton x:Uid="TakePictureMenu" Icon="Camera" Label="" Click="TakePictureButon_Click" />
+            <AppBarButton x:Uid="SaveMenu" Icon="Save" Label="" Click="SubmitButton_Click" />
+            <AppBarButton x:Uid="CancelMenu" Icon="Cancel" Label="" Click="CancelButton_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <local:MenuHeaderControl Grid.Row="0" Grid.Column="0" Header="{Binding Title}" />
+            <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Hidden" 
+                          Grid.Row="1" Grid.Column="0">
+                <StackPanel x:Name="ReviewEditor" Orientation="Vertical" Margin="20,5">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Slider x:Name="RatingSlider" Grid.Row="0" Grid.Column="0" Value="{Binding Rating, Mode=TwoWay}" 
+                                            Minimum="0" Maximum="5" StepFrequency="0.25" HorizontalAlignment="Stretch" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"
+                                   Text="{Binding Rating, Mode=OneWay, Converter={StaticResource RatingConverter}}" 
+                                   Margin="5,0" FontWeight="SemiLight" FontSize="24" LineHeight="28" />
+                    </Grid>
+                    <TextBox x:Uid="ReviewNotesBox" x:Name="NotesBox" Text="{Binding Notes, Mode=TwoWay}" AcceptsReturn="True"
+                                 TextWrapping="Wrap"  PlaceholderText="" />
+                    <local:ImageList Pictures="{Binding Pictures}" ImageViewer="{Binding ElementName=FullScreenViewer}" 
+                                     Persister="{Binding Persister, ElementName=page}" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <local:ImageViewer x:Name="FullScreenViewer" Visibility="Collapsed" />
+        <Grid Visibility="{Binding Busy, Converter={StaticResource VisibilityConverter}}">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.50" />
+            </Grid.Background>
+            <ProgressBar IsIndeterminate="True" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+        </Grid>
+    </Grid>
+</Page>
