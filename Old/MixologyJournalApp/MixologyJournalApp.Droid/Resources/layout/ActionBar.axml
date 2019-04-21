@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
+    android:background="?android:attr/colorPrimary"
+    android:theme="@style/AppTheme">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+        <ImageButton
+            android:id="@+id/saveButton"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_save_white_24dp"
+            style="@style/Widget.AppCompat.ActionButton"
+            android:foregroundTint="@android:color/white"
+            android:tint="@android:color/white"
+            android:visibility="gone" />
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_delete_white_24dp"
+            style="@style/Widget.AppCompat.ActionButton"
+            android:foregroundTint="@android:color/white"
+            android:tint="@android:color/white"
+            android:visibility="gone" />
+    </RelativeLayout>
+</Toolbar>

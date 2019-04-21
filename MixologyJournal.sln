@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixologyJournal", "MixologyJournal\MixologyJournal.csproj", "{A470BEFB-0AC5-4767-BD73-9CB3A54DB209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixologyJournalTest", "MixologyJournalTest\MixologyJournalTest.csproj", "{1AF77FFD-CA51-4D74-958B-7AAA388086CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A470BEFB-0AC5-4767-BD73-9CB3A54DB209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A470BEFB-0AC5-4767-BD73-9CB3A54DB209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A470BEFB-0AC5-4767-BD73-9CB3A54DB209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A470BEFB-0AC5-4767-BD73-9CB3A54DB209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AF77FFD-CA51-4D74-958B-7AAA388086CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AF77FFD-CA51-4D74-958B-7AAA388086CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AF77FFD-CA51-4D74-958B-7AAA388086CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AF77FFD-CA51-4D74-958B-7AAA388086CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A948512B-5394-47F8-9A40-8EF14E14EE41}
+	EndGlobalSection
+EndGlobal
