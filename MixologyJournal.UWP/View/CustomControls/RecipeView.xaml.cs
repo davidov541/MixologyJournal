@@ -20,7 +20,7 @@ namespace MixologyJournal.View
         public static DependencyProperty ReadOnlyProperty =
             DependencyProperty.Register("ReadOnly", typeof(Boolean), typeof(RecipeView), new PropertyMetadata(false));
 
-        internal IViewRecipeViewModel Recipe
+        public IViewRecipeViewModel Recipe
         {
             get { return (IViewRecipeViewModel)GetValue(RecipeProperty); }
             set { SetValue(RecipeProperty, value); }
