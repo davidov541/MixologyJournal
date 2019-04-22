@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MixologyJournal.SourceModel.Entry;
 using MixologyJournal.SourceModel.Recipe;
 
-namespace MixologyJournal.Test.SourceModel
+namespace MixologyJournalApp.Test.SourceModel
 {
     /// <summary>
     /// Summary description for BarDrinkEntryUnitTests

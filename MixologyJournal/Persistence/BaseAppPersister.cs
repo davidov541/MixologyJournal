@@ -33,7 +33,7 @@ namespace MixologyJournal.Persistence
         private JournalViewModel GetEmptyJournal()
         {
             Assembly asm = typeof(BaseAppPersister).GetTypeInfo().Assembly;
-            Stream s = asm.GetManifestResourceStream("MixologyJournalApp.RecipePacks.en_US.DefaultRecipes.xml");
+            Stream s = asm.GetManifestResourceStream("MixologyJournal.RecipePacks.en_US.DefaultRecipes.xml");
             XDocument doc = XDocument.Load(s);
             return LoadJournal(doc);
         }
