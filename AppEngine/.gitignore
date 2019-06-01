@@ -1,0 +1,4 @@
+openapi.json
+swagger.json
+target/
+.gradle/
