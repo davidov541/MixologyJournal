@@ -14,21 +14,24 @@
  * limitations under the License.
  */
 
-
-package com.example.echo;
+package net.davidmcginnis.mixologyjournal.appengine.services.profileinfo;
 
 /**
  * The message bean that will be used in the echo request and response.
  */
-public class Message {
+public class Response {
 
-  private String message;
+    private String message;
 
-  public String getMessage() {
-    return this.message;
-  }
+    public Response(String message) {
+        this.message = message;
+    }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

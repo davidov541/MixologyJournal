@@ -23,7 +23,7 @@ function TestEndpoints () {
   curl -H "Content-Type: application/json" \
     -X POST \
     -d "{'message':'hello ${3} version-${2}'}" \
-    "https://${2}-dot-${1}.appspot.com/_ah/api/echo/v1/echo" | \
+    "https://${2}-dot-${1}.appspot.com/api/profileinfo/v1/userExists/test" | \
     tee "$ERROR_OUTPUT_DIR/response.json" | \
     grep "hello ${3} version-${2}"
 }
