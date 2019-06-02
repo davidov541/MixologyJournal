@@ -38,9 +38,11 @@ import com.google.appengine.api.datastore.*;
 )
 
 public class ProfileInfoService {
+    private static String userKindName = "User";
+
     @ApiMethod(name = "add_user", path = "addUser/{user}", apiKeyRequired = AnnotationBoolean.TRUE)
     public Response addUser(@Named("user") String emailAddress) {
-        Entity user = new Entity("User", emailAddress);
+        Entity user = new Entity(userKindName, emailAddress);
         user.setProperty("email", emailAddress);
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
@@ -50,7 +52,7 @@ public class ProfileInfoService {
 
     @ApiMethod(name = "user_exists", path = "userExists/{user}", apiKeyRequired = AnnotationBoolean.TRUE)
     public Response userExists(@Named("user") String emailAddress) {
-        Entity possibleEntity = new Entity("User", emailAddress);
+        Entity possibleEntity = new Entity(userKindName, emailAddress);
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         try {
             datastore.get(possibleEntity.getKey());
