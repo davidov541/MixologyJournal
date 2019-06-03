@@ -20,7 +20,6 @@ import com.google.api.server.spi.config.AnnotationBoolean;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
-import com.google.api.server.spi.config.Named;
 import com.google.appengine.api.datastore.*;
 
 /**
@@ -38,27 +37,26 @@ import com.google.appengine.api.datastore.*;
 )
 
 public class ProfileInfoService {
-    private static String userKindName = "User";
-
-    @ApiMethod(name = "add_user", path = "addUser/{user}", apiKeyRequired = AnnotationBoolean.TRUE)
-    public Response addUser(@Named("user") String emailAddress) {
-        Entity user = new Entity(userKindName, emailAddress);
-        user.setProperty("email", emailAddress);
+    @ApiMethod(name = "add_user", apiKeyRequired = AnnotationBoolean.TRUE)
+    public AddUserResponse addUser(FullProfileRequest request) {
+        String profileID = request.getProfileID();
+        Entity user = new Entity(Profile.datastoreKindName, profileID);
+        user.setProperty(Profile.datastoreProfileIDName, profileID);
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         datastore.put(user);
-        return new Response("Success");
+        return new AddUserResponse("Success", profileID);
     }
 
-    @ApiMethod(name = "user_exists", path = "userExists/{user}", apiKeyRequired = AnnotationBoolean.TRUE)
-    public Response userExists(@Named("user") String emailAddress) {
-        Entity possibleEntity = new Entity(userKindName, emailAddress);
+    @ApiMethod(name = "get_user_info", path="getUserInfo", httpMethod="POST", apiKeyRequired = AnnotationBoolean.TRUE)
+    public FullProfileResponse getUserInfo(FullProfileRequest request) {
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        Profile profile;
         try {
-            datastore.get(possibleEntity.getKey());
+            profile = request.getProfile(datastore);
         } catch (EntityNotFoundException e) {
-            return new Response("Failure");
+            return new FullProfileResponse("Failure", null);
         }
-        return new Response("Success");
+        return new FullProfileResponse("Success", profile);
     }
 }
