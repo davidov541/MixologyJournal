@@ -14,19 +14,19 @@ class ProfileInfoServiceTest {
     private LocalServiceTestHelper helper;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         helper = new LocalServiceTestHelper(new LocalDatastoreServiceTestConfig());
         helper.setUp();
     }
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         helper.tearDown();
     }
 
 
     @Test
-    public void testEmptyQuery() {
+    void testEmptyQuery() {
         String profileID = "TestProfileID";
 
         ProfileInfoService service = new ProfileInfoService();
@@ -36,7 +36,7 @@ class ProfileInfoServiceTest {
     }
 
     @Test
-    public void testSimpleQuery() {
+    void testSimpleQuery() {
         DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
         String profileID = "TestProfileID";
         Entity e = new Entity(Profile.datastoreKindName, profileID);
@@ -50,7 +50,7 @@ class ProfileInfoServiceTest {
     }
 
     @Test
-    public void testSimpleInsert() {
+    void testSimpleInsert() {
         DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
         ProfileInfoService service = new ProfileInfoService();
         String profileID = "TestProfileID";
@@ -64,7 +64,7 @@ class ProfileInfoServiceTest {
     }
 
     @Test
-    public void testUpdateWithNoChanges() {
+    void testUpdateWithNoChanges() {
         String profileID = "TestProfileID";
 
         Drink[] drinks = new Drink[] { };
@@ -73,7 +73,7 @@ class ProfileInfoServiceTest {
     }
 
     @Test
-    public void testAddDrink() {
+    void testAddDrink() {
         String profileID = "TestProfileID";
         String drinkID = "TestDrinkID";
 
