@@ -11,8 +11,13 @@ public class Profile {
     static final String datastoreKindName = "User";
     static final String datastoreProfileIDName = "email";
 
-    Profile(Entity entity, Drink[] drinks) {
+    private Profile(Entity entity, Drink[] drinks) {
         this._profileID = (String)entity.getProperty(Profile.datastoreProfileIDName);
+        this._drinks = drinks;
+    }
+
+    private Profile(String profileID, Drink[] drinks) {
+        this._profileID = profileID;
         this._drinks = drinks;
     }
 
@@ -27,6 +32,10 @@ public class Profile {
         }
 
         return new Profile(result, drinks);
+    }
+
+    static Profile createProfile(String profileID, Drink[] drinks) {
+        return new Profile(profileID, drinks);
     }
 
     void save(DatastoreService datastore) {

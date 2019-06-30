@@ -13,13 +13,22 @@ public class Drink {
     static final String datastoreKindName = "Drink";
     static final String datastoreDrinkIDName = "drinkID";
 
-    Drink(Entity entity, Key profileKey) {
+    private Drink(Entity entity, Key profileKey) {
         this._drinkID = (String)entity.getProperty(Drink.datastoreDrinkIDName);
+        this._profileKey = profileKey;
+    }
+
+    private Drink(String drinkID, Key profileKey) {
+        this._drinkID = drinkID;
         this._profileKey = profileKey;
     }
 
     static Drink createDrink(DatastoreService datastore, Entity drink, Key profileKey) {
         return new Drink(drink, profileKey);
+    }
+
+    static Drink createDrink(String drinkID, Key profileKey) {
+        return new Drink(drinkID, profileKey);
     }
 
     void save(DatastoreService datastore) {

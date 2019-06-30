@@ -25,14 +25,17 @@ class ProfileInfoServiceTest {
     }
 
     @Test
-    public void testUpdateWithNoChanges() throws EntityNotFoundException {
+    public void testUpdateWithNoChanges() {
         DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
         ProfileInfoService service = new ProfileInfoService();
         String profileID = "TestProfileID";
+        String drinkID = "TestDrinkID";
+
+        Drink[] drinks = new Drink[] { };
+        Profile newProfile = Profile.createProfile(profileID, drinks);
+
         service.addUser(new FullProfileRequest(profileID));
 
-        Entity newEntity = new Entity(Profile.datastoreKindName, profileID);
-        Profile newProfile = Profile.createProfile(ds, newEntity.getKey());
         service.syncUserInfo(new SyncProfileRequest(newProfile));
 
         assertEquals(1, ds.prepare(new Query(Profile.datastoreKindName)).countEntities(withLimit(10)));
@@ -53,13 +56,12 @@ class ProfileInfoServiceTest {
         String profileID = "TestProfileID";
         String drinkID = "TestDrinkID";
 
+        Entity profileEntity = new Entity(Profile.datastoreKindName, profileID);
+        Drink[] drinks = new Drink[] { Drink.createDrink(drinkID, profileEntity.getKey())};
+        Profile newProfile = Profile.createProfile(profileID, drinks);
+
         service.addUser(new FullProfileRequest(profileID));
 
-        Entity profileEntity = new Entity(Profile.datastoreKindName, profileID);
-        profileEntity.setProperty(Profile.datastoreProfileIDName, profileID);
-        Entity drinkEntity = new Entity(Drink.datastoreKindName, drinkID);
-        drinkEntity.setProperty(Drink.datastoreDrinkIDName, drinkID);
-        Profile newProfile = new Profile(profileEntity, new Drink[] { new Drink(drinkEntity , profileEntity.getKey())});
         service.syncUserInfo(new SyncProfileRequest(newProfile));
 
         assertEquals(1, ds.prepare(new Query(Profile.datastoreKindName)).countEntities(withLimit(10)));
