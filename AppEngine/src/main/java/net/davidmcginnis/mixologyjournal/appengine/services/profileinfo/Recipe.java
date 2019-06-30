@@ -8,15 +8,23 @@ import com.google.appengine.api.datastore.Key;
 public class Recipe {
     private String _recipeID;
     static final String datastoreKindName = "Recipe";
-    static final String datastoreRecipeIDName = "recipeID";
+    private static final String datastoreRecipeIDName = "recipeID";
 
     private Recipe(Entity entity) {
         this._recipeID = (String)entity.getProperty(Recipe.datastoreRecipeIDName);
     }
 
-    static Recipe createProfile(DatastoreService datastore, Key profileKey) throws EntityNotFoundException {
-        Entity result = datastore.get(profileKey);
+    private Recipe(String recipeID) {
+        this._recipeID = recipeID;
+    }
+
+    static Recipe getRecipe(DatastoreService datastore, Key recipeKey) throws EntityNotFoundException {
+        Entity result = datastore.get(recipeKey);
         return new Recipe(result);
+    }
+
+    static Recipe createRecipe(String recipeID) {
+        return new Recipe(recipeID);
     }
 
     public String getRecipeID() {
@@ -25,5 +33,18 @@ public class Recipe {
 
     public void setRecipeID(String profileID) {
         _recipeID = profileID;
+    }
+
+    public Key getRecipeKey() {
+        Entity recipeEntity = new Entity(datastoreKindName, _recipeID);
+        return recipeEntity.getKey();
+    }
+
+    public void save(DatastoreService datastore) {
+        Entity entity = new Entity(datastoreKindName, _recipeID);
+
+        entity.setProperty(datastoreRecipeIDName, _recipeID);
+
+        datastore.put(entity);
     }
 }

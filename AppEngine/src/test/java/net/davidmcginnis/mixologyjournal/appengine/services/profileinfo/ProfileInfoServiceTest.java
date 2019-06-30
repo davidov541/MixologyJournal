@@ -76,9 +76,11 @@ class ProfileInfoServiceTest {
     void testAddDrink() {
         String profileID = "TestProfileID";
         String drinkID = "TestDrinkID";
+        String recipeID = "TestRecipeID";
 
         Entity profileEntity = new Entity(Profile.datastoreKindName, profileID);
-        Drink[] drinks = new Drink[] { Drink.createDrink(drinkID, profileEntity.getKey())};
+        Recipe derivedRecipe = Recipe.createRecipe(recipeID);
+        Drink[] drinks = new Drink[] { Drink.createDrink(drinkID, profileEntity.getKey(), derivedRecipe)};
 
         runUpdateTest(profileID, drinks);
     }
@@ -105,6 +107,7 @@ class ProfileInfoServiceTest {
             Entity drinkResultEntity = drinkQuery.asList(withLimit(10)).get(i);
             assertEquals(drinks[i].getDrinkID(), drinkResultEntity.getProperty(Drink.datastoreDrinkIDName).toString());
             assertEquals(drinks[i].getDrinkID(), drinkResultEntity.getKey().getName());
+            assertEquals(drinks[i].getDerivedRecipeKey(), drinkResultEntity.getProperty(Drink.datastoreDerivedRecipeName));
         }
     }
 }

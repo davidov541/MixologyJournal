@@ -28,7 +28,7 @@ public class Profile {
         List<Entity> drinkEntities = datastore.prepare(drinkQuery).asList(FetchOptions.Builder.withDefaults());
         Drink[] drinks = new Drink[drinkEntities.size()];
         for (int i = 0; i < drinks.length; i++) {
-            drinks[i] = Drink.createDrink(datastore, drinkEntities.get(i), profileKey);
+            drinks[i] = Drink.getDrink(datastore, drinkEntities.get(i), profileKey);
         }
 
         return new Profile(result, drinks);
