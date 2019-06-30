@@ -25,6 +25,6 @@ public class FullProfileRequest {
 
     Profile getProfile(DatastoreService datastore) throws EntityNotFoundException {
         Entity possibleEntity = new Entity(Profile.datastoreKindName, getProfileID());
-        return Profile.createProfile(datastore, possibleEntity.getKey());
+        return Profile.create(datastore, possibleEntity.getKey());
     }
 }

@@ -21,20 +21,20 @@ public class Profile {
         this._recipes = drinks;
     }
 
-    static Profile createProfile(DatastoreService datastore, Key profileKey) throws EntityNotFoundException {
+    static Profile create(DatastoreService datastore, Key profileKey) throws EntityNotFoundException {
         Entity result = datastore.get(profileKey);
 
-        Query recipeQuery = new Query(Recipe.datastoreKindName).setAncestor(result.getKey());
+        Query recipeQuery = new Query(Recipe.kindName).setAncestor(result.getKey());
         List<Entity> recipeEntities = datastore.prepare(recipeQuery).asList(FetchOptions.Builder.withDefaults());
         Recipe[] recipes = new Recipe[recipeEntities.size()];
         for (int i = 0; i < recipes.length; i++) {
-            recipes[i] = Recipe.getRecipe(datastore, recipeEntities.get(i), profileKey);
+            recipes[i] = Recipe.get(datastore, recipeEntities.get(i), profileKey);
         }
 
         return new Profile(result, recipes);
     }
 
-    static Profile createProfile(String profileID, Recipe[] recipes) {
+    static Profile get(String profileID, Recipe[] recipes) {
         return new Profile(profileID, recipes);
     }
 
@@ -48,6 +48,12 @@ public class Profile {
         }
 
         datastore.put(newEntity);
+    }
+
+    boolean equals(Entity entity) {
+        boolean areEqual = _profileID.equals(entity.getProperty(Profile.datastoreProfileIDName).toString());
+        areEqual = areEqual && _profileID.equals(entity.getKey().getName());
+        return areEqual;
     }
 
     public String getProfileID() {
