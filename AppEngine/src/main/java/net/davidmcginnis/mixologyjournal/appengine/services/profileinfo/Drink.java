@@ -4,50 +4,36 @@ import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.EntityNotFoundException;
 import com.google.appengine.api.datastore.Key;
-import com.google.appengine.repackaged.com.google.datastore.v1.Datastore;
 
 public class Drink {
     private String _drinkID;
-    private Key _profileKey;
-    private Recipe _derivedRecipe;
-    private Key _derivedRecipeKey;
+    private Key _recipeKey;
 
     static final String datastoreKindName = "Drink";
     static final String datastoreDrinkIDName = "drinkID";
     static final String datastoreDerivedRecipeName = "recipeKey";
 
-    private Drink(Entity entity, Key profileKey, Recipe derivedRecipe) {
+    private Drink(Entity entity, Key recipeKey) {
         this._drinkID = (String)entity.getProperty(Drink.datastoreDrinkIDName);
-        this._profileKey = profileKey;
-        this._derivedRecipe = derivedRecipe;
-        this._derivedRecipeKey = _derivedRecipe.getRecipeKey();
     }
 
-    private Drink(String drinkID, Key profileKey, Recipe derivedRecipe) {
+    private Drink(String drinkID, Key recipeKey) {
         this._drinkID = drinkID;
-        this._profileKey = profileKey;
-        this._derivedRecipe = derivedRecipe;
-        this._derivedRecipeKey = _derivedRecipe.getRecipeKey();
+        this._recipeKey = recipeKey;
     }
 
-    static Drink getDrink(DatastoreService datastore, Entity drink, Key profileKey) throws EntityNotFoundException {
-        Key recipeKey = (Key)drink.getProperty(datastoreDerivedRecipeName);
-        Recipe derivedRecipe = Recipe.getRecipe(datastore, recipeKey);
-
-        return new Drink(drink, profileKey, derivedRecipe);
+    static Drink getDrink(DatastoreService datastore, Entity drink, Key recipeKey) {
+        return new Drink(drink, recipeKey);
     }
 
-    static Drink createDrink(String drinkID, Key profileKey, Recipe derivedRecipe) {
-        return new Drink(drinkID, profileKey, derivedRecipe);
+    static Drink createDrink(String drinkID, Key recipeKey) {
+        return new Drink(drinkID, recipeKey);
     }
 
     void save(DatastoreService datastore) {
-        Entity entity = new Entity(datastoreKindName, _drinkID, _profileKey);
-
-        _derivedRecipe.save(datastore);
+        Entity entity = new Entity(datastoreKindName, _drinkID, _recipeKey);
 
         entity.setProperty(datastoreDrinkIDName, _drinkID);
-        entity.setProperty(datastoreDerivedRecipeName, _derivedRecipe.getRecipeKey());
 
         datastore.put(entity);
     }
@@ -58,13 +44,5 @@ public class Drink {
 
     public void setDrinkID(String drinkID) {
         _drinkID = drinkID;
-    }
-
-    public Key getDerivedRecipeKey() {
-        return _derivedRecipeKey;
-    }
-
-    public void setDerivedRecipeKey(Key derivedRecipeKey) {
-        _derivedRecipeKey = derivedRecipeKey;
     }
 }

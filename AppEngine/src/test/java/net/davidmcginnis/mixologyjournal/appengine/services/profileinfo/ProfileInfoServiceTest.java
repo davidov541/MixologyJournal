@@ -67,28 +67,41 @@ class ProfileInfoServiceTest {
     void testUpdateWithNoChanges() {
         String profileID = "TestProfileID";
 
-        Drink[] drinks = new Drink[] { };
+        Recipe[] drinks = new Recipe[] { };
 
         runUpdateTest(profileID, drinks);
     }
 
     @Test
-    void testAddDrink() {
+    void testAddEmptyRecipe() {
+        String profileID = "TestProfileID";
+        String recipeID = "TestRecipeID";
+
+        Entity profileEntity = new Entity(Profile.datastoreKindName, profileID);
+        Drink[] drinks = new Drink[] { };
+        Recipe[] recipes = new Recipe[] { Recipe.createRecipe(recipeID, profileEntity.getKey(), drinks) };
+
+        runUpdateTest(profileID, recipes);
+    }
+
+    @Test
+    void testAddRecipeAndDrink() {
         String profileID = "TestProfileID";
         String drinkID = "TestDrinkID";
         String recipeID = "TestRecipeID";
 
         Entity profileEntity = new Entity(Profile.datastoreKindName, profileID);
-        Recipe derivedRecipe = Recipe.createRecipe(recipeID);
-        Drink[] drinks = new Drink[] { Drink.createDrink(drinkID, profileEntity.getKey(), derivedRecipe)};
+        Entity recipeEntity = new Entity(Recipe.datastoreKindName, recipeID, profileEntity.getKey());
+        Drink[] drinks = new Drink[] { Drink.createDrink(drinkID, recipeEntity.getKey())};
+        Recipe[] recipes = new Recipe[] { Recipe.createRecipe(recipeID, profileEntity.getKey(), drinks) };
 
-        runUpdateTest(profileID, drinks);
+        runUpdateTest(profileID, recipes);
     }
 
-    private void runUpdateTest(String profileID, Drink[] drinks) {
+    private void runUpdateTest(String profileID, Recipe[] recipes) {
         DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
         ProfileInfoService service = new ProfileInfoService();
-        Profile newProfile = Profile.createProfile(profileID, drinks);
+        Profile newProfile = Profile.createProfile(profileID, recipes);
 
         service.addUser(new FullProfileRequest(profileID));
 
@@ -101,13 +114,22 @@ class ProfileInfoServiceTest {
         assertEquals(profileID, profileResultEntity.getProperty(Profile.datastoreProfileIDName).toString());
         assertEquals(profileID, profileResultEntity.getKey().getName());
 
-        PreparedQuery drinkQuery = ds.prepare(new Query(Drink.datastoreKindName));
-        assertEquals(drinks.length, drinkQuery.countEntities(withLimit(10)));
-        for(int i = 0; i < drinks.length; i++) {
-            Entity drinkResultEntity = drinkQuery.asList(withLimit(10)).get(i);
-            assertEquals(drinks[i].getDrinkID(), drinkResultEntity.getProperty(Drink.datastoreDrinkIDName).toString());
-            assertEquals(drinks[i].getDrinkID(), drinkResultEntity.getKey().getName());
-            assertEquals(drinks[i].getDerivedRecipeKey(), drinkResultEntity.getProperty(Drink.datastoreDerivedRecipeName));
+        PreparedQuery recipeQuery = ds.prepare(new Query(Recipe.datastoreKindName).setAncestor(profileResultEntity.getKey()));
+        assertEquals(recipes.length, recipeQuery.countEntities(withLimit(10)));
+        for(int i = 0; i < recipes.length; i++) {
+            Entity recipeResultEntity = recipeQuery.asList(withLimit(10)).get(i);
+            assertEquals(recipes[i].getRecipeID(), recipeResultEntity.getProperty(Recipe.datastoreRecipeIDName).toString());
+            assertEquals(recipes[i].getRecipeID(), recipeResultEntity.getKey().getName());
+            assertEquals(profileID, recipeResultEntity.getKey().getParent().getName());
+
+            PreparedQuery drinkQuery = ds.prepare(new Query(Drink.datastoreKindName).setAncestor(recipeResultEntity.getKey()));
+            Drink[] drinks = recipes[i].getDrinks();
+            assertEquals(drinks.length, drinkQuery.countEntities(withLimit(10)));
+            for(int j = 0; j < drinks.length; j++) {
+                Entity drinkResultEntity = drinkQuery.asList(withLimit(10)).get(j);
+                assertEquals(drinks[j].getDrinkID(), drinkResultEntity.getProperty(Drink.datastoreDrinkIDName).toString());
+                assertEquals(drinks[j].getDrinkID(), drinkResultEntity.getKey().getName());
+            }
         }
     }
 }

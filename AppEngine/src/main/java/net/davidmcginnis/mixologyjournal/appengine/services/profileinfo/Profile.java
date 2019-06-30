@@ -6,36 +6,36 @@ import java.util.List;
 
 public class Profile {
     private String _profileID;
-    private Drink[] _drinks;
+    private Recipe[] _recipes;
 
     static final String datastoreKindName = "User";
     static final String datastoreProfileIDName = "email";
 
-    private Profile(Entity entity, Drink[] drinks) {
+    private Profile(Entity entity, Recipe[] drinks) {
         this._profileID = (String)entity.getProperty(Profile.datastoreProfileIDName);
-        this._drinks = drinks;
+        this._recipes = drinks;
     }
 
-    private Profile(String profileID, Drink[] drinks) {
+    private Profile(String profileID, Recipe[] drinks) {
         this._profileID = profileID;
-        this._drinks = drinks;
+        this._recipes = drinks;
     }
 
     static Profile createProfile(DatastoreService datastore, Key profileKey) throws EntityNotFoundException {
         Entity result = datastore.get(profileKey);
 
-        Query drinkQuery = new Query(Drink.datastoreKindName).setAncestor(result.getKey());
-        List<Entity> drinkEntities = datastore.prepare(drinkQuery).asList(FetchOptions.Builder.withDefaults());
-        Drink[] drinks = new Drink[drinkEntities.size()];
-        for (int i = 0; i < drinks.length; i++) {
-            drinks[i] = Drink.getDrink(datastore, drinkEntities.get(i), profileKey);
+        Query recipeQuery = new Query(Recipe.datastoreKindName).setAncestor(result.getKey());
+        List<Entity> recipeEntities = datastore.prepare(recipeQuery).asList(FetchOptions.Builder.withDefaults());
+        Recipe[] recipes = new Recipe[recipeEntities.size()];
+        for (int i = 0; i < recipes.length; i++) {
+            recipes[i] = Recipe.getRecipe(datastore, recipeEntities.get(i), profileKey);
         }
 
-        return new Profile(result, drinks);
+        return new Profile(result, recipes);
     }
 
-    static Profile createProfile(String profileID, Drink[] drinks) {
-        return new Profile(profileID, drinks);
+    static Profile createProfile(String profileID, Recipe[] recipes) {
+        return new Profile(profileID, recipes);
     }
 
     void save(DatastoreService datastore) {
@@ -43,8 +43,8 @@ public class Profile {
 
         newEntity.setProperty(datastoreProfileIDName, _profileID);
 
-        for(Drink drink: _drinks) {
-            drink.save(datastore);
+        for(Recipe recipe: _recipes) {
+            recipe.save(datastore);
         }
 
         datastore.put(newEntity);
@@ -58,11 +58,11 @@ public class Profile {
         _profileID = profileID;
     }
 
-    public Drink[] getDrinks() {
-        return _drinks;
+    public Recipe[] getRecipes() {
+        return _recipes;
     }
 
-    public void setDrinks(Drink[] drinks) {
-        _drinks = drinks;
+    public void setRecipes(Recipe[] recipes) {
+        _recipes = recipes;
     }
 }
