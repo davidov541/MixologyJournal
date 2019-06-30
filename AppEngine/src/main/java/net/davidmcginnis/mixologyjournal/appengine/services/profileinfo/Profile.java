@@ -11,7 +11,7 @@ public class Profile {
     static final String datastoreKindName = "User";
     static final String datastoreProfileIDName = "email";
 
-    private Profile(Entity entity, Drink[] drinks) {
+    Profile(Entity entity, Drink[] drinks) {
         this._profileID = (String)entity.getProperty(Profile.datastoreProfileIDName);
         this._drinks = drinks;
     }
@@ -23,7 +23,7 @@ public class Profile {
         List<Entity> drinkEntities = datastore.prepare(drinkQuery).asList(FetchOptions.Builder.withDefaults());
         Drink[] drinks = new Drink[drinkEntities.size()];
         for (int i = 0; i < drinks.length; i++) {
-            drinks[i] = Drink.createDrink(datastore, drinkEntities.get(i));
+            drinks[i] = Drink.createDrink(datastore, drinkEntities.get(i), profileKey);
         }
 
         return new Profile(result, drinks);
@@ -33,6 +33,10 @@ public class Profile {
         Entity newEntity = new Entity(datastoreKindName, _profileID);
 
         newEntity.setProperty(datastoreProfileIDName, _profileID);
+
+        for(Drink drink: _drinks) {
+            drink.save(datastore);
+        }
 
         datastore.put(newEntity);
     }

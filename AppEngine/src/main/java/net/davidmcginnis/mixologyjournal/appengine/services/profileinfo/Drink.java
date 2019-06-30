@@ -4,18 +4,30 @@ import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.EntityNotFoundException;
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.repackaged.com.google.datastore.v1.Datastore;
 
 public class Drink {
     private String _drinkID;
-    static final String datastoreKindName = "Drink";
-    private static final String datastoreDrinkIDName = "drinkID";
+    private Key _profileKey;
 
-    private Drink(Entity entity) {
+    static final String datastoreKindName = "Drink";
+    static final String datastoreDrinkIDName = "drinkID";
+
+    Drink(Entity entity, Key profileKey) {
         this._drinkID = (String)entity.getProperty(Drink.datastoreDrinkIDName);
+        this._profileKey = profileKey;
     }
 
-    static Drink createDrink(DatastoreService datastore, Entity drink) {
-        return new Drink(drink);
+    static Drink createDrink(DatastoreService datastore, Entity drink, Key profileKey) {
+        return new Drink(drink, profileKey);
+    }
+
+    void save(DatastoreService datastore) {
+        Entity entity = new Entity(datastoreKindName, _drinkID, _profileKey);
+
+        entity.setProperty(datastoreDrinkIDName, _drinkID);
+
+        datastore.put(entity);
     }
 
     public String getRecipeID() {
