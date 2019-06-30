@@ -59,4 +59,12 @@ public class ProfileInfoService {
         }
         return new FullProfileResponse("Success", profile);
     }
+
+    @ApiMethod(name = "sync_user_info", path="syncUserInfo", httpMethod="POST", apiKeyRequired = AnnotationBoolean.TRUE)
+    public SyncProfileResponse syncUserInfo(SyncProfileRequest request) {
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        request.setProfile(datastore);
+        // Note that we cannot fail currently. If the entity doesn't exist, it will after this is run.
+        return new SyncProfileResponse("Success");
+    }
 }

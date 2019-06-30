@@ -25,6 +25,25 @@ class ProfileInfoServiceTest {
     }
 
     @Test
+    public void testUpdateWithNoChanges() throws EntityNotFoundException {
+        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
+        ProfileInfoService service = new ProfileInfoService();
+        String profileID = "TestProfileID";
+        service.addUser(new FullProfileRequest(profileID));
+
+        Entity newEntity = new Entity(Profile.datastoreKindName, profileID);
+        Profile newProfile = Profile.createProfile(ds, newEntity.getKey());
+        service.syncUserInfo(new SyncProfileRequest(newProfile));
+
+        assertEquals(1, ds.prepare(new Query(Profile.datastoreKindName)).countEntities(withLimit(10)));
+        PreparedQuery query = ds.prepare(new Query(Profile.datastoreKindName));
+        assertEquals(1, query.countEntities(withLimit(10)));
+        Entity entity = query.asList(withLimit(10)).get(0);
+        assertEquals(profileID, entity.getProperty(Profile.datastoreProfileIDName).toString());
+        assertEquals(profileID, entity.getKey().getName());
+    }
+
+    @Test
     public void testSimpleInsert() {
         DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
         ProfileInfoService service = new ProfileInfoService();
