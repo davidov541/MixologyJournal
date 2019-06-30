@@ -39,11 +39,11 @@ public class Drink {
         datastore.put(entity);
     }
 
-    public String getRecipeID() {
+    public String getDrinkID() {
         return _drinkID;
     }
 
-    public void setRecipeID(String profileID) {
-        _drinkID = profileID;
+    public void setDrinkID(String drinkID) {
+        _drinkID = drinkID;
     }
 }

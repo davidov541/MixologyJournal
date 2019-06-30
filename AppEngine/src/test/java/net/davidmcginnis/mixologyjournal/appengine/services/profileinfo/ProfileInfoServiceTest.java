@@ -24,72 +24,15 @@ class ProfileInfoServiceTest {
         helper.tearDown();
     }
 
-    @Test
-    public void testUpdateWithNoChanges() {
-        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
-        ProfileInfoService service = new ProfileInfoService();
-        String profileID = "TestProfileID";
-        String drinkID = "TestDrinkID";
-
-        Drink[] drinks = new Drink[] { };
-        Profile newProfile = Profile.createProfile(profileID, drinks);
-
-        service.addUser(new FullProfileRequest(profileID));
-
-        service.syncUserInfo(new SyncProfileRequest(newProfile));
-
-        assertEquals(1, ds.prepare(new Query(Profile.datastoreKindName)).countEntities(withLimit(10)));
-        PreparedQuery profileQuery = ds.prepare(new Query(Profile.datastoreKindName));
-        assertEquals(1, profileQuery.countEntities(withLimit(10)));
-        Entity profileResultEntity = profileQuery.asList(withLimit(10)).get(0);
-        assertEquals(profileID, profileResultEntity.getProperty(Profile.datastoreProfileIDName).toString());
-        assertEquals(profileID, profileResultEntity.getKey().getName());
-
-        PreparedQuery drinkQuery = ds.prepare(new Query(Drink.datastoreKindName));
-        assertEquals(0, drinkQuery.countEntities(withLimit(10)));
-    }
 
     @Test
-    public void testAddDrink() {
-        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
-        ProfileInfoService service = new ProfileInfoService();
+    public void testEmptyQuery() {
         String profileID = "TestProfileID";
-        String drinkID = "TestDrinkID";
 
-        Entity profileEntity = new Entity(Profile.datastoreKindName, profileID);
-        Drink[] drinks = new Drink[] { Drink.createDrink(drinkID, profileEntity.getKey())};
-        Profile newProfile = Profile.createProfile(profileID, drinks);
-
-        service.addUser(new FullProfileRequest(profileID));
-
-        service.syncUserInfo(new SyncProfileRequest(newProfile));
-
-        assertEquals(1, ds.prepare(new Query(Profile.datastoreKindName)).countEntities(withLimit(10)));
-        PreparedQuery profileQuery = ds.prepare(new Query(Profile.datastoreKindName));
-        assertEquals(1, profileQuery.countEntities(withLimit(10)));
-        Entity profileResultEntity = profileQuery.asList(withLimit(10)).get(0);
-        assertEquals(profileID, profileResultEntity.getProperty(Profile.datastoreProfileIDName).toString());
-        assertEquals(profileID, profileResultEntity.getKey().getName());
-
-        PreparedQuery drinkQuery = ds.prepare(new Query(Drink.datastoreKindName));
-        assertEquals(1, drinkQuery.countEntities(withLimit(10)));
-        Entity drinkResultEntity = drinkQuery.asList(withLimit(10)).get(0);
-        assertEquals(drinkID, drinkResultEntity.getProperty(Drink.datastoreDrinkIDName).toString());
-        assertEquals(drinkID, drinkResultEntity.getKey().getName());
-    }
-
-    @Test
-    public void testSimpleInsert() {
-        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
         ProfileInfoService service = new ProfileInfoService();
-        String profileID = "TestProfileID";
-        service.addUser(new FullProfileRequest(profileID));
-        assertEquals(1, ds.prepare(new Query(Profile.datastoreKindName)).countEntities(withLimit(10)));
-        PreparedQuery query = ds.prepare(new Query(Profile.datastoreKindName));
-        assertEquals(1, query.countEntities(withLimit(10)));
-        Entity entity = query.asList(withLimit(10)).get(0);
-        assertEquals(profileID, entity.getProperty(Profile.datastoreProfileIDName).toString());
-        assertEquals(profileID, entity.getKey().getName());
+        FullProfileResponse response = service.getUserInfo(new FullProfileRequest(profileID));
+        assertEquals("Failure", response.getResult());
+        assertNull(response.getProfile());
     }
 
     @Test
@@ -107,12 +50,61 @@ class ProfileInfoServiceTest {
     }
 
     @Test
-    public void testEmptyQuery() {
+    public void testSimpleInsert() {
+        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
+        ProfileInfoService service = new ProfileInfoService();
+        String profileID = "TestProfileID";
+        service.addUser(new FullProfileRequest(profileID));
+        assertEquals(1, ds.prepare(new Query(Profile.datastoreKindName)).countEntities(withLimit(10)));
+        PreparedQuery query = ds.prepare(new Query(Profile.datastoreKindName));
+        assertEquals(1, query.countEntities(withLimit(10)));
+        Entity entity = query.asList(withLimit(10)).get(0);
+        assertEquals(profileID, entity.getProperty(Profile.datastoreProfileIDName).toString());
+        assertEquals(profileID, entity.getKey().getName());
+    }
+
+    @Test
+    public void testUpdateWithNoChanges() {
         String profileID = "TestProfileID";
 
+        Drink[] drinks = new Drink[] { };
+
+        runUpdateTest(profileID, drinks);
+    }
+
+    @Test
+    public void testAddDrink() {
+        String profileID = "TestProfileID";
+        String drinkID = "TestDrinkID";
+
+        Entity profileEntity = new Entity(Profile.datastoreKindName, profileID);
+        Drink[] drinks = new Drink[] { Drink.createDrink(drinkID, profileEntity.getKey())};
+
+        runUpdateTest(profileID, drinks);
+    }
+
+    private void runUpdateTest(String profileID, Drink[] drinks) {
+        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
         ProfileInfoService service = new ProfileInfoService();
-        FullProfileResponse response = service.getUserInfo(new FullProfileRequest(profileID));
-        assertEquals("Failure", response.getResult());
-        assertNull(response.getProfile());
+        Profile newProfile = Profile.createProfile(profileID, drinks);
+
+        service.addUser(new FullProfileRequest(profileID));
+
+        service.syncUserInfo(new SyncProfileRequest(newProfile));
+
+        assertEquals(1, ds.prepare(new Query(Profile.datastoreKindName)).countEntities(withLimit(10)));
+        PreparedQuery profileQuery = ds.prepare(new Query(Profile.datastoreKindName));
+        assertEquals(1, profileQuery.countEntities(withLimit(10)));
+        Entity profileResultEntity = profileQuery.asList(withLimit(10)).get(0);
+        assertEquals(profileID, profileResultEntity.getProperty(Profile.datastoreProfileIDName).toString());
+        assertEquals(profileID, profileResultEntity.getKey().getName());
+
+        PreparedQuery drinkQuery = ds.prepare(new Query(Drink.datastoreKindName));
+        assertEquals(drinks.length, drinkQuery.countEntities(withLimit(10)));
+        for(int i = 0; i < drinks.length; i++) {
+            Entity drinkResultEntity = drinkQuery.asList(withLimit(10)).get(i);
+            assertEquals(drinks[i].getDrinkID(), drinkResultEntity.getProperty(Drink.datastoreDrinkIDName).toString());
+            assertEquals(drinks[i].getDrinkID(), drinkResultEntity.getKey().getName());
+        }
     }
 }
