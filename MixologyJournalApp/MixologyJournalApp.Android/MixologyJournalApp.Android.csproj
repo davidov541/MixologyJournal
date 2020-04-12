@@ -69,7 +69,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\AuthenticationManager.cs" />
+    <Compile Include="Model\BackendManager.cs" />
     <Compile Include="View\AlertDialogFactory.cs" />
   </ItemGroup>
   <ItemGroup>

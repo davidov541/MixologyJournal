@@ -3,7 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Microsoft.WindowsAzure.MobileServices;
-using MixologyJournalApp.Droid.Security;
+using MixologyJournalApp.Droid.Model;
 using MixologyJournalApp.Droid.View;
 
 namespace MixologyJournalApp.Droid
@@ -21,7 +21,7 @@ namespace MixologyJournalApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            App app = App.GetInstance(new AuthenticationManager(this), new AlertDialogFactory(this));
+            App app = App.GetInstance(new BackendManager(this), new AlertDialogFactory(this));
 
             LoadApplication(app);
         }

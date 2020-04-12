@@ -1,9 +1,10 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
 using System.Threading.Tasks;
 
-namespace MixologyJournalApp.Security
+namespace MixologyJournalApp.Model
 {
-    public interface IAuthenticate
+    public interface IBackend
     {
         bool IsAuthenticated
         {
@@ -15,10 +16,7 @@ namespace MixologyJournalApp.Security
             get;
         }
 
-        MobileServiceClient Client
-        {
-            get;
-        }
+        Task<String> GetResult(String path);
 
         Task<bool> Authenticate();
     }
