@@ -15,6 +15,11 @@ namespace MixologyJournalApp.Security
             get;
         }
 
+        MobileServiceClient Client
+        {
+            get;
+        }
+
         Task<bool> Authenticate();
     }
 }

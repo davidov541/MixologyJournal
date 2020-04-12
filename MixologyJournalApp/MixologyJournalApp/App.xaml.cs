@@ -6,18 +6,26 @@ namespace MixologyJournalApp
 {
     public partial class App : Application
     {
+        private static App _instance;
+
         public static IAuthenticate Authenticator { get; private set; }
 
         public static IAlertDialogFactory DialogFactory { get; private set; }
 
-        public static void Init(IAuthenticate authenticator, IAlertDialogFactory dialogFactory)
+        public static App GetInstance(IAuthenticate authenticator, IAlertDialogFactory dialogFactory)
+        {
+            if (_instance == null)
+            {
+                _instance = new App(authenticator, dialogFactory);
+            }
+            return _instance;
+        }
+
+        private App(IAuthenticate authenticator, IAlertDialogFactory dialogFactory)
         {
             Authenticator = authenticator;
             DialogFactory = dialogFactory;
-        }
 
-        public App()
-        {
             InitializeComponent();
 
             MainPage = new MainPage();

@@ -21,12 +21,9 @@ namespace MixologyJournalApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            MobileServiceClient client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
-            client.LoginAsync(this, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
+            App app = App.GetInstance(new AuthenticationManager(this), new AlertDialogFactory(this));
 
-            App.Init(new AuthenticationManager(this), new AlertDialogFactory(this));
-
-            LoadApplication(new App());
+            LoadApplication(app);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

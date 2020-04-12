@@ -26,6 +26,12 @@ namespace MixologyJournalApp.Droid.Security
             private set; 
         }
 
+        public MobileServiceClient Client
+        {
+            get;
+            private set;
+        }
+
         public AuthenticationManager(Context context)
         {
             _context = context;
@@ -38,15 +44,15 @@ namespace MixologyJournalApp.Droid.Security
             try
             {
                 // Sign in with Google login using a server-managed flow.
-                MobileServiceClient client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
-                User = await client.LoginAsync(_context, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
+                Client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
+                User = await Client.LoginAsync(_context, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
                 if (User != null)
                 {
                     message = string.Format("you are now signed-in as {0}.", User.UserId);
                     success = true;
                 }
                 Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + User.MobileServiceAuthenticationToken } };
-                HttpResponseMessage response = await client.InvokeApiAsync("/insecure/recipes", new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
+                HttpResponseMessage response = await Client.InvokeApiAsync("/insecure/recipes", new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
                 String responseStr = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseStr);
             }
