@@ -362,9 +362,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MixologyJournal\MixologyJournal.csproj">
+    <ProjectReference Include="..\MixologyJournal\MixologyJournal.Old.csproj">
       <Project>{a470befb-0ac5-4767-bd73-9cb3a54db209}</Project>
-      <Name>MixologyJournal</Name>
+      <Name>MixologyJournal.Old</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

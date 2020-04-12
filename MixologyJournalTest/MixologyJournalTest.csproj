@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MixologyJournal\MixologyJournal.csproj" />
+    <ProjectReference Include="..\MixologyJournal\MixologyJournal.Old.csproj" />
   </ItemGroup>
 
 </Project>
