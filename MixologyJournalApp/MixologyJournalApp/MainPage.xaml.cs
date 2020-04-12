@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using MixologyJournalApp.ViewModel;
 
 namespace MixologyJournalApp
 {
@@ -14,32 +15,28 @@ namespace MixologyJournalApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private MainPageViewModel _viewModel;
+
         public MainPage()
         {
+            _viewModel = new MainPageViewModel();
             InitializeComponent();
         }
 
         private async Task RefreshItems()
         {
-            this.loginButton.IsVisible = !App.GetInstance().Backend.IsAuthenticated;
-            IEnumerable<String> recipeNames = JsonConvert.DeserializeObject<List<Recipe>>(await App.GetInstance().Backend.GetResult("/insecure/recipes")).Select(r => r.Name);
+            this.loginButton.IsVisible = !_viewModel.IsAuthenticated;
+            await _viewModel.UpdateRecipes();
+            IEnumerable<String> recipeNames = _viewModel.Recipes.Select(r => r.Name);
             messageLabel.Text = String.Join(",", recipeNames);
         }
 
         async void loginButton_Clicked(object sender, EventArgs e)
         {
-            if (App.GetInstance().Backend != null)
-            {
-                if (await App.GetInstance().Backend.Authenticate())
-                {
-                    // Display the success or failure message.
-                    String message = string.Format("you are now signed-in as {0}.", App.GetInstance().Backend.User.UserId); ;
-                    App.GetInstance().DialogFactory.showDialog("Sign-in result", message);
-                }
-            }
+            await _viewModel.LogIn();
 
             // Set syncItems to true to synchronize the data on startup when offline is enabled.
-            if (App.GetInstance().Backend.IsAuthenticated)
+            if (_viewModel.IsAuthenticated)
             {
                 await RefreshItems();
             }
@@ -50,7 +47,7 @@ namespace MixologyJournalApp
             base.OnAppearing();
 
             // Refresh items only when authenticated.
-            if (App.GetInstance().Backend.IsAuthenticated)
+            if (_viewModel.IsAuthenticated)
             {
                 // Set syncItems to true in order to synchronize the data
                 // on startup when running in offline mode.
