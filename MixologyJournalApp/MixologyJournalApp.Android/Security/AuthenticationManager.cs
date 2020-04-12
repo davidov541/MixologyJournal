@@ -10,9 +10,21 @@ namespace MixologyJournalApp.Droid.Security
 {
     internal class AuthenticationManager: IAuthenticate
     {
-        // Define an authenticated user.
-        private MobileServiceUser user;
         private Context _context;
+
+        public Boolean IsAuthenticated
+        {
+            get
+            {
+                return User != null;
+            }
+        }
+
+        public MobileServiceUser User 
+        { 
+            get; 
+            private set; 
+        }
 
         public AuthenticationManager(Context context)
         {
@@ -27,13 +39,13 @@ namespace MixologyJournalApp.Droid.Security
             {
                 // Sign in with Google login using a server-managed flow.
                 MobileServiceClient client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
-                user = await client.LoginAsync(_context, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
-                if (user != null)
+                User = await client.LoginAsync(_context, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
+                if (User != null)
                 {
-                    message = string.Format("you are now signed-in as {0}.", user.UserId);
+                    message = string.Format("you are now signed-in as {0}.", User.UserId);
                     success = true;
                 }
-                Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + user.MobileServiceAuthenticationToken } };
+                Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + User.MobileServiceAuthenticationToken } };
                 HttpResponseMessage response = await client.InvokeApiAsync("/insecure/recipes", new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
                 String responseStr = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseStr);
@@ -44,13 +56,6 @@ namespace MixologyJournalApp.Droid.Security
             }
 
             Console.WriteLine(message);
-            /*
-            // Display the success or failure message.
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.SetMessage(message);
-            builder.SetTitle("Sign-in result");
-            builder.Create().Show();
-            */
 
             return success;
         }

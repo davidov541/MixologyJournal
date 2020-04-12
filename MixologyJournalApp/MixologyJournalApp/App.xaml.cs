@@ -1,4 +1,5 @@
 ﻿using MixologyJournalApp.Security;
+using MixologyJournalApp.View;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp
@@ -7,9 +8,12 @@ namespace MixologyJournalApp
     {
         public static IAuthenticate Authenticator { get; private set; }
 
-        public static void Init(IAuthenticate authenticator)
+        public static IAlertDialogFactory DialogFactory { get; private set; }
+
+        public static void Init(IAuthenticate authenticator, IAlertDialogFactory dialogFactory)
         {
             Authenticator = authenticator;
+            DialogFactory = dialogFactory;
         }
 
         public App()

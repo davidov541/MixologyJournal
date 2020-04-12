@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Microsoft.WindowsAzure.MobileServices;
 using MixologyJournalApp.Droid.Security;
+using MixologyJournalApp.Droid.View;
 
 namespace MixologyJournalApp.Droid
 {
@@ -23,7 +24,7 @@ namespace MixologyJournalApp.Droid
             MobileServiceClient client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
             client.LoginAsync(this, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
 
-            App.Init(new AuthenticationManager(this));
+            App.Init(new AuthenticationManager(this), new AlertDialogFactory(this));
 
             LoadApplication(new App());
         }
