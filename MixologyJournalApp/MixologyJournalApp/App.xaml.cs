@@ -1,15 +1,8 @@
-﻿using System;
+﻿using MixologyJournalApp.Security;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using System.Threading.Tasks;
 
 namespace MixologyJournalApp
 {
-    public interface IAuthenticate
-    {
-        Task<bool> Authenticate();
-    }
-
     public partial class App : Application
     {
         public static IAuthenticate Authenticator { get; private set; }
