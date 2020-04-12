@@ -19,7 +19,7 @@ namespace MixologyJournalApp
             InitializeComponent();
         }
 
-        private async Task RefreshItems(bool showActivityIndicator, bool syncItems)
+        private async Task RefreshItems()
         {
             this.loginButton.IsVisible = !App.GetInstance().Backend.IsAuthenticated;
             IEnumerable<String> recipeNames = JsonConvert.DeserializeObject<List<Recipe>>(await App.GetInstance().Backend.GetResult("/insecure/recipes")).Select(r => r.Name);
@@ -41,7 +41,7 @@ namespace MixologyJournalApp
             // Set syncItems to true to synchronize the data on startup when offline is enabled.
             if (App.GetInstance().Backend.IsAuthenticated)
             {
-                await RefreshItems(true, syncItems: false);
+                await RefreshItems();
             }
         }
 
@@ -54,7 +54,7 @@ namespace MixologyJournalApp
             {
                 // Set syncItems to true in order to synchronize the data
                 // on startup when running in offline mode.
-                await RefreshItems(true, syncItems: false);
+                await RefreshItems();
 
                 // Hide the Sign-in button.
                 this.loginButton.IsVisible = false;
