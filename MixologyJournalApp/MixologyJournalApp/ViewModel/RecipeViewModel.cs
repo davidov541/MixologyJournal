@@ -1,7 +1,5 @@
 ﻿using MixologyJournalApp.Model;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MixologyJournalApp.ViewModel
 {

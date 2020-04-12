@@ -1,12 +1,10 @@
-﻿using MixologyJournalApp.Model;
-using Newtonsoft.Json;
+﻿using MixologyJournalApp.ViewModel;
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using MixologyJournalApp.ViewModel;
 
 namespace MixologyJournalApp
 {
