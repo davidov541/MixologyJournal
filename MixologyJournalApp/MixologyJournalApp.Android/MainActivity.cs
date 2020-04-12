@@ -8,6 +8,9 @@ using Android.Widget;
 using Android.OS;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace MixologyJournalApp.Droid
 {
@@ -45,13 +48,17 @@ namespace MixologyJournalApp.Droid
             try
             {
                 // Sign in with Google login using a server-managed flow.
-                MobileServiceClient client = new MobileServiceClient("https://mixologyjournalapi.azurewebsites.net");
+                MobileServiceClient client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
                 user = await client.LoginAsync(this, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
                 if (user != null)
                 {
                     message = string.Format("you are now signed-in as {0}.", user.UserId);
                     success = true;
                 }
+                Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + user.MobileServiceAuthenticationToken } };
+                HttpResponseMessage response = await client.InvokeApiAsync("/recipes", new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
+                String responseStr = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseStr);
             }
             catch (Exception ex)
             {
