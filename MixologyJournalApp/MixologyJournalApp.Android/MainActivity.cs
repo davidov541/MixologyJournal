@@ -56,7 +56,7 @@ namespace MixologyJournalApp.Droid
                     success = true;
                 }
                 Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + user.MobileServiceAuthenticationToken } };
-                HttpResponseMessage response = await client.InvokeApiAsync("/recipes", new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
+                HttpResponseMessage response = await client.InvokeApiAsync("/insecure/recipes", new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
                 String responseStr = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseStr);
             }
