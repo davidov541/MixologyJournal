@@ -8,10 +8,10 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label x:Name="messageLabel" Text="Welcome to Xamarin.Forms!" 
+        <Label x:Name="messageLabel" Text="{Binding Path=Message}" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-        <Button x:Name="loginButton" Text="Sign-in" MinimumHeightRequest="30" Clicked="loginButton_Clicked"/>
+        <Button x:Name="loginButton" Text="Sign-in" MinimumHeightRequest="30" Clicked="loginButton_Clicked" IsVisible="{Binding Path=IsUnauthenticated}"/>
     </StackLayout>
 
 </ContentPage>

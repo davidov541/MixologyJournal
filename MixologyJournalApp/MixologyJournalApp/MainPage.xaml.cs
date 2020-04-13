@@ -18,12 +18,12 @@ namespace MixologyJournalApp
         public MainPage()
         {
             _viewModel = new MainPageViewModel();
+            BindingContext = _viewModel;
             InitializeComponent();
         }
 
         private async Task RefreshItems()
         {
-            this.loginButton.IsVisible = !_viewModel.IsAuthenticated;
             await _viewModel.UpdateRecipes();
             IEnumerable<String> recipeNames = _viewModel.Recipes.Select(r => r.Name);
             messageLabel.Text = String.Join(",", recipeNames);
@@ -50,9 +50,6 @@ namespace MixologyJournalApp
                 // Set syncItems to true in order to synchronize the data
                 // on startup when running in offline mode.
                 await RefreshItems();
-
-                // Hide the Sign-in button.
-                this.loginButton.IsVisible = false;
             }
         }
     }

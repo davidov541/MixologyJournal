@@ -2,7 +2,6 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
-using Microsoft.WindowsAzure.MobileServices;
 using MixologyJournalApp.Droid.Model;
 using MixologyJournalApp.Droid.View;
 
