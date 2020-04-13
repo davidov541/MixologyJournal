@@ -25,8 +25,6 @@ namespace MixologyJournalApp
         private async Task RefreshItems()
         {
             await _viewModel.UpdateRecipes();
-            IEnumerable<String> recipeNames = _viewModel.Recipes.Select(r => r.Name);
-            messageLabel.Text = String.Join(",", recipeNames);
         }
 
         private async void loginButton_Clicked(object sender, EventArgs e)

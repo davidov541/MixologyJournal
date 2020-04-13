@@ -10,6 +10,13 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class MainPageViewModel: INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(String propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public bool IsAuthenticated
         {
             get
@@ -44,13 +51,6 @@ namespace MixologyJournalApp.ViewModel
         }
 
         private List<RecipeViewModel> _recipes = new List<RecipeViewModel>();
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(String propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         public IEnumerable<RecipeViewModel> Recipes
         {

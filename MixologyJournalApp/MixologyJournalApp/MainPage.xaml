@@ -7,11 +7,16 @@
              x:Class="MixologyJournalApp.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label x:Name="messageLabel"
-               Text="{Binding Path=Message}"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+        <ListView x:Name="listView" 
+                  ItemsSource="{Binding Path=Recipes}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Path=Name}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button x:Name="loginButton" 
                 Text="Sign-in" 
                 MinimumHeightRequest="30" 
