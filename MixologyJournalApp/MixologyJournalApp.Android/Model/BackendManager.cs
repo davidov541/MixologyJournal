@@ -30,6 +30,7 @@ namespace MixologyJournalApp.Droid.Model
         public BackendManager(Context context)
         {
             _context = context;
+            _client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
         }
 
         public async Task<String> GetResult(String path)
@@ -46,7 +47,6 @@ namespace MixologyJournalApp.Droid.Model
             try
             {
                 // Sign in with Google login using a server-managed flow.
-                _client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
                 User = await _client.LoginAsync(_context, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
                 if (User != null)
                 {
@@ -62,6 +62,12 @@ namespace MixologyJournalApp.Droid.Model
             Console.WriteLine(message);
 
             return success;
+        }
+
+        public async Task LogOffAsync()
+        {
+            await _client.LogoutAsync();
+            User = null;
         }
     }
 }

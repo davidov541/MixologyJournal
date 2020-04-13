@@ -100,5 +100,16 @@ namespace MixologyJournalApp.ViewModel
             OnPropertyChanged(nameof(IsAuthenticated));
             OnPropertyChanged(nameof(IsUnauthenticated));
         }
+
+        public async Task LogOff()
+        {
+            if (App.GetInstance().Backend != null)
+            {
+                await App.GetInstance().Backend.LogOffAsync();
+                App.GetInstance().DialogFactory.showDialog("Sign-out result", "Logged out");
+            }
+            OnPropertyChanged(nameof(IsAuthenticated));
+            OnPropertyChanged(nameof(IsUnauthenticated));
+        }
     }
 }

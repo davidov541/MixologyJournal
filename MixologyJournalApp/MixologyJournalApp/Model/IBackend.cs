@@ -19,5 +19,7 @@ namespace MixologyJournalApp.Model
         Task<String> GetResult(String path);
 
         Task<bool> Authenticate();
+
+        Task LogOffAsync();
     }
 }

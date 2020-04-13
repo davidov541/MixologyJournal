@@ -8,10 +8,20 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label x:Name="messageLabel" Text="{Binding Path=Message}" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Button x:Name="loginButton" Text="Sign-in" MinimumHeightRequest="30" Clicked="loginButton_Clicked" IsVisible="{Binding Path=IsUnauthenticated}"/>
+        <Label x:Name="messageLabel"
+               Text="{Binding Path=Message}"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+        <Button x:Name="loginButton" 
+                Text="Sign-in" 
+                MinimumHeightRequest="30" 
+                Clicked="loginButton_Clicked" 
+                IsVisible="{Binding Path=IsUnauthenticated}"/>
+        <Button x:Name="logoutButton" 
+                Text="Sign-out" 
+                MinimumHeightRequest="30" 
+                Clicked="logoutButton_Clicked" 
+                IsVisible="{Binding Path=IsAuthenticated}"/>
     </StackLayout>
 
 </ContentPage>

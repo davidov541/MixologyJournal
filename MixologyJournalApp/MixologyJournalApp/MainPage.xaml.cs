@@ -29,7 +29,7 @@ namespace MixologyJournalApp
             messageLabel.Text = String.Join(",", recipeNames);
         }
 
-        async void loginButton_Clicked(object sender, EventArgs e)
+        private async void loginButton_Clicked(object sender, EventArgs e)
         {
             await _viewModel.LogIn();
 
@@ -51,6 +51,11 @@ namespace MixologyJournalApp
                 // on startup when running in offline mode.
                 await RefreshItems();
             }
+        }
+
+        private async void logoutButton_Clicked(object sender, EventArgs e)
+        {
+            await _viewModel.LogOff();
         }
     }
 }
