@@ -4,11 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="MixologyJournalApp.MainPage">
-
+             x:Class="MixologyJournalApp.View.MainPage">
     <StackLayout>
         <ListView x:Name="listView" 
-                  ItemsSource="{Binding Path=Recipes}">
+                  ItemsSource="{Binding Path=Recipes}" 
+                  ItemTapped="listView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

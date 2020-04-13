@@ -19,4 +19,16 @@
   <ItemGroup>
     <Folder Include="Security\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\RecipePage.xaml.cs">
+      <DependentUpon>RecipePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\RecipePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
