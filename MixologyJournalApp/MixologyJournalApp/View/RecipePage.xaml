@@ -10,6 +10,9 @@
             <Label Text="{Binding Path=Name}"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding Path=Ingredients}"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
             <Label Text="{Binding Path=Steps}"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" />

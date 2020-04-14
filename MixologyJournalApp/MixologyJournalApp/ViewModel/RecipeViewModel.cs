@@ -39,6 +39,19 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String Ingredients
+        {
+            get
+            {
+                String result = "";
+                foreach (Ingredient ingred in _model.Ingredients)
+                {
+                    result += String.Format("{0} {1}s of {2}\n", ingred.Amount, ingred.Unit, ingred.Name);
+                }
+                return result;
+            }
+        }
+
         public RecipeViewModel(Recipe model)
         {
             _model = model;
