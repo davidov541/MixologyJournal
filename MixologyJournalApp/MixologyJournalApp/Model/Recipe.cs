@@ -22,6 +22,13 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty]
+        public String Id
+        {
+            get;
+            set;
+        }
+
         public static async Task<Recipe> GetRecipe(String id)
         {
             String result = await App.GetInstance().Backend.GetResult("");
@@ -35,6 +42,7 @@ namespace MixologyJournalApp.Model
 
         public Recipe(String id)
         {
+            Id = id;
         }
     }
 }
