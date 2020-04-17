@@ -13,6 +13,8 @@ namespace MixologyJournalApp.Droid.Model
         private Context _context;
         private MobileServiceClient _client;
 
+        private const String _basePath = "https://mixologyjournalfunction.azurewebsites.net/api";
+
         public Boolean IsAuthenticated
         {
             get
@@ -30,14 +32,19 @@ namespace MixologyJournalApp.Droid.Model
         public BackendManager(Context context)
         {
             _context = context;
-            _client = new MobileServiceClient("https://mixologyjournal.azurewebsites.net");
+            _client = new MobileServiceClient(_basePath);
         }
 
         public async Task<String> GetResult(String path)
         {
-            Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + User.MobileServiceAuthenticationToken } };
-            HttpResponseMessage response = await _client.InvokeApiAsync(path, new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
+            HttpClient client = new HttpClient();
+            String fullPath = _basePath + "/" + path;
+            Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + User.MobileServiceAuthenticationToken } }; 
+            HttpResponseMessage response = await client.GetAsync(fullPath);
+
             return await response.Content.ReadAsStringAsync();
+            // HttpResponseMessage response = await _client.InvokeApiAsync(path, new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
+            // return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<bool> Authenticate()
