@@ -1,12 +1,12 @@
 ﻿using Android.Content;
 using Microsoft.WindowsAzure.MobileServices;
-using MixologyJournalApp.Model;
+using MixologyJournalApp.Platform;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace MixologyJournalApp.Droid.Model
+namespace MixologyJournalApp.Droid.Platform
 {
     internal class BackendManager: IBackend
     {

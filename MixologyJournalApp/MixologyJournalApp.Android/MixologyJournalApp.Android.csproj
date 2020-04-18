@@ -66,12 +66,12 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AndroidPlatform.cs" />
+    <Compile Include="Platform\AndroidPlatform.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\BackendManager.cs" />
-    <Compile Include="View\AlertDialogFactory.cs" />
+    <Compile Include="Platform\BackendManager.cs" />
+    <Compile Include="Platform\AlertDialogFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

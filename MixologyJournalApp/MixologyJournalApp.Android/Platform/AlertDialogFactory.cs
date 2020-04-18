@@ -1,9 +1,9 @@
 ﻿using Android.App;
 using Android.Content;
-using MixologyJournalApp.View;
+using MixologyJournalApp.Platform;
 using System;
 
-namespace MixologyJournalApp.Droid.View
+namespace MixologyJournalApp.Droid.Platform
 {
     internal class AlertDialogFactory: IAlertDialogFactory
     {

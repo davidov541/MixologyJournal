@@ -1,40 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.Content;
+using MixologyJournalApp.Platform;
 
 namespace MixologyJournalApp.Droid.Platform
 {
-    internal class AndroidPlatform
+    public class AndroidPlatform : IPlatform
     {
-        private static AndroidPlatform _instance;
-
-        public Context CurrentContext
+        private AlertDialogFactory _factory;
+        public IAlertDialogFactory AlertDialogFactory
         {
-            get;
-            set;
+            get
+            {
+                return _factory;
+            }
         }
 
-        public static void Init(Context context)
+        private BackendManager _backend;
+        public IBackend Backend
         {
-            _instance = new AndroidPlatform(context);
+            get
+            {
+                return _backend;
+            }
         }
 
-        public static AndroidPlatform getInstance()
+        internal AndroidPlatform(Context context)
         {
-            return _instance;
-        }
-
-        private AndroidPlatform(Context context)
-        {
-            CurrentContext = context;
+            _factory = new AlertDialogFactory(context);
+            _backend = new BackendManager(context);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MixologyJournalApp.View
+namespace MixologyJournalApp.Platform
 {
     public interface IAlertDialogFactory
     {

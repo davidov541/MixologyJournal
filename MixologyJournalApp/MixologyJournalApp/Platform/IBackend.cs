@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace MixologyJournalApp.Model
+namespace MixologyJournalApp.Platform
 {
     public interface IBackend
     {

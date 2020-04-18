@@ -2,8 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
-using MixologyJournalApp.Droid.Model;
-using MixologyJournalApp.Droid.View;
+using MixologyJournalApp.Droid.Platform;
 
 namespace MixologyJournalApp.Droid
 {
