@@ -7,7 +7,7 @@
              x:Class="MixologyJournalApp.View.LoadingPage" BackgroundColor="Black">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Loading..."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" TextColor="Red" />
         </StackLayout>
