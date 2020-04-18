@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Droid.Platform
@@ -53,8 +54,14 @@ namespace MixologyJournalApp.Droid.Platform
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
             String token = (User == null) ? string.Empty : User.MobileServiceAuthenticationToken;
-            Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + token } }; 
-            HttpResponseMessage response = await client.GetAsync(fullPath);
+            Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + token } };
+            HttpRequestMessage request = new HttpRequestMessage()
+            {
+                RequestUri = new Uri(fullPath),
+                Method = HttpMethod.Get,
+            };
+            request.Headers.Authorization = new AuthenticationHeaderValue("authorization", "bearer" + token);
+            HttpResponseMessage response = await client.SendAsync(request);
 
             return await response.Content.ReadAsStringAsync();
         }
