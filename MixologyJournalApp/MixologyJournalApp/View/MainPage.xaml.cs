@@ -13,9 +13,9 @@ namespace MixologyJournalApp.View
     {
         private MainPageViewModel _viewModel;
 
-        public MainPage()
+        internal MainPage(MainPageViewModel vm)
         {
-            _viewModel = new MainPageViewModel();
+            _viewModel = vm;
             BindingContext = _viewModel;
             InitializeComponent();
         }

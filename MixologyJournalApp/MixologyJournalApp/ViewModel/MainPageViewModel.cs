@@ -67,18 +67,11 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task UpdateRecipes()
         {
-            if (IsAuthenticated)
-            {
-                String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/recipes");
-                _recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r)).ToList();
-                _recipes.ForEach(r => r.PropertyChanged += Recipe_PropertyChanged);
-                OnPropertyChanged(nameof(Recipes));
-                OnPropertyChanged(nameof(Message));
-            }
-            else
-            {
-                _recipes = new List<RecipeViewModel>();
-            }
+            String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/recipes");
+            _recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r)).ToList();
+            _recipes.ForEach(r => r.PropertyChanged += Recipe_PropertyChanged);
+            OnPropertyChanged(nameof(Recipes));
+            OnPropertyChanged(nameof(Message));
         }
 
         private void Recipe_PropertyChanged(object sender, PropertyChangedEventArgs e)

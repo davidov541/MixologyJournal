@@ -39,12 +39,11 @@ namespace MixologyJournalApp.Droid.Platform
         {
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
-            Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + User.MobileServiceAuthenticationToken } }; 
+            String token = (User == null) ? string.Empty : User.MobileServiceAuthenticationToken;
+            Dictionary<String, String> headers = new Dictionary<String, String>() { { "authorization", "bearer " + token } }; 
             HttpResponseMessage response = await client.GetAsync(fullPath);
 
             return await response.Content.ReadAsStringAsync();
-            // HttpResponseMessage response = await _client.InvokeApiAsync(path, new StringContent(""), HttpMethod.Get, headers, new Dictionary<String, String>());
-            // return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<bool> Authenticate()

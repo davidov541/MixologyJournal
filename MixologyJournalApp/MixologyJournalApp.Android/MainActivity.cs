@@ -3,13 +3,14 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using MixologyJournalApp.Droid.Platform;
+using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Droid
 {
     [Activity(Label = "MixologyJournalApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -20,8 +21,9 @@ namespace MixologyJournalApp.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             App app = App.GetInstance(new AndroidPlatform(this));
-
             LoadApplication(app);
+
+            await app.LoadAsync();
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {

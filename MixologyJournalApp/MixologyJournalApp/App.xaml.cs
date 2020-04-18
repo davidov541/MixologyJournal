@@ -2,6 +2,7 @@
 using MixologyJournalApp.Platform;
 using MixologyJournalApp.View;
 using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp
@@ -30,13 +31,20 @@ namespace MixologyJournalApp
             return _instance;
         }
 
+        private LoadingPage _loadingPage;
         private App(IPlatform platform)
         {
             PlatformInfo = platform;
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            _loadingPage = new LoadingPage();
+            MainPage = new NavigationPage(_loadingPage);
+        }
+
+        public async Task LoadAsync()
+        {
+            await _loadingPage.LoadAsync();
         }
 
         protected override void OnStart()
