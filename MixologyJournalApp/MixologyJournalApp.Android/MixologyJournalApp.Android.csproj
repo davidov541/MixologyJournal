@@ -72,6 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Platform\BackendManager.cs" />
     <Compile Include="Platform\AlertDialogFactory.cs" />
+    <Compile Include="Security\SecureStorageAccountStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

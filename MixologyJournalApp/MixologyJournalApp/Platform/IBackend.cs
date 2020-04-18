@@ -16,6 +16,8 @@ namespace MixologyJournalApp.Platform
             get;
         }
 
+        Task Init();
+
         Task<String> GetResult(String path);
 
         Task<bool> Authenticate();

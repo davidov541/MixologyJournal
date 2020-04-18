@@ -1,8 +1,10 @@
 ﻿using Android.Content;
 using Microsoft.WindowsAzure.MobileServices;
+using MixologyJournalApp.Droid.Security;
 using MixologyJournalApp.Platform;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -12,6 +14,7 @@ namespace MixologyJournalApp.Droid.Platform
     {
         private Context _context;
         private MobileServiceClient _client;
+        private SecureStorageAccountStore _accountStore;
 
         private const String _basePath = "https://mixologyjournalfunction.azurewebsites.net/api";
 
@@ -33,6 +36,16 @@ namespace MixologyJournalApp.Droid.Platform
         {
             _context = context;
             _client = new MobileServiceClient(_basePath);
+            _accountStore = new SecureStorageAccountStore();
+        }
+
+        public async Task Init()
+        {
+            List<MobileServiceUser> users = await _accountStore.FindAccountsForServiceAsync(SecureStorageAccountStore.GoogleServiceId);
+            if (users.Any())
+            {
+                User = users.First();
+            }
         }
 
         public async Task<String> GetResult(String path)
@@ -58,6 +71,7 @@ namespace MixologyJournalApp.Droid.Platform
                 {
                     message = string.Format("you are now signed-in as {0}.", User.UserId);
                     success = true;
+                    await _accountStore.SaveAsync(User, SecureStorageAccountStore.GoogleServiceId);
                 }
             }
             catch (Exception ex)
@@ -74,6 +88,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             await _client.LogoutAsync();
             User = null;
+            _accountStore.Delete(SecureStorageAccountStore.GoogleServiceId);
         }
     }
 }
