@@ -1,4 +1,5 @@
 ﻿using MixologyJournalApp.Model;
+using MixologyJournalApp.Platform;
 using MixologyJournalApp.View;
 using System;
 using Xamarin.Forms;
@@ -9,15 +10,13 @@ namespace MixologyJournalApp
     {
         private static App _instance;
 
-        public IBackend Backend { get; private set; }
+        public IPlatform PlatformInfo { get; private set; }
 
-        public IAlertDialogFactory DialogFactory { get; private set; }
-
-        public static App GetInstance(IBackend authenticator, IAlertDialogFactory dialogFactory)
+        public static App GetInstance(IPlatform platform)
         {
             if (_instance == null)
             {
-                _instance = new App(authenticator, dialogFactory);
+                _instance = new App(platform);
             }
             return _instance;
         }
@@ -31,10 +30,9 @@ namespace MixologyJournalApp
             return _instance;
         }
 
-        private App(IBackend authenticator, IAlertDialogFactory dialogFactory)
+        private App(IPlatform platform)
         {
-            Backend = authenticator;
-            DialogFactory = dialogFactory;
+            PlatformInfo = platform;
 
             InitializeComponent();
 

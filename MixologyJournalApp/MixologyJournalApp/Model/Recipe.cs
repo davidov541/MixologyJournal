@@ -38,7 +38,7 @@ namespace MixologyJournalApp.Model
 
         public static async Task<Recipe> GetRecipe(String id)
         {
-            String result = await App.GetInstance().Backend.GetResult("");
+            String result = await App.GetInstance().PlatformInfo.Backend.GetResult("");
             return GetRecipeFromJSON(result);
         }
 

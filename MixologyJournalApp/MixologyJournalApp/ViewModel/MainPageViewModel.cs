@@ -1,4 +1,5 @@
 ﻿using MixologyJournalApp.Model;
+using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace MixologyJournalApp.ViewModel
                 bool authenticated = false;
                 try
                 {
-                    authenticated = App.GetInstance().Backend.IsAuthenticated;
+                    authenticated = App.GetInstance().PlatformInfo.Backend.IsAuthenticated;
                 } catch (InvalidOperationException)
                 {
                     // We haven't created the App object yet, so we should just return that we aren't authenticated.
@@ -68,7 +69,7 @@ namespace MixologyJournalApp.ViewModel
         {
             if (IsAuthenticated)
             {
-                String jsonResult = await App.GetInstance().Backend.GetResult("/insecure/recipes");
+                String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/recipes");
                 _recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r)).ToList();
                 _recipes.ForEach(r => r.PropertyChanged += Recipe_PropertyChanged);
                 OnPropertyChanged(nameof(Recipes));
@@ -88,13 +89,14 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task LogIn()
         {
-            if (App.GetInstance().Backend != null)
+            IPlatform platform = App.GetInstance().PlatformInfo;
+            if (platform.Backend != null)
             {
-                if (await App.GetInstance().Backend.Authenticate())
+                if (await App.GetInstance().PlatformInfo.Backend.Authenticate())
                 {
                     // Display the success or failure message.
-                    String message = string.Format("you are now signed-in as {0}.", App.GetInstance().Backend.User.UserId); ;
-                    App.GetInstance().DialogFactory.showDialog("Sign-in result", message);
+                    String message = string.Format("you are now signed-in as {0}.", platform.Backend.User.UserId); ;
+                    platform.AlertDialogFactory.showDialog("Sign-in result", message);
                 }
             }
             OnPropertyChanged(nameof(IsAuthenticated));
@@ -103,10 +105,11 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task LogOff()
         {
-            if (App.GetInstance().Backend != null)
+            IPlatform platform = App.GetInstance().PlatformInfo;
+            if (platform.Backend != null)
             {
-                await App.GetInstance().Backend.LogOffAsync();
-                App.GetInstance().DialogFactory.showDialog("Sign-out result", "Logged out");
+                await platform.Backend.LogOffAsync();
+                platform.AlertDialogFactory.showDialog("Sign-out result", "Logged out");
             }
             OnPropertyChanged(nameof(IsAuthenticated));
             OnPropertyChanged(nameof(IsUnauthenticated));
