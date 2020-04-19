@@ -1,5 +1,4 @@
-﻿using MixologyJournalApp.Model;
-using MixologyJournalApp.Platform;
+﻿using MixologyJournalApp.Platform;
 using MixologyJournalApp.View;
 using MixologyJournalApp.ViewModel;
 using System;
