@@ -49,6 +49,9 @@ namespace MixologyJournalApp.Model
 
         public Recipe()
         {
+            Steps = new List<String>();
+            Steps.Add("");
+            Ingredients = new List<Ingredient>();
         }
 
         public Recipe(String id)

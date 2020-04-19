@@ -2,12 +2,14 @@
 using System;
 using System.Linq;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace MixologyJournalApp.ViewModel
 {
     internal class RecipeViewModel: INotifyPropertyChanged
     {
         private Recipe _model;
+        private List<StepViewModel> _steps;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -39,6 +41,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public IEnumerable<StepViewModel> StepsList
+        {
+            get
+            {
+                return _steps;
+            }
+        }
+
         public String Ingredients
         {
             get
@@ -52,14 +62,21 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public RecipeViewModel()
+        public RecipeViewModel() : this(new Recipe())
         {
-            _model = new Recipe();
         }
 
         public RecipeViewModel(Recipe model)
         {
             _model = model;
+            _steps = _model.Steps.Select((s, i) => new StepViewModel(s, i)).ToList();
+            _steps.ForEach(s => s.PropertyChanged += stepChanged);
+        }
+
+        private void stepChanged(object sender, PropertyChangedEventArgs e)
+        {
+            StepViewModel vm = sender as StepViewModel;
+            _model.Steps[vm.Index] = vm.Text;
         }
     }
 }

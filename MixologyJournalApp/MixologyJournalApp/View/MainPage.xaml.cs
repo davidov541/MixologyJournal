@@ -62,7 +62,7 @@ namespace MixologyJournalApp.View
 
         private async void addRecipeButton_Clicked(object sender, EventArgs e)
         {
-            CreateRecipePage recipePage = new CreateRecipePage(new RecipeViewModel(), this);
+            CreateRecipePage recipePage = new CreateRecipePage(new RecipeViewModel());
             await Navigation.PushAsync(recipePage);
         }
     }

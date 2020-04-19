@@ -16,17 +16,16 @@ namespace MixologyJournalApp.View
         private MainPage _previous;
         private RecipeViewModel _vm;
 
-        internal CreateRecipePage(RecipeViewModel recipe, MainPage previous)
+        internal CreateRecipePage(RecipeViewModel recipe)
         {
             _vm = recipe;
-            _previous = previous;
+            BindingContext = _vm;
             InitializeComponent();
         }
 
         private async void createButton_Clicked(object sender, EventArgs e)
         {
-            NavigationPage navigationPage = new NavigationPage(_previous);
-            await Navigation.PushAsync(navigationPage);
+            await Navigation.PopAsync();
         }
     }
 }
