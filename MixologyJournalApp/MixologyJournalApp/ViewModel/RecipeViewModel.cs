@@ -90,5 +90,14 @@ namespace MixologyJournalApp.ViewModel
             OnPropertyChanged(nameof(Steps));
             OnPropertyChanged(nameof(StepsList));
         }
+
+        public void DeleteStep(StepViewModel step)
+        {
+            int index = step.Index;
+            _steps.Remove(step);
+            _model.Steps.RemoveAt(index);
+            OnPropertyChanged(nameof(Steps));
+            OnPropertyChanged(nameof(StepsList));
+        }
     }
 }

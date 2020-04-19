@@ -31,5 +31,11 @@ namespace MixologyJournalApp.View
         {
             _vm.AddStep();
         }
+
+        private void deleteStepButton_Clicked(object sender, EventArgs e)
+        {
+            StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
+            _vm.DeleteStep(vm);
+        }
     }
 }
