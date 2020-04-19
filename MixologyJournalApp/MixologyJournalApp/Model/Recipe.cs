@@ -47,6 +47,10 @@ namespace MixologyJournalApp.Model
             return JsonConvert.DeserializeObject<Recipe>(jsonScript);
         }
 
+        public Recipe()
+        {
+        }
+
         public Recipe(String id)
         {
             Id = id;

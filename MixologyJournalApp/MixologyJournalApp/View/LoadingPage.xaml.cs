@@ -12,16 +12,14 @@ namespace MixologyJournalApp.View
         public LoadingPage()
         {
             InitializeComponent();
-            
         }
 
-        public async Task LoadAsync()
+        internal async Task<MainPageViewModel> LoadAsync()
         {
             _nextPageVM = new MainPageViewModel();
             await _nextPageVM.UpdateRecipes();
             await App.GetInstance().PlatformInfo.Backend.Init();
-            NavigationPage navigationPage = new NavigationPage(new MainPage(_nextPageVM));
-            await Navigation.PushAsync(navigationPage);
+            return _nextPageVM;
         }
     }
 }

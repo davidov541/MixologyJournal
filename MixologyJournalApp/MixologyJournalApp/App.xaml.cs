@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.Model;
 using MixologyJournalApp.Platform;
 using MixologyJournalApp.View;
+using MixologyJournalApp.ViewModel;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -39,12 +40,13 @@ namespace MixologyJournalApp
             InitializeComponent();
 
             _loadingPage = new LoadingPage();
-            MainPage = new NavigationPage(_loadingPage);
+            MainPage = _loadingPage;
         }
 
         public async Task LoadAsync()
         {
-            await _loadingPage.LoadAsync();
+            MainPageViewModel pageVM = await _loadingPage.LoadAsync();
+            MainPage = new NavigationPage(new MainPage(pageVM));
         }
 
         protected override void OnStart()

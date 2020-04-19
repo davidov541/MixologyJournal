@@ -52,6 +52,11 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public RecipeViewModel()
+        {
+            _model = new Recipe();
+        }
+
         public RecipeViewModel(Recipe model)
         {
             _model = model;

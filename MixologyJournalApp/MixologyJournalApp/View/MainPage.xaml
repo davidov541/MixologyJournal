@@ -17,6 +17,11 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button x:Name="addRecipeButton"
+                Text="Add Recipe"
+                MinimumHeightRequest="30"
+                Clicked="addRecipeButton_Clicked"
+                IsVisible="{Binding Path=IsAuthenticated}" />
         <Button x:Name="loginButton" 
                 Text="Sign-in" 
                 MinimumHeightRequest="30" 
