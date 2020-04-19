@@ -3,20 +3,16 @@ using System;
 using System.Linq;
 using System.ComponentModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace MixologyJournalApp.ViewModel
 {
     internal class RecipeViewModel: INotifyPropertyChanged
     {
         private Recipe _model;
-        private List<StepViewModel> _steps;
+        private ObservableCollection<StepViewModel> _steps;
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(String propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         public String Name
         {
@@ -41,7 +37,7 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public IEnumerable<StepViewModel> StepsList
+        public ObservableCollection<StepViewModel> StepsList
         {
             get
             {
@@ -69,14 +65,30 @@ namespace MixologyJournalApp.ViewModel
         public RecipeViewModel(Recipe model)
         {
             _model = model;
-            _steps = _model.Steps.Select((s, i) => new StepViewModel(s, i)).ToList();
-            _steps.ForEach(s => s.PropertyChanged += stepChanged);
+            List<StepViewModel> steps = _model.Steps.Select((s, i) => new StepViewModel(s, i)).ToList();
+            steps.ForEach(s => s.PropertyChanged += StepChanged);
+            _steps = new ObservableCollection<StepViewModel>(steps);
         }
 
-        private void stepChanged(object sender, PropertyChangedEventArgs e)
+        private void OnPropertyChanged(String propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void StepChanged(object sender, PropertyChangedEventArgs e)
         {
             StepViewModel vm = sender as StepViewModel;
             _model.Steps[vm.Index] = vm.Text;
+        }
+
+        public void AddStep()
+        {
+            _model.Steps.Add("");
+            StepViewModel stepvm = new StepViewModel("", _steps.Count);
+            stepvm.PropertyChanged += StepChanged;
+            _steps.Add(stepvm);
+            OnPropertyChanged(nameof(Steps));
+            OnPropertyChanged(nameof(StepsList));
         }
     }
 }

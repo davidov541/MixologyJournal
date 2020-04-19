@@ -18,6 +18,10 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button x:Name="addStepButton" 
+                Text="Add Step" 
+                MinimumHeightRequest="30" 
+                Clicked="addStepButton_Clicked" />
             <Button x:Name="createButton" 
                 Text="Create" 
                 MinimumHeightRequest="30" 

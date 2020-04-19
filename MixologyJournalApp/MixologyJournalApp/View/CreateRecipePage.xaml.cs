@@ -13,7 +13,6 @@ namespace MixologyJournalApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateRecipePage : ContentPage
     {
-        private MainPage _previous;
         private RecipeViewModel _vm;
 
         internal CreateRecipePage(RecipeViewModel recipe)
@@ -26,6 +25,11 @@ namespace MixologyJournalApp.View
         private async void createButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
+        }
+
+        private void addStepButton_Clicked(object sender, EventArgs e)
+        {
+            _vm.AddStep();
         }
     }
 }
