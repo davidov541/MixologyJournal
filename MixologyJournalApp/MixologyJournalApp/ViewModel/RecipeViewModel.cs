@@ -58,6 +58,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public Boolean CanDeleteStep
+        {
+            get
+            {
+                return _steps.Count > 1;
+            }
+        }
+
         public RecipeViewModel() : this(new Recipe())
         {
         }
@@ -89,6 +97,7 @@ namespace MixologyJournalApp.ViewModel
             _steps.Add(stepvm);
             OnPropertyChanged(nameof(Steps));
             OnPropertyChanged(nameof(StepsList));
+            OnPropertyChanged(nameof(CanDeleteStep));
         }
 
         public void DeleteStep(StepViewModel step)
@@ -98,6 +107,7 @@ namespace MixologyJournalApp.ViewModel
             _model.Steps.RemoveAt(index);
             OnPropertyChanged(nameof(Steps));
             OnPropertyChanged(nameof(StepsList));
+            OnPropertyChanged(nameof(CanDeleteStep));
         }
     }
 }

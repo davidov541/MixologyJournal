@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="MixologyJournalApp.View.CreateRecipePage">
+             x:Class="MixologyJournalApp.View.CreateRecipePage"
+             x:Name="rootPage">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Steps" />
@@ -21,8 +22,15 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="auto" />
                                 </Grid.ColumnDefinitions>
-                                <Entry Grid.Row="0" Grid.Column="0" Text="{Binding Path=Text, Mode=TwoWay}" WidthRequest="100" />
-                                <Button Grid.Row="0" Grid.Column="1" x:Name="deleteStepButton" Text="Remove Step" Clicked="deleteStepButton_Clicked" />
+                                <Entry Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       Text="{Binding Path=Text, Mode=TwoWay}" />
+                                <Button Grid.Row="0" 
+                                        Grid.Column="1" 
+                                        x:Name="deleteStepButton" 
+                                        Text="Remove Step" 
+                                        Clicked="deleteStepButton_Clicked" 
+                                        IsEnabled="{Binding Path=BindingContext.CanDeleteStep, Source={x:Reference rootPage}}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
