@@ -27,6 +27,15 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        public static IngredientUsage CreateEmpty()
+        {
+            IngredientUsage usage = new IngredientUsage();
+            usage.Amount = "";
+            usage.Unit = new Unit();
+            usage.Ingredient = new Ingredient();
+            return usage;
+        }
+
         public IngredientUsage()
         {
         }

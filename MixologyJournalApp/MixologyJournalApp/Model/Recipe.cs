@@ -52,7 +52,7 @@ namespace MixologyJournalApp.Model
             Recipe recipe = new Recipe();
 
             recipe.Steps.Add("");
-            recipe.Ingredients.Add(new IngredientUsage());
+            recipe.Ingredients.Add(IngredientUsage.CreateEmpty());
 
             return recipe;
         }

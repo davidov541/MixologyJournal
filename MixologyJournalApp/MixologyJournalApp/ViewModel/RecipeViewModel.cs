@@ -57,6 +57,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public Boolean CanDeleteIngredient
+        {
+            get
+            {
+                return IngredientUsages.Count > 1;
+            }
+        }
+
         public RecipeViewModel() : this(Recipe.CreateEmptyRecipe())
         {
         }
@@ -81,14 +89,13 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        private void UsageChanged(object sender, PropertyChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void OnPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void UsageChanged(object sender, PropertyChangedEventArgs e)
+        {
         }
 
         private void StepChanged(object sender, PropertyChangedEventArgs e)
@@ -116,6 +123,27 @@ namespace MixologyJournalApp.ViewModel
             OnPropertyChanged(nameof(Steps));
             OnPropertyChanged(nameof(StepsList));
             OnPropertyChanged(nameof(CanDeleteStep));
+        }
+
+        public void AddIngredient()
+        {
+            IngredientUsage usage = IngredientUsage.CreateEmpty();
+            IngredientUsageViewModel viewModel = new IngredientUsageViewModel(usage);
+            IngredientUsages.Add(viewModel);
+            _model.Ingredients.Add(usage);
+            OnPropertyChanged(nameof(IngredientUsages));
+            OnPropertyChanged(nameof(Ingredients));
+            OnPropertyChanged(nameof(CanDeleteIngredient));
+        }
+
+        public void DeleteIngredient(IngredientUsageViewModel usage)
+        {
+            int index = IngredientUsages.IndexOf(usage);
+            IngredientUsages.Remove(usage);
+            _model.Ingredients.RemoveAt(index);
+            OnPropertyChanged(nameof(IngredientUsages));
+            OnPropertyChanged(nameof(Ingredients));
+            OnPropertyChanged(nameof(CanDeleteIngredient));
         }
     }
 }

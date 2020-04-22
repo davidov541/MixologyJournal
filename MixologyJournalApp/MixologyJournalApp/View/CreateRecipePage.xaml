@@ -32,7 +32,7 @@
                                         Grid.Row="0" 
                                         Grid.Column="1" 
                                         ItemsSource="{Binding AvailableUnits}" 
-                                        Title="Ingredient" 
+                                        Title="Unit" 
                                         SelectedItem="{Binding Unit}" />
                                 <Picker x:Name="ingredientPicker" 
                                         Grid.Row="0" 
@@ -40,11 +40,21 @@
                                         ItemsSource="{Binding AvailableIngredients}" 
                                         Title="Ingredient" 
                                         SelectedItem="{Binding Ingredient}" />
+                                <Button Grid.Row="0" 
+                                        Grid.Column="3" 
+                                        x:Name="deleteIngredientButton" 
+                                        Text="Remove Ingredient" 
+                                        Clicked="deleteIngredientButton_Clicked"
+                                        IsEnabled="{Binding Path=BindingContext.CanDeleteIngredient, Source={x:Reference rootPage}}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button x:Name="addIngredientButton" 
+                Text="Add Ingredient" 
+                MinimumHeightRequest="30" 
+                Clicked="addIngredientButton_Clicked" />
             <Label Text="Steps" />
             <ListView x:Name="StepsList"
                       ItemsSource="{Binding Path=StepsList}">
