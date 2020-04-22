@@ -44,6 +44,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public ObservableCollection<UnitViewModel> AvailableUnits
+        {
+            get
+            {
+                return _cache.AvailableUnits;
+            }
+        }
+
         public IngredientUsageViewModel(IngredientUsage model)
         {
             _model = model;

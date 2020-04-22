@@ -22,5 +22,10 @@ namespace MixologyJournalApp.ViewModel
         {
             _model = model;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

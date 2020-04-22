@@ -28,6 +28,12 @@
                                        Grid.Column="0"
                                        Keyboard="Numeric"
                                        Text="{Binding Amount}"/>
+                                <Picker x:Name="unitPicker" 
+                                        Grid.Row="0" 
+                                        Grid.Column="1" 
+                                        ItemsSource="{Binding AvailableUnits}" 
+                                        Title="Ingredient" 
+                                        SelectedItem="{Binding Unit}" />
                                 <Picker x:Name="ingredientPicker" 
                                         Grid.Row="0" 
                                         Grid.Column="2" 
