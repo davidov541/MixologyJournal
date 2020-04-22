@@ -1,9 +1,5 @@
 ﻿using MixologyJournalApp.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -36,6 +32,11 @@ namespace MixologyJournalApp.View
         {
             StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
             _vm.DeleteStep(vm);
+        }
+
+        private void ingredientPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // TODO: Actually set the chosen ingredient on the ingredient usage.
         }
     }
 }

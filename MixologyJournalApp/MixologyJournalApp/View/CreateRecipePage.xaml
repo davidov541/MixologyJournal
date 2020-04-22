@@ -8,8 +8,22 @@
              x:Name="rootPage">
     <ContentPage.Content>
         <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Picker x:Name="ingredientPicker" Grid.Row="0" Grid.Column="0" 
+                        ItemsSource="{Binding AvailableIngredients}" Title="Ingredient" 
+                        SelectedIndexChanged="ingredientPicker_SelectedIndexChanged" />
+            </Grid>
             <Label Text="Steps" />
-            <ListView x:Name="StepsList" 
+            <ListView x:Name="StepsList"
                       ItemsSource="{Binding Path=StepsList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
