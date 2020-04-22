@@ -30,6 +30,12 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public UnitViewModel Unit
+        {
+            get;
+            set;
+        }
+
         public ObservableCollection<IngredientViewModel> AvailableIngredients
         {
             get
@@ -45,11 +51,17 @@ namespace MixologyJournalApp.ViewModel
             _cache = App.GetInstance().Cache;
 
             Ingredient = new IngredientViewModel(_model.Ingredient);
+            Unit = new UnitViewModel(_model.Unit);
         }
 
         private void OnPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1}s of {2}", Amount, Unit.Name, Ingredient.Name);
         }
     }
 }
