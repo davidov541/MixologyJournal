@@ -13,14 +13,18 @@ namespace MixologyJournalApp.ViewModel
     {
         public ObservableCollection<RecipeViewModel> Recipes { get; } = new ObservableCollection<RecipeViewModel>();
 
+        public ObservableCollection<IngredientViewModel> AvailableIngredients { get; } = new ObservableCollection<IngredientViewModel>();
+
         public async Task Init()
         {
             await UpdateRecipes();
+            await UpdateAvailableIngredients();
         }
 
         public async Task Resync()
         {
             await UpdateRecipes();
+            await UpdateAvailableIngredients();
         }
 
         private async Task UpdateRecipes()
@@ -32,6 +36,17 @@ namespace MixologyJournalApp.ViewModel
             {
                 r.PropertyChanged += Recipe_PropertyChanged;
                 Recipes.Add(r);
+            }
+        }
+
+        private async Task UpdateAvailableIngredients()
+        {
+            String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/ingredients");
+            List<IngredientViewModel> ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResult).Select(i => new IngredientViewModel(i)).ToList();
+            AvailableIngredients.Clear();
+            foreach (IngredientViewModel i in ingredients)
+            {
+                AvailableIngredients.Add(i);
             }
         }
 
