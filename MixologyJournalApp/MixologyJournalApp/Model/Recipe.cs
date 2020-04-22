@@ -50,7 +50,10 @@ namespace MixologyJournalApp.Model
         public static Recipe CreateEmptyRecipe()
         {
             Recipe recipe = new Recipe();
+
             recipe.Steps.Add("");
+            recipe.Ingredients.Add(new IngredientUsage());
+
             return recipe;
         }
 

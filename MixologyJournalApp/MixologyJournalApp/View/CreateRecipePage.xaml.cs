@@ -33,10 +33,5 @@ namespace MixologyJournalApp.View
             StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
             _vm.DeleteStep(vm);
         }
-
-        private void ingredientPicker_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // TODO: Actually set the chosen ingredient on the ingredient usage.
-        }
     }
 }

@@ -1,10 +1,9 @@
 ﻿using MixologyJournalApp.Model;
 using System;
-using System.Linq;
-using System.ComponentModel;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Linq;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -40,6 +39,8 @@ namespace MixologyJournalApp.ViewModel
 
         public ObservableCollection<StepViewModel> StepsList { get; } = new ObservableCollection<StepViewModel>();
 
+        public ObservableCollection<IngredientUsageViewModel> IngredientUsages { get; } = new ObservableCollection<IngredientUsageViewModel>();
+
         public String Ingredients
         {
             get
@@ -61,14 +62,6 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ObservableCollection<IngredientViewModel> AvailableIngredients 
-        {
-            get
-            {
-                return _cache.AvailableIngredients;
-            }
-        }
-
         public RecipeViewModel() : this(Recipe.CreateEmptyRecipe())
         {
         }
@@ -84,6 +77,18 @@ namespace MixologyJournalApp.ViewModel
                 s.PropertyChanged += StepChanged;
                 StepsList.Add(s);
             }
+
+            IEnumerable<IngredientUsageViewModel> usages = _model.Ingredients.Select(u => new IngredientUsageViewModel(u));
+            foreach (IngredientUsageViewModel u in usages)
+            {
+                u.PropertyChanged += UsageChanged;
+                IngredientUsages.Add(u);
+            }
+        }
+
+        private void UsageChanged(object sender, PropertyChangedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void OnPropertyChanged(String propertyName)

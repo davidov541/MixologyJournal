@@ -8,23 +8,32 @@
              x:Name="rootPage">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="auto" />
-                </Grid.ColumnDefinitions>
-                <Picker x:Name="ingredientPicker" 
-                        Grid.Row="0" 
-                        Grid.Column="0" 
-                        ItemsSource="{Binding AvailableIngredients}" 
-                        Title="Ingredient" Opacity="1.0"
-                        SelectedIndexChanged="ingredientPicker_SelectedIndexChanged" />
-            </Grid>
+            <ListView x:Name="IngredientUsagesList" 
+                      ItemsSource="{Binding IngredientUsages}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Picker x:Name="ingredientPicker" 
+                                        Grid.Row="0" 
+                                        Grid.Column="0" 
+                                        ItemsSource="{Binding AvailableIngredients}" 
+                                        Title="Ingredient" 
+                                        SelectedItem="{Binding Ingredient}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Label Text="Steps" />
             <ListView x:Name="StepsList"
                       ItemsSource="{Binding Path=StepsList}">
