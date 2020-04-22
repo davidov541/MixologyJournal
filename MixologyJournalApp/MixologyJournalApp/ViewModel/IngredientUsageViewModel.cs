@@ -44,10 +44,7 @@ namespace MixologyJournalApp.ViewModel
 
             _cache = App.GetInstance().Cache;
 
-            Ingredient ingredientModel = new Ingredient();
-            ingredientModel.Id = _model.Id;
-            ingredientModel.Name = _model.Name;
-            Ingredient = new IngredientViewModel(ingredientModel);
+            Ingredient = new IngredientViewModel(_model.Ingredient);
         }
 
         private void OnPropertyChanged(String propertyName)

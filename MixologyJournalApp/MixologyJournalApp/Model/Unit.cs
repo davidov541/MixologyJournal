@@ -4,30 +4,23 @@ using System;
 namespace MixologyJournalApp.Model
 {
     [JsonObject(MemberSerialization.OptIn)]
-    internal class IngredientUsage
+    internal class Unit
     {
         [JsonProperty]
-        public Ingredient Ingredient
+        public String Id
         {
             get;
             set;
         }
 
         [JsonProperty]
-        public Unit Unit
+        public String Name
         {
             get;
             set;
         }
 
-        [JsonProperty]
-        public String Amount
-        {
-            get;
-            set;
-        }
-
-        public IngredientUsage()
+        public Unit()
         {
         }
     }
