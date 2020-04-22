@@ -20,6 +20,14 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        public static Unit CreateEmpty()
+        {
+            Unit unit = new Unit();
+            unit.Id = "";
+            unit.Name = "";
+            return unit;
+        }
+
         public Unit()
         {
         }

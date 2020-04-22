@@ -20,6 +20,14 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        public static Ingredient CreateEmpty()
+        {
+            Ingredient ingredient = new Ingredient();
+            ingredient.Name = "";
+            ingredient.Id = "";
+            return ingredient;
+        }
+
         public Ingredient()
         {
         }

@@ -22,7 +22,7 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public String Steps
+        public String FormattedSteps
         {
             get
             {
@@ -37,11 +37,11 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ObservableCollection<StepViewModel> StepsList { get; } = new ObservableCollection<StepViewModel>();
+        public ObservableCollection<StepViewModel> Steps { get; } = new ObservableCollection<StepViewModel>();
 
         public ObservableCollection<IngredientUsageViewModel> IngredientUsages { get; } = new ObservableCollection<IngredientUsageViewModel>();
 
-        public String Ingredients
+        public String FormattedIngredients
         {
             get
             {
@@ -53,7 +53,7 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return StepsList.Count > 1;
+                return Steps.Count > 1;
             }
         }
 
@@ -78,7 +78,7 @@ namespace MixologyJournalApp.ViewModel
             foreach(StepViewModel s in steps)
             {
                 s.PropertyChanged += StepChanged;
-                StepsList.Add(s);
+                Steps.Add(s);
             }
 
             IEnumerable<IngredientUsageViewModel> usages = _model.Ingredients.Select(u => new IngredientUsageViewModel(u));
@@ -107,21 +107,21 @@ namespace MixologyJournalApp.ViewModel
         public void AddStep()
         {
             _model.Steps.Add("");
-            StepViewModel stepvm = new StepViewModel("", StepsList.Count);
+            StepViewModel stepvm = new StepViewModel("", Steps.Count);
             stepvm.PropertyChanged += StepChanged;
-            StepsList.Add(stepvm);
+            Steps.Add(stepvm);
+            OnPropertyChanged(nameof(FormattedSteps));
             OnPropertyChanged(nameof(Steps));
-            OnPropertyChanged(nameof(StepsList));
             OnPropertyChanged(nameof(CanDeleteStep));
         }
 
         public void DeleteStep(StepViewModel step)
         {
             int index = step.Index;
-            StepsList.Remove(step);
+            Steps.Remove(step);
             _model.Steps.RemoveAt(index);
+            OnPropertyChanged(nameof(FormattedSteps));
             OnPropertyChanged(nameof(Steps));
-            OnPropertyChanged(nameof(StepsList));
             OnPropertyChanged(nameof(CanDeleteStep));
         }
 
@@ -132,7 +132,7 @@ namespace MixologyJournalApp.ViewModel
             IngredientUsages.Add(viewModel);
             _model.Ingredients.Add(usage);
             OnPropertyChanged(nameof(IngredientUsages));
-            OnPropertyChanged(nameof(Ingredients));
+            OnPropertyChanged(nameof(FormattedIngredients));
             OnPropertyChanged(nameof(CanDeleteIngredient));
         }
 
@@ -142,7 +142,7 @@ namespace MixologyJournalApp.ViewModel
             IngredientUsages.Remove(usage);
             _model.Ingredients.RemoveAt(index);
             OnPropertyChanged(nameof(IngredientUsages));
-            OnPropertyChanged(nameof(Ingredients));
+            OnPropertyChanged(nameof(FormattedIngredients));
             OnPropertyChanged(nameof(CanDeleteIngredient));
         }
     }

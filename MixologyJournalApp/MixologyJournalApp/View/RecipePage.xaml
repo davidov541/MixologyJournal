@@ -10,10 +10,10 @@
             <Label Text="{Binding Path=Name}"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Path=Ingredients}"
+            <Label Text="{Binding Path=FormattedIngredients}"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Path=Steps}"
+            <Label Text="{Binding Path=FormattedSteps}"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" />
         </StackLayout>

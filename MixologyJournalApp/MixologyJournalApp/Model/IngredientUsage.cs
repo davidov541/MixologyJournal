@@ -31,8 +31,8 @@ namespace MixologyJournalApp.Model
         {
             IngredientUsage usage = new IngredientUsage();
             usage.Amount = "";
-            usage.Unit = new Unit();
-            usage.Ingredient = new Ingredient();
+            usage.Unit = Unit.CreateEmpty();
+            usage.Ingredient = Ingredient.CreateEmpty();
             return usage;
         }
 
