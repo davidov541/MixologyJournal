@@ -23,9 +23,14 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="auto" />
                                 </Grid.ColumnDefinitions>
+                                <Entry x:Name="amountEntry"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       Keyboard="Numeric"
+                                       Text="{Binding Amount}"/>
                                 <Picker x:Name="ingredientPicker" 
                                         Grid.Row="0" 
-                                        Grid.Column="0" 
+                                        Grid.Column="2" 
                                         ItemsSource="{Binding AvailableIngredients}" 
                                         Title="Ingredient" 
                                         SelectedItem="{Binding Ingredient}" />

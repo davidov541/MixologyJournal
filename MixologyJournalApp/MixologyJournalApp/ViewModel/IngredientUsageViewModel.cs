@@ -18,6 +18,18 @@ namespace MixologyJournalApp.ViewModel
             set;
         }
 
+        public String Amount
+        {
+            get
+            {
+                return _model.Amount;
+            }
+            set
+            {
+                _model.Amount = value;
+            }
+        }
+
         public ObservableCollection<IngredientViewModel> AvailableIngredients
         {
             get
