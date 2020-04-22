@@ -66,7 +66,7 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public RecipeViewModel() : this(new Recipe())
+        public RecipeViewModel() : this(Recipe.CreateEmptyRecipe())
         {
         }
 

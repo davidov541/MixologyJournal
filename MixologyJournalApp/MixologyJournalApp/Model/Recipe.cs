@@ -47,10 +47,16 @@ namespace MixologyJournalApp.Model
             return JsonConvert.DeserializeObject<Recipe>(jsonScript);
         }
 
+        public static Recipe CreateEmptyRecipe()
+        {
+            Recipe recipe = new Recipe();
+            recipe.Steps.Add("");
+            return recipe;
+        }
+
         public Recipe()
         {
             Steps = new List<String>();
-            Steps.Add("");
             Ingredients = new List<IngredientUsage>();
         }
 
