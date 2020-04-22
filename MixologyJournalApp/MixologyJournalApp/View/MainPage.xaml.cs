@@ -20,33 +20,9 @@ namespace MixologyJournalApp.View
             InitializeComponent();
         }
 
-        private async Task RefreshItems()
-        {
-            await _viewModel.UpdateRecipes();
-        }
-
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-
-            // Refresh items only when authenticated.
-            if (_viewModel.IsAuthenticated)
-            {
-                // Set syncItems to true in order to synchronize the data
-                // on startup when running in offline mode.
-                await RefreshItems();
-            }
-        }
-
         private async void loginButton_Clicked(object sender, EventArgs e)
         {
             await _viewModel.LogIn();
-
-            // Set syncItems to true to synchronize the data on startup when offline is enabled.
-            if (_viewModel.IsAuthenticated)
-            {
-                await RefreshItems();
-            }
         }
 
         private async void logoutButton_Clicked(object sender, EventArgs e)

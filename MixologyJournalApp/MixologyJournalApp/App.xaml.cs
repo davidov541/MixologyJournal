@@ -13,6 +13,8 @@ namespace MixologyJournalApp
 
         public IPlatform PlatformInfo { get; private set; }
 
+        internal LocalDataCache Cache { get; private set; }
+
         public static App GetInstance(IPlatform platform)
         {
             if (_instance == null)
@@ -35,6 +37,7 @@ namespace MixologyJournalApp
         private App(IPlatform platform)
         {
             PlatformInfo = platform;
+            Cache = new LocalDataCache();
 
             InitializeComponent();
 
@@ -44,7 +47,9 @@ namespace MixologyJournalApp
 
         public async Task LoadAsync()
         {
-            MainPageViewModel pageVM = await _loadingPage.LoadAsync();
+            await Cache.Init();
+            await PlatformInfo.Backend.Init();
+            MainPageViewModel pageVM = new MainPageViewModel();
             MainPage = new NavigationPage(new MainPage(pageVM));
         }
 

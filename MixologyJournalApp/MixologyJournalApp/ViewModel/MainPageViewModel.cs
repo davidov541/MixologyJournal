@@ -3,6 +3,8 @@ using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,12 +13,9 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class MainPageViewModel: INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        private LocalDataCache _cache;
 
-        private void OnPropertyChanged(String propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public bool IsAuthenticated
         {
@@ -42,42 +41,28 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public String Message
+        public ObservableCollection<RecipeViewModel> Recipes
         {
             get
             {
-                IEnumerable<String> recipeNames = Recipes.Select(r => r.Name);
-                return String.Join(",", recipeNames);
-            }
-        }
-
-        private List<RecipeViewModel> _recipes = new List<RecipeViewModel>();
-
-        public IEnumerable<RecipeViewModel> Recipes
-        {
-            get
-            {
-                return _recipes;
+                return _cache.Recipes;
             }
         }
 
         public MainPageViewModel()
         {
+            _cache = App.GetInstance().Cache;
+            _cache.Recipes.CollectionChanged += Recipes_CollectionChanged;
         }
 
-        public async Task UpdateRecipes()
+        private void Recipes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/recipes");
-            _recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r)).ToList();
-            _recipes.ForEach(r => r.PropertyChanged += Recipe_PropertyChanged);
             OnPropertyChanged(nameof(Recipes));
-            OnPropertyChanged(nameof(Message));
         }
 
-        private void Recipe_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void OnPropertyChanged(String propertyName)
         {
-            OnPropertyChanged(nameof(Recipes));
-            OnPropertyChanged(nameof(Message));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public async Task LogIn()
@@ -94,6 +79,8 @@ namespace MixologyJournalApp.ViewModel
             }
             OnPropertyChanged(nameof(IsAuthenticated));
             OnPropertyChanged(nameof(IsUnauthenticated));
+
+            await _cache.Resync();
         }
 
         public async Task LogOff()
@@ -106,6 +93,8 @@ namespace MixologyJournalApp.ViewModel
             }
             OnPropertyChanged(nameof(IsAuthenticated));
             OnPropertyChanged(nameof(IsUnauthenticated));
+
+            await _cache.Resync();
         }
     }
 }
