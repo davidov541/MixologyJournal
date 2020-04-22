@@ -44,7 +44,7 @@
                                         Grid.Column="3" 
                                         x:Name="deleteIngredientButton" 
                                         Text="Remove Ingredient" 
-                                        Clicked="deleteIngredientButton_Clicked"
+                                        Clicked="DeleteIngredientButton_Clicked"
                                         IsEnabled="{Binding Path=BindingContext.CanDeleteIngredient, Source={x:Reference rootPage}}" />
                             </Grid>
                         </ViewCell>
@@ -54,7 +54,7 @@
             <Button x:Name="addIngredientButton" 
                 Text="Add Ingredient" 
                 MinimumHeightRequest="30" 
-                Clicked="addIngredientButton_Clicked" />
+                Clicked="AddIngredientButton_Clicked" />
             <Label Text="Steps" />
             <ListView x:Name="StepsList"
                       ItemsSource="{Binding Path=StepsList}">
@@ -76,7 +76,7 @@
                                         Grid.Column="1" 
                                         x:Name="deleteStepButton" 
                                         Text="Remove Step" 
-                                        Clicked="deleteStepButton_Clicked" 
+                                        Clicked="DeleteStepButton_Clicked" 
                                         IsEnabled="{Binding Path=BindingContext.CanDeleteStep, Source={x:Reference rootPage}}" />
                             </Grid>
                         </ViewCell>
@@ -86,11 +86,11 @@
             <Button x:Name="addStepButton" 
                 Text="Add Step" 
                 MinimumHeightRequest="30" 
-                Clicked="addStepButton_Clicked" />
+                Clicked="AddStepButton_Clicked" />
             <Button x:Name="createButton" 
                 Text="Create" 
                 MinimumHeightRequest="30" 
-                Clicked="createButton_Clicked" />
+                Clicked="CreateButton_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

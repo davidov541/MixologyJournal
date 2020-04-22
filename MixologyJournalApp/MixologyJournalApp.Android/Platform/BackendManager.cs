@@ -6,16 +6,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Droid.Platform
 {
     internal class BackendManager: IBackend
     {
-        private Context _context;
-        private MobileServiceClient _client;
-        private SecureStorageAccountStore _accountStore;
+        private readonly Context _context;
+        private readonly MobileServiceClient _client;
+        private readonly SecureStorageAccountStore _accountStore;
 
         private const String _basePath = "https://mixologyjournalfunction.azurewebsites.net/api";
 

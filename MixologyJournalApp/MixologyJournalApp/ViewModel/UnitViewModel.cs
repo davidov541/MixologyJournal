@@ -8,7 +8,7 @@ namespace MixologyJournalApp.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Unit _model;
+        private readonly Unit _model;
 
         public String Name
         {

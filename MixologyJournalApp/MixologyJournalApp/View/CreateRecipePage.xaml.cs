@@ -9,7 +9,7 @@ namespace MixologyJournalApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateRecipePage : ContentPage
     {
-        private RecipeViewModel _vm;
+        private readonly RecipeViewModel _vm;
 
         internal CreateRecipePage(RecipeViewModel recipe)
         {
@@ -18,28 +18,28 @@ namespace MixologyJournalApp.View
             InitializeComponent();
         }
 
-        private async void createButton_Clicked(object sender, EventArgs e)
+        private async void CreateButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }
 
-        private void addStepButton_Clicked(object sender, EventArgs e)
+        private void AddStepButton_Clicked(object sender, EventArgs e)
         {
             _vm.AddStep();
         }
 
-        private void deleteStepButton_Clicked(object sender, EventArgs e)
+        private void DeleteStepButton_Clicked(object sender, EventArgs e)
         {
             StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
             _vm.DeleteStep(vm);
         }
 
-        private void addIngredientButton_Clicked(object sender, EventArgs e)
+        private void AddIngredientButton_Clicked(object sender, EventArgs e)
         {
             _vm.AddIngredient();
         }
 
-        private void deleteIngredientButton_Clicked(object sender, EventArgs e)
+        private void DeleteIngredientButton_Clicked(object sender, EventArgs e)
         {
             IngredientUsageViewModel vm = (sender as Button).BindingContext as IngredientUsageViewModel;
             _vm.DeleteIngredient(vm);

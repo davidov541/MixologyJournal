@@ -9,8 +9,8 @@ namespace MixologyJournalApp.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private IngredientUsage _model;
-        private LocalDataCache _cache;
+        private readonly IngredientUsage _model;
+        private readonly LocalDataCache _cache;
 
         public IngredientViewModel Ingredient
         {

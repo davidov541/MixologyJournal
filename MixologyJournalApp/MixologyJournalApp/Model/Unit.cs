@@ -22,9 +22,11 @@ namespace MixologyJournalApp.Model
 
         public static Unit CreateEmpty()
         {
-            Unit unit = new Unit();
-            unit.Id = "";
-            unit.Name = "";
+            Unit unit = new Unit
+            {
+                Id = "",
+                Name = ""
+            };
             return unit;
         }
 

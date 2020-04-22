@@ -22,9 +22,11 @@ namespace MixologyJournalApp.Model
 
         public static Ingredient CreateEmpty()
         {
-            Ingredient ingredient = new Ingredient();
-            ingredient.Name = "";
-            ingredient.Id = "";
+            Ingredient ingredient = new Ingredient
+            {
+                Name = "",
+                Id = ""
+            };
             return ingredient;
         }
 

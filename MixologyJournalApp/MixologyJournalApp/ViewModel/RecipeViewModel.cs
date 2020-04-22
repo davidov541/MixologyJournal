@@ -9,8 +9,7 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class RecipeViewModel: INotifyPropertyChanged
     {
-        private Recipe _model;
-        private LocalDataCache _cache;
+        private readonly Recipe _model;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -72,7 +71,6 @@ namespace MixologyJournalApp.ViewModel
         public RecipeViewModel(Recipe model)
         {
             _model = model;
-            _cache = App.GetInstance().Cache;
 
             IEnumerable<StepViewModel> steps = _model.Steps.Select((s, i) => new StepViewModel(s, i));
             foreach(StepViewModel s in steps)

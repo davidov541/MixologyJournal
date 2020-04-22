@@ -7,7 +7,7 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class IngredientViewModel
     {
-        private Ingredient _model;
+        private readonly Ingredient _model;
         public String Id
         {
             get
