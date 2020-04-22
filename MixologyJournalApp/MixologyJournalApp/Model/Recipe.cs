@@ -30,7 +30,7 @@ namespace MixologyJournalApp.Model
         }
 
         [JsonProperty]
-        public List<Ingredient> Ingredients
+        public List<IngredientUsage> Ingredients
         {
             get;
             set;
@@ -51,7 +51,7 @@ namespace MixologyJournalApp.Model
         {
             Steps = new List<String>();
             Steps.Add("");
-            Ingredients = new List<Ingredient>();
+            Ingredients = new List<IngredientUsage>();
         }
 
         public Recipe(String id)

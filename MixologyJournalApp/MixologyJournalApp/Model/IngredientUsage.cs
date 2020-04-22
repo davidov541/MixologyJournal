@@ -4,9 +4,9 @@ using System;
 namespace MixologyJournalApp.Model
 {
     [JsonObject(MemberSerialization.OptIn)]
-    internal class Ingredient
+    internal class IngredientUsage
     {
-        [JsonProperty("ingredient")]
+        [JsonProperty("ingredientname")]
         public String Name
         {
             get;
@@ -27,15 +27,15 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty("ingredientid")]
         public String Id
         {
             get;
-            private set;
+            set;
         }
 
-        public Ingredient(String id)
+        public IngredientUsage()
         {
-            Id = id;
         }
     }
 }
