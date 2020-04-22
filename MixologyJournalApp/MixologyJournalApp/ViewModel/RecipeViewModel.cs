@@ -61,7 +61,13 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ObservableCollection<String> AvailableIngredients { get; } = new ObservableCollection<string>();
+        public ObservableCollection<IngredientViewModel> AvailableIngredients 
+        {
+            get
+            {
+                return _cache.AvailableIngredients;
+            }
+        }
 
         public RecipeViewModel() : this(Recipe.CreateEmptyRecipe())
         {
@@ -71,12 +77,6 @@ namespace MixologyJournalApp.ViewModel
         {
             _model = model;
             _cache = App.GetInstance().Cache;
-
-            foreach(IngredientViewModel i in _cache.AvailableIngredients)
-            {
-                AvailableIngredients.Add(i.Name);
-            }
-            _cache.AvailableIngredients.CollectionChanged += AvailableIngredients_CollectionChanged;
 
             IEnumerable<StepViewModel> steps = _model.Steps.Select((s, i) => new StepViewModel(s, i));
             foreach(StepViewModel s in steps)
@@ -89,44 +89,6 @@ namespace MixologyJournalApp.ViewModel
         private void OnPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void AvailableIngredients_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            int oldIndex = e.OldStartingIndex;
-            int newIndex = e.NewStartingIndex;
-            switch (e.Action)
-            {
-                case NotifyCollectionChangedAction.Add:
-                    foreach (IngredientViewModel ingredient in e.NewItems.OfType<IngredientViewModel>())
-                    {
-                        if (newIndex > AvailableIngredients.Count)
-                        {
-                            AvailableIngredients.Add(ingredient.Name);
-                        } 
-                        else
-                        {
-                            AvailableIngredients.Insert(newIndex, ingredient.Name);
-                        }
-                        newIndex++;
-                    }
-                    break;
-                case NotifyCollectionChangedAction.Replace:
-                    foreach (IngredientViewModel ingredient in e.NewItems.OfType<IngredientViewModel>())
-                    {
-                        AvailableIngredients[newIndex++] = ingredient.Name;
-                    }
-                    break;
-                case NotifyCollectionChangedAction.Move:
-                    AvailableIngredients.Move(oldIndex, newIndex);
-                    break;
-                case NotifyCollectionChangedAction.Reset:
-                    AvailableIngredients.Clear();
-                    break;
-                case NotifyCollectionChangedAction.Remove:
-                    AvailableIngredients.RemoveAt(oldIndex);
-                    break;
-            }
         }
 
         private void StepChanged(object sender, PropertyChangedEventArgs e)
