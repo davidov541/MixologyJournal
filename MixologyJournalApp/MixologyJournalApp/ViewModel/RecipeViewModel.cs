@@ -19,6 +19,11 @@ namespace MixologyJournalApp.ViewModel
             {
                 return _model.Name;
             }
+            set
+            {
+                _model.Name = value;
+                OnPropertyChanged(nameof(Name));
+            }
         }
 
         public String FormattedSteps
@@ -82,7 +87,6 @@ namespace MixologyJournalApp.ViewModel
             IEnumerable<IngredientUsageViewModel> usages = _model.Ingredients.Select(u => new IngredientUsageViewModel(u));
             foreach (IngredientUsageViewModel u in usages)
             {
-                u.PropertyChanged += UsageChanged;
                 IngredientUsages.Add(u);
             }
         }
@@ -90,10 +94,6 @@ namespace MixologyJournalApp.ViewModel
         private void OnPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void UsageChanged(object sender, PropertyChangedEventArgs e)
-        {
         }
 
         private void StepChanged(object sender, PropertyChangedEventArgs e)

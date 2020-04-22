@@ -8,6 +8,9 @@
              x:Name="rootPage">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
+            <Entry x:Name="NameEntry"
+                   Text="{Binding Name}"
+                   Keyboard="Default" />
             <ListView x:Name="IngredientUsagesList" 
                       ItemsSource="{Binding IngredientUsages}">
                 <ListView.ItemTemplate>
