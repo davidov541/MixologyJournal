@@ -22,8 +22,8 @@
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="1.5*" />
+                                    <ColumnDefinition Width="2*" />
                                     <ColumnDefinition Width="auto" />
                                 </Grid.ColumnDefinitions>
                                 <Entry x:Name="amountEntry"
@@ -46,7 +46,7 @@
                                 <Button Grid.Row="0" 
                                         Grid.Column="3" 
                                         x:Name="deleteIngredientButton" 
-                                        Text="Remove Ingredient" 
+                                        Text="Delete" 
                                         Clicked="DeleteIngredientButton_Clicked"
                                         IsEnabled="{Binding Path=BindingContext.CanDeleteIngredient, Source={x:Reference rootPage}}" />
                             </Grid>
@@ -60,7 +60,7 @@
                 Clicked="AddIngredientButton_Clicked" />
             <Label Text="Steps" />
             <ListView x:Name="StepsList"
-                      ItemsSource="{Binding Path=StepsList}">
+                      ItemsSource="{Binding Path=Steps}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -78,7 +78,7 @@
                                 <Button Grid.Row="0" 
                                         Grid.Column="1" 
                                         x:Name="deleteStepButton" 
-                                        Text="Remove Step" 
+                                        Text="Delete" 
                                         Clicked="DeleteStepButton_Clicked" 
                                         IsEnabled="{Binding Path=BindingContext.CanDeleteStep, Source={x:Reference rootPage}}" />
                             </Grid>
