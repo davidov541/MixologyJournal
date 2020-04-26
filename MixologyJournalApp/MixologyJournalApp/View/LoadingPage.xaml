@@ -7,9 +7,9 @@
              x:Class="MixologyJournalApp.View.LoadingPage" BackgroundColor="Black">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Loading..."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" TextColor="Red" />
+            <Image VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Source="@drawable/SplashScreen"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
