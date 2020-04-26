@@ -23,6 +23,7 @@ namespace MixologyJournalApp.ViewModel
             {
                 _ingredient = value;
                 _model.Ingredient = _ingredient.Model;
+                OnPropertyChanged(nameof(Ingredient));
             }
         }
 
@@ -35,6 +36,7 @@ namespace MixologyJournalApp.ViewModel
             set
             {
                 _model.Amount = value;
+                OnPropertyChanged(nameof(Amount));
             }
         }
 
@@ -49,6 +51,7 @@ namespace MixologyJournalApp.ViewModel
             {
                 _unit = value;
                 _model.Unit = _unit.Model;
+                OnPropertyChanged(nameof(Unit));
             }
         }
 
