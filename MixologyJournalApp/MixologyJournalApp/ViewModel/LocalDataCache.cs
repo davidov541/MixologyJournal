@@ -35,7 +35,7 @@ namespace MixologyJournalApp.ViewModel
             String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/recipes");
             List<RecipeViewModel> recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r)).ToList();
             Recipes.Clear();
-            foreach (RecipeViewModel r in recipes)
+            foreach (RecipeViewModel r in recipes.OrderBy(i => i.Name))
             {
                 Recipes.Add(r);
             }
@@ -46,7 +46,7 @@ namespace MixologyJournalApp.ViewModel
             String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/ingredients");
             List<IngredientViewModel> ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResult).Select(i => new IngredientViewModel(i)).ToList();
             AvailableIngredients.Clear();
-            foreach (IngredientViewModel i in ingredients)
+            foreach (IngredientViewModel i in ingredients.OrderBy(i => i.Name))
             {
                 AvailableIngredients.Add(i);
             }
@@ -57,7 +57,7 @@ namespace MixologyJournalApp.ViewModel
             String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/units");
             List<UnitViewModel> units = JsonConvert.DeserializeObject<List<Unit>>(jsonResult).Select(u => new UnitViewModel(u)).ToList();
             AvailableUnits.Clear();
-            foreach (UnitViewModel u in units)
+            foreach (UnitViewModel u in units.OrderBy(i => i.Name))
             {
                 AvailableUnits.Add(u);
             }
@@ -65,7 +65,10 @@ namespace MixologyJournalApp.ViewModel
 
         public void CreateRecipe(RecipeViewModel recipe)
         {
-            Recipes.Add(recipe);
+            int insertIndex = Recipes.IndexOf(Recipes.First(r => {
+                return recipe.Name.CompareTo(r.Name) < 0;
+            }));
+            Recipes.Insert(insertIndex, recipe);
         }
     }
 }
