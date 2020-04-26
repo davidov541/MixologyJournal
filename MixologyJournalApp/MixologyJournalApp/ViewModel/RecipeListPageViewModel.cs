@@ -9,9 +9,10 @@ using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class MainPageViewModel: INotifyPropertyChanged
+    internal class RecipeListPageViewModel: INotifyPropertyChanged
     {
         private readonly LocalDataCache _cache;
+        private readonly App _app;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,7 +23,7 @@ namespace MixologyJournalApp.ViewModel
                 bool authenticated = false;
                 try
                 {
-                    authenticated = App.GetInstance().PlatformInfo.Backend.IsAuthenticated;
+                    authenticated = _app.PlatformInfo.Backend.IsAuthenticated;
                 } catch (InvalidOperationException)
                 {
                     // We haven't created the App object yet, so we should just return that we aren't authenticated.
@@ -59,11 +60,12 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public MainPageViewModel()
+        public RecipeListPageViewModel(App app)
         {
             SetCommands();
 
-            _cache = App.GetInstance().Cache;
+            _app = app;
+            _cache = _app.Cache;
             _cache.Recipes.CollectionChanged += Recipes_CollectionChanged;
         }
 
@@ -101,13 +103,13 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task LogIn()
         {
-            IPlatform platform = App.GetInstance().PlatformInfo;
+            IPlatform platform = _app.PlatformInfo;
             if (platform.Backend != null)
             {
-                if (await App.GetInstance().PlatformInfo.Backend.Authenticate())
+                if (await platform.Backend.Authenticate())
                 {
                     // Display the success or failure message.
-                    String message = string.Format("you are now signed-in as {0}.", platform.Backend.User.UserId); ;
+                    String message = String.Format("you are now signed-in as {0}.", platform.Backend.User.UserId); ;
                     platform.AlertDialogFactory.ShowDialog("Sign-in result", message);
                 }
             }
@@ -122,7 +124,7 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task LogOff()
         {
-            IPlatform platform = App.GetInstance().PlatformInfo;
+            IPlatform platform = _app.PlatformInfo;
             if (platform.Backend != null)
             {
                 await platform.Backend.LogOffAsync();

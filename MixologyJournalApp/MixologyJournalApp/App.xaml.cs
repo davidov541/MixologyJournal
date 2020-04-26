@@ -37,7 +37,7 @@ namespace MixologyJournalApp
         private App(IPlatform platform)
         {
             PlatformInfo = platform;
-            Cache = new LocalDataCache();
+            Cache = new LocalDataCache(this);
 
             InitializeComponent();
 
@@ -49,7 +49,7 @@ namespace MixologyJournalApp
         {
             await PlatformInfo.Backend.Init();
             await Cache.Init();
-            MainPage = new RootPage();
+            MainPage = new RootPage(this);
         }
 
         protected override void OnStart()

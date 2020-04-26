@@ -10,11 +10,18 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class LocalDataCache
     {
+        private readonly App _app;
+
         public ObservableCollection<RecipeViewModel> Recipes { get; } = new ObservableCollection<RecipeViewModel>();
 
         public ObservableCollection<IngredientViewModel> AvailableIngredients { get; } = new ObservableCollection<IngredientViewModel>();
 
         public ObservableCollection<UnitViewModel> AvailableUnits { get; } = new ObservableCollection<UnitViewModel>();
+
+        public LocalDataCache(App app)
+        {
+            _app = app;
+        }
 
         public async Task Init()
         {
@@ -32,7 +39,7 @@ namespace MixologyJournalApp.ViewModel
 
         private async Task UpdateRecipes()
         {
-            String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/recipes");
+            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/recipes");
             List<RecipeViewModel> recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r)).ToList();
             Recipes.Clear();
             foreach (RecipeViewModel r in recipes.OrderBy(i => i.Name))
@@ -43,7 +50,7 @@ namespace MixologyJournalApp.ViewModel
 
         private async Task UpdateAvailableIngredients()
         {
-            String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/ingredients");
+            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/ingredients");
             List<IngredientViewModel> ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResult).Select(i => new IngredientViewModel(i)).ToList();
             AvailableIngredients.Clear();
             foreach (IngredientViewModel i in ingredients.OrderBy(i => i.Name))
@@ -54,7 +61,7 @@ namespace MixologyJournalApp.ViewModel
 
         private async Task UpdateAvailableUnits()
         {
-            String jsonResult = await App.GetInstance().PlatformInfo.Backend.GetResult("/insecure/units");
+            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/units");
             List<UnitViewModel> units = JsonConvert.DeserializeObject<List<Unit>>(jsonResult).Select(u => new UnitViewModel(u)).ToList();
             AvailableUnits.Clear();
             foreach (UnitViewModel u in units.OrderBy(i => i.Name))

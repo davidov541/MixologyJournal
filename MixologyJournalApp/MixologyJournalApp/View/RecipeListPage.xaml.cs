@@ -10,11 +10,13 @@ namespace MixologyJournalApp.View
     [DesignTimeVisible(false)]
     public partial class RecipeListPage : ContentPage
     {
-        private readonly MainPageViewModel _viewModel;
+        private readonly RecipeListPageViewModel _viewModel;
+        private readonly App _app;
 
-        public RecipeListPage()
+        public RecipeListPage(App app)
         {
-            _viewModel = new MainPageViewModel();
+            _app = app;
+            _viewModel = new RecipeListPageViewModel(_app);
             BindingContext = _viewModel;
             InitializeComponent();
         }
@@ -27,7 +29,7 @@ namespace MixologyJournalApp.View
 
         private async void AddRecipeButton_Clicked(object sender, EventArgs e)
         {
-            CreateRecipePage recipePage = new CreateRecipePage(new RecipeViewModel());
+            CreateRecipePage recipePage = new CreateRecipePage(_app, new RecipeViewModel());
             await Navigation.PushAsync(recipePage);
         }
     }

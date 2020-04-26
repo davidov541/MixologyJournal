@@ -176,12 +176,12 @@ namespace MixologyJournalApp.ViewModel
             OnPropertyChanged(nameof(Steps));
         }
 
-        public async Task<bool> SaveNew()
+        public async Task<bool> SaveNew(App app)
         {
             bool result = await _model.SaveNew();
             if (result)
             {
-                App.GetInstance().Cache.CreateRecipe(this);
+                app.Cache.CreateRecipe(this);
             }
             return result;
         }
