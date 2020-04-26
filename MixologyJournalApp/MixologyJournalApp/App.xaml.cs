@@ -1,7 +1,6 @@
 ﻿using MixologyJournalApp.Platform;
 using MixologyJournalApp.View;
 using MixologyJournalApp.ViewModel;
-using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 

@@ -47,11 +47,11 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task Init()
         {
-            await UpdateRecipes();
+            await UpdateAvailableUnits();
             InitProgress = 0.333;
             await UpdateAvailableIngredients();
             InitProgress = 0.666;
-            await UpdateAvailableUnits();
+            await UpdateRecipes();
             InitProgress = 1.000;
         }
 
