@@ -49,8 +49,7 @@ namespace MixologyJournalApp
         {
             await PlatformInfo.Backend.Init();
             await Cache.Init();
-            MainPageViewModel pageVM = new MainPageViewModel();
-            MainPage = new NavigationPage(new MainPage(pageVM));
+            MainPage = new RootPage();
         }
 
         protected override void OnStart()

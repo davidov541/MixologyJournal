@@ -12,9 +12,9 @@ namespace MixologyJournalApp.View
     {
         private readonly MainPageViewModel _viewModel;
 
-        internal MainPage(MainPageViewModel vm)
+        public MainPage()
         {
-            _viewModel = vm;
+            _viewModel = new MainPageViewModel();
             BindingContext = _viewModel;
             InitializeComponent();
         }
