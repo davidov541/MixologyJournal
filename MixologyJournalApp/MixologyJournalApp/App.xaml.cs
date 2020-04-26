@@ -32,7 +32,7 @@ namespace MixologyJournalApp
 
             InitializeComponent();
 
-            _loadingPage = new LoadingPage();
+            _loadingPage = new LoadingPage(Cache);
             MainPage = _loadingPage;
         }
 

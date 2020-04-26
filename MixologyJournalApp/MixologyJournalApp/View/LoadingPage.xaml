@@ -10,6 +10,7 @@
             <Image VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" 
                    Source="@drawable/SplashScreen"/>
+            <ProgressBar Progress="{Binding InitProgress}" VerticalOptions="Center" Margin="10,0" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

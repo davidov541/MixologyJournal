@@ -3,14 +3,17 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class LocalDataCache
+    internal class LocalDataCache: INotifyPropertyChanged
     {
         private readonly App _app;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<RecipeViewModel> Recipes { get; } = new ObservableCollection<RecipeViewModel>();
 
@@ -18,16 +21,38 @@ namespace MixologyJournalApp.ViewModel
 
         public ObservableCollection<UnitViewModel> AvailableUnits { get; } = new ObservableCollection<UnitViewModel>();
 
+        private double _initProgress = 0.0;
+        public double InitProgress
+        {
+            get
+            {
+                return _initProgress;
+            }
+            private set
+            {
+                _initProgress = value;
+                OnPropertyChanged(nameof(InitProgress));
+            }
+        }
+
         public LocalDataCache(App app)
         {
             _app = app;
         }
 
+        private void OnPropertyChanged(String propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public async Task Init()
         {
             await UpdateRecipes();
+            InitProgress = 0.333;
             await UpdateAvailableIngredients();
+            InitProgress = 0.666;
             await UpdateAvailableUnits();
+            InitProgress = 1.000;
         }
 
         public async Task Resync()
