@@ -22,13 +22,13 @@ namespace MixologyJournalApp.View
 
         class RootPageMasterViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<RootPageMasterMenuItem> MenuItems { get; set; }
+            public ObservableCollection<IMasterMenuItem> MenuItems { get; set; }
 
             public RootPageMasterViewModel()
             {
-                MenuItems = new ObservableCollection<RootPageMasterMenuItem>(new[]
+                MenuItems = new ObservableCollection<IMasterMenuItem>(new[]
                 {
-                    new RootPageMasterMenuItem { Id = 0, Title = "Recipes", TargetType = typeof(RecipeListPage) },
+                    new MasterMenuItem<RecipeListPage>("Recipes"),
                 });
             }
 

@@ -5,21 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.RootPageMaster"
-             Title="Master">
+             Title="MasterPage">
 	<StackLayout>
 		<ListView x:Name="MenuItemsListView"
                   SeparatorVisibility="None"
                   HasUnevenRows="true"
                   ItemsSource="{Binding MenuItems}">
-			<d:ListView.ItemsSource>
-					<x:Array Type="{x:Type x:String}">
-							<x:String>Page 1</x:String>
-							<x:String>Page 2</x:String>
-							<x:String>Page 3</x:String>
-							<x:String>Page 4</x:String>
-							<x:String>Page 5</x:String>
-					</x:Array>
-			</d:ListView.ItemsSource>
 			<ListView.Header>
 				<Grid BackgroundColor="#03A9F4">
 					<Grid.ColumnDefinitions>

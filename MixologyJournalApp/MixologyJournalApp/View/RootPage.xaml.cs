@@ -16,7 +16,7 @@ namespace MixologyJournalApp.View
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as RootPageMasterMenuItem;
+            var item = e.SelectedItem as IMasterMenuItem;
             if (item == null)
                 return;
 
