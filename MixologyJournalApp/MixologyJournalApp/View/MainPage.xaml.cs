@@ -1,7 +1,6 @@
 ﻿using MixologyJournalApp.ViewModel;
 using System;
 using System.ComponentModel;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.View
