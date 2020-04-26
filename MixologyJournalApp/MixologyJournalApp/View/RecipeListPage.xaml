@@ -6,14 +6,14 @@
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.RecipeListPage"
              Title="Recipe List">
-    <StackLayout Margin="10">
+    <StackLayout>
         <ListView x:Name="listView" 
                   ItemsSource="{Binding Path=Recipes}" 
                   ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="{Binding Path=Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                        <Label Text="{Binding Path=Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="10, 0, 0, 0" />
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
