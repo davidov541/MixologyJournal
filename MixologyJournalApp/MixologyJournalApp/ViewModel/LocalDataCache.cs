@@ -65,9 +65,7 @@ namespace MixologyJournalApp.ViewModel
 
         public void CreateRecipe(RecipeViewModel recipe)
         {
-            int insertIndex = Recipes.IndexOf(Recipes.First(r => {
-                return recipe.Name.CompareTo(r.Name) < 0;
-            }));
+            int insertIndex = Recipes.IndexOf(Recipes.First(r => recipe.Name.CompareTo(r.Name) < 0));
             Recipes.Insert(insertIndex, recipe);
         }
     }
