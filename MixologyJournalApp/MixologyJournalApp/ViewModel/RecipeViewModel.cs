@@ -57,22 +57,6 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public Boolean CanDeleteStep
-        {
-            get
-            {
-                return Steps.Count > 1;
-            }
-        }
-
-        public Boolean CanDeleteIngredient
-        {
-            get
-            {
-                return IngredientUsages.Count > 1;
-            }
-        }
-
         public ICommand AddIngredientCommand
         {
             get;
@@ -129,13 +113,11 @@ namespace MixologyJournalApp.ViewModel
             {
                 case nameof(Steps):
                     OnPropertyChanged(nameof(FormattedSteps));
-                    OnPropertyChanged(nameof(CanDeleteStep));
 
                     (DeleteStepCommand as Command).ChangeCanExecute();
                     break;
                 case nameof(IngredientUsages):
                     OnPropertyChanged(nameof(FormattedIngredients));
-                    OnPropertyChanged(nameof(CanDeleteIngredient));
 
                     (DeleteIngredientCommand as Command).ChangeCanExecute();
                     break;
@@ -160,7 +142,7 @@ namespace MixologyJournalApp.ViewModel
                 },
                 canExecute: (ingred) =>
                 {
-                    return CanDeleteIngredient;
+                    return IngredientUsages.Count > 1;
                 });
             AddStepCommand = new Command(
                 execute: () =>
@@ -178,7 +160,7 @@ namespace MixologyJournalApp.ViewModel
                 },
                 canExecute: (step) =>
                 {
-                    return CanDeleteStep;
+                    return Steps.Count > 1;
                 });
         }
 
