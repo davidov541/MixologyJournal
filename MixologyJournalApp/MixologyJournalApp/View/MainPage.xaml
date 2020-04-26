@@ -24,14 +24,14 @@
                 IsVisible="{Binding Path=IsAuthenticated}" />
         <Button x:Name="loginButton" 
                 Text="Sign-in" 
-                MinimumHeightRequest="30" 
-                Clicked="loginButton_Clicked" 
-                IsVisible="{Binding Path=IsUnauthenticated}"/>
+                MinimumHeightRequest="30"
+                IsVisible="{Binding Path=IsUnauthenticated}" 
+                Command="{Binding Path=LoginCommand}"/>
         <Button x:Name="logoutButton" 
                 Text="Sign-out" 
                 MinimumHeightRequest="30" 
-                Clicked="logoutButton_Clicked" 
-                IsVisible="{Binding Path=IsAuthenticated}"/>
+                IsVisible="{Binding Path=IsAuthenticated}"
+                Command="{Binding Path=LogoffCommand}"/>
     </StackLayout>
 
 </ContentPage>

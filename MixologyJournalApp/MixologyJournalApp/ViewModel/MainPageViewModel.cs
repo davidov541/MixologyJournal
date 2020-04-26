@@ -1,13 +1,11 @@
-﻿using MixologyJournalApp.Model;
-using MixologyJournalApp.Platform;
-using Newtonsoft.Json;
+﻿using MixologyJournalApp.Platform;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -41,6 +39,18 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public ICommand LoginCommand
+        {
+            get;
+            private set;
+        }
+
+        public ICommand LogoffCommand
+        {
+            get;
+            private set;
+        }
+
         public ObservableCollection<RecipeViewModel> Recipes
         {
             get
@@ -51,8 +61,32 @@ namespace MixologyJournalApp.ViewModel
 
         public MainPageViewModel()
         {
+            SetCommands();
+
             _cache = App.GetInstance().Cache;
             _cache.Recipes.CollectionChanged += Recipes_CollectionChanged;
+        }
+
+        private void SetCommands()
+        {
+            LoginCommand = new Command(
+                execute: async () =>
+                {
+                    await LogIn();
+                },
+                canExecute: () =>
+                {
+                    return IsUnauthenticated;
+                });
+            LogoffCommand = new Command(
+                execute: async () =>
+                {
+                    await LogOff();
+                },
+                canExecute: () =>
+                {
+                    return IsAuthenticated;
+                });
         }
 
         private void Recipes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -80,6 +114,9 @@ namespace MixologyJournalApp.ViewModel
             OnPropertyChanged(nameof(IsAuthenticated));
             OnPropertyChanged(nameof(IsUnauthenticated));
 
+            (LoginCommand as Command).ChangeCanExecute();
+            (LogoffCommand as Command).ChangeCanExecute();
+
             await _cache.Resync();
         }
 
@@ -93,6 +130,9 @@ namespace MixologyJournalApp.ViewModel
             }
             OnPropertyChanged(nameof(IsAuthenticated));
             OnPropertyChanged(nameof(IsUnauthenticated));
+
+            (LoginCommand as Command).ChangeCanExecute();
+            (LogoffCommand as Command).ChangeCanExecute();
 
             await _cache.Resync();
         }

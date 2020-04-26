@@ -20,16 +20,6 @@ namespace MixologyJournalApp.View
             InitializeComponent();
         }
 
-        private async void loginButton_Clicked(object sender, EventArgs e)
-        {
-            await _viewModel.LogIn();
-        }
-
-        private async void logoutButton_Clicked(object sender, EventArgs e)
-        {
-            await _viewModel.LogOff();
-        }
-
         private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             RecipePage recipePage = new RecipePage(e.Item as RecipeViewModel);
