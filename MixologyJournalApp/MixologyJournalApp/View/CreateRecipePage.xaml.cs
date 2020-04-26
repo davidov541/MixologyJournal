@@ -20,7 +20,15 @@ namespace MixologyJournalApp.View
 
         private async void CreateButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            bool result = await _vm.SaveNew();
+            if (result)
+            {
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                App.GetInstance().PlatformInfo.AlertDialogFactory.ShowDialog("Save Failed", "Could not save the new recipe. Please try again.");
+            }
         }
 
         private void AddStepButton_Clicked(object sender, EventArgs e)

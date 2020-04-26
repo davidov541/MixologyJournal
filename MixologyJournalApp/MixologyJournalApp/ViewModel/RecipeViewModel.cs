@@ -1,9 +1,11 @@
 ﻿using MixologyJournalApp.Model;
+using MixologyJournalApp.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -100,6 +102,16 @@ namespace MixologyJournalApp.ViewModel
         {
             StepViewModel vm = sender as StepViewModel;
             _model.Steps[vm.Index] = vm.Text;
+        }
+
+        public async Task<bool> SaveNew()
+        {
+            bool result = await _model.SaveNew();
+            if (result)
+            {
+                App.GetInstance().Cache.CreateRecipe(this);
+            }
+            return result;
         }
 
         public void AddStep()

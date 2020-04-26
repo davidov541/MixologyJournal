@@ -1,7 +1,5 @@
 ﻿using MixologyJournalApp.Model;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -21,6 +19,14 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return _model.Name;
+            }
+        }
+
+        internal Ingredient Model
+        {
+            get
+            {
+                return _model;
             }
         }
 

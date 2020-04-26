@@ -33,7 +33,7 @@ namespace MixologyJournalApp
             return _instance;
         }
 
-        private LoadingPage _loadingPage;
+        private readonly LoadingPage _loadingPage;
         private App(IPlatform platform)
         {
             PlatformInfo = platform;

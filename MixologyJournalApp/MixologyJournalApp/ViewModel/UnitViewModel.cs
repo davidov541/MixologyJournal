@@ -18,6 +18,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        internal Unit Model
+        {
+            get
+            {
+                return _model;
+            }
+        }
+
         public UnitViewModel(Unit model)
         {
             _model = model;

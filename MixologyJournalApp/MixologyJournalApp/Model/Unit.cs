@@ -6,14 +6,14 @@ namespace MixologyJournalApp.Model
     [JsonObject(MemberSerialization.OptIn)]
     internal class Unit
     {
-        [JsonProperty]
+        [JsonProperty("id")]
         public String Id
         {
             get;
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("name")]
         public String Name
         {
             get;

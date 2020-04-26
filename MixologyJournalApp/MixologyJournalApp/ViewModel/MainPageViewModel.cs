@@ -74,7 +74,7 @@ namespace MixologyJournalApp.ViewModel
                 {
                     // Display the success or failure message.
                     String message = string.Format("you are now signed-in as {0}.", platform.Backend.User.UserId); ;
-                    platform.AlertDialogFactory.showDialog("Sign-in result", message);
+                    platform.AlertDialogFactory.ShowDialog("Sign-in result", message);
                 }
             }
             OnPropertyChanged(nameof(IsAuthenticated));
@@ -89,7 +89,7 @@ namespace MixologyJournalApp.ViewModel
             if (platform.Backend != null)
             {
                 await platform.Backend.LogOffAsync();
-                platform.AlertDialogFactory.showDialog("Sign-out result", "Logged out");
+                platform.AlertDialogFactory.ShowDialog("Sign-out result", "Logged out");
             }
             OnPropertyChanged(nameof(IsAuthenticated));
             OnPropertyChanged(nameof(IsUnauthenticated));

@@ -6,21 +6,21 @@ namespace MixologyJournalApp.Model
     [JsonObject(MemberSerialization.OptIn)]
     internal class IngredientUsage
     {
-        [JsonProperty]
+        [JsonProperty("ingredient")]
         public Ingredient Ingredient
         {
             get;
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("unit")]
         public Unit Unit
         {
             get;
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("amount")]
         public String Amount
         {
             get;

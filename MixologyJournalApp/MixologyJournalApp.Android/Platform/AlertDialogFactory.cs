@@ -14,7 +14,7 @@ namespace MixologyJournalApp.Droid.Platform
             _context = context;
         }
 
-        public void showDialog(String title, String message)
+        public void ShowDialog(String title, String message)
         {
             // Display the success or failure message.
             AlertDialog.Builder builder = new AlertDialog.Builder(_context);

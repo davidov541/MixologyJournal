@@ -18,9 +18,11 @@ namespace MixologyJournalApp.Platform
 
         Task Init();
 
-        Task<String> GetResult(String path);
-
         Task<bool> Authenticate();
+
+        Task<bool> PostResult(String path, Object body);
+
+        Task<String> GetResult(String path);
 
         Task LogOffAsync();
     }

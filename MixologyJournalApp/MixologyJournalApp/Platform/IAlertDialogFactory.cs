@@ -4,6 +4,6 @@ namespace MixologyJournalApp.Platform
 {
     public interface IAlertDialogFactory
     {
-        void showDialog(String title, String message);
+        void ShowDialog(String title, String message);
     }
 }

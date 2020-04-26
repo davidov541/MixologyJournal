@@ -2,6 +2,7 @@
 using Microsoft.WindowsAzure.MobileServices;
 using MixologyJournalApp.Droid.Security;
 using MixologyJournalApp.Platform;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,22 +49,6 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        public async Task<String> GetResult(String path)
-        {
-            HttpClient client = new HttpClient();
-            String fullPath = _basePath + "/" + path;
-            String token = (User == null) ? string.Empty : User.MobileServiceAuthenticationToken;
-            HttpRequestMessage request = new HttpRequestMessage()
-            {
-                RequestUri = new Uri(fullPath),
-                Method = HttpMethod.Get,
-            };
-            request.Headers.Add("X-ZUMO-AUTH", token);
-            HttpResponseMessage response = await client.SendAsync(request);
-
-            return await response.Content.ReadAsStringAsync();
-        }
-
         public async Task<bool> Authenticate()
         {
             var success = false;
@@ -87,6 +72,38 @@ namespace MixologyJournalApp.Droid.Platform
             Console.WriteLine(message);
 
             return success;
+        }
+
+        public async Task<String> GetResult(String path)
+        {
+            HttpClient client = new HttpClient();
+            String fullPath = _basePath + "/" + path;
+            String token = (User == null) ? string.Empty : User.MobileServiceAuthenticationToken;
+            HttpRequestMessage request = new HttpRequestMessage()
+            {
+                RequestUri = new Uri(fullPath),
+                Method = HttpMethod.Get,
+            };
+            request.Headers.Add("X-ZUMO-AUTH", token);
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task<bool> PostResult(string path, object body)
+        {
+            HttpClient client = new HttpClient();
+            String fullPath = _basePath + "/" + path;
+            String token = (User == null) ? string.Empty : User.MobileServiceAuthenticationToken;
+            HttpRequestMessage request = new HttpRequestMessage()
+            {
+                RequestUri = new Uri(fullPath),
+                Method = HttpMethod.Post,
+                Content = new StringContent(JsonConvert.SerializeObject(body))
+            };
+            request.Headers.Add("X-ZUMO-AUTH", token);
+            HttpResponseMessage response = await client.SendAsync(request);
+            return response.IsSuccessStatusCode;
         }
 
         public async Task LogOffAsync()

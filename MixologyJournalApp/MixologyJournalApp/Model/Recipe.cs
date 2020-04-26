@@ -8,14 +8,14 @@ namespace MixologyJournalApp.Model
     [JsonObject(MemberSerialization.OptIn)]
     internal class Recipe
     {
-        [JsonProperty]
+        [JsonProperty("name")]
         public String Name
         {
             get;
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("steps")]
         public List<String> Steps
         {
             get;
@@ -29,16 +29,11 @@ namespace MixologyJournalApp.Model
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("ingredients")]
         public List<IngredientUsage> Ingredients
         {
             get;
             set;
-        }
-
-        public static Recipe GetRecipeFromJSON(String jsonScript)
-        {
-            return JsonConvert.DeserializeObject<Recipe>(jsonScript);
         }
 
         public static Recipe CreateEmptyRecipe()
@@ -60,6 +55,11 @@ namespace MixologyJournalApp.Model
         public Recipe(String id)
         {
             Id = id;
+        }
+
+        public async Task<bool> SaveNew()
+        {
+            return await App.GetInstance().PlatformInfo.Backend.PostResult("/secure/recipes", this);
         }
     }
 }

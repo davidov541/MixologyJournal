@@ -12,10 +12,18 @@ namespace MixologyJournalApp.ViewModel
         private readonly IngredientUsage _model;
         private readonly LocalDataCache _cache;
 
+        private IngredientViewModel _ingredient;
         public IngredientViewModel Ingredient
         {
-            get;
-            set;
+            get
+            {
+                return _ingredient;
+            }
+            set
+            {
+                _ingredient = value;
+                _model.Ingredient = _ingredient.Model;
+            }
         }
 
         public String Amount
@@ -30,10 +38,18 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        private UnitViewModel _unit;
         public UnitViewModel Unit
         {
-            get;
-            set;
+            get
+            {
+                return _unit;
+            }
+            set
+            {
+                _unit = value;
+                _model.Unit = _unit.Model;
+            }
         }
 
         public ObservableCollection<IngredientViewModel> AvailableIngredients
