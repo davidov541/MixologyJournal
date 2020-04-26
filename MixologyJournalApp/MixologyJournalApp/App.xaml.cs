@@ -15,20 +15,11 @@ namespace MixologyJournalApp
 
         internal LocalDataCache Cache { get; private set; }
 
-        public static App CreateInstance(IPlatform platform)
+        public static App Create(IPlatform platform)
         {
             if (_instance == null)
             {
                 _instance = new App(platform);
-            }
-            return _instance;
-        }
-
-        public static App GetInstance()
-        {
-            if (_instance == null)
-            {
-                throw new InvalidOperationException("GetInstance called without any parameters when no instance was available yet.");
             }
             return _instance;
         }

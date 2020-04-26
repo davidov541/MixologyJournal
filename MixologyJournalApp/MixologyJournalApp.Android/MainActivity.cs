@@ -20,7 +20,7 @@ namespace MixologyJournalApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            App app = App.CreateInstance(new AndroidPlatform(this));
+            App app = App.Create(new AndroidPlatform(this));
             LoadApplication(app);
 
             await app.LoadAsync();
