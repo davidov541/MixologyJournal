@@ -47,8 +47,8 @@ namespace MixologyJournalApp
 
         public async Task LoadAsync()
         {
-            await Cache.Init();
             await PlatformInfo.Backend.Init();
+            await Cache.Init();
             MainPageViewModel pageVM = new MainPageViewModel();
             MainPage = new NavigationPage(new MainPage(pageVM));
         }
