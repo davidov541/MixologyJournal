@@ -4,15 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="MixologyJournalApp.View.RecipeListPage">
-    <StackLayout>
+             x:Class="MixologyJournalApp.View.RecipeListPage"
+             Title="Recipe List">
+    <StackLayout Margin="10">
         <ListView x:Name="listView" 
                   ItemsSource="{Binding Path=Recipes}" 
                   ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="{Binding Path=Name}" />
+                        <Label Text="{Binding Path=Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
