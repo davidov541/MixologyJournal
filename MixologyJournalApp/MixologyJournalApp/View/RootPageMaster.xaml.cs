@@ -28,7 +28,7 @@ namespace MixologyJournalApp.View
             {
                 MenuItems = new ObservableCollection<RootPageMasterMenuItem>(new[]
                 {
-                    new RootPageMasterMenuItem { Id = 0, Title = "Recipes", TargetType = typeof(MainPage) },
+                    new RootPageMasterMenuItem { Id = 0, Title = "Recipes", TargetType = typeof(RecipeListPage) },
                 });
             }
 
