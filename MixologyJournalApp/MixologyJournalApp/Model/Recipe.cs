@@ -22,7 +22,7 @@ namespace MixologyJournalApp.Model
             set;
         }
 
-        [JsonProperty]
+        [JsonProperty("id")]
         public String Id
         {
             get;
@@ -50,16 +50,6 @@ namespace MixologyJournalApp.Model
         {
             Steps = new List<String>();
             Ingredients = new List<IngredientUsage>();
-        }
-
-        public Recipe(String id)
-        {
-            Id = id;
-        }
-
-        public async Task<bool> SaveNew()
-        {
-            return await App.GetInstance().PlatformInfo.Backend.PostResult("/secure/recipes", this);
         }
     }
 }

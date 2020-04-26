@@ -11,6 +11,7 @@ namespace MixologyJournalApp.ViewModel
 
         private readonly IngredientUsage _model;
         private readonly LocalDataCache _cache;
+        private readonly App _app;
 
         private IngredientViewModel _ingredient;
         public IngredientViewModel Ingredient
@@ -77,11 +78,11 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public IngredientUsageViewModel(IngredientUsage model)
+        public IngredientUsageViewModel(IngredientUsage model, App app)
         {
             _model = model;
-
-            _cache = App.GetInstance().Cache;
+            _app = app;
+            _cache = _app.Cache;
 
             Ingredient = new IngredientViewModel(_model.Ingredient);
             Unit = new UnitViewModel(_model.Unit);

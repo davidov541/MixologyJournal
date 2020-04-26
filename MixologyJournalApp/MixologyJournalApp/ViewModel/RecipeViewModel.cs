@@ -13,6 +13,7 @@ namespace MixologyJournalApp.ViewModel
     internal class RecipeViewModel: INotifyPropertyChanged
     {
         private readonly Recipe _model;
+        private readonly App _app;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -80,13 +81,14 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
-        public RecipeViewModel() : this(Recipe.CreateEmptyRecipe())
+        public RecipeViewModel(App app) : this(Recipe.CreateEmptyRecipe(), app)
         {
         }
 
-        public RecipeViewModel(Recipe model)
+        public RecipeViewModel(Recipe model, App app)
         {
             _model = model;
+            _app = app;
 
             InitCommands();
 
@@ -97,7 +99,7 @@ namespace MixologyJournalApp.ViewModel
                 Steps.Add(s);
             }
 
-            IEnumerable<IngredientUsageViewModel> usages = _model.Ingredients.Select(u => new IngredientUsageViewModel(u));
+            IEnumerable<IngredientUsageViewModel> usages = _model.Ingredients.Select(u => new IngredientUsageViewModel(u, _app));
             foreach (IngredientUsageViewModel u in usages)
             {
                 IngredientUsages.Add(u);
@@ -176,12 +178,12 @@ namespace MixologyJournalApp.ViewModel
             OnPropertyChanged(nameof(Steps));
         }
 
-        public async Task<bool> SaveNew(App app)
+        public async Task<bool> SaveNew()
         {
-            bool result = await _model.SaveNew();
+            bool result = await _app.PlatformInfo.Backend.PostResult("/secure/recipes", _model);
             if (result)
             {
-                app.Cache.CreateRecipe(this);
+                _app.Cache.CreateRecipe(this);
             }
             return result;
         }
@@ -207,7 +209,7 @@ namespace MixologyJournalApp.ViewModel
         public void AddIngredient()
         {
             IngredientUsage usage = IngredientUsage.CreateEmpty();
-            IngredientUsageViewModel viewModel = new IngredientUsageViewModel(usage);
+            IngredientUsageViewModel viewModel = new IngredientUsageViewModel(usage, _app);
             IngredientUsages.Add(viewModel);
             _model.Ingredients.Add(usage);
 

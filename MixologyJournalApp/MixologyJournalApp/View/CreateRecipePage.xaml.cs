@@ -22,7 +22,7 @@ namespace MixologyJournalApp.View
 
         private async void CreateButton_Clicked(object sender, EventArgs e)
         {
-            bool result = await _vm.SaveNew(_app);
+            bool result = await _vm.SaveNew();
             if (result)
             {
                 await Navigation.PopAsync();

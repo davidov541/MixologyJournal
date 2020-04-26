@@ -40,7 +40,7 @@ namespace MixologyJournalApp.ViewModel
         private async Task UpdateRecipes()
         {
             String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/recipes");
-            List<RecipeViewModel> recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r)).ToList();
+            List<RecipeViewModel> recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r, _app)).ToList();
             Recipes.Clear();
             foreach (RecipeViewModel r in recipes.OrderBy(i => i.Name))
             {
