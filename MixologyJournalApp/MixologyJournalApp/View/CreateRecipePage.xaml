@@ -7,10 +7,13 @@
              x:Class="MixologyJournalApp.View.CreateRecipePage"
              x:Name="rootPage">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical"
+                     Margin="10,5">
+            <Label Text="Title" />
             <Entry x:Name="NameEntry"
                    Text="{Binding Name}"
                    Keyboard="Default" />
+            <Label Text="Ingredients" />
             <ListView x:Name="IngredientUsagesList" 
                       ItemsSource="{Binding IngredientUsages}">
                 <ListView.ItemTemplate>
@@ -55,9 +58,9 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button x:Name="addIngredientButton" 
-                Text="Add Ingredient" 
-                MinimumHeightRequest="30" 
-                Clicked="AddIngredientButton_Clicked" />
+                    Text="Add Ingredient" 
+                    MinimumHeightRequest="30" 
+                    Clicked="AddIngredientButton_Clicked" />
             <Label Text="Steps" />
             <ListView x:Name="StepsList"
                       ItemsSource="{Binding Path=Steps}">
@@ -87,9 +90,9 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button x:Name="addStepButton" 
-                Text="Add Step" 
-                MinimumHeightRequest="30" 
-                Clicked="AddStepButton_Clicked" />
+                    Text="Add Step" 
+                    MinimumHeightRequest="30" 
+                    Clicked="AddStepButton_Clicked" />
             <Button x:Name="createButton" 
                 Text="Create" 
                 MinimumHeightRequest="30" 
