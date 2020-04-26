@@ -22,7 +22,10 @@ namespace MixologyJournalApp.ViewModel
             set
             {
                 _ingredient = value;
-                _model.Ingredient = _ingredient.Model;
+                if (_ingredient != null)
+                {
+                    _model.Ingredient = _ingredient.Model;
+                }
                 OnPropertyChanged(nameof(Ingredient));
             }
         }
@@ -50,7 +53,10 @@ namespace MixologyJournalApp.ViewModel
             set
             {
                 _unit = value;
-                _model.Unit = _unit.Model;
+                if (_unit != null)
+                {
+                    _model.Unit = _unit.Model;
+                }
                 OnPropertyChanged(nameof(Unit));
             }
         }

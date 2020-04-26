@@ -11,7 +11,7 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class MainPageViewModel: INotifyPropertyChanged
     {
-        private LocalDataCache _cache;
+        private readonly LocalDataCache _cache;
 
         public event PropertyChangedEventHandler PropertyChanged;
 

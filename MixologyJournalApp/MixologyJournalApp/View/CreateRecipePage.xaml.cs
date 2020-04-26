@@ -41,16 +41,5 @@ namespace MixologyJournalApp.View
             StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
             _vm.DeleteStep(vm);
         }
-
-        private void AddIngredientButton_Clicked(object sender, EventArgs e)
-        {
-            _vm.AddIngredient();
-        }
-
-        private void DeleteIngredientButton_Clicked(object sender, EventArgs e)
-        {
-            IngredientUsageViewModel vm = (sender as Button).BindingContext as IngredientUsageViewModel;
-            _vm.DeleteIngredient(vm);
-        }
     }
 }

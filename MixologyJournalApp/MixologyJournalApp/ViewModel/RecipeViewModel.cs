@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -71,6 +73,30 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public ICommand AddIngredientCommand
+        {
+            get;
+            private set;
+        }
+
+        public ICommand DeleteIngredientCommand
+        {
+            get;
+            private set;
+        }
+
+        public ICommand AddStepCommand
+        {
+            get;
+            private set;
+        }
+
+        public ICommand DeleteStepCommand
+        {
+            get;
+            private set;
+        }
+
         public RecipeViewModel() : this(Recipe.CreateEmptyRecipe())
         {
         }
@@ -78,6 +104,8 @@ namespace MixologyJournalApp.ViewModel
         public RecipeViewModel(Recipe model)
         {
             _model = model;
+
+            InitCommands();
 
             IEnumerable<StepViewModel> steps = _model.Steps.Select((s, i) => new StepViewModel(s, i));
             foreach(StepViewModel s in steps)
@@ -91,6 +119,67 @@ namespace MixologyJournalApp.ViewModel
             {
                 IngredientUsages.Add(u);
             }
+
+            PropertyChanged += RecipeViewModel_PropertyChanged;
+        }
+
+        private void RecipeViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case nameof(Steps):
+                    OnPropertyChanged(nameof(FormattedSteps));
+                    OnPropertyChanged(nameof(CanDeleteStep));
+
+                    (DeleteStepCommand as Command).ChangeCanExecute();
+                    break;
+                case nameof(IngredientUsages):
+                    OnPropertyChanged(nameof(FormattedIngredients));
+                    OnPropertyChanged(nameof(CanDeleteIngredient));
+
+                    (DeleteIngredientCommand as Command).ChangeCanExecute();
+                    break;
+            }
+        }
+
+        private void InitCommands()
+        {
+            AddIngredientCommand = new Command(
+                execute: () =>
+                {
+                    AddIngredient();
+                },
+                canExecute: () =>
+                {
+                    return true;
+                });
+            DeleteIngredientCommand = new Command(
+                execute: (ingred) =>
+                {
+                    DeleteIngredient(ingred as IngredientUsageViewModel);
+                },
+                canExecute: (ingred) =>
+                {
+                    return CanDeleteIngredient;
+                });
+            AddStepCommand = new Command(
+                execute: () =>
+                {
+                    AddStep();
+                },
+                canExecute: () =>
+                {
+                    return true;
+                });
+            DeleteStepCommand = new Command(
+                execute: (step) =>
+                {
+                    DeleteStep(step as StepViewModel);
+                },
+                canExecute: (step) =>
+                {
+                    return CanDeleteStep;
+                });
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -102,6 +191,8 @@ namespace MixologyJournalApp.ViewModel
         {
             StepViewModel vm = sender as StepViewModel;
             _model.Steps[vm.Index] = vm.Text;
+
+            OnPropertyChanged(nameof(Steps));
         }
 
         public async Task<bool> SaveNew()
@@ -120,9 +211,7 @@ namespace MixologyJournalApp.ViewModel
             StepViewModel stepvm = new StepViewModel("", Steps.Count);
             stepvm.PropertyChanged += StepChanged;
             Steps.Add(stepvm);
-            OnPropertyChanged(nameof(FormattedSteps));
             OnPropertyChanged(nameof(Steps));
-            OnPropertyChanged(nameof(CanDeleteStep));
         }
 
         public void DeleteStep(StepViewModel step)
@@ -130,9 +219,8 @@ namespace MixologyJournalApp.ViewModel
             int index = step.Index;
             Steps.Remove(step);
             _model.Steps.RemoveAt(index);
-            OnPropertyChanged(nameof(FormattedSteps));
+
             OnPropertyChanged(nameof(Steps));
-            OnPropertyChanged(nameof(CanDeleteStep));
         }
 
         public void AddIngredient()
@@ -141,9 +229,8 @@ namespace MixologyJournalApp.ViewModel
             IngredientUsageViewModel viewModel = new IngredientUsageViewModel(usage);
             IngredientUsages.Add(viewModel);
             _model.Ingredients.Add(usage);
+
             OnPropertyChanged(nameof(IngredientUsages));
-            OnPropertyChanged(nameof(FormattedIngredients));
-            OnPropertyChanged(nameof(CanDeleteIngredient));
         }
 
         public void DeleteIngredient(IngredientUsageViewModel usage)
@@ -151,9 +238,8 @@ namespace MixologyJournalApp.ViewModel
             int index = IngredientUsages.IndexOf(usage);
             IngredientUsages.Remove(usage);
             _model.Ingredients.RemoveAt(index);
+
             OnPropertyChanged(nameof(IngredientUsages));
-            OnPropertyChanged(nameof(FormattedIngredients));
-            OnPropertyChanged(nameof(CanDeleteIngredient));
         }
     }
 }
