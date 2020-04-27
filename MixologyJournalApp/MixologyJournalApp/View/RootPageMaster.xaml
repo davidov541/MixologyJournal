@@ -12,7 +12,7 @@
                   HasUnevenRows="true"
                   ItemsSource="{Binding MenuItems}">
 			<ListView.Header>
-				<Grid BackgroundColor="#03A9F4">
+				<Grid BackgroundColor="{StaticResource LightThemeColor}">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="10"/>
 						<ColumnDefinition Width="*"/>
@@ -27,7 +27,7 @@
 					<Label Grid.Column="1"
                            Grid.Row="2"
                            Text="Mixology Journal"
-                           Style="{DynamicResource SubtitleStyle}"/>
+                           Style="{DynamicResource Subtitle}"/>
 				</Grid>
 			</ListView.Header>
 			<ListView.ItemTemplate>
@@ -38,7 +38,7 @@
                                    VerticalTextAlignment="Center" 
                                    Text="{Binding Title}" 
                                    d:Text="{Binding .}"
-                                   FontSize="24"/>
+                                   Style="{StaticResource Categories}"/>
 						</StackLayout>
 					</ViewCell>
 				</DataTemplate>
