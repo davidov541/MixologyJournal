@@ -87,6 +87,13 @@ namespace MixologyJournalApp.Droid.Platform
             request.Headers.Add("X-ZUMO-AUTH", token);
             HttpResponseMessage response = await client.SendAsync(request);
 
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Request failed. See below for the error message.");
+                Console.WriteLine(response.ReasonPhrase);
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+            }
+
             return await response.Content.ReadAsStringAsync();
         }
 
@@ -103,6 +110,14 @@ namespace MixologyJournalApp.Droid.Platform
             };
             request.Headers.Add("X-ZUMO-AUTH", token);
             HttpResponseMessage response = await client.SendAsync(request);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Request failed. See below for the error message.");
+                Console.WriteLine(response.ReasonPhrase);
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+            }
+
             return response.IsSuccessStatusCode;
         }
 
