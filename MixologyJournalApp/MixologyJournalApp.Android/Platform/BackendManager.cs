@@ -23,7 +23,27 @@ namespace MixologyJournalApp.Droid.Platform
         {
             get
             {
-                return User != null;
+                return GetActiveLoginMethod() != null;
+            }
+        }
+
+        public Boolean HasBeenSetup
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        private List<ILoginMethod> _loginMethods = new List<ILoginMethod>()
+        {
+            new GoogleLoginMethod()
+        };
+        public IEnumerable<ILoginMethod> LoginMethods
+        {
+            get
+            {
+                return _loginMethods;
             }
         }
 
@@ -47,6 +67,11 @@ namespace MixologyJournalApp.Droid.Platform
             {
                 User = users.First();
             }
+        }
+
+        private ILoginMethod GetActiveLoginMethod()
+        {
+            return _loginMethods.FirstOrDefault(l => l.IsLoggedIn);
         }
 
         public async Task<bool> Authenticate()

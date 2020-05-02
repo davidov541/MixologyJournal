@@ -1,12 +1,23 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Platform
 {
     public interface IBackend
     {
-        bool IsAuthenticated
+        Boolean HasBeenSetup
+        {
+            get;
+        }
+
+        Boolean IsAuthenticated
+        {
+            get;
+        }
+
+        IEnumerable<ILoginMethod> LoginMethods
         {
             get;
         }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "586448729923",
+    "firebase_url": "https://mixologyjournal-27689.firebaseio.com",
+    "project_id": "mixologyjournal-27689",
+    "storage_bucket": "mixologyjournal-27689.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586448729923:android:924f1d1ab87c6c8e5ba1f6",
+        "android_client_info": {
+          "package_name": "MixologyJournalApp.Droid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586448729923-nd1s5o350krotn2eandc6pl7lmm7odp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "MixologyJournalApp.Droid",
+            "certificate_hash": "ef814ca3cebd8da6474667b05ef6bb6dc08758ac"
+          }
+        },
+        {
+          "client_id": "586448729923-f8di165k0o8blnr3fkjeppskrf60anh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJD1xxRH_d4VjpnQT_qhrrbkLCeLHAL2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586448729923-f8di165k0o8blnr3fkjeppskrf60anh2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

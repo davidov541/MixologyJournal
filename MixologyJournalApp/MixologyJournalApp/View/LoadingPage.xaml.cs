@@ -7,7 +7,7 @@ namespace MixologyJournalApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoadingPage : ContentPage
     {
-        private LocalDataCache _cache;
+        private readonly LocalDataCache _cache;
 
         internal LoadingPage(LocalDataCache cache)
         {

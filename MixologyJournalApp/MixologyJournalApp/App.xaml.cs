@@ -38,8 +38,14 @@ namespace MixologyJournalApp
         public async Task LoadAsync()
         {
             await PlatformInfo.Backend.Init();
-            await Cache.Init();
-            MainPage = new RootPage(this);
+            if (PlatformInfo.Backend.HasBeenSetup)
+            {
+                await StartApp();
+            }
+            else
+            {
+                MainPage = new SetupPage(PlatformInfo);
+            }
         }
 
         protected override void OnStart()
@@ -52,6 +58,12 @@ namespace MixologyJournalApp
 
         protected override void OnResume()
         {
+        }
+
+        internal async Task StartApp()
+        {
+            await Cache.Init();
+            MainPage = new RootPage(this);
         }
     }
 }
