@@ -3,7 +3,7 @@ using Android.Content;
 
 namespace MixologyJournalApp.Droid
 {
-    [Activity(Label = "SplashActivity", Theme = "@style/MainTheme.Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "Mixology Journal", Theme = "@style/MainTheme.Splash", MainLauncher = true, NoHistory = true)]
     public class SplashActivity: global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         // Launches the startup task
