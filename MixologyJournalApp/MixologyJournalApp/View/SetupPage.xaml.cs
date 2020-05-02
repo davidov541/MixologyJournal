@@ -15,5 +15,10 @@ namespace MixologyJournalApp.View
             BindingContext = _viewModel;
             InitializeComponent();
         }
+
+        private async void SkipButton_Clicked(object sender, System.EventArgs e)
+        {
+            await (App.Current as App).StartApp();
+        }
     }
 }

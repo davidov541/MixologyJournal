@@ -44,7 +44,8 @@ namespace MixologyJournalApp.Droid.Platform
         { 
             get
             {
-                return GetActiveLoginMethod().CurrentUser;
+                ILoginMethod method = GetActiveLoginMethod();
+                return method?.CurrentUser;
             }
         }
 

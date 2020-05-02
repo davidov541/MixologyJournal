@@ -7,7 +7,7 @@
              x:Class="MixologyJournalApp.View.SetupPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Welcome to Mixology Journal! Please log in with your authentication mechanism of choice."
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
             <StackLayout Padding="20"
@@ -28,6 +28,7 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
+            <Button x:Name="SkipButton" Text="Skip" Clicked="SkipButton_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
