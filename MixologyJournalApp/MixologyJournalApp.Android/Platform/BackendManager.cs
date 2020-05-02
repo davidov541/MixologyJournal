@@ -14,9 +14,6 @@ namespace MixologyJournalApp.Droid.Platform
 {
     internal class BackendManager: IBackend
     {
-        private readonly MobileServiceClient _client;
-        private readonly SecureStorageAccountStore _accountStore;
-
         private const String _basePath = "https://mixologyjournalfunction.azurewebsites.net/api";
 
         public Boolean IsAuthenticated
@@ -27,7 +24,7 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        private List<ILoginMethod> _loginMethods = new List<ILoginMethod>()
+        private readonly List<ILoginMethod> _loginMethods = new List<ILoginMethod>()
         {
             new GoogleLoginMethod()
         };
@@ -49,13 +46,9 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        public BackendManager(Context context)
+        public BackendManager()
         {
-            _client = new MobileServiceClient(_basePath);
-            _accountStore = new SecureStorageAccountStore();
-
-
-            _loginMethods.ForEach(l => l.PropertyChanged += loginMethod_PropertyChanged);
+            _loginMethods.ForEach(l => l.PropertyChanged += LoginMethod_PropertyChanged);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -64,7 +57,7 @@ namespace MixologyJournalApp.Droid.Platform
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void loginMethod_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void LoginMethod_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(ILoginMethod.IsLoggedIn))
             {

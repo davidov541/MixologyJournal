@@ -10,7 +10,7 @@ namespace MixologyJournalApp
     public partial class App : Application
     {
         private static App _instance;
-        private String _hasBeenSetupKey = "HasBeenSetUp";
+        private const String _hasBeenSetupKey = "HasBeenSetUp";
 
         public IPlatform PlatformInfo { get; private set; }
 
@@ -55,6 +55,7 @@ namespace MixologyJournalApp
             }
             await Cache.Init();
             Properties[_hasBeenSetupKey] = true.ToString();
+            await SavePropertiesAsync();
             MainPage = new RootPage(this);
         }
     }

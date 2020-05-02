@@ -6,7 +6,7 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class SetupPageViewModel
     {
-        private IPlatform _platform;
+        private readonly IPlatform _platform;
         public IEnumerable<ILoginMethod> LoginMethods
         {
             get

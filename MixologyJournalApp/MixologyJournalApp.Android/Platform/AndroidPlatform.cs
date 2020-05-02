@@ -5,7 +5,7 @@ namespace MixologyJournalApp.Droid.Platform
 {
     public class AndroidPlatform : IPlatform
     {
-        private AlertDialogFactory _factory;
+        private readonly AlertDialogFactory _factory;
         public IAlertDialogFactory AlertDialogFactory
         {
             get
@@ -14,7 +14,7 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        private BackendManager _backend;
+        private readonly BackendManager _backend;
         public IBackend Backend
         {
             get
@@ -26,7 +26,7 @@ namespace MixologyJournalApp.Droid.Platform
         internal AndroidPlatform(Context context)
         {
             _factory = new AlertDialogFactory(context);
-            _backend = new BackendManager(context);
+            _backend = new BackendManager();
         }
     }
 }
