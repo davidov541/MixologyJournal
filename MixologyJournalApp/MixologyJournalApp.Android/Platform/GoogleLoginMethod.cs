@@ -70,6 +70,7 @@ namespace MixologyJournalApp.Droid.Platform
         public GoogleLoginMethod()
         {
             _googleService = CrossGoogleClient.Current;
+            IsLoggedIn = !String.IsNullOrEmpty(_googleService.ActiveToken);
         }
 
         private async void Login()

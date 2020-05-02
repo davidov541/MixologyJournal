@@ -1,5 +1,6 @@
 ﻿using MixologyJournalApp.Platform;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -17,6 +18,15 @@ namespace MixologyJournalApp.ViewModel
         public SetupPageViewModel(IPlatform platform)
         {
             _platform = platform;
+            _platform.Backend.PropertyChanged += Backend_PropertyChanged;
+        }
+
+        private async void Backend_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(IBackend.IsAuthenticated))
+            {
+                await (App.Current as App).StartApp();
+            }
         }
     }
 }

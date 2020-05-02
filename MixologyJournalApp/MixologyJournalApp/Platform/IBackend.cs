@@ -1,11 +1,12 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Platform
 {
-    public interface IBackend
+    public interface IBackend : INotifyPropertyChanged
     {
         Boolean HasBeenSetup
         {

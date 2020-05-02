@@ -5,6 +5,7 @@ using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -39,6 +40,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             new GoogleLoginMethod()
         };
+
         public IEnumerable<ILoginMethod> LoginMethods
         {
             get
@@ -58,6 +60,22 @@ namespace MixologyJournalApp.Droid.Platform
             _context = context;
             _client = new MobileServiceClient(_basePath);
             _accountStore = new SecureStorageAccountStore();
+
+            _loginMethods.ForEach(l => l.PropertyChanged += loginMethod_PropertyChanged);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(String propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void loginMethod_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(ILoginMethod.IsLoggedIn))
+            {
+                OnPropertyChanged(nameof(IsAuthenticated));
+            }
         }
 
         public async Task Init()

@@ -23,16 +23,12 @@ namespace MixologyJournalApp
             return _instance;
         }
 
-        private readonly LoadingPage _loadingPage;
         private App(IPlatform platform)
         {
             PlatformInfo = platform;
             Cache = new LocalDataCache(this);
 
             InitializeComponent();
-
-            _loadingPage = new LoadingPage(Cache);
-            MainPage = _loadingPage;
         }
 
         public async Task LoadAsync()
@@ -40,6 +36,7 @@ namespace MixologyJournalApp
             await PlatformInfo.Backend.Init();
             if (PlatformInfo.Backend.HasBeenSetup)
             {
+                MainPage = new LoadingPage(Cache);
                 await StartApp();
             }
             else
@@ -48,20 +45,12 @@ namespace MixologyJournalApp
             }
         }
 
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
-        }
-
         internal async Task StartApp()
         {
+            if (!(MainPage is LoadingPage))
+            {
+                await MainPage.Navigation.PushModalAsync(new LoadingPage(Cache));
+            }
             await Cache.Init();
             MainPage = new RootPage(this);
         }
