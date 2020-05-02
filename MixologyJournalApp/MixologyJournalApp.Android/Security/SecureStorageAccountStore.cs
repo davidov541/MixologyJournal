@@ -10,7 +10,8 @@ namespace MixologyJournalApp.Droid.Security
     public class SecureStorageAccountStore
     {
         public const String GoogleServiceId = "Google";
-        public async Task SaveAsync(GoogleUser account, string serviceId)
+        public const String HasBeenSetUpId = "HasBeenSetUp";
+        public async Task SaveCredentialsAsync(GoogleUser account, string serviceId)
         {
             // Find existing accounts for the service
             List<GoogleUser> accounts = await FindAccountsForServiceAsync(serviceId);
@@ -36,7 +37,7 @@ namespace MixologyJournalApp.Droid.Security
         public async Task<List<GoogleUser>> FindAccountsForServiceAsync(string serviceId)
         {
             // Get the json for accounts for the service
-            var json = await SecureStorage.GetAsync(serviceId);
+            String json = await SecureStorage.GetAsync(serviceId);
 
             try
             {
@@ -47,6 +48,16 @@ namespace MixologyJournalApp.Droid.Security
 
             // If this fails, return an empty list
             return new List<GoogleUser>();
+        }
+
+        public async Task SaveDataAsync(String data, string id)
+        {
+            await SecureStorage.SetAsync(id, data);
+        }
+
+        public async Task<String> LoadDataAsync(String id)
+        {
+            return await SecureStorage.GetAsync(id);
         }
     }
 }

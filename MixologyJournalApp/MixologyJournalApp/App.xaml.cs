@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.Platform;
 using MixologyJournalApp.View;
 using MixologyJournalApp.ViewModel;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -9,6 +10,7 @@ namespace MixologyJournalApp
     public partial class App : Application
     {
         private static App _instance;
+        private String _hasBeenSetupKey = "HasBeenSetUp";
 
         public IPlatform PlatformInfo { get; private set; }
 
@@ -34,7 +36,7 @@ namespace MixologyJournalApp
         public async Task LoadAsync()
         {
             await PlatformInfo.Backend.Init();
-            if (PlatformInfo.Backend.HasBeenSetup)
+            if (Properties.ContainsKey(_hasBeenSetupKey) && Properties[_hasBeenSetupKey].ToString() == true.ToString())
             {
                 MainPage = new LoadingPage(Cache);
                 await StartApp();
@@ -52,6 +54,7 @@ namespace MixologyJournalApp
                 await MainPage.Navigation.PushModalAsync(new LoadingPage(Cache));
             }
             await Cache.Init();
+            Properties[_hasBeenSetupKey] = true.ToString();
             MainPage = new RootPage(this);
         }
     }

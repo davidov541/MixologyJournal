@@ -27,14 +27,6 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        public Boolean HasBeenSetup
-        {
-            get
-            {
-                return false;
-            }
-        }
-
         private List<ILoginMethod> _loginMethods = new List<ILoginMethod>()
         {
             new GoogleLoginMethod()
@@ -60,6 +52,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             _client = new MobileServiceClient(_basePath);
             _accountStore = new SecureStorageAccountStore();
+
 
             _loginMethods.ForEach(l => l.PropertyChanged += loginMethod_PropertyChanged);
         }

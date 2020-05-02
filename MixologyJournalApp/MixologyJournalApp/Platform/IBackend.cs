@@ -7,11 +7,6 @@ namespace MixologyJournalApp.Platform
 {
     public interface IBackend : INotifyPropertyChanged
     {
-        Boolean HasBeenSetup
-        {
-            get;
-        }
-
         Boolean IsAuthenticated
         {
             get;

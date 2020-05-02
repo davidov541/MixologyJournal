@@ -130,7 +130,7 @@ namespace MixologyJournalApp.Droid.Platform
                     String googleUserString = JsonConvert.SerializeObject(_currentUser);
                     Console.WriteLine($"Google Logged in succesfully: {googleUserString}");
 
-                    await _accountStore.SaveAsync(_currentUser, SecureStorageAccountStore.GoogleServiceId);
+                    await _accountStore.SaveCredentialsAsync(_currentUser, SecureStorageAccountStore.GoogleServiceId);
                     IsLoggedIn = true;
                     break;
                 case GoogleActionStatus.Canceled:
