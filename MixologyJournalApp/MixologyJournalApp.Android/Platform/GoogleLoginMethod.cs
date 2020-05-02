@@ -1,9 +1,12 @@
-﻿using MixologyJournalApp.Platform;
+﻿using MixologyJournalApp.Droid.Security;
+using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using Plugin.GoogleClient;
 using Plugin.GoogleClient.Shared;
 using System;
 using System.ComponentModel;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -12,6 +15,8 @@ namespace MixologyJournalApp.Droid.Platform
     internal class GoogleLoginMethod : ILoginMethod
     {
         private readonly IGoogleClientManager _googleService;
+        private readonly SecureStorageAccountStore _accountStore;
+        private GoogleUser _currentUser;
 
         public String Name
         {
@@ -67,10 +72,32 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
+        public ICommand LogoffCommand
+        {
+            get
+            {
+                return new Command(Logoff);
+            }
+        }
+
+        public User CurrentUser
+        {
+            get
+            {
+                return new User(_currentUser.Name, _googleService.ActiveToken);
+            }
+        }
+
         public GoogleLoginMethod()
         {
+            _accountStore = new SecureStorageAccountStore();
             _googleService = CrossGoogleClient.Current;
-            IsLoggedIn = !String.IsNullOrEmpty(_googleService.ActiveToken);
+        }
+
+        public async Task Init()
+        {
+            _currentUser = (await _accountStore.FindAccountsForServiceAsync(SecureStorageAccountStore.GoogleServiceId)).FirstOrDefault();
+            IsLoggedIn = _currentUser != null;
         }
 
         private async void Login()
@@ -98,8 +125,12 @@ namespace MixologyJournalApp.Droid.Platform
             switch (e.Status)
             {
                 case GoogleActionStatus.Completed:
-                    String googleUserString = JsonConvert.SerializeObject(e.Data);
+                    _currentUser = e.Data;
+
+                    String googleUserString = JsonConvert.SerializeObject(_currentUser);
                     Console.WriteLine($"Google Logged in succesfully: {googleUserString}");
+
+                    await _accountStore.SaveAsync(_currentUser, SecureStorageAccountStore.GoogleServiceId);
                     IsLoggedIn = true;
                     break;
                 case GoogleActionStatus.Canceled:
@@ -114,6 +145,12 @@ namespace MixologyJournalApp.Droid.Platform
             }
 
             _googleService.OnLogin -= LoginProcessCompleted;
+        }
+
+        private void Logoff()
+        {
+            _googleService.Logout();
+            _accountStore.Delete(SecureStorageAccountStore.GoogleServiceId);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MixologyJournalApp.Platform
@@ -35,5 +36,19 @@ namespace MixologyJournalApp.Platform
         {
             get;
         }
+
+        ICommand LogoffCommand
+        {
+            get;
+        }
+
+        User CurrentUser
+        {
+            get;
+        }
+
+        Task Init();
+
+
     }
 }

@@ -40,18 +40,6 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ICommand LoginCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand LogoffCommand
-        {
-            get;
-            private set;
-        }
-
         public ObservableCollection<RecipeViewModel> Recipes
         {
             get
@@ -62,33 +50,9 @@ namespace MixologyJournalApp.ViewModel
 
         public RecipeListPageViewModel(App app)
         {
-            SetCommands();
-
             _app = app;
             _cache = _app.Cache;
             _cache.Recipes.CollectionChanged += Recipes_CollectionChanged;
-        }
-
-        private void SetCommands()
-        {
-            LoginCommand = new Command(
-                execute: async () =>
-                {
-                    await LogIn();
-                },
-                canExecute: () =>
-                {
-                    return IsUnauthenticated;
-                });
-            LogoffCommand = new Command(
-                execute: async () =>
-                {
-                    await LogOff();
-                },
-                canExecute: () =>
-                {
-                    return IsAuthenticated;
-                });
         }
 
         private void Recipes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -99,44 +63,6 @@ namespace MixologyJournalApp.ViewModel
         private void OnPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public async Task LogIn()
-        {
-            IPlatform platform = _app.PlatformInfo;
-            if (platform.Backend != null)
-            {
-                if (await platform.Backend.Authenticate())
-                {
-                    // Display the success or failure message.
-                    String message = String.Format("you are now signed-in as {0}.", platform.Backend.User.UserId); ;
-                    platform.AlertDialogFactory.ShowDialog("Sign-in result", message);
-                }
-            }
-            OnPropertyChanged(nameof(IsAuthenticated));
-            OnPropertyChanged(nameof(IsUnauthenticated));
-
-            (LoginCommand as Command).ChangeCanExecute();
-            (LogoffCommand as Command).ChangeCanExecute();
-
-            await _cache.Resync();
-        }
-
-        public async Task LogOff()
-        {
-            IPlatform platform = _app.PlatformInfo;
-            if (platform.Backend != null)
-            {
-                await platform.Backend.LogOffAsync();
-                platform.AlertDialogFactory.ShowDialog("Sign-out result", "Logged out");
-            }
-            OnPropertyChanged(nameof(IsAuthenticated));
-            OnPropertyChanged(nameof(IsUnauthenticated));
-
-            (LoginCommand as Command).ChangeCanExecute();
-            (LogoffCommand as Command).ChangeCanExecute();
-
-            await _cache.Resync();
         }
     }
 }

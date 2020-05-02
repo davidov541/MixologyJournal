@@ -1,5 +1,4 @@
-﻿using Microsoft.WindowsAzure.MobileServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -23,19 +22,15 @@ namespace MixologyJournalApp.Platform
             get;
         }
 
-        MobileServiceUser User
+        User User
         {
             get;
         }
 
         Task Init();
 
-        Task<bool> Authenticate();
-
         Task<bool> PostResult(String path, Object body);
 
         Task<String> GetResult(String path);
-
-        Task LogOffAsync();
     }
 }

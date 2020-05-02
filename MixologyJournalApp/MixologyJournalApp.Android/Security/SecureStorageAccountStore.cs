@@ -1,5 +1,5 @@
-﻿using Microsoft.WindowsAzure.MobileServices;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Plugin.GoogleClient.Shared;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,13 +10,13 @@ namespace MixologyJournalApp.Droid.Security
     public class SecureStorageAccountStore
     {
         public const String GoogleServiceId = "Google";
-        public async Task SaveAsync(MobileServiceUser account, string serviceId)
+        public async Task SaveAsync(GoogleUser account, string serviceId)
         {
             // Find existing accounts for the service
-            List<MobileServiceUser> accounts = await FindAccountsForServiceAsync(serviceId);
+            List<GoogleUser> accounts = await FindAccountsForServiceAsync(serviceId);
 
             // Remove existing account with Id if exists
-            accounts.RemoveAll(a => a.UserId == account.UserId);
+            accounts.RemoveAll(a => a.Id == account.Id);
 
             // Add account we are saving
             accounts.Add(account);
@@ -33,7 +33,7 @@ namespace MixologyJournalApp.Droid.Security
             SecureStorage.Remove(serviceId);
         }
 
-        public async Task<List<MobileServiceUser>> FindAccountsForServiceAsync(string serviceId)
+        public async Task<List<GoogleUser>> FindAccountsForServiceAsync(string serviceId)
         {
             // Get the json for accounts for the service
             var json = await SecureStorage.GetAsync(serviceId);
@@ -41,12 +41,12 @@ namespace MixologyJournalApp.Droid.Security
             try
             {
                 // Try to return deserialized list of accounts
-                return JsonConvert.DeserializeObject<List<MobileServiceUser>>(json);
+                return JsonConvert.DeserializeObject<List<GoogleUser>>(json);
             }
             catch { }
 
             // If this fails, return an empty list
-            return new List<MobileServiceUser>();
+            return new List<GoogleUser>();
         }
     }
 }

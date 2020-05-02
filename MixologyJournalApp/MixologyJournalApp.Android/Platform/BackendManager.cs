@@ -14,7 +14,6 @@ namespace MixologyJournalApp.Droid.Platform
 {
     internal class BackendManager: IBackend
     {
-        private readonly Context _context;
         private readonly MobileServiceClient _client;
         private readonly SecureStorageAccountStore _accountStore;
 
@@ -49,15 +48,16 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        public MobileServiceUser User 
+        public User User 
         { 
-            get; 
-            private set; 
+            get
+            {
+                return GetActiveLoginMethod().CurrentUser;
+            }
         }
 
         public BackendManager(Context context)
         {
-            _context = context;
             _client = new MobileServiceClient(_basePath);
             _accountStore = new SecureStorageAccountStore();
 
@@ -80,11 +80,8 @@ namespace MixologyJournalApp.Droid.Platform
 
         public async Task Init()
         {
-            List<MobileServiceUser> users = await _accountStore.FindAccountsForServiceAsync(SecureStorageAccountStore.GoogleServiceId);
-            if (users.Any())
-            {
-                User = users.First();
-            }
+            IEnumerable<Task> initializationTasks = _loginMethods.Select(l => l.Init());
+            await Task.WhenAll(initializationTasks);
         }
 
         private ILoginMethod GetActiveLoginMethod()
@@ -92,36 +89,11 @@ namespace MixologyJournalApp.Droid.Platform
             return _loginMethods.FirstOrDefault(l => l.IsLoggedIn);
         }
 
-        public async Task<bool> Authenticate()
-        {
-            var success = false;
-            var message = string.Empty;
-            try
-            {
-                // Sign in with Google login using a server-managed flow.
-                User = await _client.LoginAsync(_context, MobileServiceAuthenticationProvider.Google, "mixologyjournal");
-                if (User != null)
-                {
-                    message = string.Format("you are now signed-in as {0}.", User.UserId);
-                    success = true;
-                    await _accountStore.SaveAsync(User, SecureStorageAccountStore.GoogleServiceId);
-                }
-            }
-            catch (Exception ex)
-            {
-                message = ex.Message;
-            }
-
-            Console.WriteLine(message);
-
-            return success;
-        }
-
         public async Task<String> GetResult(String path)
         {
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
-            String token = (User == null) ? string.Empty : User.MobileServiceAuthenticationToken;
+            String token = (User == null) ? string.Empty : User.AuthToken;
             HttpRequestMessage request = new HttpRequestMessage()
             {
                 RequestUri = new Uri(fullPath),
@@ -144,7 +116,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
-            String token = (User == null) ? string.Empty : User.MobileServiceAuthenticationToken;
+            String token = (User == null) ? string.Empty : User.AuthToken;
             HttpRequestMessage request = new HttpRequestMessage()
             {
                 RequestUri = new Uri(fullPath),
@@ -162,13 +134,6 @@ namespace MixologyJournalApp.Droid.Platform
             }
 
             return response.IsSuccessStatusCode;
-        }
-
-        public async Task LogOffAsync()
-        {
-            await _client.LogoutAsync();
-            User = null;
-            _accountStore.Delete(SecureStorageAccountStore.GoogleServiceId);
         }
     }
 }
