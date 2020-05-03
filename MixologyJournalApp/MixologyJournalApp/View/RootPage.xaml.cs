@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MixologyJournalApp.ViewModel;
+using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,7 +10,7 @@ namespace MixologyJournalApp.View
     public partial class RootPage : MasterDetailPage
     {
         private readonly App _app;
-        private RootPageMaster _master;
+        private readonly RootPageMaster _master;
 
         public RootPage(App app)
         {
