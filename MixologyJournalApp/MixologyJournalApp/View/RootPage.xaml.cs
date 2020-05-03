@@ -9,13 +9,16 @@ namespace MixologyJournalApp.View
     public partial class RootPage : MasterDetailPage
     {
         private readonly App _app;
+        private RootPageMaster _master;
 
         public RootPage(App app)
         {
             _app = app;
+            _master = new RootPageMaster(new RootPageMasterViewModel(_app));
+            Master = _master;
             Detail = new NavigationPage(new RecipeListPage(_app));
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            _master.ListView.ItemSelected += ListView_ItemSelected;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -31,7 +34,7 @@ namespace MixologyJournalApp.View
             Detail = new NavigationPage(page);
             IsPresented = false;
 
-            MasterPage.ListView.SelectedItem = null;
+            _master.ListView.SelectedItem = null;
         }
     }
 }

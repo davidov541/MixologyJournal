@@ -6,7 +6,4 @@
                   mc:Ignorable="d"
                   x:Class="MixologyJournalApp.View.RootPage"
                   xmlns:pages="clr-namespace:MixologyJournalApp.View">
-    <MasterDetailPage.Master>
-        <pages:RootPageMaster x:Name="MasterPage" />
-    </MasterDetailPage.Master>
 </MasterDetailPage>

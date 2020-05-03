@@ -7,7 +7,8 @@
              x:Class="MixologyJournalApp.View.RootPageMaster"
              Title="MasterPage">
 	<StackLayout>
-		<ListView x:Name="MenuItemsListView"
+        <Label Text="{Binding UserName}" />
+        <ListView x:Name="MenuItemsListView"
                   SeparatorVisibility="None"
                   HasUnevenRows="true"
                   ItemsSource="{Binding MenuItems}">
