@@ -25,6 +25,20 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        private Uri _userIcon;
+        public Uri UserIcon
+        {
+            get
+            {
+                return _userIcon;
+            }
+            private set
+            {
+                _userIcon = value;
+                OnPropertyChanged(nameof(UserIcon));
+            }
+        }
+
         public RootPageMasterViewModel(App app)
         {
             MenuItems = new ObservableCollection<IMasterMenuItem>(new[]
@@ -35,6 +49,7 @@ namespace MixologyJournalApp.ViewModel
             if (currentUser != null)
             {
                 UserName = currentUser.Name;
+                UserIcon = currentUser.IconPath;
             }
         }
 

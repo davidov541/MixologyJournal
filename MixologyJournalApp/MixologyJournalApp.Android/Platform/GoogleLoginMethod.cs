@@ -84,7 +84,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             get
             {
-                return new User(_currentUser.Name, _googleService.ActiveToken);
+                return new User(_currentUser.Name, _currentUser.Picture, _googleService.ActiveToken);
             }
         }
 

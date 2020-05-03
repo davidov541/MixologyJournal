@@ -21,11 +21,18 @@
 					<Grid.RowDefinitions>
 						<RowDefinition Height="30"/>
 						<RowDefinition Height="80"/>
-						<RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
 						<RowDefinition Height="10"/>
 					</Grid.RowDefinitions>
-					<Label Grid.Column="1"
+                    <Image Grid.Column="0"
+                           Grid.ColumnSpan="3"
                            Grid.Row="2"
+                           HeightRequest="108"
+                           WidthRequest="108"
+                           Source="{Binding UserIcon}"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="3"
                            Text="{Binding UserName}"
                            Style="{DynamicResource Subtitle}"/>
                 </Grid>
