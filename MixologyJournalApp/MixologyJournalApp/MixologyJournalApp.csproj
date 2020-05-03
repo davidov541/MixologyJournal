@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -31,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\DrinkListPage.xaml.cs">
+      <DependentUpon>DrinkListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\RecipeListPage.xaml.cs">
       <DependentUpon>RecipeListPage.xaml</DependentUpon>
     </Compile>

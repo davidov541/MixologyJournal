@@ -41,10 +41,11 @@ namespace MixologyJournalApp.ViewModel
 
         public RootPageMasterViewModel(App app)
         {
-            MenuItems = new ObservableCollection<IMasterMenuItem>(new[]
+            MenuItems = new ObservableCollection<IMasterMenuItem>(new IMasterMenuItem[]
             {
                     new MasterMenuItem<RecipeListPage>("Recipes"),
-                });
+                    new MasterMenuItem<DrinkListPage>("Drinks")
+            });
             User currentUser = app.PlatformInfo.Backend.User;
             if (currentUser != null)
             {
