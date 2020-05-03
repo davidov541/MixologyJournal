@@ -1,15 +1,11 @@
-﻿using MixologyJournalApp.Platform;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class RecipeListPageViewModel: INotifyPropertyChanged
+    internal class DrinkListPageViewModel: INotifyPropertyChanged
     {
         private readonly LocalDataCache _cache;
         private readonly App _app;
@@ -40,7 +36,7 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public RecipeListPageViewModel(App app)
+        public DrinkListPageViewModel(App app)
         {
             _app = app;
             _cache = _app.Cache;

@@ -10,13 +10,13 @@ namespace MixologyJournalApp.View
     [DesignTimeVisible(false)]
     public partial class DrinkListPage : ContentPage
     {
-        private readonly RecipeListPageViewModel _viewModel;
+        private readonly DrinkListPageViewModel _viewModel;
         private readonly App _app;
 
         public DrinkListPage(App app)
         {
             _app = app;
-            _viewModel = new RecipeListPageViewModel(_app);
+            _viewModel = new DrinkListPageViewModel(_app);
             BindingContext = _viewModel;
             InitializeComponent();
         }
