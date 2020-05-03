@@ -10,7 +10,7 @@
                     HorizontalOptions="FillAndExpand">
         <StackLayout>
             <ListView x:Name="listView" 
-                  ItemsSource="{Binding Path=Recipes}" 
+                  ItemsSource="{Binding Path=Drinks}" 
                   ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -20,15 +20,10 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button x:Name="addRecipeButton"
-                Text="Add Recipe"
-                MinimumHeightRequest="30"
-                Clicked="AddRecipeButton_Clicked"
-                IsVisible="{Binding Path=IsAuthenticated}" />
         </StackLayout>
-        <Button x:Name="addRecipeButton2" 
+        <Button x:Name="addDrinkButton" 
                 Image="@drawable/ic_add_white_48dp"
-                Clicked="AddRecipeButton_Clicked" 
+                Clicked="AddDrinkButton_Clicked" 
                 IsVisible="True"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
                 AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 

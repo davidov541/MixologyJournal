@@ -9,7 +9,7 @@ namespace MixologyJournalApp.Model
     public class AppConfigManager
     {
         private static AppConfigManager _instance;
-        private JObject _secrets;
+        private readonly JObject _secrets;
 
         private const string Namespace = "MixologyJournalApp";
         private const string FileName = "appsettings.json";

@@ -17,6 +17,8 @@ namespace MixologyJournalApp.ViewModel
 
         public ObservableCollection<RecipeViewModel> Recipes { get; } = new ObservableCollection<RecipeViewModel>();
 
+        public ObservableCollection<DrinkViewModel> Drinks { get; } = new ObservableCollection<DrinkViewModel>();
+
         public ObservableCollection<IngredientViewModel> AvailableIngredients { get; } = new ObservableCollection<IngredientViewModel>();
 
         public ObservableCollection<UnitViewModel> AvailableUnits { get; } = new ObservableCollection<UnitViewModel>();
@@ -48,18 +50,18 @@ namespace MixologyJournalApp.ViewModel
         public async Task Init()
         {
             await UpdateAvailableUnits();
-            InitProgress = 0.333;
+            InitProgress = 0.25;
             await UpdateAvailableIngredients();
-            InitProgress = 0.666;
+            InitProgress = 0.5;
             await UpdateRecipes();
-            InitProgress = 1.000;
+            InitProgress = 0.75;
+            await UpdateDrinks();
+            InitProgress = 1.0;
         }
 
         public async Task Resync()
         {
-            await UpdateRecipes();
-            await UpdateAvailableIngredients();
-            await UpdateAvailableUnits();
+            await Init();
         }
 
         private async Task UpdateRecipes()
@@ -70,6 +72,17 @@ namespace MixologyJournalApp.ViewModel
             foreach (RecipeViewModel r in recipes.OrderBy(i => i.Name))
             {
                 Recipes.Add(r);
+            }
+        }
+
+        private async Task UpdateDrinks()
+        {
+            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/drinks");
+            List<DrinkViewModel> drinks = JsonConvert.DeserializeObject<List<Drink>>(jsonResult).Select(d => new DrinkViewModel(d, _app)).ToList();
+            Drinks.Clear();
+            foreach (DrinkViewModel d in drinks.OrderBy(i => i.Name))
+            {
+                Drinks.Add(d);
             }
         }
 
@@ -106,6 +119,20 @@ namespace MixologyJournalApp.ViewModel
             {
                 int insertIndex = Recipes.IndexOf(insertBeforeRecipe);
                 Recipes.Insert(insertIndex, recipe);
+            }
+        }
+
+        public void CreateDrink(DrinkViewModel drink)
+        {
+            DrinkViewModel insertBeforeRecipe = Drinks.FirstOrDefault(d => drink.Name.CompareTo(d.Name) < 0);
+            if (insertBeforeRecipe == null)
+            {
+                Drinks.Add(drink);
+            }
+            else
+            {
+                int insertIndex = Drinks.IndexOf(insertBeforeRecipe);
+                Drinks.Insert(insertIndex, drink);
             }
         }
     }

@@ -28,11 +28,11 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ObservableCollection<RecipeViewModel> Recipes
+        public ObservableCollection<DrinkViewModel> Drinks
         {
             get
             {
-                return _cache.Recipes;
+                return _cache.Drinks;
             }
         }
 
@@ -40,12 +40,12 @@ namespace MixologyJournalApp.ViewModel
         {
             _app = app;
             _cache = _app.Cache;
-            _cache.Recipes.CollectionChanged += Recipes_CollectionChanged;
+            _cache.Drinks.CollectionChanged += Drinks_CollectionChanged;
         }
 
-        private void Recipes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void Drinks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            OnPropertyChanged(nameof(Recipes));
+            OnPropertyChanged(nameof(Drinks));
         }
 
         private void OnPropertyChanged(String propertyName)
