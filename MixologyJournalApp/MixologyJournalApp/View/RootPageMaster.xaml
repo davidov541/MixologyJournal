@@ -7,7 +7,6 @@
              x:Class="MixologyJournalApp.View.RootPageMaster"
              Title="MasterPage">
 	<StackLayout>
-        <Label Text="{Binding UserName}" />
         <ListView x:Name="MenuItemsListView"
                   SeparatorVisibility="None"
                   HasUnevenRows="true"
@@ -27,9 +26,9 @@
 					</Grid.RowDefinitions>
 					<Label Grid.Column="1"
                            Grid.Row="2"
-                           Text="Mixology Journal"
+                           Text="{Binding UserName}"
                            Style="{DynamicResource Subtitle}"/>
-				</Grid>
+                </Grid>
 			</ListView.Header>
 			<ListView.ItemTemplate>
 				<DataTemplate>
