@@ -37,6 +37,9 @@
     <Compile Update="View\RecipeListPage.xaml.cs">
       <DependentUpon>RecipeListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="View\DrinkPage.xaml.cs">
+      <DependentUpon>DrinkPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\RecipePage.xaml.cs">
       <DependentUpon>RecipePage.xaml</DependentUpon>
     </Compile>

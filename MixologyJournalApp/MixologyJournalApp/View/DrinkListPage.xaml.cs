@@ -23,8 +23,8 @@ namespace MixologyJournalApp.View
 
         private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            RecipePage recipePage = new RecipePage(e.Item as RecipeViewModel);
-            await Navigation.PushAsync(recipePage);
+            DrinkPage drinkPage = new DrinkPage(e.Item as DrinkViewModel);
+            await Navigation.PushAsync(drinkPage);
         }
 
         private async void AddDrinkButton_Clicked(object sender, EventArgs e)
