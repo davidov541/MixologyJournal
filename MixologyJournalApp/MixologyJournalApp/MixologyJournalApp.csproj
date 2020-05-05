@@ -31,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\SelectSourceRecipePage.xaml.cs">
+      <DependentUpon>SelectSourceRecipePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\DrinkListPage.xaml.cs">
       <DependentUpon>DrinkListPage.xaml</DependentUpon>
     </Compile>
