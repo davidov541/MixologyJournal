@@ -1,7 +1,4 @@
-﻿using Android.Content;
-using Microsoft.WindowsAzure.MobileServices;
-using MixologyJournalApp.Droid.Security;
-using MixologyJournalApp.Model;
+﻿using MixologyJournalApp.Model;
 using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using System;
@@ -92,9 +89,9 @@ namespace MixologyJournalApp.Droid.Platform
 
             if (!response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Request failed. See below for the error message.");
-                Console.WriteLine(response.ReasonPhrase);
-                Console.WriteLine(await response.Content.ReadAsStringAsync());
+                String message = "Request failed. See below for the error message.\n" + response.ReasonPhrase + "\n" + await response.Content.ReadAsStringAsync();
+                Console.WriteLine(message);
+                throw new HttpRequestException(message);
             }
 
             return await response.Content.ReadAsStringAsync();
