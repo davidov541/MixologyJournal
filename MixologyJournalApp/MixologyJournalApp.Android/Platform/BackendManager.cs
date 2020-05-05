@@ -101,14 +101,14 @@ namespace MixologyJournalApp.Droid.Platform
         {
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
-            String token = (User == null) ? string.Empty : User.AuthToken;
+            String token = AppConfigManager.Settings["AppSecret"];
             HttpRequestMessage request = new HttpRequestMessage()
             {
                 RequestUri = new Uri(fullPath),
                 Method = HttpMethod.Post,
                 Content = new StringContent(JsonConvert.SerializeObject(body))
             };
-            request.Headers.Add("X-ZUMO-AUTH", token);
+            request.Headers.Add("app-secret", token);
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (!response.IsSuccessStatusCode)

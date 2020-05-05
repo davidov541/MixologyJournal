@@ -18,6 +18,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String Id
+        {
+            get
+            {
+                return _model.Id;
+            }
+        }
+
         internal Unit Model
         {
             get
@@ -34,6 +42,16 @@ namespace MixologyJournalApp.ViewModel
         public override string ToString()
         {
             return Name;
+        }
+
+        public override bool Equals(object obj)
+        {
+            UnitViewModel other = obj as UnitViewModel;
+            if (other == null)
+            {
+                return false;
+            }
+            return other.Id.Equals(Id);
         }
     }
 }

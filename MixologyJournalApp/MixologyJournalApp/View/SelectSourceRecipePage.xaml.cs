@@ -20,10 +20,10 @@ namespace MixologyJournalApp.View
             InitializeComponent();
         }
 
-        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            // RecipePage recipePage = new RecipePage(e.Item as RecipeViewModel);
-            // await Navigation.PushAsync(recipePage);
+            CreateDrinkPage drinkPage = new CreateDrinkPage(_app, e.Item as RecipeViewModel);
+            await Navigation.PushAsync(drinkPage);
         }
     }
 }

@@ -81,7 +81,7 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
-        public DrinkViewModel(App app) : this(Drink.CreateEmptyDrink(), app)
+        public DrinkViewModel(RecipeViewModel basis, App app) : this(basis.CreateDerivedDrink(), app)
         {
         }
 
@@ -180,7 +180,7 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task<bool> SaveNew()
         {
-            bool result = await _app.PlatformInfo.Backend.PostResult("/secure/recipes", _model);
+            bool result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", _model);
             if (result)
             {
                 _app.Cache.CreateDrink(this);

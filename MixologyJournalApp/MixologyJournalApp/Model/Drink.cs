@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MixologyJournalApp.Model
 {
@@ -48,12 +49,15 @@ namespace MixologyJournalApp.Model
             private set;
         }
 
-        public static Drink CreateEmptyDrink()
+        public static Drink CreateEmptyDrink(Recipe basis)
         {
             Drink drink = new Drink();
 
-            drink.Steps.Add("");
-            drink.Ingredients.Add(IngredientUsage.CreateEmpty());
+            drink.Name = basis.Name;
+            drink.Steps.AddRange(basis.Steps);
+            drink.Ingredients.AddRange(basis.Ingredients.Select(i => i.Clone()));
+            drink.SourceRecipe = basis;
+            drink.SourceRecipeID = basis.Id;
 
             return drink;
         }

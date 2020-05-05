@@ -224,5 +224,10 @@ namespace MixologyJournalApp.ViewModel
 
             OnPropertyChanged(nameof(IngredientUsages));
         }
+
+        public Drink CreateDerivedDrink()
+        {
+            return Drink.CreateEmptyDrink(_model);
+        }
     }
 }

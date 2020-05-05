@@ -41,5 +41,16 @@ namespace MixologyJournalApp.Model
         public IngredientUsage()
         {
         }
+
+        public IngredientUsage Clone()
+        {
+            IngredientUsage clone = new IngredientUsage
+            {
+                Amount = Amount,
+                Ingredient = Ingredient.Clone(),
+                Unit = Unit.Clone()
+            };
+            return clone;
+        }
     }
 }

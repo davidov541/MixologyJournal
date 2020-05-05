@@ -39,5 +39,15 @@ namespace MixologyJournalApp.ViewModel
         {
             return Name;
         }
+
+        public override bool Equals(object obj)
+        {
+            IngredientViewModel other = obj as IngredientViewModel;
+            if (other == null)
+            {
+                return false;
+            }
+            return other.Id.Equals(Id);
+        }
     }
 }

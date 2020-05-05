@@ -33,5 +33,15 @@ namespace MixologyJournalApp.Model
         public Ingredient()
         {
         }
+
+        public Ingredient Clone()
+        {
+            Ingredient clone = new Ingredient
+            {
+                Id = Id,
+                Name = Name
+            };
+            return clone;
+        }
     }
 }

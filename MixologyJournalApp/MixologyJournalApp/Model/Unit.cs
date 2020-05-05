@@ -33,5 +33,15 @@ namespace MixologyJournalApp.Model
         public Unit()
         {
         }
+
+        public Unit Clone()
+        {
+            Unit clone = new Unit
+            {
+                Id = Id,
+                Name = Name
+            };
+            return clone;
+        }
     }
 }
