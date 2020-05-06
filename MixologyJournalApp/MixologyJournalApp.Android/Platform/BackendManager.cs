@@ -22,10 +22,7 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        private readonly List<ILoginMethod> _loginMethods = new List<ILoginMethod>()
-        {
-            new GoogleLoginMethod()
-        };
+        private readonly List<ILoginMethod> _loginMethods = new List<ILoginMethod>();
 
         public IEnumerable<ILoginMethod> LoginMethods
         {
@@ -44,8 +41,9 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        public BackendManager()
+        public BackendManager(MainActivity mainActivity)
         {
+            _loginMethods.Add(new Auth0LoginMethod(mainActivity));
             _loginMethods.ForEach(l => l.PropertyChanged += LoginMethod_PropertyChanged);
         }
 

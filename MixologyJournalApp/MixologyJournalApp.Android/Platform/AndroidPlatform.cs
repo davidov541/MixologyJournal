@@ -23,10 +23,10 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        internal AndroidPlatform(Context context)
+        internal AndroidPlatform(MainActivity context)
         {
             _factory = new AlertDialogFactory(context);
-            _backend = new BackendManager();
+            _backend = new BackendManager(context);
         }
     }
 }

@@ -24,11 +24,18 @@ namespace MixologyJournalApp.Platform
             private set;
         }
 
-        public User(String name, Uri iconPath, String authToken)
+        public String RefreshToken
+        {
+            get;
+            private set;
+        }
+
+        public User(String name, Uri iconPath, String authToken, String refreshToken)
         {
             Name = name;
             IconPath = iconPath;
             AuthToken = authToken;
+            RefreshToken = refreshToken;
         }
     }
 }

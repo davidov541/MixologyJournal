@@ -42,12 +42,12 @@ namespace MixologyJournalApp.ViewModel
 
         public override bool Equals(object obj)
         {
-            IngredientViewModel other = obj as IngredientViewModel;
-            if (other == null)
-            {
-                return false;
-            }
-            return other.Id.Equals(Id);
+            return !(obj is IngredientViewModel other) ? false : other.Id.Equals(Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
         }
     }
 }

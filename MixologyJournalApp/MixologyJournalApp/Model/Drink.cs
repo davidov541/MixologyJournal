@@ -51,13 +51,14 @@ namespace MixologyJournalApp.Model
 
         public static Drink CreateEmptyDrink(Recipe basis)
         {
-            Drink drink = new Drink();
-
-            drink.Name = basis.Name;
+            Drink drink = new Drink
+            {
+                Name = basis.Name,
+                SourceRecipe = basis,
+                SourceRecipeID = basis.Id
+            };
             drink.Steps.AddRange(basis.Steps);
             drink.Ingredients.AddRange(basis.Ingredients.Select(i => i.Clone()));
-            drink.SourceRecipe = basis;
-            drink.SourceRecipeID = basis.Id;
 
             return drink;
         }

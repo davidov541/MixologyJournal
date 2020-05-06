@@ -46,12 +46,12 @@ namespace MixologyJournalApp.ViewModel
 
         public override bool Equals(object obj)
         {
-            UnitViewModel other = obj as UnitViewModel;
-            if (other == null)
-            {
-                return false;
-            }
-            return other.Id.Equals(Id);
+            return !(obj is UnitViewModel other) ? false : other.Id.Equals(Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
         }
     }
 }
