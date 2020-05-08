@@ -102,7 +102,8 @@ namespace MixologyJournalApp.Droid.Platform
             }
             catch (Exception)
             {
-
+                // We weren't able to get a renewal token. 
+                // Likely this is a cold boot, so we should just ignore this and move on.
             }
         }
 
