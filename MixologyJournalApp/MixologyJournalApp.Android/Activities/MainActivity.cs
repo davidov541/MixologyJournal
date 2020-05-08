@@ -46,10 +46,36 @@ namespace MixologyJournalApp.Droid
 
         private TaskCompletionSource<User> LoginCompletionState;
 
-        internal async Task<User> StartLoginActivity()
+        internal async Task<User> RunLoginActivity()
         {
             LoginCompletionState = new TaskCompletionSource<User>();
             Intent intent = new Intent(Application.Context, typeof(LoginActivity));
+            intent.PutExtra(LoginActivity.ModeKey, LoginActivity.LoginActivityMode);
+            StartActivityForResult(intent, 100);
+
+            User result = await LoginCompletionState.Task;
+            LoginCompletionState = null;
+            return result;
+        }
+
+        internal async Task<User> RunRenewalActivity(String renewalToken)
+        {
+            LoginCompletionState = new TaskCompletionSource<User>();
+            Intent intent = new Intent(Application.Context, typeof(LoginActivity));
+            intent.PutExtra(LoginActivity.ModeKey, LoginActivity.RenewalActivityMode);
+            intent.PutExtra(LoginActivity.RenewalToken, renewalToken);
+            StartActivityForResult(intent, 100);
+
+            User result = await LoginCompletionState.Task;
+            LoginCompletionState = null;
+            return result;
+        }
+
+        internal async Task<User> RunLogOffActivity()
+        {
+            LoginCompletionState = new TaskCompletionSource<User>();
+            Intent intent = new Intent(Application.Context, typeof(LoginActivity));
+            intent.PutExtra(LoginActivity.ModeKey, LoginActivity.RenewalActivityMode);
             StartActivityForResult(intent, 100);
 
             User result = await LoginCompletionState.Task;

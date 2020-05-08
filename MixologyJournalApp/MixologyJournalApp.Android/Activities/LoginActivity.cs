@@ -4,9 +4,12 @@ using Android.Content.PM;
 using Android.OS;
 using Auth0.OidcClient;
 using IdentityModel.OidcClient;
+using IdentityModel.OidcClient.Results;
 using MixologyJournalApp.Model;
 using System;
 using System.Threading.Tasks;
+using System.Linq;
+using IdentityModel.OidcClient.Browser;
 
 namespace MixologyJournalApp.Droid
 {
@@ -21,6 +24,12 @@ namespace MixologyJournalApp.Droid
     {
         private Auth0Client _auth0Client;
 
+        public const String ModeKey = "mode";
+        public const String LoginActivityMode = "login";
+        public const String RenewalActivityMode = "renewal";
+        public const String LogOffActivityMode = "logoff";
+        public const String RenewalToken = "renewalToken";
+
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -33,10 +42,25 @@ namespace MixologyJournalApp.Droid
 
             });
 
-            Intent result = await LoginAsync(this, new EventArgs());
+            Intent result = null;
+            switch (Intent.GetStringExtra(ModeKey))
+            {
+                case LoginActivityMode:
+                    result = await LoginAsync(this, new EventArgs());
+                    break;
+                case RenewalActivityMode:
+                    String renewalToken = Intent.GetStringExtra(RenewalToken);
+                    result = await RenewAsync(renewalToken);
+                    break;
+                case LogOffActivityMode:
+                    result = await LogOffAsync();
+                    break;
+                default:
+                    break;
+            }
             SetResult(Android.App.Result.Ok, result);
             Finish();
-        }
+       }
 
         protected override void OnNewIntent(Intent intent)
         {
@@ -74,6 +98,41 @@ namespace MixologyJournalApp.Droid
             result.PutExtra("iconPath", loginResult.User.FindFirst(c => c.Type == "picture")?.Value);
             result.PutExtra("authToken", loginResult.AccessToken);
             result.PutExtra("refreshToken", loginResult.RefreshToken);
+            return result;
+        }
+
+        private async Task<Intent> RenewAsync(String renewalToken)
+        {
+            RefreshTokenResult refreshResult = await _auth0Client.RefreshTokenAsync(renewalToken);
+            UserInfoResult user = await _auth0Client.GetUserInfoAsync(refreshResult.AccessToken);
+
+#if DEBUG
+            Console.WriteLine($"id_token: {refreshResult.IdentityToken}");
+            Console.WriteLine($"access_token: {refreshResult.AccessToken}");
+            Console.WriteLine($"refresh_token: {refreshResult.RefreshToken}");
+
+            Console.WriteLine($"name: {user.Claims.First(c => c.Type == "name")?.Value}");
+            Console.WriteLine($"email: {user.Claims.First(c => c.Type == "email")?.Value}");
+
+            foreach (var claim in user.Claims)
+            {
+                Console.WriteLine($"{claim.Type} = {claim.Value}");
+            }
+#endif
+
+            Intent result = new Intent();
+            result.PutExtra("name", user.Claims.First(c => c.Type == "name")?.Value);
+            result.PutExtra("iconPath", user.Claims.First(c => c.Type == "picture")?.Value);
+            result.PutExtra("authToken", refreshResult.AccessToken);
+            result.PutExtra("refreshToken", refreshResult.RefreshToken);
+            return result;
+        }
+
+        private async Task<Intent> LogOffAsync()
+        {
+            BrowserResultType resultType = await _auth0Client.LogoutAsync();
+            Intent result = new Intent();
+            result.PutExtra("resultCode", resultType.ToString());
             return result;
         }
     }

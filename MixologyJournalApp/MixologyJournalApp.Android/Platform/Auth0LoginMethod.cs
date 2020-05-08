@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace MixologyJournalApp.Droid.Platform
 {
     internal class Auth0LoginMethod : ILoginMethod
     {
+        private const String RenewalTokenKey = "RenewalToken";
+
         public String Name
         {
             get
@@ -87,16 +90,32 @@ namespace MixologyJournalApp.Droid.Platform
         public async Task Init()
         {
             IsLoggedIn = false;
+            try
+            {
+                String renewalToken = await SecureStorage.GetAsync(RenewalTokenKey);
+                if (!String.IsNullOrEmpty(renewalToken))
+                {
+                    CurrentUser = await _mainActivity.RunRenewalActivity(renewalToken);
+                    IsLoggedIn = true;
+                    await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private async void Login()
         {
-            CurrentUser = await _mainActivity.StartLoginActivity();
+            CurrentUser = await _mainActivity.RunLoginActivity();
             IsLoggedIn = true;
+            await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
         }
 
         private void Logoff()
         {
+            SecureStorage.Remove(RenewalTokenKey);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
