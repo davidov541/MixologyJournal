@@ -24,7 +24,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             get
             {
-                return "ic_google";
+                return "icon_auth0";
             }
         }
 
