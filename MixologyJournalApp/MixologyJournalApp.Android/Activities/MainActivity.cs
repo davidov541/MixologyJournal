@@ -5,7 +5,6 @@ using Android.OS;
 using Android.Runtime;
 using MixologyJournalApp.Droid.Platform;
 using MixologyJournalApp.Platform;
-using Plugin.GoogleClient;
 using System;
 using System.Threading.Tasks;
 
@@ -28,7 +27,6 @@ namespace MixologyJournalApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-            GoogleClientManager.Initialize(this);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

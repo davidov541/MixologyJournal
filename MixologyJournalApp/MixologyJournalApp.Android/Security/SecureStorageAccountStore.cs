@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Plugin.GoogleClient.Shared;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,6 +6,7 @@ using Xamarin.Essentials;
 
 namespace MixologyJournalApp.Droid.Security
 {
+    /*
     public class SecureStorageAccountStore
     {
         public const String GoogleServiceId = "Google";
@@ -60,4 +60,5 @@ namespace MixologyJournalApp.Droid.Security
             return await SecureStorage.GetAsync(id);
         }
     }
+    */
 }
