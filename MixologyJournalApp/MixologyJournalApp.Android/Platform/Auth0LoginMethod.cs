@@ -87,23 +87,26 @@ namespace MixologyJournalApp.Droid.Platform
             _mainActivity = mainActivity;
         }
 
-        public async Task Init()
+        public async Task Init(bool setupMode)
         {
             IsLoggedIn = false;
-            try
+            if (!setupMode)
             {
-                String renewalToken = await SecureStorage.GetAsync(RenewalTokenKey);
-                if (!String.IsNullOrEmpty(renewalToken))
+                try
                 {
-                    CurrentUser = await _mainActivity.RunRenewalActivity(renewalToken);
-                    IsLoggedIn = true;
-                    await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
+                    String renewalToken = await SecureStorage.GetAsync(RenewalTokenKey);
+                    if (!String.IsNullOrEmpty(renewalToken))
+                    {
+                        CurrentUser = await _mainActivity.RunRenewalActivity(renewalToken);
+                        IsLoggedIn = true;
+                        await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                // We weren't able to get a renewal token. 
-                // Likely this is a cold boot, so we should just ignore this and move on.
+                catch (Exception)
+                {
+                    // We weren't able to get a renewal token. 
+                    // Likely this is a cold boot, so we should just ignore this and move on.
+                }
             }
         }
 

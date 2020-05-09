@@ -61,9 +61,9 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        public async Task Init()
+        public async Task Init(bool setupMode)
         {
-            IEnumerable<Task> initializationTasks = _loginMethods.Select(l => l.Init());
+            IEnumerable<Task> initializationTasks = _loginMethods.Select(l => l.Init(setupMode));
             await Task.WhenAll(initializationTasks);
         }
 

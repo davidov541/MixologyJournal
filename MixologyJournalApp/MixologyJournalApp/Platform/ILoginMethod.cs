@@ -47,7 +47,7 @@ namespace MixologyJournalApp.Platform
             get;
         }
 
-        Task Init();
+        Task Init(bool setupMode);
 
 
     }

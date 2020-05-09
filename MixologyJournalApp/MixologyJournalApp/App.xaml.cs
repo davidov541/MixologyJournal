@@ -35,8 +35,9 @@ namespace MixologyJournalApp
 
         public async Task LoadAsync()
         {
-            await PlatformInfo.Backend.Init();
-            if (Properties.ContainsKey(_hasBeenSetupKey) && Properties[_hasBeenSetupKey].ToString() == true.ToString() && false)
+            bool setupMode = !(Properties.ContainsKey(_hasBeenSetupKey) && Properties[_hasBeenSetupKey].ToString() == true.ToString());
+            await PlatformInfo.Backend.Init(setupMode);
+            if (!setupMode)
             {
                 MainPage = new LoadingPage(Cache);
                 await StartApp();

@@ -22,7 +22,7 @@ namespace MixologyJournalApp.Platform
             get;
         }
 
-        Task Init();
+        Task Init(bool setupMode);
 
         Task<bool> PostResult(String path, Object body);
 
