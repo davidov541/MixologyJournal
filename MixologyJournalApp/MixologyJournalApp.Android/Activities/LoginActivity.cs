@@ -10,10 +10,11 @@ using System;
 using System.Threading.Tasks;
 using System.Linq;
 using IdentityModel.OidcClient.Browser;
+using Android.Widget;
 
 namespace MixologyJournalApp.Droid
 {
-    [Activity(Label = "Logging In...", MainLauncher = false, LaunchMode = LaunchMode.SingleTask)]
+    [Activity(Label = "Logging In...", MainLauncher = false, LaunchMode = LaunchMode.SingleTask, Theme = "@style/MainTheme.Login")]
     [IntentFilter(
         new[] { Intent.ActionView },
         Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
@@ -34,6 +35,9 @@ namespace MixologyJournalApp.Droid
         {
             base.OnCreate(bundle);
 
+            SetContentView(Resource.Layout.LoginScreen);
+            TextView captionText = FindViewById<TextView>(Resource.Id.CaptionText);
+
             _auth0Client = new Auth0Client(new Auth0ClientOptions
             {
                 Domain = AppConfigManager.Settings["Auth0Domain"],
@@ -46,16 +50,16 @@ namespace MixologyJournalApp.Droid
             switch (Intent.GetStringExtra(ModeKey))
             {
                 case LoginActivityMode:
-                    Title = "Logging In...";
+                    captionText.Text = "Logging In...";
                     result = await LoginAsync(this, new EventArgs());
                     break;
                 case RenewalActivityMode:
-                    Title = "Retrieving User Information...";
+                    captionText.Text = "Retrieving User Information...";
                     String renewalToken = Intent.GetStringExtra(RenewalToken);
                     result = await RenewAsync(renewalToken);
                     break;
                 case LogOffActivityMode:
-                    Title = "Logging Off...";
+                    captionText.Text = "Logging Off...";
                     result = await LogOffAsync();
                     break;
                 default:
