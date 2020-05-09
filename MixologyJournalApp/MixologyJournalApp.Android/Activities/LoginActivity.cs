@@ -42,8 +42,8 @@ namespace MixologyJournalApp.Droid
             {
                 Domain = AppConfigManager.Settings["Auth0Domain"],
                 ClientId = AppConfigManager.Settings["ClientID"],
-                Scope = "openid profile email offline_access"
-
+                Scope = "openid profile email offline_access",
+                LoadProfile = true
             });
 
             Intent result = null;
@@ -51,7 +51,7 @@ namespace MixologyJournalApp.Droid
             {
                 case LoginActivityMode:
                     captionText.Text = "Logging In...";
-                    result = await LoginAsync(this, new EventArgs());
+                    result = await LoginAsync();
                     break;
                 case RenewalActivityMode:
                     captionText.Text = "Retrieving User Information...";
@@ -76,7 +76,7 @@ namespace MixologyJournalApp.Droid
             ActivityMediator.Instance.Send(intent.DataString);
         }
 
-        private async Task<Intent> LoginAsync(object sender, EventArgs eventArgs)
+        private async Task<Intent> LoginAsync()
         {
             LoginResult loginResult = await _auth0Client.LoginAsync();
 
@@ -130,7 +130,7 @@ namespace MixologyJournalApp.Droid
             Intent result = new Intent();
             result.PutExtra("name", user.Claims.First(c => c.Type == "name")?.Value);
             result.PutExtra("iconPath", user.Claims.First(c => c.Type == "picture")?.Value);
-            result.PutExtra("authToken", refreshResult.AccessToken);
+            result.PutExtra("authToken", refreshResult.IdentityToken);
             result.PutExtra("refreshToken", refreshResult.RefreshToken);
             return result;
         }

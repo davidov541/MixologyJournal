@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Droid.Platform
@@ -76,13 +77,12 @@ namespace MixologyJournalApp.Droid.Platform
         {
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
-            String token = AppConfigManager.Settings["AppSecret"];
             HttpRequestMessage request = new HttpRequestMessage()
             {
                 RequestUri = new Uri(fullPath),
                 Method = HttpMethod.Get,
             };
-            request.Headers.Add("app-secret", token);
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (!response.IsSuccessStatusCode)
@@ -92,21 +92,21 @@ namespace MixologyJournalApp.Droid.Platform
                 throw new HttpRequestException(message);
             }
 
-            return await response.Content.ReadAsStringAsync();
+            String result = await response.Content.ReadAsStringAsync();
+            return result;
         }
 
         public async Task<bool> PostResult(string path, object body)
         {
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
-            String token = AppConfigManager.Settings["AppSecret"];
             HttpRequestMessage request = new HttpRequestMessage()
             {
                 RequestUri = new Uri(fullPath),
                 Method = HttpMethod.Post,
                 Content = new StringContent(JsonConvert.SerializeObject(body))
             };
-            request.Headers.Add("app-secret", token);
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (!response.IsSuccessStatusCode)
