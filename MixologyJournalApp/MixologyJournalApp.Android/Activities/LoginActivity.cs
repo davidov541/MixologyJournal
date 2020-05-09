@@ -103,7 +103,7 @@ namespace MixologyJournalApp.Droid
             Intent result = new Intent();
             result.PutExtra("name", loginResult.User.FindFirst(c => c.Type == "name")?.Value);
             result.PutExtra("iconPath", loginResult.User.FindFirst(c => c.Type == "picture")?.Value);
-            result.PutExtra("authToken", loginResult.AccessToken);
+            result.PutExtra("authToken", loginResult.IdentityToken);
             result.PutExtra("refreshToken", loginResult.RefreshToken);
             return result;
         }
