@@ -46,13 +46,16 @@ namespace MixologyJournalApp.Droid
             switch (Intent.GetStringExtra(ModeKey))
             {
                 case LoginActivityMode:
+                    Title = "Logging In...";
                     result = await LoginAsync(this, new EventArgs());
                     break;
                 case RenewalActivityMode:
+                    Title = "Retrieving User Information...";
                     String renewalToken = Intent.GetStringExtra(RenewalToken);
                     result = await RenewAsync(renewalToken);
                     break;
                 case LogOffActivityMode:
+                    Title = "Logging Off...";
                     result = await LogOffAsync();
                     break;
                 default:
