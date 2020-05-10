@@ -140,5 +140,10 @@ namespace MixologyJournalApp.ViewModel
                 Drinks.Insert(insertIndex, drink);
             }
         }
+
+        public void DeleteDrink(DrinkViewModel drink)
+        {
+            Drinks.Remove(drink);
+        }
     }
 }

@@ -7,13 +7,23 @@
              x:Class="MixologyJournalApp.View.DrinkPage"
              Title="{Binding Path=Name}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Path=FormattedIngredients}"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Path=FormattedSteps}"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+            <StackLayout>
+                <Label Text="{Binding Path=FormattedIngredients}"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding Path=FormattedSteps}"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <Button x:Name="deleteDrink" 
+                    Image="@drawable/ic_trash_48dp"
+                    Command="{Binding DeleteDrinkCommand}"
+                    IsVisible="{Binding Path=IsAdminUser}"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
+                    Style="{StaticResource FloatingButton}" />
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

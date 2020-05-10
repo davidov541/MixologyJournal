@@ -81,6 +81,24 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
+        public ICommand DeleteDrinkCommand
+        {
+            get;
+            private set;
+        }
+
+        public Boolean IsAdminUser
+        {
+            get
+            {
+#if DEBUG
+                return true;
+#else
+                return false;
+#endif
+            }
+        }
+
         public DrinkViewModel(RecipeViewModel basis, App app) : this(basis.CreateDerivedDrink(), app)
         {
         }
@@ -163,6 +181,15 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return Steps.Count > 1;
                 });
+            DeleteDrinkCommand = new Command(
+                execute: async () =>
+                {
+                    await Delete();
+                },
+                canExecute: () =>
+                {
+                    return IsAdminUser;
+                });
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -223,6 +250,12 @@ namespace MixologyJournalApp.ViewModel
             _model.Ingredients.RemoveAt(index);
 
             OnPropertyChanged(nameof(IngredientUsages));
+        }
+
+        public async Task Delete()
+        {
+            await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", _model);
+            await _app.DrinkDeleted(this);
         }
     }
 }
