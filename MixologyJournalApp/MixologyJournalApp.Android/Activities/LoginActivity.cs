@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using IdentityModel.OidcClient.Browser;
 using Android.Widget;
+using MixologyJournalApp.Droid.Platform;
 
 namespace MixologyJournalApp.Droid
 {
@@ -42,7 +43,7 @@ namespace MixologyJournalApp.Droid
             {
                 Domain = AppConfigManager.Settings["Auth0Domain"],
                 ClientId = AppConfigManager.Settings["ClientID"],
-                Scope = "openid profile email offline_access",
+                Scope = "openid profile email offline_access permissions read:recipes delete:recipes modify:recipes",
                 LoadProfile = true
             });
 

@@ -8,7 +8,7 @@ namespace MixologyJournalApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecipePage : ContentPage
     {
-        private RecipeViewModel _viewModel;
+        private readonly RecipeViewModel _viewModel;
 
         internal RecipePage(RecipeViewModel viewModel)
         {

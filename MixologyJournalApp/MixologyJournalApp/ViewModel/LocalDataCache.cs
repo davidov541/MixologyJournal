@@ -122,6 +122,11 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public void DeleteRecipe(RecipeViewModel recipe)
+        {
+            Recipes.Remove(recipe);
+        }
+
         public void CreateDrink(DrinkViewModel drink)
         {
             DrinkViewModel insertBeforeRecipe = Drinks.FirstOrDefault(d => drink.Name.CompareTo(d.Name) < 0);

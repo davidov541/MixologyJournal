@@ -97,12 +97,22 @@ namespace MixologyJournalApp.Droid.Platform
 
         public async Task<bool> PostResult(string path, object body)
         {
+            return await RunQuery(path, body, HttpMethod.Post);
+        }
+
+        public async Task<bool> DeleteResult(string path, object body)
+        {
+            return await RunQuery(path, body, HttpMethod.Delete);
+        }
+
+        private async Task<bool> RunQuery(string path, object body, HttpMethod method)
+        {
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
             HttpRequestMessage request = new HttpRequestMessage()
             {
                 RequestUri = new Uri(fullPath),
-                Method = HttpMethod.Post,
+                Method = method,
                 Content = new StringContent(JsonConvert.SerializeObject(body))
             };
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);

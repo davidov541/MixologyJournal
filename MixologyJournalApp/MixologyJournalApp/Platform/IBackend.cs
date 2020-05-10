@@ -26,6 +26,8 @@ namespace MixologyJournalApp.Platform
 
         Task<bool> PostResult(String path, Object body);
 
+        Task<bool> DeleteResult(String path, Object body);
+
         Task<String> GetResult(String path);
     }
 }

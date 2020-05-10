@@ -59,5 +59,11 @@ namespace MixologyJournalApp
             await SavePropertiesAsync();
             MainPage = new RootPage(this);
         }
+
+        internal async Task RecipeDeleted(RecipeViewModel recipe)
+        {
+            Cache.DeleteRecipe(recipe);
+            await (MainPage as RootPage).Detail.Navigation.PopToRootAsync();
+        }
     }
 }
