@@ -29,10 +29,6 @@ namespace MixologyJournalApp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            // Set background to black so that we don't have a flash of white between loading user information and going to the load screen.
-            ContentFrameLayout v = FindViewById<ContentFrameLayout>(Android.Resource.Id.Content);
-            v.SetBackgroundColor(Color.Black);
-
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
