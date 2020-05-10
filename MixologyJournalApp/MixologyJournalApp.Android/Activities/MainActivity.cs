@@ -1,8 +1,11 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
+using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.Widget;
 using MixologyJournalApp.Droid.Platform;
 using MixologyJournalApp.Platform;
 using System;
@@ -25,6 +28,10 @@ namespace MixologyJournalApp.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            // Set background to black so that we don't have a flash of white between loading user information and going to the load screen.
+            ContentFrameLayout v = FindViewById<ContentFrameLayout>(Android.Resource.Id.Content);
+            v.SetBackgroundColor(Color.Black);
 
             base.OnCreate(savedInstanceState);
 
