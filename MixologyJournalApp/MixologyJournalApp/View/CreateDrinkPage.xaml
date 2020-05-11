@@ -93,6 +93,27 @@
                     Text="Add Step" 
                     MinimumHeightRequest="30" 
                     Command="{Binding AddStepCommand}"/>
+            <Picker x:Name="RatingPicker" SelectedItem="{Binding Rating}">
+                <Picker.Items>
+                    <x:String>0.0 Stars</x:String>
+                    <x:String>0.5 Stars</x:String>
+                    <x:String>1.0 Stars</x:String>
+                    <x:String>1.5 Stars</x:String>
+                    <x:String>2.0 Stars</x:String>
+                    <x:String>2.5 Stars</x:String>
+                    <x:String>3.0 Stars</x:String>
+                    <x:String>3.5 Stars</x:String>
+                    <x:String>4.0 Stars</x:String>
+                    <x:String>4.5 Stars</x:String>
+                    <x:String>5.0 Stars</x:String>
+                </Picker.Items>
+            </Picker>
+            <Editor x:Name="reviewText" 
+                    IsTextPredictionEnabled="True" 
+                    Keyboard="Text" 
+                    Text="{Binding Review}"
+                    IsSpellCheckEnabled="True"
+                    AutoSize="TextChanges"/>
             <Button x:Name="createButton" 
                 Text="Create" 
                 MinimumHeightRequest="30" 

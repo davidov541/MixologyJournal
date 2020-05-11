@@ -49,6 +49,20 @@ namespace MixologyJournalApp.Model
             private set;
         }
 
+        [JsonProperty("rating")]
+        public float Rating
+        {
+            get;
+            set;
+        }
+
+        [JsonProperty("review")]
+        public String Review
+        {
+            get;
+            set;
+        }
+
         public static Drink CreateEmptyDrink(Recipe basis)
         {
             Drink drink = new Drink
@@ -67,6 +81,8 @@ namespace MixologyJournalApp.Model
         {
             Steps = new List<String>();
             Ingredients = new List<IngredientUsage>();
+            Rating = 0.0f;
+            Review = "";
         }
     }
 }

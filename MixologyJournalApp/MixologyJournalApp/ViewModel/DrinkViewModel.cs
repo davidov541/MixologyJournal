@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class DrinkViewModel: INotifyPropertyChanged
+    internal class DrinkViewModel : INotifyPropertyChanged
     {
         private readonly Drink _model;
         private readonly App _app;
@@ -54,6 +54,33 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return IngredientUsages.Select(i => i.ToString()).Aggregate((i1, i2) => i1 + "\n" + i2);
+            }
+        }
+
+        public String Rating
+        {
+            get
+            {
+                return String.Format("{0:0.0} Stars", _model.Rating);
+            }
+            set
+            {
+                float ratingVal = float.Parse(value.Split(' ')[0]);
+                _model.Rating = ratingVal;
+                OnPropertyChanged(nameof(Rating));
+            }
+        }
+
+        public String Review
+        {
+            get
+            {
+                return _model.Review.Replace("\\n", "\n");
+            }
+            set
+            {
+                _model.Review = value.Replace("\n", "\\n");
+                OnPropertyChanged(nameof(Review));
             }
         }
 

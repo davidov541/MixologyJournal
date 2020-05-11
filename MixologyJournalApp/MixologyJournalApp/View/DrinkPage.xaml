@@ -16,6 +16,12 @@
                 <Label Text="{Binding Path=FormattedSteps}"
                        VerticalOptions="CenterAndExpand"
                        HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding Path=Rating}"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding Path=Review}"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <Button x:Name="deleteDrink" 
                     Image="@drawable/ic_trash_48dp"
