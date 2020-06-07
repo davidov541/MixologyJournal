@@ -31,6 +31,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String FormattedAmount
+        {
+            get
+            {
+                return Amount + " " + _unit.ToString();
+            }
+        }
+
         public String Amount
         {
             get

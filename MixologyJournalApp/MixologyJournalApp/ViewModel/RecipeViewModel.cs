@@ -49,14 +49,6 @@ namespace MixologyJournalApp.ViewModel
 
         public ObservableCollection<IngredientUsageViewModel> IngredientUsages { get; } = new ObservableCollection<IngredientUsageViewModel>();
 
-        public String FormattedIngredients
-        {
-            get
-            {
-                return IngredientUsages.Select(i => i.ToString()).Aggregate((i1, i2) => i1 + "\n" + i2);
-            }
-        }
-
         public ICommand AddIngredientCommand
         {
             get;
@@ -136,8 +128,6 @@ namespace MixologyJournalApp.ViewModel
                     (DeleteStepCommand as Command).ChangeCanExecute();
                     break;
                 case nameof(IngredientUsages):
-                    OnPropertyChanged(nameof(FormattedIngredients));
-
                     (DeleteIngredientCommand as Command).ChangeCanExecute();
                     break;
             }
