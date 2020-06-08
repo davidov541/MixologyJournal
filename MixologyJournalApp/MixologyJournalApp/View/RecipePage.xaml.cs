@@ -15,6 +15,7 @@ namespace MixologyJournalApp.View
             _viewModel = viewModel;
             BindingContext = _viewModel;
             InitializeComponent();
+            ingredientUsageList.HeightRequest = ingredientUsageList.RowHeight * _viewModel.IngredientUsages.Count + 5;
         }
     }
 }
