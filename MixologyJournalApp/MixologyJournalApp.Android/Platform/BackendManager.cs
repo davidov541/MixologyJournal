@@ -55,9 +55,14 @@ namespace MixologyJournalApp.Droid.Platform
 
         private void LoginMethod_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(ILoginMethod.IsLoggedIn))
+            switch (e.PropertyName)
             {
-                OnPropertyChanged(nameof(IsAuthenticated));
+                case nameof(ILoginMethod.IsLoggedIn):
+                    OnPropertyChanged(nameof(IsAuthenticated));
+                    OnPropertyChanged(nameof(User));
+                    break;
+                default:
+                    break;
             }
         }
 

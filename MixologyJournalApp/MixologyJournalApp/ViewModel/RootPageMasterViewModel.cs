@@ -9,33 +9,23 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class RootPageMasterViewModel : INotifyPropertyChanged
     {
+        private IBackend _backend;
+
         public ObservableCollection<IMasterMenuItem> MenuItems { get; set; }
 
-        private String _userName;
         public String UserName
         {
             get
             {
-                return _userName;
-            }
-            private set
-            {
-                _userName = value;
-                OnPropertyChanged(nameof(UserName));
+                return _backend.User?.Name;
             }
         }
 
-        private Uri _userIcon;
         public Uri UserIcon
         {
             get
             {
-                return _userIcon;
-            }
-            private set
-            {
-                _userIcon = value;
-                OnPropertyChanged(nameof(UserIcon));
+                return _backend.User?.IconPath;
             }
         }
 
@@ -47,11 +37,20 @@ namespace MixologyJournalApp.ViewModel
                     new MasterMenuItem<DrinkListPage>("Drinks"),
                     new MasterMenuItem<SettingsPage>("Settings")
             });
-            User currentUser = app.PlatformInfo.Backend.User;
-            if (currentUser != null)
+            _backend = app.PlatformInfo.Backend;
+            _backend.PropertyChanged += Backend_PropertyChanged;
+        }
+
+        private void Backend_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
             {
-                UserName = currentUser.Name;
-                UserIcon = currentUser.IconPath;
+                case nameof(IBackend.User):
+                    OnPropertyChanged(nameof(UserName));
+                    OnPropertyChanged(nameof(UserIcon));
+                    break;
+                default:
+                    break;
             }
         }
 
