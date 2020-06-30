@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MixologyJournalApp.View"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.SettingsPage">
     <ContentPage.Content>
@@ -16,7 +17,8 @@
                          BindableLayout.ItemsSource="{Binding LoginMethods}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding Name, StringFormat='Login with {0}'}"
+                        <RelativeLayout>
+                            <Button Text="{Binding Name, StringFormat='Login with {0}'}"
                                 ImageSource="{Binding Icon}"
                                 HeightRequest="45"
                                 TextColor="{Binding ForegroundColor}"
@@ -24,11 +26,22 @@
                                 Command="{Binding LoginCommand}"
                                 WidthRequest="200"
                                 HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="FillAndExpand" />
+                                VerticalOptions="FillAndExpand"
+                                IsVisible="{Binding IsLoggedIn, Converter={local:InvertBooleanConverter}}"/>
+                            <Button Text="{Binding Name, StringFormat='Log out of {0}'}"
+                                ImageSource="{Binding Icon}"
+                                HeightRequest="45"
+                                TextColor="{Binding ForegroundColor}"
+                                BackgroundColor="{Binding BackgroundColor}"
+                                Command="{Binding LogoffCommand}"
+                                WidthRequest="200"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                IsVisible="{Binding IsLoggedIn}"/>
+                        </RelativeLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            <Button x:Name="LogOutButton" Text="Log Out" Clicked="LogOutButton_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

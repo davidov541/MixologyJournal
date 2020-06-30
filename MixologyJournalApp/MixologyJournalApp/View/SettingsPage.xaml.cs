@@ -14,10 +14,5 @@ namespace MixologyJournalApp.View
             BindingContext = _viewModel;
             InitializeComponent();
         }
-
-        private void LogOutButton_Clicked(object sender, System.EventArgs e)
-        {
-
-        }
     }
 }

@@ -120,6 +120,7 @@ namespace MixologyJournalApp.Droid.Platform
         private void Logoff()
         {
             SecureStorage.Remove(RenewalTokenKey);
+            IsLoggedIn = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

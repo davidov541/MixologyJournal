@@ -81,7 +81,10 @@ namespace MixologyJournalApp.Droid.Platform
                 RequestUri = new Uri(fullPath),
                 Method = HttpMethod.Get,
             };
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
+            if (IsAuthenticated)
+            {
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
+            }
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (!response.IsSuccessStatusCode)
