@@ -1,4 +1,5 @@
-﻿using MixologyJournalApp.Platform;
+﻿using MixologyJournalApp.Model;
+using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace MixologyJournalApp.Droid.Platform
 {
     internal class BackendManager: IBackend
     {
-        private const String _basePath = "https://mixologyjournalfunction.azurewebsites.net/api";
+        private readonly String _basePath = AppConfigManager.Settings["BackendAddress"];
 
         public Boolean IsAuthenticated
         {
