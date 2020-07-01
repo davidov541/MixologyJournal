@@ -12,7 +12,11 @@ namespace MixologyJournalApp.Model
         private readonly JObject _secrets;
 
         private const string Namespace = "MixologyJournalApp";
-        private const string FileName = "appsettings.json";
+#if DEBUG
+        private const string FileName = "appsettings.dev.json";
+#else
+        private const string FileName = "appsettings.prod.json";
+#endif
 
         private AppConfigManager()
         {

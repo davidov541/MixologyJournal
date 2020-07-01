@@ -8,6 +8,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,11 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="appsettings.json" />
+    <None Remove="appsettings.dev.json" />
+    <None Remove="appsettings.prod.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="appsettings.json" />
+    <EmbeddedResource Include="appsettings.dev.json" />
+    <EmbeddedResource Include="appsettings.prod.json" />
   </ItemGroup>
 
   <ItemGroup>

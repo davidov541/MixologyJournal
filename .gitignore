@@ -329,3 +329,7 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /MixologyJournalApp/MixologyJournalApp/appsettings.json
+/MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
+/MixologyJournalApp/MixologyJournalApp/appsettings.dev.json
+/MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
+/MixologyJournalApp/MixologyJournalApp/appsettings.dev.json
