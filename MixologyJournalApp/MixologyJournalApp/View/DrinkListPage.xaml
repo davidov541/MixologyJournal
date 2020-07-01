@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MixologyJournalApp.View.DrinkListPage"
+             Title="Drink List">
+    <AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+        <StackLayout>
+            <ListView x:Name="listView" 
+                  ItemsSource="{Binding Path=Drinks}" 
+                  ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Path=Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="10, 0, 0, 0" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <Button x:Name="addDrinkButton" 
+                Image="@drawable/ic_add_white_48dp"
+                Clicked="AddDrinkButton_Clicked" 
+                IsVisible="True"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
+                Style="{StaticResource FloatingButton}" />
+    </AbsoluteLayout>
+</ContentPage>

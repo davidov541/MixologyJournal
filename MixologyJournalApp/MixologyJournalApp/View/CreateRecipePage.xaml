@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MixologyJournalApp.View.CreateRecipePage"
+             x:Name="rootPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     Margin="10,5">
+            <Label Text="Title" />
+            <Entry x:Name="NameEntry"
+                   Text="{Binding Name}"
+                   Keyboard="Default" />
+            <Label Text="Ingredients" />
+            <ListView x:Name="IngredientUsagesList" 
+                      ItemsSource="{Binding IngredientUsages}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="1.5*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Entry x:Name="amountEntry"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       Keyboard="Numeric"
+                                       Text="{Binding Amount}"/>
+                                <Picker x:Name="unitPicker" 
+                                        Grid.Row="0" 
+                                        Grid.Column="1" 
+                                        ItemsSource="{Binding AvailableUnits}" 
+                                        Title="Unit" 
+                                        SelectedItem="{Binding Unit}" />
+                                <Picker x:Name="ingredientPicker" 
+                                        Grid.Row="0" 
+                                        Grid.Column="2" 
+                                        ItemsSource="{Binding AvailableIngredients}" 
+                                        Title="Ingredient" 
+                                        SelectedItem="{Binding Ingredient}" />
+                                <Button Grid.Row="0" 
+                                        Grid.Column="3" 
+                                        x:Name="deleteIngredientButton" 
+                                        Text="Delete" 
+                                        Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
+                                        CommandParameter="{Binding}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="addIngredientButton" 
+                    Text="Add Ingredient" 
+                    MinimumHeightRequest="30" 
+                    Command="{Binding AddIngredientCommand}"/>
+            <Label Text="Steps" />
+            <ListView x:Name="StepsList"
+                      ItemsSource="{Binding Path=Steps}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Entry Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       Text="{Binding Path=Text, Mode=TwoWay}" />
+                                <Button Grid.Row="0" 
+                                        Grid.Column="1" 
+                                        x:Name="deleteStepButton" 
+                                        Text="Delete" 
+                                        Command="{Binding Path=BindingContext.DeleteStepCommand, Source={x:Reference rootPage}}"
+                                        CommandParameter="{Binding}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="addStepButton" 
+                    Text="Add Step" 
+                    MinimumHeightRequest="30" 
+                    Command="{Binding AddStepCommand}"/>
+            <Button x:Name="createButton" 
+                Text="Create" 
+                MinimumHeightRequest="30" 
+                Clicked="CreateButton_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

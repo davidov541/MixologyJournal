@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MixologyJournalApp.View"
+             mc:Ignorable="d"
+             x:Class="MixologyJournalApp.View.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Mixology Journal! Please log in with your authentication mechanism of choice."
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            <StackLayout Padding="20"
+                         VerticalOptions="CenterAndExpand" 
+                         x:Name="mainLayout"
+                         BindableLayout.ItemsSource="{Binding LoginMethods}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <RelativeLayout>
+                            <Button Text="{Binding Name, StringFormat='Login with {0}'}"
+                                ImageSource="{Binding Icon}"
+                                HeightRequest="45"
+                                TextColor="{Binding ForegroundColor}"
+                                BackgroundColor="{Binding BackgroundColor}"
+                                Command="{Binding LoginCommand}"
+                                WidthRequest="200"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                IsVisible="{Binding IsLoggedIn, Converter={local:InvertBooleanConverter}}"/>
+                            <Button Text="{Binding Name, StringFormat='Log out of {0}'}"
+                                ImageSource="{Binding Icon}"
+                                HeightRequest="45"
+                                TextColor="{Binding ForegroundColor}"
+                                BackgroundColor="{Binding BackgroundColor}"
+                                Command="{Binding LogoffCommand}"
+                                WidthRequest="200"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                IsVisible="{Binding IsLoggedIn}"/>
+                        </RelativeLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
