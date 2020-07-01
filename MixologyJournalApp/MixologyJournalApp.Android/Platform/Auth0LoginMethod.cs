@@ -113,8 +113,11 @@ namespace MixologyJournalApp.Droid.Platform
         private async void Login()
         {
             CurrentUser = await _mainActivity.RunLoginActivity();
-            IsLoggedIn = true;
-            await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
+            if (CurrentUser != null)
+            {
+                IsLoggedIn = true;
+                await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
+            }
         }
 
         private void Logoff()

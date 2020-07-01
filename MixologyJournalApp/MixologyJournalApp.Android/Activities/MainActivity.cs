@@ -1,11 +1,8 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Graphics;
-using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V7.Widget;
 using MixologyJournalApp.Droid.Platform;
 using MixologyJournalApp.Platform;
 using System;
@@ -92,12 +89,19 @@ namespace MixologyJournalApp.Droid
 
             if (requestCode == 100)
             {
-                String name = data.GetStringExtra("name");
-                String iconPath = data.GetStringExtra("iconPath");
-                String authToken = data.GetStringExtra("authToken");
-                String refreshToken = data.GetStringExtra("refreshToken");
-                User result = new User(name, new Uri(iconPath), authToken, refreshToken);
-                LoginCompletionState.TrySetResult(result);
+                if (data != null)
+                {
+                    String name = data.GetStringExtra("name");
+                    String iconPath = data.GetStringExtra("iconPath");
+                    String authToken = data.GetStringExtra("authToken");
+                    String refreshToken = data.GetStringExtra("refreshToken");
+                    User result = new User(name, new Uri(iconPath), authToken, refreshToken);
+                    LoginCompletionState.TrySetResult(result);
+                }
+                else
+                {
+                    LoginCompletionState.TrySetResult(null);
+                }
             }
         }
     }
