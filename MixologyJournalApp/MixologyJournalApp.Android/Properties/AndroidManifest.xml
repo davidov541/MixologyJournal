@@ -1,14 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.0" package="net.davidmcginnis.mixologyjournal.android" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="4" android:versionName="1.0" package="net.davidmcginnis.mixologyjournal.android" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="20" android:targetSdkVersion="28" />
 	<application android:label="Mixology Journal" android:icon="@drawable/Square310x310Logo">
 		<activity android:name="com.microsoft.windowsazure.mobileservices.authentication.RedirectUrlActivity" android:launchMode="singleTop" android:noHistory="true">
-			<intent-filter>
-				<action android:name="android.intent.action.VIEW" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<category android:name="android.intent.category.BROWSABLE" />
-				<data android:scheme="mixologyjournal" android:host="easyauth.callback" />
-			</intent-filter>
 		</activity>
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

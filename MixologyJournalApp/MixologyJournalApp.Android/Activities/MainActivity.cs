@@ -11,12 +11,6 @@ using System.Threading.Tasks;
 namespace MixologyJournalApp.Droid
 {
     [Activity(Label = "MixologyJournalApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTask)]
-    [IntentFilter(
-        new[] { Android.Content.Intent.ActionView },
-        Categories = new[] { Android.Content.Intent.CategoryDefault, Android.Content.Intent.CategoryBrowsable },
-        DataScheme = "com.auth0.quickstart",
-        DataHost = "mixologyjournal.auth0.com",
-        DataPathPrefix = "/android/com.auth0.quickstart/callback")]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private App _app;

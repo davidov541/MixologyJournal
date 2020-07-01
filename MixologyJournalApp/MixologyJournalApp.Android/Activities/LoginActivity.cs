@@ -19,9 +19,9 @@ namespace MixologyJournalApp.Droid
     [IntentFilter(
         new[] { Intent.ActionView },
         Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
-        DataScheme = "mixologyjournalapp.droid",
+        DataScheme = "net.davidmcginnis.mixologyjournal.android",
         DataHost = "mixologyjournal.auth0.com",
-        DataPathPrefix = "/android/mixologyjournalapp.droid/callback")]
+        DataPathPrefix = "/android/net.davidmcginnis.mixologyjournal.android/callback")]
     public class LoginActivity : Auth0ClientActivity
     {
         private Auth0Client _auth0Client;
