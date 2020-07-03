@@ -9,6 +9,9 @@
         <ResourceDictionary>
             <Color x:Key="LightThemeColor">#2196F3</Color>
             <Color x:Key="DarkButtonBackground">#303F9F</Color>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="DarkSlateGray" />
+            </Style>
             <Style x:Key="FloatingButton" TargetType="Button">
                 <Setter Property="CornerRadius" Value="100"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackground}"/>

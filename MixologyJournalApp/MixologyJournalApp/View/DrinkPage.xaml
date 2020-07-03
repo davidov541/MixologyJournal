@@ -12,20 +12,16 @@
             <StackLayout>
                 <Label Text="{Binding Path=FormattedIngredients}"
                        VerticalOptions="CenterAndExpand" 
-                       HorizontalOptions="CenterAndExpand"
-                       TextColor="DarkSlateGray" />
+                       HorizontalOptions="CenterAndExpand" />
                 <Label Text="{Binding Path=FormattedSteps}"
                        VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand"
-                       TextColor="DarkSlateGray" />
+                       HorizontalOptions="CenterAndExpand" />
                 <Label Text="{Binding Path=Rating}"
                        VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand"
-                       TextColor="DarkSlateGray" />
+                       HorizontalOptions="CenterAndExpand" />
                 <Label Text="{Binding Path=Review}"
                        VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand"
-                       TextColor="DarkSlateGray" />
+                       HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <Button x:Name="deleteDrink" 
                     Image="@drawable/ic_trash_48dp"

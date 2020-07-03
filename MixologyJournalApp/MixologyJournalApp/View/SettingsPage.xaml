@@ -10,8 +10,7 @@
         <StackLayout>
             <Label Text="Welcome to Mixology Journal! Please log in with your authentication mechanism of choice."
                    VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"
-                   TextColor="DarkSlateGray" />
+                   HorizontalOptions="CenterAndExpand" />
             <StackLayout Padding="20"
                          VerticalOptions="CenterAndExpand" 
                          x:Name="mainLayout"

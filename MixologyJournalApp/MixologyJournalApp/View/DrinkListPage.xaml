@@ -15,7 +15,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Path=Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="10, 0, 0, 0" TextColor="DarkSlateGray" />
+                            <Label Text="{Binding Path=Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="10, 0, 0, 0" />
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
