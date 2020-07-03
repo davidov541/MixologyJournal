@@ -10,12 +10,12 @@
     <ContentPage.Resources>
         <DataTemplate x:Key="evenTemplate">
             <ViewCell>
-                <Label BackgroundColor="LightGray" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" />
+                <Label BackgroundColor="LightGray" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
             </ViewCell>
         </DataTemplate>
         <DataTemplate x:Key="unevenTemplate">
             <ViewCell>
-                <Label BackgroundColor="WhiteSmoke" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" />
+                <Label BackgroundColor="WhiteSmoke" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
             </ViewCell>
         </DataTemplate>
         <local:AlternateColorDataTemplateSelector x:Key="alternateColorDataTemplateSelector"
@@ -36,7 +36,7 @@
                               RowHeight="40"
                               Margin="0,0,0,10" 
                               VerticalScrollBarVisibility="Never" />
-                    <Label Text="{Binding Path=FormattedSteps}" />
+                    <Label Text="{Binding Path=FormattedSteps}" TextColor="DarkSlateGray" />
                 </StackLayout>
             </ScrollView>
             <Button x:Name="deleteRecipe" 
