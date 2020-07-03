@@ -124,7 +124,10 @@ namespace MixologyJournalApp.Droid.Platform
                 Method = method,
                 Content = new StringContent(JsonConvert.SerializeObject(body))
             };
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
+            if (IsAuthenticated)
+            {
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
+            }
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (!response.IsSuccessStatusCode)

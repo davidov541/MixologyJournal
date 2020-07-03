@@ -281,8 +281,8 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task Delete()
         {
-            await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", _model);
-            await _app.DrinkDeleted(this);
+            Boolean success = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", _model);
+            await _app.DrinkDeleted(this, success);
         }
     }
 }
