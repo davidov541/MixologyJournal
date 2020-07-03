@@ -20,7 +20,7 @@
                         <RelativeLayout>
                             <Button Text="{Binding Name, StringFormat='Login with {0}'}"
                                 ImageSource="{Binding Icon}"
-                                HeightRequest="45"
+                                HeightRequest="48"
                                 TextColor="{Binding ForegroundColor}"
                                 BackgroundColor="{Binding BackgroundColor}"
                                 Command="{Binding LoginCommand}"
@@ -30,7 +30,7 @@
                                 IsVisible="{Binding IsLoggedIn, Converter={local:InvertBooleanConverter}}"/>
                             <Button Text="{Binding Name, StringFormat='Log out of {0}'}"
                                 ImageSource="{Binding Icon}"
-                                HeightRequest="45"
+                                HeightRequest="48"
                                 TextColor="{Binding ForegroundColor}"
                                 BackgroundColor="{Binding BackgroundColor}"
                                 Command="{Binding LogoffCommand}"
