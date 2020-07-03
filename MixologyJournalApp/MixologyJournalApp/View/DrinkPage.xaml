@@ -26,7 +26,6 @@
             <Button x:Name="deleteDrink" 
                     Image="@drawable/ic_trash_48dp"
                     Command="{Binding DeleteDrinkCommand}"
-                    IsVisible="{Binding Path=IsAdminUser}"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
                     Style="{StaticResource FloatingButton}" />
