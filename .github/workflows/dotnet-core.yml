@@ -19,6 +19,8 @@ jobs:
         dotnet-version: 3.1.101
     - name: Install dependencies
       run: dotnet restore
+    - name: Create mock configuration file
+      run: touch MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
