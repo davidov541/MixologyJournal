@@ -33,18 +33,26 @@ namespace MixologyJournalApp
             InitializeComponent();
         }
 
-        public async Task LoadAsync()
+        public async Task InitAsync()
         {
             bool setupMode = !(Properties.ContainsKey(_hasBeenSetupKey) && Properties[_hasBeenSetupKey].ToString() == true.ToString());
             await PlatformInfo.Backend.Init(setupMode);
             if (!setupMode)
             {
                 MainPage = new LoadingPage(Cache);
-                await StartApp();
             }
             else
             {
                 MainPage = new SetupPage(PlatformInfo);
+            }
+        }
+
+        public async Task LoadAsync()
+        {
+            bool setupMode = !(Properties.ContainsKey(_hasBeenSetupKey) && Properties[_hasBeenSetupKey].ToString() == true.ToString());
+            if (!setupMode)
+            {
+                await StartApp();
             }
         }
 

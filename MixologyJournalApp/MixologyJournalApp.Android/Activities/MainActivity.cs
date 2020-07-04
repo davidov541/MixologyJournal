@@ -26,6 +26,9 @@ namespace MixologyJournalApp.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             _app = App.Create(new AndroidPlatform(this));
+
+            await _app.InitAsync();
+
             LoadApplication(_app);
 
             await _app.LoadAsync();
@@ -90,11 +93,11 @@ namespace MixologyJournalApp.Droid
                     String authToken = data.GetStringExtra("authToken");
                     String refreshToken = data.GetStringExtra("refreshToken");
                     User result = new User(name, new Uri(iconPath), authToken, refreshToken);
-                    LoginCompletionState.TrySetResult(result);
+                    LoginCompletionState.SetResult(result);
                 }
                 else
                 {
-                    LoginCompletionState.TrySetResult(null);
+                    LoginCompletionState.SetResult(null);
                 }
             }
         }
