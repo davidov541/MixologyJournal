@@ -132,7 +132,7 @@ namespace MixologyJournalApp.Droid
             result.PutExtra("name", user.Claims.First(c => c.Type == "name")?.Value);
             result.PutExtra("iconPath", user.Claims.First(c => c.Type == "picture")?.Value);
             result.PutExtra("authToken", refreshResult.IdentityToken);
-            result.PutExtra("refreshToken", refreshResult.RefreshToken);
+            result.PutExtra("refreshToken", renewalToken);
             return result;
         }
 
