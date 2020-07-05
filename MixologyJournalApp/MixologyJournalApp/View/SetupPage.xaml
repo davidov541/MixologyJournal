@@ -6,29 +6,52 @@
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.SetupPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Mixology Journal! Please log in with your authentication mechanism of choice."
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
-            <StackLayout Padding="20"
-                         VerticalOptions="CenterAndExpand" 
-                         x:Name="mainLayout"
-                         BindableLayout.ItemsSource="{Binding LoginMethods}">
-                <BindableLayout.ItemTemplate>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <CarouselView x:Name="setupView"
+                          ItemsSource="{Binding PageItems}"
+                          Grid.Row="0"
+                          Grid.Column="0">
+                <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding Name, StringFormat='Login with {0}'}"
-                                ImageSource="{Binding Icon}"
-                                HeightRequest="48"
-                                TextColor="{Binding ForegroundColor}"
-                                BackgroundColor="{Binding BackgroundColor}"
-                                Command="{Binding LoginCommand}"
-                                WidthRequest="200"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="FillAndExpand" />
+                        <StackLayout>
+                            <Label Text="{Binding Caption}"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand" />
+                            <StackLayout Padding="20"
+                                         VerticalOptions="CenterAndExpand"
+                                         x:Name="mainLayout"
+                                         BindableLayout.ItemsSource="{Binding LoginMethods}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Text="{Binding Name, StringFormat='Login with {0}'}"
+                                                ImageSource="{Binding Icon}"
+                                                HeightRequest="48"
+                                                TextColor="{Binding ForegroundColor}"
+                                                BackgroundColor="{Binding BackgroundColor}"
+                                                Command="{Binding LoginCommand}"
+                                                WidthRequest="200"
+                                                HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="FillAndExpand" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                            <Button x:Name="SkipButton" Text="Skip" HeightRequest="48" Clicked="SkipButton_Clicked" />
+                        </StackLayout>
                     </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
-            <Button x:Name="SkipButton" Text="Skip" HeightRequest="48" Clicked="SkipButton_Clicked" />
-        </StackLayout>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="indicatorView"
+                           IndicatorColor="LightGray"
+                           SelectedIndicatorColor="DarkGray"
+                           IndicatorView.ItemsSourceBy="setupView"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

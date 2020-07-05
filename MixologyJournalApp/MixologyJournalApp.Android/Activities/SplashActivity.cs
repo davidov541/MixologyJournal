@@ -10,6 +10,9 @@ namespace MixologyJournalApp.Droid
         protected override void OnResume()
         {
             base.OnResume();
+
+            Xamarin.Forms.Forms.SetFlags("IndicatorView_Experimental");
+
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
     }
