@@ -4,7 +4,43 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="MixologyJournalApp.View.SetupPage">
+             x:Class="MixologyJournalApp.View.SetupPage"
+             xmlns:controls="clr-namespace:MixologyJournalApp.View">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="DescriptionTemplate">
+        </DataTemplate>
+
+        <DataTemplate x:Key="LoginTemplate">
+            <StackLayout>
+                <Label Text="{Binding Caption}"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="CenterAndExpand" />
+                <StackLayout Padding="20"
+                                        VerticalOptions="CenterAndExpand"
+                                        x:Name="mainLayout"
+                                        BindableLayout.ItemsSource="{Binding LoginMethods}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Button Text="{Binding Name, StringFormat='Login with {0}'}"
+                                            ImageSource="{Binding Icon}"
+                                            HeightRequest="48"
+                                            TextColor="{Binding ForegroundColor}"
+                                            BackgroundColor="{Binding BackgroundColor}"
+                                            Command="{Binding LoginCommand}"
+                                            WidthRequest="200"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="FillAndExpand" />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                <Button x:Name="SkipButton" Text="Skip" HeightRequest="48" Clicked="SkipButton_Clicked" />
+            </StackLayout>
+        </DataTemplate>
+
+        <controls:SetupItemDataTemplateSelector x:Key="setupItemSelector"
+                                                DescriptionTemplate="{StaticResource DescriptionTemplate}"
+                                                LoginTemplate="{StaticResource LoginTemplate}" />
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -14,36 +50,8 @@
             <CarouselView x:Name="setupView"
                           ItemsSource="{Binding PageItems}"
                           Grid.Row="0"
-                          Grid.Column="0">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Label Text="{Binding Caption}"
-                                   VerticalOptions="CenterAndExpand"
-                                   HorizontalOptions="CenterAndExpand" />
-                            <StackLayout Padding="20"
-                                         VerticalOptions="CenterAndExpand"
-                                         x:Name="mainLayout"
-                                         BindableLayout.ItemsSource="{Binding LoginMethods}">
-                                <BindableLayout.ItemTemplate>
-                                    <DataTemplate>
-                                        <Button Text="{Binding Name, StringFormat='Login with {0}'}"
-                                                ImageSource="{Binding Icon}"
-                                                HeightRequest="48"
-                                                TextColor="{Binding ForegroundColor}"
-                                                BackgroundColor="{Binding BackgroundColor}"
-                                                Command="{Binding LoginCommand}"
-                                                WidthRequest="200"
-                                                HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="FillAndExpand" />
-                                    </DataTemplate>
-                                </BindableLayout.ItemTemplate>
-                            </StackLayout>
-                            <Button x:Name="SkipButton" Text="Skip" HeightRequest="48" Clicked="SkipButton_Clicked" />
-                        </StackLayout>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
+                          Grid.Column="0"
+                          ItemTemplate="{StaticResource setupItemSelector}" />
             <IndicatorView x:Name="indicatorView"
                            IndicatorColor="LightGray"
                            SelectedIndicatorColor="DarkGray"
