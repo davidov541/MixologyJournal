@@ -28,6 +28,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public bool IsEmpty
+        {
+            get
+            {
+                return _cache.Drinks.Count == 0;
+            }
+        }
+
         public ObservableCollection<DrinkViewModel> Drinks
         {
             get
@@ -46,6 +54,7 @@ namespace MixologyJournalApp.ViewModel
         private void Drinks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             OnPropertyChanged(nameof(Drinks));
+            OnPropertyChanged(nameof(IsEmpty));
         }
 
         private void OnPropertyChanged(String propertyName)

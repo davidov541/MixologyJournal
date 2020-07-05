@@ -8,10 +8,10 @@
              Title="Drink List">
     <AbsoluteLayout VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand">
-        <StackLayout>
-            <ListView x:Name="listView" 
-                  ItemsSource="{Binding Path=Drinks}" 
-                  ItemTapped="ListView_ItemTapped">
+        <AbsoluteLayout>
+            <ListView x:Name="listView"
+                      ItemsSource="{Binding Path=Drinks}"
+                      ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -20,7 +20,13 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+            <Label IsVisible="{Binding IsEmpty}"
+                   Text="No Drinks Yet! Good Excuse to Make a Drink Tonight!" 
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        </AbsoluteLayout>
         <Button x:Name="addDrinkButton" 
                 Image="@drawable/ic_add_white_48dp"
                 Clicked="AddDrinkButton_Clicked" 
