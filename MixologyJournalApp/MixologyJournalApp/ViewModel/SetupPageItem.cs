@@ -30,11 +30,16 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
-
-        public SetupPageItem(String caption, ItemType type, IEnumerable<ILoginMethod> loginMethods)
+        public SetupPageItem(String caption)
         {
             Caption = caption;
-            Type = type;
+            Type = ItemType.Description;
+        }
+
+        public SetupPageItem(String caption, IEnumerable<ILoginMethod> loginMethods)
+        {
+            Caption = caption;
+            Type = ItemType.Login;
             LoginMethods = loginMethods;
         }
     }

@@ -8,28 +8,35 @@
              xmlns:controls="clr-namespace:MixologyJournalApp.View">
     <ContentPage.Resources>
         <DataTemplate x:Key="DescriptionTemplate">
+            <Label Text="{Binding Caption}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" 
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Margin="10"/>
         </DataTemplate>
 
         <DataTemplate x:Key="LoginTemplate">
             <StackLayout>
                 <Label Text="{Binding Caption}"
-                                VerticalOptions="CenterAndExpand"
-                                HorizontalOptions="CenterAndExpand" />
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="10"/>
                 <StackLayout Padding="20"
-                                        VerticalOptions="CenterAndExpand"
-                                        x:Name="mainLayout"
-                                        BindableLayout.ItemsSource="{Binding LoginMethods}">
+                             VerticalOptions="CenterAndExpand"
+                             x:Name="mainLayout"
+                             BindableLayout.ItemsSource="{Binding LoginMethods}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Button Text="{Binding Name, StringFormat='Login with {0}'}"
-                                            ImageSource="{Binding Icon}"
-                                            HeightRequest="48"
-                                            TextColor="{Binding ForegroundColor}"
-                                            BackgroundColor="{Binding BackgroundColor}"
-                                            Command="{Binding LoginCommand}"
-                                            WidthRequest="200"
-                                            HorizontalOptions="CenterAndExpand"
-                                            VerticalOptions="FillAndExpand" />
+                                    ImageSource="{Binding Icon}"
+                                    HeightRequest="48"
+                                    TextColor="{Binding ForegroundColor}"
+                                    BackgroundColor="{Binding BackgroundColor}"
+                                    Command="{Binding LoginCommand}"
+                                    WidthRequest="200"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="FillAndExpand" />
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
@@ -47,11 +54,34 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="30" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
             <CarouselView x:Name="setupView"
                           ItemsSource="{Binding PageItems}"
                           Grid.Row="0"
                           Grid.Column="0"
-                          ItemTemplate="{StaticResource setupItemSelector}" />
+                          Grid.ColumnSpan="3"
+                          ItemTemplate="{StaticResource setupItemSelector}"
+                          Position="{Binding Position, Mode=TwoWay}"/>
+            <Button BackgroundColor="Transparent"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="0" 
+                    Command="{Binding ChangePositionCommand}"
+                    CommandParameter="-1"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
+            <Button BackgroundColor="Transparent"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="2"
+                    Command="{Binding ChangePositionCommand}"
+                    CommandParameter="1"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
             <IndicatorView x:Name="indicatorView"
                            IndicatorColor="LightGray"
                            SelectedIndicatorColor="DarkGray"
@@ -59,7 +89,7 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            Grid.Row="1"
-                           Grid.Column="0"/>
+                           Grid.Column="1"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
