@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.Platform;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -29,7 +30,7 @@ namespace MixologyJournalApp.ViewModel
         {
             if (e.PropertyName == nameof(IBackend.IsAuthenticated))
             {
-                await (App.Current as App).StartApp();
+                await (Application.Current as App).StartApp();
             }
         }
     }
