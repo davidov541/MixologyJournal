@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.Model;
 using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,17 +105,17 @@ namespace MixologyJournalApp.Droid.Platform
             return result;
         }
 
-        public async Task<bool> PostResult(string path, object body)
+        public async Task<QueryResult> PostResult(string path, object body)
         {
             return await RunQuery(path, body, HttpMethod.Post);
         }
 
-        public async Task<bool> DeleteResult(string path, object body)
+        public async Task<QueryResult> DeleteResult(string path, object body)
         {
             return await RunQuery(path, body, HttpMethod.Delete);
         }
 
-        private async Task<bool> RunQuery(string path, object body, HttpMethod method)
+        private async Task<QueryResult> RunQuery(string path, object body, HttpMethod method)
         {
             HttpClient client = new HttpClient();
             String fullPath = _basePath + "/" + path;
@@ -137,7 +138,7 @@ namespace MixologyJournalApp.Droid.Platform
                 Console.WriteLine(await response.Content.ReadAsStringAsync());
             }
 
-            return response.IsSuccessStatusCode;
+            return await QueryResult.Create(response);
         }
     }
 }

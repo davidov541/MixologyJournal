@@ -24,9 +24,9 @@ namespace MixologyJournalApp.Platform
 
         Task Init(bool setupMode);
 
-        Task<bool> PostResult(String path, Object body);
+        Task<QueryResult> PostResult(String path, Object body);
 
-        Task<bool> DeleteResult(String path, Object body);
+        Task<QueryResult> DeleteResult(String path, Object body);
 
         Task<String> GetResult(String path);
     }

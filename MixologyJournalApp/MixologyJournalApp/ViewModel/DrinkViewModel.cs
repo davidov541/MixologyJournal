@@ -1,4 +1,5 @@
 ﻿using MixologyJournalApp.Model;
+using MixologyJournalApp.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -234,12 +235,12 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task<bool> SaveNew()
         {
-            bool result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", _model);
-            if (result)
+            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", _model);
+            if (result.Result)
             {
                 _app.Cache.CreateDrink(this);
             }
-            return result;
+            return result.Result;
         }
 
         public void AddStep()
@@ -281,8 +282,8 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task Delete()
         {
-            Boolean success = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", _model);
-            await _app.DrinkDeleted(this, success);
+            QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", _model);
+            await _app.DrinkDeleted(this, result.Result);
         }
     }
 }
