@@ -203,6 +203,7 @@ namespace MixologyJournalApp.ViewModel
             {
                 _app.Cache.CreateRecipe(this);
             }
+            _model.Id = result.Content["createdId"];
             return result.Result;
         }
 
