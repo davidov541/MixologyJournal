@@ -36,7 +36,7 @@ namespace MixologyJournalApp.Model
             set;
         }
 
-        [JsonProperty("sourceRecipeID")]
+        [JsonProperty("basisRecipe")]
         public String SourceRecipeID
         {
             get;
