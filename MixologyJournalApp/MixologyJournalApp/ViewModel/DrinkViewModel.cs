@@ -115,6 +115,20 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
+        private Boolean _processIsRunning = false;
+        public Boolean ProcessIsRunning
+        {
+            get
+            {
+                return _processIsRunning;
+            }
+            set
+            {
+                _processIsRunning = value;
+                OnPropertyChanged(nameof(ProcessIsRunning));
+            }
+        }
+
         public Boolean IsAdminUser
         {
             get
@@ -235,12 +249,14 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task<bool> SaveNew()
         {
+            ProcessIsRunning = true;
             QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", _model);
             if (result.Result)
             {
                 _app.Cache.CreateDrink(this);
             }
             _model.Id = result.Content["createdId"];
+            ProcessIsRunning = false;
             return result.Result;
         }
 
@@ -283,8 +299,10 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task Delete()
         {
+            ProcessIsRunning = true;
             QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", _model);
             await _app.DrinkDeleted(this, result.Result);
+            ProcessIsRunning = false;
         }
     }
 }
