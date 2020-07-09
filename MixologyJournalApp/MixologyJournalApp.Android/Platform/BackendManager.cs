@@ -92,6 +92,7 @@ namespace MixologyJournalApp.Droid.Platform
             {
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
             }
+            request.Headers.Add("apiversion", "1");
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (!response.IsSuccessStatusCode)
@@ -129,6 +130,7 @@ namespace MixologyJournalApp.Droid.Platform
             {
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
             }
+            request.Headers.Add("apiversion", "1");
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (!response.IsSuccessStatusCode)
