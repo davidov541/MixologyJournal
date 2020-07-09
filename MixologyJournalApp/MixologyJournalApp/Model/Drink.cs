@@ -85,7 +85,7 @@ namespace MixologyJournalApp.Model
             }
             set
             {
-                _isFavorite = true;
+                _isFavorite = value;
                 if (SourceRecipe != null)
                 {
                     SourceRecipe.FavoriteDrink = this;

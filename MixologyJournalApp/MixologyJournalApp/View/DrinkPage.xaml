@@ -28,6 +28,20 @@
                        VerticalOptions="CenterAndExpand"
                        HorizontalOptions="CenterAndExpand" />
             </StackLayout>
+            <Button x:Name="favoriteDrink" 
+                    Image="@drawable/emptyStar_48"
+                    Command="{Binding FavoriteDrinkCommand}"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 0.85, AutoSize, AutoSize" 
+                    Style="{StaticResource FloatingButton}"
+                    IsVisible="{Binding IsFavorite, Converter={StaticResource invertConverter}}"/>
+            <Button x:Name="unfavoriteDrink" 
+                    Image="@drawable/filledStar_48"
+                    Command="{Binding FavoriteDrinkCommand}"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 0.85, AutoSize, AutoSize" 
+                    Style="{StaticResource FloatingButton}"
+                    IsVisible="{Binding IsFavorite}"/>
             <Button x:Name="deleteDrink" 
                     Image="@drawable/ic_trash_48dp"
                     Command="{Binding DeleteDrinkCommand}"

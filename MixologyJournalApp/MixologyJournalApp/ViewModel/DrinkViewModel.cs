@@ -115,6 +115,12 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
+        public ICommand FavoriteDrinkCommand
+        {
+            get;
+            private set;
+        }
+
         private Boolean _processIsRunning = false;
         public Boolean ProcessIsRunning
         {
@@ -138,6 +144,19 @@ namespace MixologyJournalApp.ViewModel
 #else
                 return false;
 #endif
+            }
+        }
+
+        public Boolean IsFavorite
+        {
+            get
+            {
+                return _model.IsFavorite;
+            }
+            set
+            {
+                _model.IsFavorite = value;
+                OnPropertyChanged(nameof(IsFavorite));
             }
         }
 
@@ -231,6 +250,15 @@ namespace MixologyJournalApp.ViewModel
                 canExecute: () =>
                 {
                     return IsAdminUser;
+                });
+            FavoriteDrinkCommand = new Command(
+                execute: () =>
+                {
+                    IsFavorite = !IsFavorite;
+                },
+                canExecute: () =>
+                {
+                    return true;
                 });
         }
 
