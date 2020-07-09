@@ -16,5 +16,11 @@ namespace MixologyJournalApp.View
             BindingContext = _viewModel;
             InitializeComponent();
         }
+
+        protected override async void OnDisappearing()
+        {
+            base.OnDisappearing();
+            await _viewModel.SaveChanges();
+        }
     }
 }

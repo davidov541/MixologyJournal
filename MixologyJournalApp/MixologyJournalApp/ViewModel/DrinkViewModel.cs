@@ -147,6 +147,7 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        private Boolean _favoriteHasChanged = false;
         public Boolean IsFavorite
         {
             get
@@ -156,6 +157,7 @@ namespace MixologyJournalApp.ViewModel
             set
             {
                 _model.IsFavorite = value;
+                _favoriteHasChanged = !_favoriteHasChanged;
                 OnPropertyChanged(nameof(IsFavorite));
             }
         }
@@ -331,6 +333,17 @@ namespace MixologyJournalApp.ViewModel
             QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", _model);
             await _app.DrinkDeleted(this, result.Result);
             ProcessIsRunning = false;
+        }
+
+        internal async Task SaveChanges()
+        {
+            if (_favoriteHasChanged)
+            {
+                ProcessIsRunning = true;
+                await _app.PlatformInfo.Backend.PostResult("/secure/favorite", new FavoriteRequest(_model.SourceRecipeID, _model.Id, IsFavorite));
+                ProcessIsRunning = false;
+                _favoriteHasChanged = false;
+            }
         }
     }
 }
