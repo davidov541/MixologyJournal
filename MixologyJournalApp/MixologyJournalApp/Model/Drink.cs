@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace MixologyJournalApp.Model
 {
@@ -43,10 +44,21 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        private Recipe _sourceRecipe;
         public Recipe SourceRecipe
         {
-            get;
-            private set;
+            get
+            {
+                return _sourceRecipe;
+            }
+            private set
+            {
+                _sourceRecipe = value;
+                if (IsFavorite)
+                {
+                    SourceRecipe.FavoriteDrink = this;
+                }
+            }
         }
 
         [JsonProperty("rating")]
@@ -61,6 +73,24 @@ namespace MixologyJournalApp.Model
         {
             get;
             set;
+        }
+
+        private Boolean _isFavorite = false;
+        [JsonProperty("isFavorite")]
+        public Boolean IsFavorite
+        {
+            get
+            {
+                return _isFavorite;
+            }
+            set
+            {
+                _isFavorite = true;
+                if (SourceRecipe != null)
+                {
+                    SourceRecipe.FavoriteDrink = this;
+                }
+            }
         }
 
         public static Drink CreateEmptyDrink(Recipe basis)

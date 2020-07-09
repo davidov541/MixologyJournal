@@ -36,6 +36,12 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        public Drink FavoriteDrink
+        {
+            get;
+            set;
+        }
+
         public static Recipe CreateEmptyRecipe()
         {
             Recipe recipe = new Recipe();
