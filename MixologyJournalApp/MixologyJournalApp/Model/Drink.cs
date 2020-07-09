@@ -84,5 +84,10 @@ namespace MixologyJournalApp.Model
             Rating = 0.0f;
             Review = "";
         }
+
+        public void Init(Recipe basisRecipe)
+        {
+            SourceRecipe = basisRecipe;
+        }
     }
 }

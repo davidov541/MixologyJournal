@@ -53,9 +53,9 @@ namespace MixologyJournalApp.ViewModel
             InitProgress = 0.25;
             await UpdateAvailableIngredients();
             InitProgress = 0.5;
-            await UpdateRecipes();
+            List<Recipe> recipeModels = await UpdateRecipes();
             InitProgress = 0.75;
-            await UpdateDrinks();
+            await UpdateDrinks(recipeModels);
             InitProgress = 1.0;
         }
 
@@ -64,21 +64,25 @@ namespace MixologyJournalApp.ViewModel
             await Init();
         }
 
-        private async Task UpdateRecipes()
+        private async Task<List<Recipe>> UpdateRecipes()
         {
             String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/recipes");
-            List<RecipeViewModel> recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult).Select(r => new RecipeViewModel(r, _app)).ToList();
+            List<Recipe> recipeModels = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult);
+            List<RecipeViewModel> recipes = recipeModels.Select(r => new RecipeViewModel(r, _app)).ToList();
             Recipes.Clear();
             foreach (RecipeViewModel r in recipes.OrderBy(i => i.Name))
             {
                 Recipes.Add(r);
             }
+            return recipeModels;
         }
 
-        private async Task UpdateDrinks()
+        private async Task UpdateDrinks(List<Recipe> recipeModels)
         {
             String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/drinks");
-            List<DrinkViewModel> drinks = JsonConvert.DeserializeObject<List<Drink>>(jsonResult).Select(d => new DrinkViewModel(d, _app)).ToList();
+            List<Drink> drinkModels = JsonConvert.DeserializeObject<List<Drink>>(jsonResult);
+            drinkModels.ForEach(d => d.Init(recipeModels.FirstOrDefault(r => r.Id.Equals(d.SourceRecipeID))));
+            List<DrinkViewModel> drinks = drinkModels.Select(d => new DrinkViewModel(d, _app)).ToList();
             Drinks.Clear();
             foreach (DrinkViewModel d in drinks.OrderBy(i => i.Name))
             {
