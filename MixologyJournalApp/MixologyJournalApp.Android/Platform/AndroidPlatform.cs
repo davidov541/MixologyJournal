@@ -1,5 +1,4 @@
-﻿using Android.Content;
-using MixologyJournalApp.Platform;
+﻿using MixologyJournalApp.Platform;
 
 namespace MixologyJournalApp.Droid.Platform
 {
