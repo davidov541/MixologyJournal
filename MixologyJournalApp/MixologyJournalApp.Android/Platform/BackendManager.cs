@@ -1,7 +1,6 @@
 ﻿using MixologyJournalApp.Model;
 using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
