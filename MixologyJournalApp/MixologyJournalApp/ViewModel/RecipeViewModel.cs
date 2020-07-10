@@ -31,6 +31,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String Id
+        {
+            get
+            {
+                return _model.Id;
+            }
+        }
+
         public String FormattedSteps
         {
             get
@@ -221,14 +229,9 @@ namespace MixologyJournalApp.ViewModel
         public async Task<bool> SaveNew()
         {
             ProcessIsRunning = true;
-            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/recipes", _model);
-            if (result.Result)
-            {
-                _app.Cache.CreateRecipe(this);
-            }
-            _model.Id = result.Content["createdId"];
+            Boolean result = await _app.Cache.CreateRecipe(this, _model);
             ProcessIsRunning = false;
-            return result.Result;
+            return result;
         }
 
         public void AddStep()
@@ -276,8 +279,8 @@ namespace MixologyJournalApp.ViewModel
         public async Task Delete()
         {
             ProcessIsRunning = true;
-            QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/recipes", _model);
-            await _app.RecipeDeleted(this, result.Result);
+            await _app.Cache.DeleteRecipe(_model);
+            await _app.PopToRoot();
             ProcessIsRunning = false;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using MixologyJournalApp.Model;
+using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -112,42 +113,73 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public void CreateRecipe(RecipeViewModel recipe)
+        public async Task<Boolean> CreateRecipe(RecipeViewModel viewModel, Recipe model)
         {
-            RecipeViewModel insertBeforeRecipe = Recipes.FirstOrDefault(r => recipe.Name.CompareTo(r.Name) < 0);
-            if (insertBeforeRecipe == null)
+            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/recipes", model);
+
+            if (result.Result)
             {
-                Recipes.Add(recipe);
-            } 
-            else
+                model.Id = result.Content["createdId"];
+
+                RecipeViewModel insertBeforeRecipe = Recipes.FirstOrDefault(r => viewModel.Name.CompareTo(r.Name) < 0);
+                if (insertBeforeRecipe == null)
+                {
+                    Recipes.Add(viewModel);
+                }
+                else
+                {
+                    int insertIndex = Recipes.IndexOf(insertBeforeRecipe);
+                    Recipes.Insert(insertIndex, viewModel);
+                }
+            }
+            return result.Result;
+        }
+
+        public async Task DeleteRecipe(Recipe recipe)
+        {
+            QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/recipes", recipe);
+            if (result.Result)
             {
-                int insertIndex = Recipes.IndexOf(insertBeforeRecipe);
-                Recipes.Insert(insertIndex, recipe);
+                RecipeViewModel recipeViewModel = Recipes.FirstOrDefault(d => d.Id == recipe.Id);
+                Recipes.Remove(recipeViewModel);
             }
         }
 
-        public void DeleteRecipe(RecipeViewModel recipe)
+        public async Task<Boolean> CreateDrink(DrinkViewModel viewModel, Drink model)
         {
-            Recipes.Remove(recipe);
+            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", model);
+
+            if (result.Result)
+            {
+                model.Id = result.Content["createdId"];
+
+                DrinkViewModel insertBeforeRecipe = Drinks.FirstOrDefault(d => viewModel.Name.CompareTo(d.Name) < 0);
+                if (insertBeforeRecipe == null)
+                {
+                    Drinks.Add(viewModel);
+                }
+                else
+                {
+                    int insertIndex = Drinks.IndexOf(insertBeforeRecipe);
+                    Drinks.Insert(insertIndex, viewModel);
+                }
+            }
+            return result.Result;
         }
 
-        public void CreateDrink(DrinkViewModel drink)
+        public async Task DeleteDrink(Drink drink)
         {
-            DrinkViewModel insertBeforeRecipe = Drinks.FirstOrDefault(d => drink.Name.CompareTo(d.Name) < 0);
-            if (insertBeforeRecipe == null)
+            QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", drink);
+            if (result.Result)
             {
-                Drinks.Add(drink);
-            }
-            else
-            {
-                int insertIndex = Drinks.IndexOf(insertBeforeRecipe);
-                Drinks.Insert(insertIndex, drink);
+                DrinkViewModel drinkViewModel = Drinks.FirstOrDefault(d => d.Id == drink.Id);
+                Drinks.Remove(drinkViewModel);
             }
         }
 
-        public void DeleteDrink(DrinkViewModel drink)
+        public async Task UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
         {
-            Drinks.Remove(drink);
+            await _app.PlatformInfo.Backend.PostResult("/secure/favorite", new FavoriteRequest(drink.SourceRecipeID, drink.Id, isFavorite));
         }
     }
 }

@@ -77,12 +77,8 @@ namespace MixologyJournalApp
             await (MainPage as RootPage).Detail.Navigation.PopToRootAsync();
         }
 
-        internal async Task DrinkDeleted(DrinkViewModel drink, Boolean succeeded)
+        internal async Task PopToRoot()
         {
-            if (succeeded)
-            {
-                Cache.DeleteDrink(drink);
-            }
             await (MainPage as RootPage).Detail.Navigation.PopToRootAsync();
         }
     }

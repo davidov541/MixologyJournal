@@ -31,6 +31,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        internal String Id
+        {
+            get
+            {
+                return _model.Id;
+            }
+        }
+
         public String FormattedSteps
         {
             get
@@ -288,14 +296,9 @@ namespace MixologyJournalApp.ViewModel
         public async Task<bool> SaveNew()
         {
             ProcessIsRunning = true;
-            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", _model);
-            if (result.Result)
-            {
-                _app.Cache.CreateDrink(this);
-            }
-            _model.Id = result.Content["createdId"];
+            Boolean result = await _app.Cache.CreateDrink(this, _model);
             ProcessIsRunning = false;
-            return result.Result;
+            return result;
         }
 
         public void AddStep()
@@ -338,8 +341,8 @@ namespace MixologyJournalApp.ViewModel
         public async Task Delete()
         {
             ProcessIsRunning = true;
-            QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", _model);
-            await _app.DrinkDeleted(this, result.Result);
+            await _app.Cache.DeleteDrink(_model);
+            await _app.PopToRoot();
             ProcessIsRunning = false;
         }
 
@@ -348,7 +351,7 @@ namespace MixologyJournalApp.ViewModel
             if (_favoriteHasChanged)
             {
                 ProcessIsRunning = true;
-                await _app.PlatformInfo.Backend.PostResult("/secure/favorite", new FavoriteRequest(_model.SourceRecipeID, _model.Id, IsFavorite));
+                await _app.Cache.UpdateFavoriteDrink(_model, IsFavorite);
                 ProcessIsRunning = false;
                 _favoriteHasChanged = false;
             }
