@@ -6,7 +6,8 @@
              xmlns:controls="clr-namespace:MixologyJournalApp.View"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.CreateRecipePage"
-             x:Name="rootPage">
+             x:Name="rootPage"
+             Visual="Material">
     <ContentPage.Resources>
         <controls:IsRunningToTintColorConverter x:Key="runningConverter" />
         <controls:InvertBooleanConverter x:Key="invertConverter" />

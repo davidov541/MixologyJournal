@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:MixologyJournalApp.View"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.RecipePage"
-             Title="{Binding Path=Name}">
+             Title="{Binding Path=Name}"
+             Visual="Material">
     <ContentPage.Resources>
         <DataTemplate x:Key="evenTemplate">
             <ViewCell>

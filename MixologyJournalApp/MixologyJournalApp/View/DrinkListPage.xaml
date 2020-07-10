@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.DrinkListPage"
-             Title="Drink List">
+             Title="Drink List"
+             Visual="Material">
     <AbsoluteLayout VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand">
         <AbsoluteLayout>

@@ -316,6 +316,2697 @@ namespace MixologyJournalApp.Droid
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColorItem;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColorItem_android_color;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_fade_in = global::MixologyJournalApp.Droid.Resource.Animation.abc_fade_in;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_fade_out = global::MixologyJournalApp.Droid.Resource.Animation.abc_fade_out;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::MixologyJournalApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_popup_enter = global::MixologyJournalApp.Droid.Resource.Animation.abc_popup_enter;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_popup_exit = global::MixologyJournalApp.Droid.Resource.Animation.abc_popup_exit;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_shrink_fade_out_from_bottom = global::MixologyJournalApp.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_slide_in_bottom = global::MixologyJournalApp.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_slide_in_top = global::MixologyJournalApp.Droid.Resource.Animation.abc_slide_in_top;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_slide_out_bottom = global::MixologyJournalApp.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_slide_out_top = global::MixologyJournalApp.Droid.Resource.Animation.abc_slide_out_top;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_tooltip_enter = global::MixologyJournalApp.Droid.Resource.Animation.abc_tooltip_enter;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.abc_tooltip_exit = global::MixologyJournalApp.Droid.Resource.Animation.abc_tooltip_exit;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::MixologyJournalApp.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.design_bottom_sheet_slide_in = global::MixologyJournalApp.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.design_bottom_sheet_slide_out = global::MixologyJournalApp.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.design_snackbar_in = global::MixologyJournalApp.Droid.Resource.Animation.design_snackbar_in;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.design_snackbar_out = global::MixologyJournalApp.Droid.Resource.Animation.design_snackbar_out;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.EnterFromLeft = global::MixologyJournalApp.Droid.Resource.Animation.EnterFromLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.EnterFromRight = global::MixologyJournalApp.Droid.Resource.Animation.EnterFromRight;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.ExitToLeft = global::MixologyJournalApp.Droid.Resource.Animation.ExitToLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Animation.ExitToRight = global::MixologyJournalApp.Droid.Resource.Animation.ExitToRight;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.design_appbar_state_list_animator = global::MixologyJournalApp.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.design_fab_hide_motion_spec = global::MixologyJournalApp.Droid.Resource.Animator.design_fab_hide_motion_spec;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.design_fab_show_motion_spec = global::MixologyJournalApp.Droid.Resource.Animator.design_fab_show_motion_spec;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.mtrl_btn_state_list_anim = global::MixologyJournalApp.Droid.Resource.Animator.mtrl_btn_state_list_anim;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::MixologyJournalApp.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.mtrl_chip_state_list_anim = global::MixologyJournalApp.Droid.Resource.Animator.mtrl_chip_state_list_anim;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.mtrl_fab_hide_motion_spec = global::MixologyJournalApp.Droid.Resource.Animator.mtrl_fab_hide_motion_spec;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.mtrl_fab_show_motion_spec = global::MixologyJournalApp.Droid.Resource.Animator.mtrl_fab_show_motion_spec;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::MixologyJournalApp.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
+			global::Xamarin.Forms.Material.Android.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec = global::MixologyJournalApp.Droid.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarDivider = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarDivider;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarItemBackground = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarItemBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarPopupTheme = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarSize = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarSplitStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarTabBarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarTabStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarTabStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarTabTextStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarTheme = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionBarWidgetTheme = global::MixologyJournalApp.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionDropDownStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionDropDownStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionLayout = global::MixologyJournalApp.Droid.Resource.Attribute.actionLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionMenuTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionMenuTextColor = global::MixologyJournalApp.Droid.Resource.Attribute.actionMenuTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeBackground = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeCloseButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeCloseDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeCopyDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeCutDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeFindDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModePasteDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModePopupWindowStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeSelectAllDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeShareDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeSplitBackground = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionModeWebSearchDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionOverflowButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionOverflowMenuStyle = global::MixologyJournalApp.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionProviderClass = global::MixologyJournalApp.Droid.Resource.Attribute.actionProviderClass;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.actionViewClass = global::MixologyJournalApp.Droid.Resource.Attribute.actionViewClass;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.activityChooserViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.alertDialogButtonGroupStyle = global::MixologyJournalApp.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.alertDialogCenterButtons = global::MixologyJournalApp.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.alertDialogStyle = global::MixologyJournalApp.Droid.Resource.Attribute.alertDialogStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.alertDialogTheme = global::MixologyJournalApp.Droid.Resource.Attribute.alertDialogTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.allowStacking = global::MixologyJournalApp.Droid.Resource.Attribute.allowStacking;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.alpha = global::MixologyJournalApp.Droid.Resource.Attribute.alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.alphabeticModifiers = global::MixologyJournalApp.Droid.Resource.Attribute.alphabeticModifiers;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.arrowHeadLength = global::MixologyJournalApp.Droid.Resource.Attribute.arrowHeadLength;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.arrowShaftLength = global::MixologyJournalApp.Droid.Resource.Attribute.arrowShaftLength;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.autoCompleteTextViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.autoSizeMaxTextSize = global::MixologyJournalApp.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.autoSizeMinTextSize = global::MixologyJournalApp.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.autoSizePresetSizes = global::MixologyJournalApp.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.autoSizeStepGranularity = global::MixologyJournalApp.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.autoSizeTextType = global::MixologyJournalApp.Droid.Resource.Attribute.autoSizeTextType;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.background = global::MixologyJournalApp.Droid.Resource.Attribute.background;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.backgroundSplit = global::MixologyJournalApp.Droid.Resource.Attribute.backgroundSplit;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.backgroundStacked = global::MixologyJournalApp.Droid.Resource.Attribute.backgroundStacked;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.backgroundTint = global::MixologyJournalApp.Droid.Resource.Attribute.backgroundTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.backgroundTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.backgroundTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.barLength = global::MixologyJournalApp.Droid.Resource.Attribute.barLength;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.behavior_autoHide = global::MixologyJournalApp.Droid.Resource.Attribute.behavior_autoHide;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.behavior_fitToContents = global::MixologyJournalApp.Droid.Resource.Attribute.behavior_fitToContents;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.behavior_hideable = global::MixologyJournalApp.Droid.Resource.Attribute.behavior_hideable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.behavior_overlapTop = global::MixologyJournalApp.Droid.Resource.Attribute.behavior_overlapTop;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.behavior_peekHeight = global::MixologyJournalApp.Droid.Resource.Attribute.behavior_peekHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.behavior_skipCollapsed = global::MixologyJournalApp.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.borderlessButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.borderWidth = global::MixologyJournalApp.Droid.Resource.Attribute.borderWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.bottomAppBarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.bottomAppBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.bottomNavigationStyle = global::MixologyJournalApp.Droid.Resource.Attribute.bottomNavigationStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.bottomSheetDialogTheme = global::MixologyJournalApp.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.bottomSheetStyle = global::MixologyJournalApp.Droid.Resource.Attribute.bottomSheetStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxBackgroundColor = global::MixologyJournalApp.Droid.Resource.Attribute.boxBackgroundColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxBackgroundMode = global::MixologyJournalApp.Droid.Resource.Attribute.boxBackgroundMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxCollapsedPaddingTop = global::MixologyJournalApp.Droid.Resource.Attribute.boxCollapsedPaddingTop;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxCornerRadiusBottomEnd = global::MixologyJournalApp.Droid.Resource.Attribute.boxCornerRadiusBottomEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxCornerRadiusBottomStart = global::MixologyJournalApp.Droid.Resource.Attribute.boxCornerRadiusBottomStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxCornerRadiusTopEnd = global::MixologyJournalApp.Droid.Resource.Attribute.boxCornerRadiusTopEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxCornerRadiusTopStart = global::MixologyJournalApp.Droid.Resource.Attribute.boxCornerRadiusTopStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxStrokeColor = global::MixologyJournalApp.Droid.Resource.Attribute.boxStrokeColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.boxStrokeWidth = global::MixologyJournalApp.Droid.Resource.Attribute.boxStrokeWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonBarButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonBarNegativeButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonBarNeutralButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonBarPositiveButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonBarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.buttonBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonCompat = global::MixologyJournalApp.Droid.Resource.Attribute.buttonCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonGravity = global::MixologyJournalApp.Droid.Resource.Attribute.buttonGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonIconDimen = global::MixologyJournalApp.Droid.Resource.Attribute.buttonIconDimen;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonPanelSideLayout = global::MixologyJournalApp.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.buttonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonStyleSmall = global::MixologyJournalApp.Droid.Resource.Attribute.buttonStyleSmall;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonTint = global::MixologyJournalApp.Droid.Resource.Attribute.buttonTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.buttonTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.buttonTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.cardBackgroundColor = global::MixologyJournalApp.Droid.Resource.Attribute.cardBackgroundColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.cardCornerRadius = global::MixologyJournalApp.Droid.Resource.Attribute.cardCornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.cardElevation = global::MixologyJournalApp.Droid.Resource.Attribute.cardElevation;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.cardMaxElevation = global::MixologyJournalApp.Droid.Resource.Attribute.cardMaxElevation;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.cardPreventCornerOverlap = global::MixologyJournalApp.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.cardUseCompatPadding = global::MixologyJournalApp.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.cardViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.cardViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.checkboxStyle = global::MixologyJournalApp.Droid.Resource.Attribute.checkboxStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.checkedChip = global::MixologyJournalApp.Droid.Resource.Attribute.checkedChip;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.checkedIcon = global::MixologyJournalApp.Droid.Resource.Attribute.checkedIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.checkedIconEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.checkedIconEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.checkedIconVisible = global::MixologyJournalApp.Droid.Resource.Attribute.checkedIconVisible;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.checkedTextViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipBackgroundColor = global::MixologyJournalApp.Droid.Resource.Attribute.chipBackgroundColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipCornerRadius = global::MixologyJournalApp.Droid.Resource.Attribute.chipCornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipEndPadding = global::MixologyJournalApp.Droid.Resource.Attribute.chipEndPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipGroupStyle = global::MixologyJournalApp.Droid.Resource.Attribute.chipGroupStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipIcon = global::MixologyJournalApp.Droid.Resource.Attribute.chipIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipIconEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.chipIconEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipIconSize = global::MixologyJournalApp.Droid.Resource.Attribute.chipIconSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipIconTint = global::MixologyJournalApp.Droid.Resource.Attribute.chipIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipIconVisible = global::MixologyJournalApp.Droid.Resource.Attribute.chipIconVisible;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipMinHeight = global::MixologyJournalApp.Droid.Resource.Attribute.chipMinHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipSpacing = global::MixologyJournalApp.Droid.Resource.Attribute.chipSpacing;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipSpacingHorizontal = global::MixologyJournalApp.Droid.Resource.Attribute.chipSpacingHorizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipSpacingVertical = global::MixologyJournalApp.Droid.Resource.Attribute.chipSpacingVertical;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipStandaloneStyle = global::MixologyJournalApp.Droid.Resource.Attribute.chipStandaloneStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipStartPadding = global::MixologyJournalApp.Droid.Resource.Attribute.chipStartPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipStrokeColor = global::MixologyJournalApp.Droid.Resource.Attribute.chipStrokeColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipStrokeWidth = global::MixologyJournalApp.Droid.Resource.Attribute.chipStrokeWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.chipStyle = global::MixologyJournalApp.Droid.Resource.Attribute.chipStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.closeIcon = global::MixologyJournalApp.Droid.Resource.Attribute.closeIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.closeIconEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.closeIconEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.closeIconEndPadding = global::MixologyJournalApp.Droid.Resource.Attribute.closeIconEndPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.closeIconSize = global::MixologyJournalApp.Droid.Resource.Attribute.closeIconSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.closeIconStartPadding = global::MixologyJournalApp.Droid.Resource.Attribute.closeIconStartPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.closeIconTint = global::MixologyJournalApp.Droid.Resource.Attribute.closeIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.closeIconVisible = global::MixologyJournalApp.Droid.Resource.Attribute.closeIconVisible;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.closeItemLayout = global::MixologyJournalApp.Droid.Resource.Attribute.closeItemLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.collapseContentDescription = global::MixologyJournalApp.Droid.Resource.Attribute.collapseContentDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.collapsedTitleGravity = global::MixologyJournalApp.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.collapsedTitleTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.collapseIcon = global::MixologyJournalApp.Droid.Resource.Attribute.collapseIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.color = global::MixologyJournalApp.Droid.Resource.Attribute.color;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorAccent = global::MixologyJournalApp.Droid.Resource.Attribute.colorAccent;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorBackgroundFloating = global::MixologyJournalApp.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorButtonNormal = global::MixologyJournalApp.Droid.Resource.Attribute.colorButtonNormal;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorControlActivated = global::MixologyJournalApp.Droid.Resource.Attribute.colorControlActivated;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorControlHighlight = global::MixologyJournalApp.Droid.Resource.Attribute.colorControlHighlight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorControlNormal = global::MixologyJournalApp.Droid.Resource.Attribute.colorControlNormal;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorError = global::MixologyJournalApp.Droid.Resource.Attribute.colorError;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorPrimary = global::MixologyJournalApp.Droid.Resource.Attribute.colorPrimary;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorPrimaryDark = global::MixologyJournalApp.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorSecondary = global::MixologyJournalApp.Droid.Resource.Attribute.colorSecondary;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorSwitchThumbNormal = global::MixologyJournalApp.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.commitIcon = global::MixologyJournalApp.Droid.Resource.Attribute.commitIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentDescription = global::MixologyJournalApp.Droid.Resource.Attribute.contentDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentInsetEnd = global::MixologyJournalApp.Droid.Resource.Attribute.contentInsetEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentInsetEndWithActions = global::MixologyJournalApp.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentInsetLeft = global::MixologyJournalApp.Droid.Resource.Attribute.contentInsetLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentInsetRight = global::MixologyJournalApp.Droid.Resource.Attribute.contentInsetRight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentInsetStart = global::MixologyJournalApp.Droid.Resource.Attribute.contentInsetStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentInsetStartWithNavigation = global::MixologyJournalApp.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentPadding = global::MixologyJournalApp.Droid.Resource.Attribute.contentPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentPaddingBottom = global::MixologyJournalApp.Droid.Resource.Attribute.contentPaddingBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentPaddingLeft = global::MixologyJournalApp.Droid.Resource.Attribute.contentPaddingLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentPaddingRight = global::MixologyJournalApp.Droid.Resource.Attribute.contentPaddingRight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentPaddingTop = global::MixologyJournalApp.Droid.Resource.Attribute.contentPaddingTop;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.contentScrim = global::MixologyJournalApp.Droid.Resource.Attribute.contentScrim;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.controlBackground = global::MixologyJournalApp.Droid.Resource.Attribute.controlBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.coordinatorLayoutStyle = global::MixologyJournalApp.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.cornerRadius = global::MixologyJournalApp.Droid.Resource.Attribute.cornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.counterEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.counterEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.counterMaxLength = global::MixologyJournalApp.Droid.Resource.Attribute.counterMaxLength;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.counterOverflowTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.counterTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.counterTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.customNavigationLayout = global::MixologyJournalApp.Droid.Resource.Attribute.customNavigationLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.defaultQueryHint = global::MixologyJournalApp.Droid.Resource.Attribute.defaultQueryHint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.dialogCornerRadius = global::MixologyJournalApp.Droid.Resource.Attribute.dialogCornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.dialogPreferredPadding = global::MixologyJournalApp.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.dialogTheme = global::MixologyJournalApp.Droid.Resource.Attribute.dialogTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.displayOptions = global::MixologyJournalApp.Droid.Resource.Attribute.displayOptions;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.divider = global::MixologyJournalApp.Droid.Resource.Attribute.divider;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.dividerHorizontal = global::MixologyJournalApp.Droid.Resource.Attribute.dividerHorizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.dividerPadding = global::MixologyJournalApp.Droid.Resource.Attribute.dividerPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.dividerVertical = global::MixologyJournalApp.Droid.Resource.Attribute.dividerVertical;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableBottomCompat = global::MixologyJournalApp.Droid.Resource.Attribute.drawableBottomCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableEndCompat = global::MixologyJournalApp.Droid.Resource.Attribute.drawableEndCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableLeftCompat = global::MixologyJournalApp.Droid.Resource.Attribute.drawableLeftCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableRightCompat = global::MixologyJournalApp.Droid.Resource.Attribute.drawableRightCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableSize = global::MixologyJournalApp.Droid.Resource.Attribute.drawableSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableStartCompat = global::MixologyJournalApp.Droid.Resource.Attribute.drawableStartCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableTint = global::MixologyJournalApp.Droid.Resource.Attribute.drawableTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.drawableTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawableTopCompat = global::MixologyJournalApp.Droid.Resource.Attribute.drawableTopCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.drawerArrowStyle = global::MixologyJournalApp.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.dropdownListPreferredItemHeight = global::MixologyJournalApp.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.dropDownListViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.editTextBackground = global::MixologyJournalApp.Droid.Resource.Attribute.editTextBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.editTextColor = global::MixologyJournalApp.Droid.Resource.Attribute.editTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.editTextStyle = global::MixologyJournalApp.Droid.Resource.Attribute.editTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.elevation = global::MixologyJournalApp.Droid.Resource.Attribute.elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.enforceMaterialTheme = global::MixologyJournalApp.Droid.Resource.Attribute.enforceMaterialTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.enforceTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.enforceTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.errorEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.errorEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.errorTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.errorTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expandActivityOverflowButtonDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expanded = global::MixologyJournalApp.Droid.Resource.Attribute.expanded;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expandedTitleGravity = global::MixologyJournalApp.Droid.Resource.Attribute.expandedTitleGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expandedTitleMargin = global::MixologyJournalApp.Droid.Resource.Attribute.expandedTitleMargin;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expandedTitleMarginBottom = global::MixologyJournalApp.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expandedTitleMarginEnd = global::MixologyJournalApp.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expandedTitleMarginStart = global::MixologyJournalApp.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expandedTitleMarginTop = global::MixologyJournalApp.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.expandedTitleTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fabAlignmentMode = global::MixologyJournalApp.Droid.Resource.Attribute.fabAlignmentMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fabCradleMargin = global::MixologyJournalApp.Droid.Resource.Attribute.fabCradleMargin;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fabCradleRoundedCornerRadius = global::MixologyJournalApp.Droid.Resource.Attribute.fabCradleRoundedCornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fabCradleVerticalOffset = global::MixologyJournalApp.Droid.Resource.Attribute.fabCradleVerticalOffset;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fabCustomSize = global::MixologyJournalApp.Droid.Resource.Attribute.fabCustomSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fabSize = global::MixologyJournalApp.Droid.Resource.Attribute.fabSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fastScrollEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.fastScrollEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fastScrollVerticalThumbDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fastScrollVerticalTrackDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.firstBaselineToTopHeight = global::MixologyJournalApp.Droid.Resource.Attribute.firstBaselineToTopHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.floatingActionButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.floatingActionButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.font = global::MixologyJournalApp.Droid.Resource.Attribute.font;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontFamily = global::MixologyJournalApp.Droid.Resource.Attribute.fontFamily;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontProviderAuthority = global::MixologyJournalApp.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontProviderCerts = global::MixologyJournalApp.Droid.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontProviderFetchStrategy = global::MixologyJournalApp.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontProviderFetchTimeout = global::MixologyJournalApp.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontProviderPackage = global::MixologyJournalApp.Droid.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontProviderQuery = global::MixologyJournalApp.Droid.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontStyle = global::MixologyJournalApp.Droid.Resource.Attribute.fontStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontVariationSettings = global::MixologyJournalApp.Droid.Resource.Attribute.fontVariationSettings;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.fontWeight = global::MixologyJournalApp.Droid.Resource.Attribute.fontWeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.foregroundInsidePadding = global::MixologyJournalApp.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.gapBetweenBars = global::MixologyJournalApp.Droid.Resource.Attribute.gapBetweenBars;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.goIcon = global::MixologyJournalApp.Droid.Resource.Attribute.goIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.headerLayout = global::MixologyJournalApp.Droid.Resource.Attribute.headerLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.height = global::MixologyJournalApp.Droid.Resource.Attribute.height;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.helperText = global::MixologyJournalApp.Droid.Resource.Attribute.helperText;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.helperTextEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.helperTextEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.helperTextTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.helperTextTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.hideMotionSpec = global::MixologyJournalApp.Droid.Resource.Attribute.hideMotionSpec;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.hideOnContentScroll = global::MixologyJournalApp.Droid.Resource.Attribute.hideOnContentScroll;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.hideOnScroll = global::MixologyJournalApp.Droid.Resource.Attribute.hideOnScroll;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.hintAnimationEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.hintEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.hintEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.hintTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.hintTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.homeAsUpIndicator = global::MixologyJournalApp.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.homeLayout = global::MixologyJournalApp.Droid.Resource.Attribute.homeLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.hoveredFocusedTranslationZ = global::MixologyJournalApp.Droid.Resource.Attribute.hoveredFocusedTranslationZ;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.icon = global::MixologyJournalApp.Droid.Resource.Attribute.icon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.iconEndPadding = global::MixologyJournalApp.Droid.Resource.Attribute.iconEndPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.iconGravity = global::MixologyJournalApp.Droid.Resource.Attribute.iconGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.iconifiedByDefault = global::MixologyJournalApp.Droid.Resource.Attribute.iconifiedByDefault;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.iconPadding = global::MixologyJournalApp.Droid.Resource.Attribute.iconPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.iconSize = global::MixologyJournalApp.Droid.Resource.Attribute.iconSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.iconStartPadding = global::MixologyJournalApp.Droid.Resource.Attribute.iconStartPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.iconTint = global::MixologyJournalApp.Droid.Resource.Attribute.iconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.iconTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.iconTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.imageButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.imageButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.indeterminateProgressStyle = global::MixologyJournalApp.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.initialActivityCount = global::MixologyJournalApp.Droid.Resource.Attribute.initialActivityCount;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.insetForeground = global::MixologyJournalApp.Droid.Resource.Attribute.insetForeground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.isLightTheme = global::MixologyJournalApp.Droid.Resource.Attribute.isLightTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemBackground = global::MixologyJournalApp.Droid.Resource.Attribute.itemBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemHorizontalPadding = global::MixologyJournalApp.Droid.Resource.Attribute.itemHorizontalPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemHorizontalTranslationEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.itemHorizontalTranslationEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemIconPadding = global::MixologyJournalApp.Droid.Resource.Attribute.itemIconPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemIconSize = global::MixologyJournalApp.Droid.Resource.Attribute.itemIconSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemIconTint = global::MixologyJournalApp.Droid.Resource.Attribute.itemIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemPadding = global::MixologyJournalApp.Droid.Resource.Attribute.itemPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemSpacing = global::MixologyJournalApp.Droid.Resource.Attribute.itemSpacing;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.itemTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemTextAppearanceActive = global::MixologyJournalApp.Droid.Resource.Attribute.itemTextAppearanceActive;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemTextAppearanceInactive = global::MixologyJournalApp.Droid.Resource.Attribute.itemTextAppearanceInactive;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.itemTextColor = global::MixologyJournalApp.Droid.Resource.Attribute.itemTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.keylines = global::MixologyJournalApp.Droid.Resource.Attribute.keylines;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.labelVisibilityMode = global::MixologyJournalApp.Droid.Resource.Attribute.labelVisibilityMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.lastBaselineToBottomHeight = global::MixologyJournalApp.Droid.Resource.Attribute.lastBaselineToBottomHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout = global::MixologyJournalApp.Droid.Resource.Attribute.layout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layoutManager = global::MixologyJournalApp.Droid.Resource.Attribute.layoutManager;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_anchor = global::MixologyJournalApp.Droid.Resource.Attribute.layout_anchor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_anchorGravity = global::MixologyJournalApp.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_behavior = global::MixologyJournalApp.Droid.Resource.Attribute.layout_behavior;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_collapseMode = global::MixologyJournalApp.Droid.Resource.Attribute.layout_collapseMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_collapseParallaxMultiplier = global::MixologyJournalApp.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_dodgeInsetEdges = global::MixologyJournalApp.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_insetEdge = global::MixologyJournalApp.Droid.Resource.Attribute.layout_insetEdge;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_keyline = global::MixologyJournalApp.Droid.Resource.Attribute.layout_keyline;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_scrollFlags = global::MixologyJournalApp.Droid.Resource.Attribute.layout_scrollFlags;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.layout_scrollInterpolator = global::MixologyJournalApp.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.liftOnScroll = global::MixologyJournalApp.Droid.Resource.Attribute.liftOnScroll;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.lineHeight = global::MixologyJournalApp.Droid.Resource.Attribute.lineHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.lineSpacing = global::MixologyJournalApp.Droid.Resource.Attribute.lineSpacing;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listChoiceBackgroundIndicator = global::MixologyJournalApp.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::MixologyJournalApp.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::MixologyJournalApp.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listDividerAlertDialog = global::MixologyJournalApp.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listItemLayout = global::MixologyJournalApp.Droid.Resource.Attribute.listItemLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listLayout = global::MixologyJournalApp.Droid.Resource.Attribute.listLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listMenuViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.listMenuViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listPopupWindowStyle = global::MixologyJournalApp.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listPreferredItemHeight = global::MixologyJournalApp.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listPreferredItemHeightLarge = global::MixologyJournalApp.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listPreferredItemHeightSmall = global::MixologyJournalApp.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listPreferredItemPaddingEnd = global::MixologyJournalApp.Droid.Resource.Attribute.listPreferredItemPaddingEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listPreferredItemPaddingLeft = global::MixologyJournalApp.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listPreferredItemPaddingRight = global::MixologyJournalApp.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.listPreferredItemPaddingStart = global::MixologyJournalApp.Droid.Resource.Attribute.listPreferredItemPaddingStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.logo = global::MixologyJournalApp.Droid.Resource.Attribute.logo;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.logoDescription = global::MixologyJournalApp.Droid.Resource.Attribute.logoDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.materialButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.materialButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.materialCardViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.materialCardViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.materialCheckBoxStyle = global::MixologyJournalApp.Droid.Resource.Attribute.materialCheckBoxStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.materialOutlinedButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.materialOutlinedButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.materialProgressBarCircularStyle = global::MixologyJournalApp.Droid.Resource.Attribute.materialProgressBarCircularStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.materialProgressBarHorizontalStyle = global::MixologyJournalApp.Droid.Resource.Attribute.materialProgressBarHorizontalStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.materialSliderStyle = global::MixologyJournalApp.Droid.Resource.Attribute.materialSliderStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.maxActionInlineWidth = global::MixologyJournalApp.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.maxButtonHeight = global::MixologyJournalApp.Droid.Resource.Attribute.maxButtonHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.maxImageSize = global::MixologyJournalApp.Droid.Resource.Attribute.maxImageSize;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.measureWithLargestChild = global::MixologyJournalApp.Droid.Resource.Attribute.measureWithLargestChild;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.menu = global::MixologyJournalApp.Droid.Resource.Attribute.menu;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.multiChoiceItemLayout = global::MixologyJournalApp.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.navigationContentDescription = global::MixologyJournalApp.Droid.Resource.Attribute.navigationContentDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.navigationIcon = global::MixologyJournalApp.Droid.Resource.Attribute.navigationIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.navigationMode = global::MixologyJournalApp.Droid.Resource.Attribute.navigationMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.navigationViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.navigationViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.numericModifiers = global::MixologyJournalApp.Droid.Resource.Attribute.numericModifiers;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.overlapAnchor = global::MixologyJournalApp.Droid.Resource.Attribute.overlapAnchor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.paddingBottomNoButtons = global::MixologyJournalApp.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.paddingEnd = global::MixologyJournalApp.Droid.Resource.Attribute.paddingEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.paddingStart = global::MixologyJournalApp.Droid.Resource.Attribute.paddingStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.paddingTopNoTitle = global::MixologyJournalApp.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.panelBackground = global::MixologyJournalApp.Droid.Resource.Attribute.panelBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.panelMenuListTheme = global::MixologyJournalApp.Droid.Resource.Attribute.panelMenuListTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.panelMenuListWidth = global::MixologyJournalApp.Droid.Resource.Attribute.panelMenuListWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.passwordToggleContentDescription = global::MixologyJournalApp.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.passwordToggleDrawable = global::MixologyJournalApp.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.passwordToggleEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.passwordToggleTint = global::MixologyJournalApp.Droid.Resource.Attribute.passwordToggleTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.passwordToggleTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.popupMenuStyle = global::MixologyJournalApp.Droid.Resource.Attribute.popupMenuStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.popupTheme = global::MixologyJournalApp.Droid.Resource.Attribute.popupTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.popupWindowStyle = global::MixologyJournalApp.Droid.Resource.Attribute.popupWindowStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.preserveIconSpacing = global::MixologyJournalApp.Droid.Resource.Attribute.preserveIconSpacing;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.pressedTranslationZ = global::MixologyJournalApp.Droid.Resource.Attribute.pressedTranslationZ;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.progressBarPadding = global::MixologyJournalApp.Droid.Resource.Attribute.progressBarPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.progressBarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.progressBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.queryBackground = global::MixologyJournalApp.Droid.Resource.Attribute.queryBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.queryHint = global::MixologyJournalApp.Droid.Resource.Attribute.queryHint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.radioButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.radioButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.ratingBarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.ratingBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.ratingBarStyleIndicator = global::MixologyJournalApp.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.ratingBarStyleSmall = global::MixologyJournalApp.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.recyclerViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.recyclerViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.reverseLayout = global::MixologyJournalApp.Droid.Resource.Attribute.reverseLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.rippleColor = global::MixologyJournalApp.Droid.Resource.Attribute.rippleColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.scrimAnimationDuration = global::MixologyJournalApp.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.scrimBackground = global::MixologyJournalApp.Droid.Resource.Attribute.scrimBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.scrimVisibleHeightTrigger = global::MixologyJournalApp.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.searchHintIcon = global::MixologyJournalApp.Droid.Resource.Attribute.searchHintIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.searchIcon = global::MixologyJournalApp.Droid.Resource.Attribute.searchIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.searchViewStyle = global::MixologyJournalApp.Droid.Resource.Attribute.searchViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.seekBarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.seekBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.selectableItemBackground = global::MixologyJournalApp.Droid.Resource.Attribute.selectableItemBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.selectableItemBackgroundBorderless = global::MixologyJournalApp.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.showAsAction = global::MixologyJournalApp.Droid.Resource.Attribute.showAsAction;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.showDividers = global::MixologyJournalApp.Droid.Resource.Attribute.showDividers;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.showMotionSpec = global::MixologyJournalApp.Droid.Resource.Attribute.showMotionSpec;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.showText = global::MixologyJournalApp.Droid.Resource.Attribute.showText;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.showTitle = global::MixologyJournalApp.Droid.Resource.Attribute.showTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.singleChoiceItemLayout = global::MixologyJournalApp.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.singleLine = global::MixologyJournalApp.Droid.Resource.Attribute.singleLine;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.singleSelection = global::MixologyJournalApp.Droid.Resource.Attribute.singleSelection;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.snackbarButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.snackbarButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.snackbarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.snackbarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.spanCount = global::MixologyJournalApp.Droid.Resource.Attribute.spanCount;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.spinBars = global::MixologyJournalApp.Droid.Resource.Attribute.spinBars;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.spinnerDropDownItemStyle = global::MixologyJournalApp.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.spinnerStyle = global::MixologyJournalApp.Droid.Resource.Attribute.spinnerStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.splitTrack = global::MixologyJournalApp.Droid.Resource.Attribute.splitTrack;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.srcCompat = global::MixologyJournalApp.Droid.Resource.Attribute.srcCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.stackFromEnd = global::MixologyJournalApp.Droid.Resource.Attribute.stackFromEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.state_above_anchor = global::MixologyJournalApp.Droid.Resource.Attribute.state_above_anchor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.state_collapsed = global::MixologyJournalApp.Droid.Resource.Attribute.state_collapsed;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.state_collapsible = global::MixologyJournalApp.Droid.Resource.Attribute.state_collapsible;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.state_liftable = global::MixologyJournalApp.Droid.Resource.Attribute.state_liftable;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.state_lifted = global::MixologyJournalApp.Droid.Resource.Attribute.state_lifted;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.statusBarBackground = global::MixologyJournalApp.Droid.Resource.Attribute.statusBarBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.statusBarScrim = global::MixologyJournalApp.Droid.Resource.Attribute.statusBarScrim;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.strokeColor = global::MixologyJournalApp.Droid.Resource.Attribute.strokeColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.strokeWidth = global::MixologyJournalApp.Droid.Resource.Attribute.strokeWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.subMenuArrow = global::MixologyJournalApp.Droid.Resource.Attribute.subMenuArrow;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.submitBackground = global::MixologyJournalApp.Droid.Resource.Attribute.submitBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.subtitle = global::MixologyJournalApp.Droid.Resource.Attribute.subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.subtitleTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.subtitleTextColor = global::MixologyJournalApp.Droid.Resource.Attribute.subtitleTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.subtitleTextStyle = global::MixologyJournalApp.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.suggestionRowLayout = global::MixologyJournalApp.Droid.Resource.Attribute.suggestionRowLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.switchMinWidth = global::MixologyJournalApp.Droid.Resource.Attribute.switchMinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.switchPadding = global::MixologyJournalApp.Droid.Resource.Attribute.switchPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.switchStyle = global::MixologyJournalApp.Droid.Resource.Attribute.switchStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.switchTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.switchTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabBackground = global::MixologyJournalApp.Droid.Resource.Attribute.tabBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabContentStart = global::MixologyJournalApp.Droid.Resource.Attribute.tabContentStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabGravity = global::MixologyJournalApp.Droid.Resource.Attribute.tabGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabIconTint = global::MixologyJournalApp.Droid.Resource.Attribute.tabIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabIconTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.tabIconTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabIndicator = global::MixologyJournalApp.Droid.Resource.Attribute.tabIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabIndicatorAnimationDuration = global::MixologyJournalApp.Droid.Resource.Attribute.tabIndicatorAnimationDuration;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabIndicatorColor = global::MixologyJournalApp.Droid.Resource.Attribute.tabIndicatorColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabIndicatorFullWidth = global::MixologyJournalApp.Droid.Resource.Attribute.tabIndicatorFullWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabIndicatorGravity = global::MixologyJournalApp.Droid.Resource.Attribute.tabIndicatorGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabIndicatorHeight = global::MixologyJournalApp.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabInlineLabel = global::MixologyJournalApp.Droid.Resource.Attribute.tabInlineLabel;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabMaxWidth = global::MixologyJournalApp.Droid.Resource.Attribute.tabMaxWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabMinWidth = global::MixologyJournalApp.Droid.Resource.Attribute.tabMinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabMode = global::MixologyJournalApp.Droid.Resource.Attribute.tabMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabPadding = global::MixologyJournalApp.Droid.Resource.Attribute.tabPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabPaddingBottom = global::MixologyJournalApp.Droid.Resource.Attribute.tabPaddingBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabPaddingEnd = global::MixologyJournalApp.Droid.Resource.Attribute.tabPaddingEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabPaddingStart = global::MixologyJournalApp.Droid.Resource.Attribute.tabPaddingStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabPaddingTop = global::MixologyJournalApp.Droid.Resource.Attribute.tabPaddingTop;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabRippleColor = global::MixologyJournalApp.Droid.Resource.Attribute.tabRippleColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabSelectedTextColor = global::MixologyJournalApp.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabStyle = global::MixologyJournalApp.Droid.Resource.Attribute.tabStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.tabTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabTextColor = global::MixologyJournalApp.Droid.Resource.Attribute.tabTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tabUnboundedRipple = global::MixologyJournalApp.Droid.Resource.Attribute.tabUnboundedRipple;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAllCaps = global::MixologyJournalApp.Droid.Resource.Attribute.textAllCaps;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceBody1 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceBody1;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceBody2 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceBody2;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceButton = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceButton;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceCaption = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceCaption;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceHeadline1 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceHeadline1;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceHeadline2 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceHeadline2;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceHeadline3 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceHeadline3;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceHeadline4 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceHeadline4;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceHeadline5 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceHeadline5;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceHeadline6 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceHeadline6;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceLargePopupMenu = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceListItem = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceListItem;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceListItemSecondary = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceListItemSmall = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceOverline = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceOverline;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearancePopupMenuHeader = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceSearchResultSubtitle = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceSearchResultTitle = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceSmallPopupMenu = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceSubtitle1 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceSubtitle1;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textAppearanceSubtitle2 = global::MixologyJournalApp.Droid.Resource.Attribute.textAppearanceSubtitle2;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textColorAlertDialogListItem = global::MixologyJournalApp.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textColorSearchUrl = global::MixologyJournalApp.Droid.Resource.Attribute.textColorSearchUrl;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textEndPadding = global::MixologyJournalApp.Droid.Resource.Attribute.textEndPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textInputStyle = global::MixologyJournalApp.Droid.Resource.Attribute.textInputStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textLocale = global::MixologyJournalApp.Droid.Resource.Attribute.textLocale;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.textStartPadding = global::MixologyJournalApp.Droid.Resource.Attribute.textStartPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.theme = global::MixologyJournalApp.Droid.Resource.Attribute.theme;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.thickness = global::MixologyJournalApp.Droid.Resource.Attribute.thickness;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.thumbTextPadding = global::MixologyJournalApp.Droid.Resource.Attribute.thumbTextPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.thumbTint = global::MixologyJournalApp.Droid.Resource.Attribute.thumbTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.thumbTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.thumbTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tickMark = global::MixologyJournalApp.Droid.Resource.Attribute.tickMark;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tickMarkTint = global::MixologyJournalApp.Droid.Resource.Attribute.tickMarkTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tickMarkTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tint = global::MixologyJournalApp.Droid.Resource.Attribute.tint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tintMode = global::MixologyJournalApp.Droid.Resource.Attribute.tintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.title = global::MixologyJournalApp.Droid.Resource.Attribute.title;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleEnabled = global::MixologyJournalApp.Droid.Resource.Attribute.titleEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleMargin = global::MixologyJournalApp.Droid.Resource.Attribute.titleMargin;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleMarginBottom = global::MixologyJournalApp.Droid.Resource.Attribute.titleMarginBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleMarginEnd = global::MixologyJournalApp.Droid.Resource.Attribute.titleMarginEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleMargins = global::MixologyJournalApp.Droid.Resource.Attribute.titleMargins;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleMarginStart = global::MixologyJournalApp.Droid.Resource.Attribute.titleMarginStart;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleMarginTop = global::MixologyJournalApp.Droid.Resource.Attribute.titleMarginTop;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleTextAppearance = global::MixologyJournalApp.Droid.Resource.Attribute.titleTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleTextColor = global::MixologyJournalApp.Droid.Resource.Attribute.titleTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.titleTextStyle = global::MixologyJournalApp.Droid.Resource.Attribute.titleTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.toolbarId = global::MixologyJournalApp.Droid.Resource.Attribute.toolbarId;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.toolbarNavigationButtonStyle = global::MixologyJournalApp.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.toolbarStyle = global::MixologyJournalApp.Droid.Resource.Attribute.toolbarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tooltipForegroundColor = global::MixologyJournalApp.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tooltipFrameBackground = global::MixologyJournalApp.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.tooltipText = global::MixologyJournalApp.Droid.Resource.Attribute.tooltipText;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.track = global::MixologyJournalApp.Droid.Resource.Attribute.track;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.trackTint = global::MixologyJournalApp.Droid.Resource.Attribute.trackTint;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.trackTintMode = global::MixologyJournalApp.Droid.Resource.Attribute.trackTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.ttcIndex = global::MixologyJournalApp.Droid.Resource.Attribute.ttcIndex;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.useCompatPadding = global::MixologyJournalApp.Droid.Resource.Attribute.useCompatPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.viewInflaterClass = global::MixologyJournalApp.Droid.Resource.Attribute.viewInflaterClass;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.voiceIcon = global::MixologyJournalApp.Droid.Resource.Attribute.voiceIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowActionBar = global::MixologyJournalApp.Droid.Resource.Attribute.windowActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowActionBarOverlay = global::MixologyJournalApp.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowActionModeOverlay = global::MixologyJournalApp.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowFixedHeightMajor = global::MixologyJournalApp.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowFixedHeightMinor = global::MixologyJournalApp.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowFixedWidthMajor = global::MixologyJournalApp.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowFixedWidthMinor = global::MixologyJournalApp.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowMinWidthMajor = global::MixologyJournalApp.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowMinWidthMinor = global::MixologyJournalApp.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.windowNoTitle = global::MixologyJournalApp.Droid.Resource.Attribute.windowNoTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Boolean.abc_action_bar_embed_tabs = global::MixologyJournalApp.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Xamarin.Forms.Material.Android.Resource.Boolean.abc_allow_stacked_button_bar = global::MixologyJournalApp.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Xamarin.Forms.Material.Android.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::MixologyJournalApp.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Xamarin.Forms.Material.Android.Resource.Boolean.mtrl_btn_textappearance_all_caps = global::MixologyJournalApp.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_background_cache_hint_selector_material_dark = global::MixologyJournalApp.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_background_cache_hint_selector_material_light = global::MixologyJournalApp.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_btn_colored_borderless_text_material = global::MixologyJournalApp.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_btn_colored_text_material = global::MixologyJournalApp.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_color_highlight_material = global::MixologyJournalApp.Droid.Resource.Color.abc_color_highlight_material;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_hint_foreground_material_dark = global::MixologyJournalApp.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_hint_foreground_material_light = global::MixologyJournalApp.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_input_method_navigation_guard = global::MixologyJournalApp.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_primary_text_disable_only_material_dark = global::MixologyJournalApp.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_primary_text_disable_only_material_light = global::MixologyJournalApp.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_primary_text_material_dark = global::MixologyJournalApp.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_primary_text_material_light = global::MixologyJournalApp.Droid.Resource.Color.abc_primary_text_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_search_url_text = global::MixologyJournalApp.Droid.Resource.Color.abc_search_url_text;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_search_url_text_normal = global::MixologyJournalApp.Droid.Resource.Color.abc_search_url_text_normal;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_search_url_text_pressed = global::MixologyJournalApp.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_search_url_text_selected = global::MixologyJournalApp.Droid.Resource.Color.abc_search_url_text_selected;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_secondary_text_material_dark = global::MixologyJournalApp.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_secondary_text_material_light = global::MixologyJournalApp.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_tint_btn_checkable = global::MixologyJournalApp.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_tint_default = global::MixologyJournalApp.Droid.Resource.Color.abc_tint_default;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_tint_edittext = global::MixologyJournalApp.Droid.Resource.Color.abc_tint_edittext;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_tint_seek_thumb = global::MixologyJournalApp.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_tint_spinner = global::MixologyJournalApp.Droid.Resource.Color.abc_tint_spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Color.abc_tint_switch_track = global::MixologyJournalApp.Droid.Resource.Color.abc_tint_switch_track;
+			global::Xamarin.Forms.Material.Android.Resource.Color.accent_material_dark = global::MixologyJournalApp.Droid.Resource.Color.accent_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.accent_material_light = global::MixologyJournalApp.Droid.Resource.Color.accent_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.background_floating_material_dark = global::MixologyJournalApp.Droid.Resource.Color.background_floating_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.background_floating_material_light = global::MixologyJournalApp.Droid.Resource.Color.background_floating_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.background_material_dark = global::MixologyJournalApp.Droid.Resource.Color.background_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.background_material_light = global::MixologyJournalApp.Droid.Resource.Color.background_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.bright_foreground_disabled_material_dark = global::MixologyJournalApp.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.bright_foreground_disabled_material_light = global::MixologyJournalApp.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.bright_foreground_inverse_material_dark = global::MixologyJournalApp.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.bright_foreground_inverse_material_light = global::MixologyJournalApp.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.bright_foreground_material_dark = global::MixologyJournalApp.Droid.Resource.Color.bright_foreground_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.bright_foreground_material_light = global::MixologyJournalApp.Droid.Resource.Color.bright_foreground_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.button_material_dark = global::MixologyJournalApp.Droid.Resource.Color.button_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.button_material_light = global::MixologyJournalApp.Droid.Resource.Color.button_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.cardview_dark_background = global::MixologyJournalApp.Droid.Resource.Color.cardview_dark_background;
+			global::Xamarin.Forms.Material.Android.Resource.Color.cardview_light_background = global::MixologyJournalApp.Droid.Resource.Color.cardview_light_background;
+			global::Xamarin.Forms.Material.Android.Resource.Color.cardview_shadow_end_color = global::MixologyJournalApp.Droid.Resource.Color.cardview_shadow_end_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.cardview_shadow_start_color = global::MixologyJournalApp.Droid.Resource.Color.cardview_shadow_start_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_bottom_navigation_shadow_color = global::MixologyJournalApp.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_default_color_primary = global::MixologyJournalApp.Droid.Resource.Color.design_default_color_primary;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_default_color_primary_dark = global::MixologyJournalApp.Droid.Resource.Color.design_default_color_primary_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_error = global::MixologyJournalApp.Droid.Resource.Color.design_error;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_fab_shadow_end_color = global::MixologyJournalApp.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_fab_shadow_mid_color = global::MixologyJournalApp.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_fab_shadow_start_color = global::MixologyJournalApp.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_fab_stroke_end_inner_color = global::MixologyJournalApp.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_fab_stroke_end_outer_color = global::MixologyJournalApp.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_fab_stroke_top_inner_color = global::MixologyJournalApp.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_fab_stroke_top_outer_color = global::MixologyJournalApp.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_snackbar_background_color = global::MixologyJournalApp.Droid.Resource.Color.design_snackbar_background_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.design_tint_password_toggle = global::MixologyJournalApp.Droid.Resource.Color.design_tint_password_toggle;
+			global::Xamarin.Forms.Material.Android.Resource.Color.dim_foreground_disabled_material_dark = global::MixologyJournalApp.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.dim_foreground_disabled_material_light = global::MixologyJournalApp.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.dim_foreground_material_dark = global::MixologyJournalApp.Droid.Resource.Color.dim_foreground_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.dim_foreground_material_light = global::MixologyJournalApp.Droid.Resource.Color.dim_foreground_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.error_color_material_dark = global::MixologyJournalApp.Droid.Resource.Color.error_color_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.error_color_material_light = global::MixologyJournalApp.Droid.Resource.Color.error_color_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.foreground_material_dark = global::MixologyJournalApp.Droid.Resource.Color.foreground_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.foreground_material_light = global::MixologyJournalApp.Droid.Resource.Color.foreground_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.highlighted_text_material_dark = global::MixologyJournalApp.Droid.Resource.Color.highlighted_text_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.highlighted_text_material_light = global::MixologyJournalApp.Droid.Resource.Color.highlighted_text_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_blue_grey_800 = global::MixologyJournalApp.Droid.Resource.Color.material_blue_grey_800;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_blue_grey_900 = global::MixologyJournalApp.Droid.Resource.Color.material_blue_grey_900;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_blue_grey_950 = global::MixologyJournalApp.Droid.Resource.Color.material_blue_grey_950;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_deep_teal_200 = global::MixologyJournalApp.Droid.Resource.Color.material_deep_teal_200;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_deep_teal_500 = global::MixologyJournalApp.Droid.Resource.Color.material_deep_teal_500;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_grey_100 = global::MixologyJournalApp.Droid.Resource.Color.material_grey_100;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_grey_300 = global::MixologyJournalApp.Droid.Resource.Color.material_grey_300;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_grey_50 = global::MixologyJournalApp.Droid.Resource.Color.material_grey_50;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_grey_600 = global::MixologyJournalApp.Droid.Resource.Color.material_grey_600;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_grey_800 = global::MixologyJournalApp.Droid.Resource.Color.material_grey_800;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_grey_850 = global::MixologyJournalApp.Droid.Resource.Color.material_grey_850;
+			global::Xamarin.Forms.Material.Android.Resource.Color.material_grey_900 = global::MixologyJournalApp.Droid.Resource.Color.material_grey_900;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::MixologyJournalApp.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_bottom_nav_item_tint = global::MixologyJournalApp.Droid.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_btn_bg_color_disabled = global::MixologyJournalApp.Droid.Resource.Color.mtrl_btn_bg_color_disabled;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_btn_bg_color_selector = global::MixologyJournalApp.Droid.Resource.Color.mtrl_btn_bg_color_selector;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_btn_ripple_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_btn_ripple_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_btn_stroke_color_selector = global::MixologyJournalApp.Droid.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_btn_text_btn_ripple_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_btn_text_color_disabled = global::MixologyJournalApp.Droid.Resource.Color.mtrl_btn_text_color_disabled;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_btn_text_color_selector = global::MixologyJournalApp.Droid.Resource.Color.mtrl_btn_text_color_selector;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_btn_transparent_bg_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_chip_background_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_chip_background_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_chip_close_icon_tint = global::MixologyJournalApp.Droid.Resource.Color.mtrl_chip_close_icon_tint;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_chip_ripple_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_chip_ripple_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_chip_text_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_chip_text_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_fab_ripple_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_fab_ripple_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_scrim_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_scrim_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_tabs_colored_ripple_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_tabs_colored_ripple_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_tabs_icon_color_selector = global::MixologyJournalApp.Droid.Resource.Color.mtrl_tabs_icon_color_selector;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_tabs_icon_color_selector_colored = global::MixologyJournalApp.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_tabs_legacy_text_color_selector = global::MixologyJournalApp.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_tabs_ripple_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_tabs_ripple_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_textinput_default_box_stroke_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_textinput_disabled_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_textinput_disabled_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::MixologyJournalApp.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.mtrl_text_btn_text_color_selector = global::MixologyJournalApp.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
+			global::Xamarin.Forms.Material.Android.Resource.Color.notification_action_color_filter = global::MixologyJournalApp.Droid.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Forms.Material.Android.Resource.Color.notification_icon_bg_color = global::MixologyJournalApp.Droid.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.notification_material_background_media_default_color = global::MixologyJournalApp.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Xamarin.Forms.Material.Android.Resource.Color.primary_dark_material_dark = global::MixologyJournalApp.Droid.Resource.Color.primary_dark_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.primary_dark_material_light = global::MixologyJournalApp.Droid.Resource.Color.primary_dark_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.primary_material_dark = global::MixologyJournalApp.Droid.Resource.Color.primary_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.primary_material_light = global::MixologyJournalApp.Droid.Resource.Color.primary_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.primary_text_default_material_dark = global::MixologyJournalApp.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.primary_text_default_material_light = global::MixologyJournalApp.Droid.Resource.Color.primary_text_default_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.primary_text_disabled_material_dark = global::MixologyJournalApp.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.primary_text_disabled_material_light = global::MixologyJournalApp.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.ripple_material_dark = global::MixologyJournalApp.Droid.Resource.Color.ripple_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.ripple_material_light = global::MixologyJournalApp.Droid.Resource.Color.ripple_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.secondary_text_default_material_dark = global::MixologyJournalApp.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.secondary_text_default_material_light = global::MixologyJournalApp.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.secondary_text_disabled_material_dark = global::MixologyJournalApp.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.secondary_text_disabled_material_light = global::MixologyJournalApp.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.switch_thumb_disabled_material_dark = global::MixologyJournalApp.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.switch_thumb_disabled_material_light = global::MixologyJournalApp.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.switch_thumb_material_dark = global::MixologyJournalApp.Droid.Resource.Color.switch_thumb_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.switch_thumb_material_light = global::MixologyJournalApp.Droid.Resource.Color.switch_thumb_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.switch_thumb_normal_material_dark = global::MixologyJournalApp.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.switch_thumb_normal_material_light = global::MixologyJournalApp.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.tooltip_background_dark = global::MixologyJournalApp.Droid.Resource.Color.tooltip_background_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Color.tooltip_background_light = global::MixologyJournalApp.Droid.Resource.Color.tooltip_background_light;
+			global::Xamarin.Forms.Material.Android.Resource.Color.white_disabled_material = global::MixologyJournalApp.Droid.Resource.Color.white_disabled_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_content_inset_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_default_height_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_default_padding_end_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_default_padding_start_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_elevation_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_stacked_max_height = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_button_min_height_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_button_min_width_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_action_button_min_width_overflow_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_alert_dialog_button_bar_height = global::MixologyJournalApp.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_alert_dialog_button_dimen = global::MixologyJournalApp.Droid.Resource.Dimension.abc_alert_dialog_button_dimen;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_button_inset_horizontal_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_button_inset_vertical_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_button_padding_horizontal_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_button_padding_vertical_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::MixologyJournalApp.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_config_prefDialogWidth = global::MixologyJournalApp.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_control_corner_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_control_corner_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_control_inset_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_control_inset_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_control_padding_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_control_padding_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_corner_radius_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_corner_radius_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_fixed_height_major = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_fixed_height_minor = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_fixed_width_major = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_fixed_width_minor = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_min_width_major = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_min_width_minor = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_padding_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_padding_top_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dialog_title_divider_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_disabled_alpha_material_dark = global::MixologyJournalApp.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_disabled_alpha_material_light = global::MixologyJournalApp.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dropdownitem_icon_width = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dropdownitem_text_padding_left = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_dropdownitem_text_padding_right = global::MixologyJournalApp.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_edit_text_inset_bottom_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_edit_text_inset_top_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_floating_window_z = global::MixologyJournalApp.Droid.Resource.Dimension.abc_floating_window_z;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_list_item_height_large_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_list_item_height_large_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_list_item_height_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_list_item_height_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_list_item_height_small_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_list_item_height_small_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_list_item_padding_horizontal_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_panel_menu_list_width = global::MixologyJournalApp.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_progress_bar_height_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_search_view_preferred_height = global::MixologyJournalApp.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_search_view_preferred_width = global::MixologyJournalApp.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_seekbar_track_background_height_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_seekbar_track_progress_height_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_select_dialog_padding_start_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_switch_padding = global::MixologyJournalApp.Droid.Resource.Dimension.abc_switch_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_body_1_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_body_2_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_button_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_caption_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_display_1_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_display_2_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_display_3_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_display_4_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_headline_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_large_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_medium_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_menu_header_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_menu_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_small_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_subhead_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_title_material = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.abc_text_size_title_material_toolbar = global::MixologyJournalApp.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.cardview_compat_inset_shadow = global::MixologyJournalApp.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.cardview_default_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.cardview_default_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.cardview_default_radius = global::MixologyJournalApp.Droid.Resource.Dimension.cardview_default_radius;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.compat_button_inset_horizontal_material = global::MixologyJournalApp.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.compat_button_inset_vertical_material = global::MixologyJournalApp.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.compat_button_padding_horizontal_material = global::MixologyJournalApp.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.compat_button_padding_vertical_material = global::MixologyJournalApp.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.compat_control_corner_material = global::MixologyJournalApp.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.compat_notification_large_icon_max_height = global::MixologyJournalApp.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.compat_notification_large_icon_max_width = global::MixologyJournalApp.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_appbar_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.design_appbar_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_active_text_size = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_height = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_icon_size = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_icon_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_item_max_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_item_min_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_margin = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_shadow_height = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_navigation_text_size = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_sheet_modal_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_bottom_sheet_peek_height_min = global::MixologyJournalApp.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_fab_border_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_fab_border_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_fab_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.design_fab_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_fab_image_size = global::MixologyJournalApp.Droid.Resource.Dimension.design_fab_image_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_fab_size_mini = global::MixologyJournalApp.Droid.Resource.Dimension.design_fab_size_mini;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_fab_size_normal = global::MixologyJournalApp.Droid.Resource.Dimension.design_fab_size_normal;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_fab_translation_z_hovered_focused = global::MixologyJournalApp.Droid.Resource.Dimension.design_fab_translation_z_hovered_focused;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_fab_translation_z_pressed = global::MixologyJournalApp.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_navigation_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.design_navigation_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_navigation_icon_padding = global::MixologyJournalApp.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_navigation_icon_size = global::MixologyJournalApp.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_navigation_item_horizontal_padding = global::MixologyJournalApp.Droid.Resource.Dimension.design_navigation_item_horizontal_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_navigation_item_icon_padding = global::MixologyJournalApp.Droid.Resource.Dimension.design_navigation_item_icon_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_navigation_max_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_navigation_max_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_navigation_padding_bottom = global::MixologyJournalApp.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_navigation_separator_vertical_padding = global::MixologyJournalApp.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_action_inline_max_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_background_corner_radius = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_max_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_min_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_padding_horizontal = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_padding_vertical = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_snackbar_text_size = global::MixologyJournalApp.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_tab_max_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_tab_max_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_tab_scrollable_min_width = global::MixologyJournalApp.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_tab_text_size = global::MixologyJournalApp.Droid.Resource.Dimension.design_tab_text_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_tab_text_size_2line = global::MixologyJournalApp.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.design_textinput_caption_translate_y = global::MixologyJournalApp.Droid.Resource.Dimension.design_textinput_caption_translate_y;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.disabled_alpha_material_dark = global::MixologyJournalApp.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.disabled_alpha_material_light = global::MixologyJournalApp.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.fastscroll_default_thickness = global::MixologyJournalApp.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.fastscroll_margin = global::MixologyJournalApp.Droid.Resource.Dimension.fastscroll_margin;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.fastscroll_minimum_range = global::MixologyJournalApp.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.highlight_alpha_material_colored = global::MixologyJournalApp.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.highlight_alpha_material_dark = global::MixologyJournalApp.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.highlight_alpha_material_light = global::MixologyJournalApp.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.hint_alpha_material_dark = global::MixologyJournalApp.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.hint_alpha_material_light = global::MixologyJournalApp.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.hint_pressed_alpha_material_dark = global::MixologyJournalApp.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.hint_pressed_alpha_material_light = global::MixologyJournalApp.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::MixologyJournalApp.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::MixologyJournalApp.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::MixologyJournalApp.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_bottomappbar_height = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_bottomappbar_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_corner_radius = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_corner_radius;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_dialog_btn_min_width = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_dialog_btn_min_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_disabled_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_disabled_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_disabled_z = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_disabled_z;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_focused_z = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_focused_z;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_hovered_z = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_hovered_z;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_icon_btn_padding_left = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_icon_btn_padding_left;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_icon_padding = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_icon_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_inset = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_inset;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_letter_spacing = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_letter_spacing;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_padding_bottom = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_padding_bottom;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_padding_left = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_padding_left;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_padding_right = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_padding_right;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_padding_top = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_padding_top;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_pressed_z = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_pressed_z;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_stroke_size = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_stroke_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_text_btn_icon_padding = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_text_btn_padding_left = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_text_size = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_text_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_btn_z = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_btn_z;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_card_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_card_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_card_spacing = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_card_spacing;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_chip_pressed_translation_z = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_chip_text_size = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_chip_text_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_fab_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_fab_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_fab_translation_z_pressed = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_navigation_elevation = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_navigation_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_navigation_item_icon_padding = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_snackbar_margin = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_snackbar_margin;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_textinput_box_bottom_offset = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_textinput_box_bottom_offset;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_textinput_box_padding_end = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_textinput_box_padding_end;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.mtrl_toolbar_default_height = global::MixologyJournalApp.Droid.Resource.Dimension.mtrl_toolbar_default_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_action_icon_size = global::MixologyJournalApp.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_action_text_size = global::MixologyJournalApp.Droid.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_big_circle_margin = global::MixologyJournalApp.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_content_margin_start = global::MixologyJournalApp.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_large_icon_height = global::MixologyJournalApp.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_large_icon_width = global::MixologyJournalApp.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_main_column_padding_top = global::MixologyJournalApp.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_media_narrow_margin = global::MixologyJournalApp.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_right_icon_size = global::MixologyJournalApp.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_right_side_padding_top = global::MixologyJournalApp.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_small_icon_background_padding = global::MixologyJournalApp.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_small_icon_size_as_large = global::MixologyJournalApp.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_subtext_size = global::MixologyJournalApp.Droid.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_top_pad = global::MixologyJournalApp.Droid.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.notification_top_pad_large_text = global::MixologyJournalApp.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.subtitle_corner_radius = global::MixologyJournalApp.Droid.Resource.Dimension.subtitle_corner_radius;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.subtitle_outline_width = global::MixologyJournalApp.Droid.Resource.Dimension.subtitle_outline_width;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.subtitle_shadow_offset = global::MixologyJournalApp.Droid.Resource.Dimension.subtitle_shadow_offset;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.subtitle_shadow_radius = global::MixologyJournalApp.Droid.Resource.Dimension.subtitle_shadow_radius;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.tooltip_corner_radius = global::MixologyJournalApp.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.tooltip_horizontal_padding = global::MixologyJournalApp.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.tooltip_margin = global::MixologyJournalApp.Droid.Resource.Dimension.tooltip_margin;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::MixologyJournalApp.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.tooltip_precise_anchor_threshold = global::MixologyJournalApp.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.tooltip_vertical_padding = global::MixologyJournalApp.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.tooltip_y_offset_non_touch = global::MixologyJournalApp.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Xamarin.Forms.Material.Android.Resource.Dimension.tooltip_y_offset_touch = global::MixologyJournalApp.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_action_bar_item_background_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_borderless_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_check_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_check_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_check_material_anim = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_check_material_anim;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_colored_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_default_mtrl_shape = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_radio_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_radio_material_anim = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_radio_material_anim;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::MixologyJournalApp.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_cab_background_internal_bg = global::MixologyJournalApp.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_cab_background_top_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_control_background_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_control_background_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_dialog_material_background = global::MixologyJournalApp.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_edit_text_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_edit_text_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_ab_back_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_clear_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_go_search_api_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_menu_overflow_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_search_api_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_star_black_16dp = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_star_black_36dp = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_star_black_48dp = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_star_half_black_16dp = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_star_half_black_36dp = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_star_half_black_48dp = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ic_voice_search_api_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_item_background_holo_dark = global::MixologyJournalApp.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_item_background_holo_light = global::MixologyJournalApp.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_divider_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_divider_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_divider_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_focused_holo = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_longpressed_holo = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_pressed_holo_dark = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_pressed_holo_light = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_selector_disabled_holo_light = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_selector_holo_dark = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_list_selector_holo_light = global::MixologyJournalApp.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::MixologyJournalApp.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_popup_background_mtrl_mult = global::MixologyJournalApp.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ratingbar_indicator_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ratingbar_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_ratingbar_small_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::MixologyJournalApp.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::MixologyJournalApp.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_seekbar_thumb_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_seekbar_tick_mark_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_seekbar_track_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_spinner_textfield_background_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_switch_thumb_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_switch_track_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_tab_indicator_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::MixologyJournalApp.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_textfield_search_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_text_cursor_material = global::MixologyJournalApp.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::MixologyJournalApp.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::MixologyJournalApp.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::MixologyJournalApp.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::MixologyJournalApp.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::MixologyJournalApp.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::MixologyJournalApp.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.abc_vector_test = global::MixologyJournalApp.Droid.Resource.Drawable.abc_vector_test;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.avd_hide_password = global::MixologyJournalApp.Droid.Resource.Drawable.avd_hide_password;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.avd_show_password = global::MixologyJournalApp.Droid.Resource.Drawable.avd_show_password;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.btn_checkbox_checked_mtrl = global::MixologyJournalApp.Droid.Resource.Drawable.btn_checkbox_checked_mtrl;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::MixologyJournalApp.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::MixologyJournalApp.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::MixologyJournalApp.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.btn_radio_off_mtrl = global::MixologyJournalApp.Droid.Resource.Drawable.btn_radio_off_mtrl;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::MixologyJournalApp.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.btn_radio_on_mtrl = global::MixologyJournalApp.Droid.Resource.Drawable.btn_radio_on_mtrl;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::MixologyJournalApp.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.design_bottom_navigation_item_background = global::MixologyJournalApp.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.design_fab_background = global::MixologyJournalApp.Droid.Resource.Drawable.design_fab_background;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.design_ic_visibility = global::MixologyJournalApp.Droid.Resource.Drawable.design_ic_visibility;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.design_ic_visibility_off = global::MixologyJournalApp.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.design_password_eye = global::MixologyJournalApp.Droid.Resource.Drawable.design_password_eye;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.design_snackbar_background = global::MixologyJournalApp.Droid.Resource.Drawable.design_snackbar_background;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.ic_mtrl_chip_checked_black = global::MixologyJournalApp.Droid.Resource.Drawable.ic_mtrl_chip_checked_black;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.ic_mtrl_chip_checked_circle = global::MixologyJournalApp.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.ic_mtrl_chip_close_circle = global::MixologyJournalApp.Droid.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.MaterialActivityIndicatorBackground = global::MixologyJournalApp.Droid.Resource.Drawable.MaterialActivityIndicatorBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.MaterialProgressBar = global::MixologyJournalApp.Droid.Resource.Drawable.MaterialProgressBar;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.mtrl_snackbar_background = global::MixologyJournalApp.Droid.Resource.Drawable.mtrl_snackbar_background;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.mtrl_tabs_default_indicator = global::MixologyJournalApp.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.navigation_empty_icon = global::MixologyJournalApp.Droid.Resource.Drawable.navigation_empty_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_action_background = global::MixologyJournalApp.Droid.Resource.Drawable.notification_action_background;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_bg = global::MixologyJournalApp.Droid.Resource.Drawable.notification_bg;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_bg_low = global::MixologyJournalApp.Droid.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_bg_low_normal = global::MixologyJournalApp.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_bg_low_pressed = global::MixologyJournalApp.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_bg_normal = global::MixologyJournalApp.Droid.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_bg_normal_pressed = global::MixologyJournalApp.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_icon_background = global::MixologyJournalApp.Droid.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_template_icon_bg = global::MixologyJournalApp.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_template_icon_low_bg = global::MixologyJournalApp.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notification_tile_bg = global::MixologyJournalApp.Droid.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::MixologyJournalApp.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.tooltip_frame_dark = global::MixologyJournalApp.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::Xamarin.Forms.Material.Android.Resource.Drawable.tooltip_frame_light = global::MixologyJournalApp.Droid.Resource.Drawable.tooltip_frame_light;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_action_clickable_span = global::MixologyJournalApp.Droid.Resource.Id.accessibility_action_clickable_span;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_0 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_0;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_1 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_1;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_10 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_10;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_11 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_11;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_12 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_12;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_13 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_13;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_14 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_14;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_15 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_15;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_16 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_16;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_17 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_17;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_18 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_18;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_19 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_19;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_2 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_2;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_20 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_20;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_21 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_21;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_22 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_22;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_23 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_23;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_24 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_24;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_25 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_25;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_26 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_26;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_27 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_27;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_28 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_28;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_29 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_29;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_3 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_3;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_30 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_30;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_31 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_31;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_4 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_4;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_5 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_5;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_6 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_6;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_7 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_7;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_8 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_8;
+			global::Xamarin.Forms.Material.Android.Resource.Id.accessibility_custom_action_9 = global::MixologyJournalApp.Droid.Resource.Id.accessibility_custom_action_9;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action0 = global::MixologyJournalApp.Droid.Resource.Id.action0;
+			global::Xamarin.Forms.Material.Android.Resource.Id.actions = global::MixologyJournalApp.Droid.Resource.Id.actions;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_bar = global::MixologyJournalApp.Droid.Resource.Id.action_bar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_bar_activity_content = global::MixologyJournalApp.Droid.Resource.Id.action_bar_activity_content;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_bar_container = global::MixologyJournalApp.Droid.Resource.Id.action_bar_container;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_bar_root = global::MixologyJournalApp.Droid.Resource.Id.action_bar_root;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_bar_spinner = global::MixologyJournalApp.Droid.Resource.Id.action_bar_spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_bar_subtitle = global::MixologyJournalApp.Droid.Resource.Id.action_bar_subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_bar_title = global::MixologyJournalApp.Droid.Resource.Id.action_bar_title;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_container = global::MixologyJournalApp.Droid.Resource.Id.action_container;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_context_bar = global::MixologyJournalApp.Droid.Resource.Id.action_context_bar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_divider = global::MixologyJournalApp.Droid.Resource.Id.action_divider;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_image = global::MixologyJournalApp.Droid.Resource.Id.action_image;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_menu_divider = global::MixologyJournalApp.Droid.Resource.Id.action_menu_divider;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_menu_presenter = global::MixologyJournalApp.Droid.Resource.Id.action_menu_presenter;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_mode_bar = global::MixologyJournalApp.Droid.Resource.Id.action_mode_bar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_mode_bar_stub = global::MixologyJournalApp.Droid.Resource.Id.action_mode_bar_stub;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_mode_close_button = global::MixologyJournalApp.Droid.Resource.Id.action_mode_close_button;
+			global::Xamarin.Forms.Material.Android.Resource.Id.action_text = global::MixologyJournalApp.Droid.Resource.Id.action_text;
+			global::Xamarin.Forms.Material.Android.Resource.Id.activity_chooser_view_content = global::MixologyJournalApp.Droid.Resource.Id.activity_chooser_view_content;
+			global::Xamarin.Forms.Material.Android.Resource.Id.add = global::MixologyJournalApp.Droid.Resource.Id.add;
+			global::Xamarin.Forms.Material.Android.Resource.Id.alertTitle = global::MixologyJournalApp.Droid.Resource.Id.alertTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Id.all = global::MixologyJournalApp.Droid.Resource.Id.all;
+			global::Xamarin.Forms.Material.Android.Resource.Id.ALT = global::MixologyJournalApp.Droid.Resource.Id.ALT;
+			global::Xamarin.Forms.Material.Android.Resource.Id.always = global::MixologyJournalApp.Droid.Resource.Id.always;
+			global::Xamarin.Forms.Material.Android.Resource.Id.async = global::MixologyJournalApp.Droid.Resource.Id.async;
+			global::Xamarin.Forms.Material.Android.Resource.Id.auto = global::MixologyJournalApp.Droid.Resource.Id.auto;
+			global::Xamarin.Forms.Material.Android.Resource.Id.beginning = global::MixologyJournalApp.Droid.Resource.Id.beginning;
+			global::Xamarin.Forms.Material.Android.Resource.Id.blocking = global::MixologyJournalApp.Droid.Resource.Id.blocking;
+			global::Xamarin.Forms.Material.Android.Resource.Id.bottom = global::MixologyJournalApp.Droid.Resource.Id.bottom;
+			global::Xamarin.Forms.Material.Android.Resource.Id.bottomtab_navarea = global::MixologyJournalApp.Droid.Resource.Id.bottomtab_navarea;
+			global::Xamarin.Forms.Material.Android.Resource.Id.bottomtab_tabbar = global::MixologyJournalApp.Droid.Resource.Id.bottomtab_tabbar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.buttonPanel = global::MixologyJournalApp.Droid.Resource.Id.buttonPanel;
+			global::Xamarin.Forms.Material.Android.Resource.Id.cancel_action = global::MixologyJournalApp.Droid.Resource.Id.cancel_action;
+			global::Xamarin.Forms.Material.Android.Resource.Id.center = global::MixologyJournalApp.Droid.Resource.Id.center;
+			global::Xamarin.Forms.Material.Android.Resource.Id.center_horizontal = global::MixologyJournalApp.Droid.Resource.Id.center_horizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Id.center_vertical = global::MixologyJournalApp.Droid.Resource.Id.center_vertical;
+			global::Xamarin.Forms.Material.Android.Resource.Id.checkbox = global::MixologyJournalApp.Droid.Resource.Id.checkbox;
+			global::Xamarin.Forms.Material.Android.Resource.Id.@checked = global::MixologyJournalApp.Droid.Resource.Id.@checked;
+			global::Xamarin.Forms.Material.Android.Resource.Id.chronometer = global::MixologyJournalApp.Droid.Resource.Id.chronometer;
+			global::Xamarin.Forms.Material.Android.Resource.Id.clip_horizontal = global::MixologyJournalApp.Droid.Resource.Id.clip_horizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Id.clip_vertical = global::MixologyJournalApp.Droid.Resource.Id.clip_vertical;
+			global::Xamarin.Forms.Material.Android.Resource.Id.collapseActionView = global::MixologyJournalApp.Droid.Resource.Id.collapseActionView;
+			global::Xamarin.Forms.Material.Android.Resource.Id.container = global::MixologyJournalApp.Droid.Resource.Id.container;
+			global::Xamarin.Forms.Material.Android.Resource.Id.content = global::MixologyJournalApp.Droid.Resource.Id.content;
+			global::Xamarin.Forms.Material.Android.Resource.Id.contentPanel = global::MixologyJournalApp.Droid.Resource.Id.contentPanel;
+			global::Xamarin.Forms.Material.Android.Resource.Id.coordinator = global::MixologyJournalApp.Droid.Resource.Id.coordinator;
+			global::Xamarin.Forms.Material.Android.Resource.Id.CTRL = global::MixologyJournalApp.Droid.Resource.Id.CTRL;
+			global::Xamarin.Forms.Material.Android.Resource.Id.custom = global::MixologyJournalApp.Droid.Resource.Id.custom;
+			global::Xamarin.Forms.Material.Android.Resource.Id.customPanel = global::MixologyJournalApp.Droid.Resource.Id.customPanel;
+			global::Xamarin.Forms.Material.Android.Resource.Id.decor_content_parent = global::MixologyJournalApp.Droid.Resource.Id.decor_content_parent;
+			global::Xamarin.Forms.Material.Android.Resource.Id.default_activity_button = global::MixologyJournalApp.Droid.Resource.Id.default_activity_button;
+			global::Xamarin.Forms.Material.Android.Resource.Id.design_bottom_sheet = global::MixologyJournalApp.Droid.Resource.Id.design_bottom_sheet;
+			global::Xamarin.Forms.Material.Android.Resource.Id.design_menu_item_action_area = global::MixologyJournalApp.Droid.Resource.Id.design_menu_item_action_area;
+			global::Xamarin.Forms.Material.Android.Resource.Id.design_menu_item_action_area_stub = global::MixologyJournalApp.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::Xamarin.Forms.Material.Android.Resource.Id.design_menu_item_text = global::MixologyJournalApp.Droid.Resource.Id.design_menu_item_text;
+			global::Xamarin.Forms.Material.Android.Resource.Id.design_navigation_view = global::MixologyJournalApp.Droid.Resource.Id.design_navigation_view;
+			global::Xamarin.Forms.Material.Android.Resource.Id.dialog_button = global::MixologyJournalApp.Droid.Resource.Id.dialog_button;
+			global::Xamarin.Forms.Material.Android.Resource.Id.disableHome = global::MixologyJournalApp.Droid.Resource.Id.disableHome;
+			global::Xamarin.Forms.Material.Android.Resource.Id.edit_query = global::MixologyJournalApp.Droid.Resource.Id.edit_query;
+			global::Xamarin.Forms.Material.Android.Resource.Id.end = global::MixologyJournalApp.Droid.Resource.Id.end;
+			global::Xamarin.Forms.Material.Android.Resource.Id.end_padder = global::MixologyJournalApp.Droid.Resource.Id.end_padder;
+			global::Xamarin.Forms.Material.Android.Resource.Id.enterAlways = global::MixologyJournalApp.Droid.Resource.Id.enterAlways;
+			global::Xamarin.Forms.Material.Android.Resource.Id.enterAlwaysCollapsed = global::MixologyJournalApp.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::Xamarin.Forms.Material.Android.Resource.Id.exitUntilCollapsed = global::MixologyJournalApp.Droid.Resource.Id.exitUntilCollapsed;
+			global::Xamarin.Forms.Material.Android.Resource.Id.expanded_menu = global::MixologyJournalApp.Droid.Resource.Id.expanded_menu;
+			global::Xamarin.Forms.Material.Android.Resource.Id.expand_activities_button = global::MixologyJournalApp.Droid.Resource.Id.expand_activities_button;
+			global::Xamarin.Forms.Material.Android.Resource.Id.fill = global::MixologyJournalApp.Droid.Resource.Id.fill;
+			global::Xamarin.Forms.Material.Android.Resource.Id.filled = global::MixologyJournalApp.Droid.Resource.Id.filled;
+			global::Xamarin.Forms.Material.Android.Resource.Id.fill_horizontal = global::MixologyJournalApp.Droid.Resource.Id.fill_horizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Id.fill_vertical = global::MixologyJournalApp.Droid.Resource.Id.fill_vertical;
+			global::Xamarin.Forms.Material.Android.Resource.Id.@fixed = global::MixologyJournalApp.Droid.Resource.Id.@fixed;
+			global::Xamarin.Forms.Material.Android.Resource.Id.flyoutcontent_appbar = global::MixologyJournalApp.Droid.Resource.Id.flyoutcontent_appbar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.flyoutcontent_recycler = global::MixologyJournalApp.Droid.Resource.Id.flyoutcontent_recycler;
+			global::Xamarin.Forms.Material.Android.Resource.Id.forever = global::MixologyJournalApp.Droid.Resource.Id.forever;
+			global::Xamarin.Forms.Material.Android.Resource.Id.FUNCTION = global::MixologyJournalApp.Droid.Resource.Id.FUNCTION;
+			global::Xamarin.Forms.Material.Android.Resource.Id.ghost_view = global::MixologyJournalApp.Droid.Resource.Id.ghost_view;
+			global::Xamarin.Forms.Material.Android.Resource.Id.ghost_view_holder = global::MixologyJournalApp.Droid.Resource.Id.ghost_view_holder;
+			global::Xamarin.Forms.Material.Android.Resource.Id.group_divider = global::MixologyJournalApp.Droid.Resource.Id.group_divider;
+			global::Xamarin.Forms.Material.Android.Resource.Id.home = global::MixologyJournalApp.Droid.Resource.Id.home;
+			global::Xamarin.Forms.Material.Android.Resource.Id.homeAsUp = global::MixologyJournalApp.Droid.Resource.Id.homeAsUp;
+			global::Xamarin.Forms.Material.Android.Resource.Id.icon = global::MixologyJournalApp.Droid.Resource.Id.icon;
+			global::Xamarin.Forms.Material.Android.Resource.Id.icon_group = global::MixologyJournalApp.Droid.Resource.Id.icon_group;
+			global::Xamarin.Forms.Material.Android.Resource.Id.ifRoom = global::MixologyJournalApp.Droid.Resource.Id.ifRoom;
+			global::Xamarin.Forms.Material.Android.Resource.Id.image = global::MixologyJournalApp.Droid.Resource.Id.image;
+			global::Xamarin.Forms.Material.Android.Resource.Id.info = global::MixologyJournalApp.Droid.Resource.Id.info;
+			global::Xamarin.Forms.Material.Android.Resource.Id.italic = global::MixologyJournalApp.Droid.Resource.Id.italic;
+			global::Xamarin.Forms.Material.Android.Resource.Id.item_touch_helper_previous_elevation = global::MixologyJournalApp.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Id.labeled = global::MixologyJournalApp.Droid.Resource.Id.labeled;
+			global::Xamarin.Forms.Material.Android.Resource.Id.largeLabel = global::MixologyJournalApp.Droid.Resource.Id.largeLabel;
+			global::Xamarin.Forms.Material.Android.Resource.Id.left = global::MixologyJournalApp.Droid.Resource.Id.left;
+			global::Xamarin.Forms.Material.Android.Resource.Id.line1 = global::MixologyJournalApp.Droid.Resource.Id.line1;
+			global::Xamarin.Forms.Material.Android.Resource.Id.line3 = global::MixologyJournalApp.Droid.Resource.Id.line3;
+			global::Xamarin.Forms.Material.Android.Resource.Id.listMode = global::MixologyJournalApp.Droid.Resource.Id.listMode;
+			global::Xamarin.Forms.Material.Android.Resource.Id.list_item = global::MixologyJournalApp.Droid.Resource.Id.list_item;
+			global::Xamarin.Forms.Material.Android.Resource.Id.main_appbar = global::MixologyJournalApp.Droid.Resource.Id.main_appbar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.main_tablayout = global::MixologyJournalApp.Droid.Resource.Id.main_tablayout;
+			global::Xamarin.Forms.Material.Android.Resource.Id.main_toolbar = global::MixologyJournalApp.Droid.Resource.Id.main_toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.main_viewpager = global::MixologyJournalApp.Droid.Resource.Id.main_viewpager;
+			global::Xamarin.Forms.Material.Android.Resource.Id.masked = global::MixologyJournalApp.Droid.Resource.Id.masked;
+			global::Xamarin.Forms.Material.Android.Resource.Id.materialformsedittext = global::MixologyJournalApp.Droid.Resource.Id.materialformsedittext;
+			global::Xamarin.Forms.Material.Android.Resource.Id.media_actions = global::MixologyJournalApp.Droid.Resource.Id.media_actions;
+			global::Xamarin.Forms.Material.Android.Resource.Id.message = global::MixologyJournalApp.Droid.Resource.Id.message;
+			global::Xamarin.Forms.Material.Android.Resource.Id.META = global::MixologyJournalApp.Droid.Resource.Id.META;
+			global::Xamarin.Forms.Material.Android.Resource.Id.middle = global::MixologyJournalApp.Droid.Resource.Id.middle;
+			global::Xamarin.Forms.Material.Android.Resource.Id.mini = global::MixologyJournalApp.Droid.Resource.Id.mini;
+			global::Xamarin.Forms.Material.Android.Resource.Id.mtrl_child_content_container = global::MixologyJournalApp.Droid.Resource.Id.mtrl_child_content_container;
+			global::Xamarin.Forms.Material.Android.Resource.Id.mtrl_internal_children_alpha_tag = global::MixologyJournalApp.Droid.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::Xamarin.Forms.Material.Android.Resource.Id.multiply = global::MixologyJournalApp.Droid.Resource.Id.multiply;
+			global::Xamarin.Forms.Material.Android.Resource.Id.navigation_header_container = global::MixologyJournalApp.Droid.Resource.Id.navigation_header_container;
+			global::Xamarin.Forms.Material.Android.Resource.Id.never = global::MixologyJournalApp.Droid.Resource.Id.never;
+			global::Xamarin.Forms.Material.Android.Resource.Id.none = global::MixologyJournalApp.Droid.Resource.Id.none;
+			global::Xamarin.Forms.Material.Android.Resource.Id.normal = global::MixologyJournalApp.Droid.Resource.Id.normal;
+			global::Xamarin.Forms.Material.Android.Resource.Id.notification_background = global::MixologyJournalApp.Droid.Resource.Id.notification_background;
+			global::Xamarin.Forms.Material.Android.Resource.Id.notification_main_column = global::MixologyJournalApp.Droid.Resource.Id.notification_main_column;
+			global::Xamarin.Forms.Material.Android.Resource.Id.notification_main_column_container = global::MixologyJournalApp.Droid.Resource.Id.notification_main_column_container;
+			global::Xamarin.Forms.Material.Android.Resource.Id.off = global::MixologyJournalApp.Droid.Resource.Id.off;
+			global::Xamarin.Forms.Material.Android.Resource.Id.on = global::MixologyJournalApp.Droid.Resource.Id.on;
+			global::Xamarin.Forms.Material.Android.Resource.Id.outline = global::MixologyJournalApp.Droid.Resource.Id.outline;
+			global::Xamarin.Forms.Material.Android.Resource.Id.parallax = global::MixologyJournalApp.Droid.Resource.Id.parallax;
+			global::Xamarin.Forms.Material.Android.Resource.Id.parentPanel = global::MixologyJournalApp.Droid.Resource.Id.parentPanel;
+			global::Xamarin.Forms.Material.Android.Resource.Id.parent_matrix = global::MixologyJournalApp.Droid.Resource.Id.parent_matrix;
+			global::Xamarin.Forms.Material.Android.Resource.Id.pin = global::MixologyJournalApp.Droid.Resource.Id.pin;
+			global::Xamarin.Forms.Material.Android.Resource.Id.progress_circular = global::MixologyJournalApp.Droid.Resource.Id.progress_circular;
+			global::Xamarin.Forms.Material.Android.Resource.Id.progress_horizontal = global::MixologyJournalApp.Droid.Resource.Id.progress_horizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Id.radio = global::MixologyJournalApp.Droid.Resource.Id.radio;
+			global::Xamarin.Forms.Material.Android.Resource.Id.right = global::MixologyJournalApp.Droid.Resource.Id.right;
+			global::Xamarin.Forms.Material.Android.Resource.Id.right_icon = global::MixologyJournalApp.Droid.Resource.Id.right_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Id.right_side = global::MixologyJournalApp.Droid.Resource.Id.right_side;
+			global::Xamarin.Forms.Material.Android.Resource.Id.save_non_transition_alpha = global::MixologyJournalApp.Droid.Resource.Id.save_non_transition_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Id.save_overlay_view = global::MixologyJournalApp.Droid.Resource.Id.save_overlay_view;
+			global::Xamarin.Forms.Material.Android.Resource.Id.screen = global::MixologyJournalApp.Droid.Resource.Id.screen;
+			global::Xamarin.Forms.Material.Android.Resource.Id.scroll = global::MixologyJournalApp.Droid.Resource.Id.scroll;
+			global::Xamarin.Forms.Material.Android.Resource.Id.scrollable = global::MixologyJournalApp.Droid.Resource.Id.scrollable;
+			global::Xamarin.Forms.Material.Android.Resource.Id.scrollIndicatorDown = global::MixologyJournalApp.Droid.Resource.Id.scrollIndicatorDown;
+			global::Xamarin.Forms.Material.Android.Resource.Id.scrollIndicatorUp = global::MixologyJournalApp.Droid.Resource.Id.scrollIndicatorUp;
+			global::Xamarin.Forms.Material.Android.Resource.Id.scrollView = global::MixologyJournalApp.Droid.Resource.Id.scrollView;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_badge = global::MixologyJournalApp.Droid.Resource.Id.search_badge;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_bar = global::MixologyJournalApp.Droid.Resource.Id.search_bar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_button = global::MixologyJournalApp.Droid.Resource.Id.search_button;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_close_btn = global::MixologyJournalApp.Droid.Resource.Id.search_close_btn;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_edit_frame = global::MixologyJournalApp.Droid.Resource.Id.search_edit_frame;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_go_btn = global::MixologyJournalApp.Droid.Resource.Id.search_go_btn;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_mag_icon = global::MixologyJournalApp.Droid.Resource.Id.search_mag_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_plate = global::MixologyJournalApp.Droid.Resource.Id.search_plate;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_src_text = global::MixologyJournalApp.Droid.Resource.Id.search_src_text;
+			global::Xamarin.Forms.Material.Android.Resource.Id.search_voice_btn = global::MixologyJournalApp.Droid.Resource.Id.search_voice_btn;
+			global::Xamarin.Forms.Material.Android.Resource.Id.selected = global::MixologyJournalApp.Droid.Resource.Id.selected;
+			global::Xamarin.Forms.Material.Android.Resource.Id.select_dialog_listview = global::MixologyJournalApp.Droid.Resource.Id.select_dialog_listview;
+			global::Xamarin.Forms.Material.Android.Resource.Id.shellcontent_appbar = global::MixologyJournalApp.Droid.Resource.Id.shellcontent_appbar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.shellcontent_toolbar = global::MixologyJournalApp.Droid.Resource.Id.shellcontent_toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.SHIFT = global::MixologyJournalApp.Droid.Resource.Id.SHIFT;
+			global::Xamarin.Forms.Material.Android.Resource.Id.shortcut = global::MixologyJournalApp.Droid.Resource.Id.shortcut;
+			global::Xamarin.Forms.Material.Android.Resource.Id.showCustom = global::MixologyJournalApp.Droid.Resource.Id.showCustom;
+			global::Xamarin.Forms.Material.Android.Resource.Id.showHome = global::MixologyJournalApp.Droid.Resource.Id.showHome;
+			global::Xamarin.Forms.Material.Android.Resource.Id.showTitle = global::MixologyJournalApp.Droid.Resource.Id.showTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Id.sliding_tabs = global::MixologyJournalApp.Droid.Resource.Id.sliding_tabs;
+			global::Xamarin.Forms.Material.Android.Resource.Id.smallLabel = global::MixologyJournalApp.Droid.Resource.Id.smallLabel;
+			global::Xamarin.Forms.Material.Android.Resource.Id.snackbar_action = global::MixologyJournalApp.Droid.Resource.Id.snackbar_action;
+			global::Xamarin.Forms.Material.Android.Resource.Id.snackbar_text = global::MixologyJournalApp.Droid.Resource.Id.snackbar_text;
+			global::Xamarin.Forms.Material.Android.Resource.Id.snap = global::MixologyJournalApp.Droid.Resource.Id.snap;
+			global::Xamarin.Forms.Material.Android.Resource.Id.snapMargins = global::MixologyJournalApp.Droid.Resource.Id.snapMargins;
+			global::Xamarin.Forms.Material.Android.Resource.Id.spacer = global::MixologyJournalApp.Droid.Resource.Id.spacer;
+			global::Xamarin.Forms.Material.Android.Resource.Id.split_action_bar = global::MixologyJournalApp.Droid.Resource.Id.split_action_bar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.src_atop = global::MixologyJournalApp.Droid.Resource.Id.src_atop;
+			global::Xamarin.Forms.Material.Android.Resource.Id.src_in = global::MixologyJournalApp.Droid.Resource.Id.src_in;
+			global::Xamarin.Forms.Material.Android.Resource.Id.src_over = global::MixologyJournalApp.Droid.Resource.Id.src_over;
+			global::Xamarin.Forms.Material.Android.Resource.Id.start = global::MixologyJournalApp.Droid.Resource.Id.start;
+			global::Xamarin.Forms.Material.Android.Resource.Id.status_bar_latest_event_content = global::MixologyJournalApp.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Xamarin.Forms.Material.Android.Resource.Id.stretch = global::MixologyJournalApp.Droid.Resource.Id.stretch;
+			global::Xamarin.Forms.Material.Android.Resource.Id.submenuarrow = global::MixologyJournalApp.Droid.Resource.Id.submenuarrow;
+			global::Xamarin.Forms.Material.Android.Resource.Id.submit_area = global::MixologyJournalApp.Droid.Resource.Id.submit_area;
+			global::Xamarin.Forms.Material.Android.Resource.Id.SYM = global::MixologyJournalApp.Droid.Resource.Id.SYM;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tabMode = global::MixologyJournalApp.Droid.Resource.Id.tabMode;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tag_accessibility_actions = global::MixologyJournalApp.Droid.Resource.Id.tag_accessibility_actions;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tag_accessibility_clickable_spans = global::MixologyJournalApp.Droid.Resource.Id.tag_accessibility_clickable_spans;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tag_accessibility_heading = global::MixologyJournalApp.Droid.Resource.Id.tag_accessibility_heading;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tag_accessibility_pane_title = global::MixologyJournalApp.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tag_screen_reader_focusable = global::MixologyJournalApp.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tag_transition_group = global::MixologyJournalApp.Droid.Resource.Id.tag_transition_group;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tag_unhandled_key_event_manager = global::MixologyJournalApp.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Xamarin.Forms.Material.Android.Resource.Id.tag_unhandled_key_listeners = global::MixologyJournalApp.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.Forms.Material.Android.Resource.Id.text = global::MixologyJournalApp.Droid.Resource.Id.text;
+			global::Xamarin.Forms.Material.Android.Resource.Id.text2 = global::MixologyJournalApp.Droid.Resource.Id.text2;
+			global::Xamarin.Forms.Material.Android.Resource.Id.textinput_counter = global::MixologyJournalApp.Droid.Resource.Id.textinput_counter;
+			global::Xamarin.Forms.Material.Android.Resource.Id.textinput_error = global::MixologyJournalApp.Droid.Resource.Id.textinput_error;
+			global::Xamarin.Forms.Material.Android.Resource.Id.textinput_helper_text = global::MixologyJournalApp.Droid.Resource.Id.textinput_helper_text;
+			global::Xamarin.Forms.Material.Android.Resource.Id.textSpacerNoButtons = global::MixologyJournalApp.Droid.Resource.Id.textSpacerNoButtons;
+			global::Xamarin.Forms.Material.Android.Resource.Id.textSpacerNoTitle = global::MixologyJournalApp.Droid.Resource.Id.textSpacerNoTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Id.textStart = global::MixologyJournalApp.Droid.Resource.Id.textStart;
+			global::Xamarin.Forms.Material.Android.Resource.Id.text_input_password_toggle = global::MixologyJournalApp.Droid.Resource.Id.text_input_password_toggle;
+			global::Xamarin.Forms.Material.Android.Resource.Id.time = global::MixologyJournalApp.Droid.Resource.Id.time;
+			global::Xamarin.Forms.Material.Android.Resource.Id.title = global::MixologyJournalApp.Droid.Resource.Id.title;
+			global::Xamarin.Forms.Material.Android.Resource.Id.titleDividerNoCustom = global::MixologyJournalApp.Droid.Resource.Id.titleDividerNoCustom;
+			global::Xamarin.Forms.Material.Android.Resource.Id.title_template = global::MixologyJournalApp.Droid.Resource.Id.title_template;
+			global::Xamarin.Forms.Material.Android.Resource.Id.toolbar = global::MixologyJournalApp.Droid.Resource.Id.toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Id.top = global::MixologyJournalApp.Droid.Resource.Id.top;
+			global::Xamarin.Forms.Material.Android.Resource.Id.topPanel = global::MixologyJournalApp.Droid.Resource.Id.topPanel;
+			global::Xamarin.Forms.Material.Android.Resource.Id.touch_outside = global::MixologyJournalApp.Droid.Resource.Id.touch_outside;
+			global::Xamarin.Forms.Material.Android.Resource.Id.transition_current_scene = global::MixologyJournalApp.Droid.Resource.Id.transition_current_scene;
+			global::Xamarin.Forms.Material.Android.Resource.Id.transition_layout_save = global::MixologyJournalApp.Droid.Resource.Id.transition_layout_save;
+			global::Xamarin.Forms.Material.Android.Resource.Id.transition_position = global::MixologyJournalApp.Droid.Resource.Id.transition_position;
+			global::Xamarin.Forms.Material.Android.Resource.Id.transition_scene_layoutid_cache = global::MixologyJournalApp.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::Xamarin.Forms.Material.Android.Resource.Id.transition_transform = global::MixologyJournalApp.Droid.Resource.Id.transition_transform;
+			global::Xamarin.Forms.Material.Android.Resource.Id.@unchecked = global::MixologyJournalApp.Droid.Resource.Id.@unchecked;
+			global::Xamarin.Forms.Material.Android.Resource.Id.uniform = global::MixologyJournalApp.Droid.Resource.Id.uniform;
+			global::Xamarin.Forms.Material.Android.Resource.Id.unlabeled = global::MixologyJournalApp.Droid.Resource.Id.unlabeled;
+			global::Xamarin.Forms.Material.Android.Resource.Id.up = global::MixologyJournalApp.Droid.Resource.Id.up;
+			global::Xamarin.Forms.Material.Android.Resource.Id.useLogo = global::MixologyJournalApp.Droid.Resource.Id.useLogo;
+			global::Xamarin.Forms.Material.Android.Resource.Id.view_offset_helper = global::MixologyJournalApp.Droid.Resource.Id.view_offset_helper;
+			global::Xamarin.Forms.Material.Android.Resource.Id.visible = global::MixologyJournalApp.Droid.Resource.Id.visible;
+			global::Xamarin.Forms.Material.Android.Resource.Id.withText = global::MixologyJournalApp.Droid.Resource.Id.withText;
+			global::Xamarin.Forms.Material.Android.Resource.Id.wrap_content = global::MixologyJournalApp.Droid.Resource.Id.wrap_content;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.abc_config_activityDefaultDur = global::MixologyJournalApp.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.abc_config_activityShortDur = global::MixologyJournalApp.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.app_bar_elevation_anim_duration = global::MixologyJournalApp.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.bottom_sheet_slide_duration = global::MixologyJournalApp.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.cancel_button_image_alpha = global::MixologyJournalApp.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.config_tooltipAnimTime = global::MixologyJournalApp.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.design_snackbar_text_max_lines = global::MixologyJournalApp.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.design_tab_indicator_anim_duration_ms = global::MixologyJournalApp.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.hide_password_duration = global::MixologyJournalApp.Droid.Resource.Integer.hide_password_duration;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.mtrl_btn_anim_delay_ms = global::MixologyJournalApp.Droid.Resource.Integer.mtrl_btn_anim_delay_ms;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.mtrl_btn_anim_duration_ms = global::MixologyJournalApp.Droid.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.mtrl_chip_anim_duration = global::MixologyJournalApp.Droid.Resource.Integer.mtrl_chip_anim_duration;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::MixologyJournalApp.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.show_password_duration = global::MixologyJournalApp.Droid.Resource.Integer.show_password_duration;
+			global::Xamarin.Forms.Material.Android.Resource.Integer.status_bar_notification_info_maxnum = global::MixologyJournalApp.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::MixologyJournalApp.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::MixologyJournalApp.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::MixologyJournalApp.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::MixologyJournalApp.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::MixologyJournalApp.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::MixologyJournalApp.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.fast_out_slow_in = global::MixologyJournalApp.Droid.Resource.Interpolator.fast_out_slow_in;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.mtrl_fast_out_linear_in = global::MixologyJournalApp.Droid.Resource.Interpolator.mtrl_fast_out_linear_in;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.mtrl_fast_out_slow_in = global::MixologyJournalApp.Droid.Resource.Interpolator.mtrl_fast_out_slow_in;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.mtrl_linear = global::MixologyJournalApp.Droid.Resource.Interpolator.mtrl_linear;
+			global::Xamarin.Forms.Material.Android.Resource.Interpolator.mtrl_linear_out_slow_in = global::MixologyJournalApp.Droid.Resource.Interpolator.mtrl_linear_out_slow_in;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_action_bar_title_item = global::MixologyJournalApp.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_action_bar_up_container = global::MixologyJournalApp.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_action_menu_item_layout = global::MixologyJournalApp.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_action_menu_layout = global::MixologyJournalApp.Droid.Resource.Layout.abc_action_menu_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_action_mode_bar = global::MixologyJournalApp.Droid.Resource.Layout.abc_action_mode_bar;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_action_mode_close_item_material = global::MixologyJournalApp.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_activity_chooser_view = global::MixologyJournalApp.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_activity_chooser_view_list_item = global::MixologyJournalApp.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_alert_dialog_button_bar_material = global::MixologyJournalApp.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_alert_dialog_material = global::MixologyJournalApp.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_alert_dialog_title_material = global::MixologyJournalApp.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_cascading_menu_item_layout = global::MixologyJournalApp.Droid.Resource.Layout.abc_cascading_menu_item_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_dialog_title_material = global::MixologyJournalApp.Droid.Resource.Layout.abc_dialog_title_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_expanded_menu_layout = global::MixologyJournalApp.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_list_menu_item_checkbox = global::MixologyJournalApp.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_list_menu_item_icon = global::MixologyJournalApp.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_list_menu_item_layout = global::MixologyJournalApp.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_list_menu_item_radio = global::MixologyJournalApp.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_popup_menu_header_item_layout = global::MixologyJournalApp.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_popup_menu_item_layout = global::MixologyJournalApp.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_screen_content_include = global::MixologyJournalApp.Droid.Resource.Layout.abc_screen_content_include;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_screen_simple = global::MixologyJournalApp.Droid.Resource.Layout.abc_screen_simple;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_screen_simple_overlay_action_mode = global::MixologyJournalApp.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_screen_toolbar = global::MixologyJournalApp.Droid.Resource.Layout.abc_screen_toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_search_dropdown_item_icons_2line = global::MixologyJournalApp.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_search_view = global::MixologyJournalApp.Droid.Resource.Layout.abc_search_view;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_select_dialog_material = global::MixologyJournalApp.Droid.Resource.Layout.abc_select_dialog_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.abc_tooltip = global::MixologyJournalApp.Droid.Resource.Layout.abc_tooltip;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.BottomTabLayout = global::MixologyJournalApp.Droid.Resource.Layout.BottomTabLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.custom_dialog = global::MixologyJournalApp.Droid.Resource.Layout.custom_dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_bottom_navigation_item = global::MixologyJournalApp.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_bottom_sheet_dialog = global::MixologyJournalApp.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_layout_snackbar = global::MixologyJournalApp.Droid.Resource.Layout.design_layout_snackbar;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_layout_snackbar_include = global::MixologyJournalApp.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_layout_tab_icon = global::MixologyJournalApp.Droid.Resource.Layout.design_layout_tab_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_layout_tab_text = global::MixologyJournalApp.Droid.Resource.Layout.design_layout_tab_text;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_menu_item_action_area = global::MixologyJournalApp.Droid.Resource.Layout.design_menu_item_action_area;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_navigation_item = global::MixologyJournalApp.Droid.Resource.Layout.design_navigation_item;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_navigation_item_header = global::MixologyJournalApp.Droid.Resource.Layout.design_navigation_item_header;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_navigation_item_separator = global::MixologyJournalApp.Droid.Resource.Layout.design_navigation_item_separator;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_navigation_item_subheader = global::MixologyJournalApp.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_navigation_menu = global::MixologyJournalApp.Droid.Resource.Layout.design_navigation_menu;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_navigation_menu_item = global::MixologyJournalApp.Droid.Resource.Layout.design_navigation_menu_item;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.design_text_input_password_icon = global::MixologyJournalApp.Droid.Resource.Layout.design_text_input_password_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.FlyoutContent = global::MixologyJournalApp.Droid.Resource.Layout.FlyoutContent;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.MaterialPickerTextInput = global::MixologyJournalApp.Droid.Resource.Layout.MaterialPickerTextInput;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.mtrl_layout_snackbar = global::MixologyJournalApp.Droid.Resource.Layout.mtrl_layout_snackbar;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.mtrl_layout_snackbar_include = global::MixologyJournalApp.Droid.Resource.Layout.mtrl_layout_snackbar_include;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_action = global::MixologyJournalApp.Droid.Resource.Layout.notification_action;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_action_tombstone = global::MixologyJournalApp.Droid.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_media_action = global::MixologyJournalApp.Droid.Resource.Layout.notification_media_action;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_media_cancel_action = global::MixologyJournalApp.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_big_media = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_big_media;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_big_media_custom = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_big_media_narrow = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_big_media_narrow_custom = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_custom_big = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_icon_group = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_lines_media = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_lines_media;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_media = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_media;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_media_custom = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_media_custom;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_part_chronometer = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.notification_template_part_time = global::MixologyJournalApp.Droid.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.RootLayout = global::MixologyJournalApp.Droid.Resource.Layout.RootLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.select_dialog_item_material = global::MixologyJournalApp.Droid.Resource.Layout.select_dialog_item_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.select_dialog_multichoice_material = global::MixologyJournalApp.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.select_dialog_singlechoice_material = global::MixologyJournalApp.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.ShellContent = global::MixologyJournalApp.Droid.Resource.Layout.ShellContent;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::MixologyJournalApp.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.Tabbar = global::MixologyJournalApp.Droid.Resource.Layout.Tabbar;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.TextInputLayoutFilledBox = global::MixologyJournalApp.Droid.Resource.Layout.TextInputLayoutFilledBox;
+			global::Xamarin.Forms.Material.Android.Resource.Layout.Toolbar = global::MixologyJournalApp.Droid.Resource.Layout.Toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_action_bar_home_description = global::MixologyJournalApp.Droid.Resource.String.abc_action_bar_home_description;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_action_bar_up_description = global::MixologyJournalApp.Droid.Resource.String.abc_action_bar_up_description;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_action_menu_overflow_description = global::MixologyJournalApp.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_action_mode_done = global::MixologyJournalApp.Droid.Resource.String.abc_action_mode_done;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_activitychooserview_choose_application = global::MixologyJournalApp.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_activity_chooser_view_see_all = global::MixologyJournalApp.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_capital_off = global::MixologyJournalApp.Droid.Resource.String.abc_capital_off;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_capital_on = global::MixologyJournalApp.Droid.Resource.String.abc_capital_on;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_alt_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_alt_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_ctrl_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_ctrl_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_delete_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_delete_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_enter_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_enter_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_function_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_function_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_meta_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_meta_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_shift_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_shift_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_space_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_space_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_menu_sym_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_menu_sym_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_prepend_shortcut_label = global::MixologyJournalApp.Droid.Resource.String.abc_prepend_shortcut_label;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_searchview_description_clear = global::MixologyJournalApp.Droid.Resource.String.abc_searchview_description_clear;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_searchview_description_query = global::MixologyJournalApp.Droid.Resource.String.abc_searchview_description_query;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_searchview_description_search = global::MixologyJournalApp.Droid.Resource.String.abc_searchview_description_search;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_searchview_description_submit = global::MixologyJournalApp.Droid.Resource.String.abc_searchview_description_submit;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_searchview_description_voice = global::MixologyJournalApp.Droid.Resource.String.abc_searchview_description_voice;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_search_hint = global::MixologyJournalApp.Droid.Resource.String.abc_search_hint;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_shareactionprovider_share_with = global::MixologyJournalApp.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_shareactionprovider_share_with_application = global::MixologyJournalApp.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Xamarin.Forms.Material.Android.Resource.String.abc_toolbar_collapse_description = global::MixologyJournalApp.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Xamarin.Forms.Material.Android.Resource.String.appbar_scrolling_view_behavior = global::MixologyJournalApp.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::Xamarin.Forms.Material.Android.Resource.String.bottom_sheet_behavior = global::MixologyJournalApp.Droid.Resource.String.bottom_sheet_behavior;
+			global::Xamarin.Forms.Material.Android.Resource.String.character_counter_content_description = global::MixologyJournalApp.Droid.Resource.String.character_counter_content_description;
+			global::Xamarin.Forms.Material.Android.Resource.String.character_counter_pattern = global::MixologyJournalApp.Droid.Resource.String.character_counter_pattern;
+			global::Xamarin.Forms.Material.Android.Resource.String.fab_transformation_scrim_behavior = global::MixologyJournalApp.Droid.Resource.String.fab_transformation_scrim_behavior;
+			global::Xamarin.Forms.Material.Android.Resource.String.fab_transformation_sheet_behavior = global::MixologyJournalApp.Droid.Resource.String.fab_transformation_sheet_behavior;
+			global::Xamarin.Forms.Material.Android.Resource.String.hide_bottom_view_on_scroll_behavior = global::MixologyJournalApp.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::Xamarin.Forms.Material.Android.Resource.String.mtrl_chip_close_icon_content_description = global::MixologyJournalApp.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Material.Android.Resource.String.password_toggle_content_description = global::MixologyJournalApp.Droid.Resource.String.password_toggle_content_description;
+			global::Xamarin.Forms.Material.Android.Resource.String.path_password_eye = global::MixologyJournalApp.Droid.Resource.String.path_password_eye;
+			global::Xamarin.Forms.Material.Android.Resource.String.path_password_eye_mask_strike_through = global::MixologyJournalApp.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::Xamarin.Forms.Material.Android.Resource.String.path_password_eye_mask_visible = global::MixologyJournalApp.Droid.Resource.String.path_password_eye_mask_visible;
+			global::Xamarin.Forms.Material.Android.Resource.String.path_password_strike_through = global::MixologyJournalApp.Droid.Resource.String.path_password_strike_through;
+			global::Xamarin.Forms.Material.Android.Resource.String.search_menu_title = global::MixologyJournalApp.Droid.Resource.String.search_menu_title;
+			global::Xamarin.Forms.Material.Android.Resource.String.status_bar_notification_info_overflow = global::MixologyJournalApp.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.AlertDialog_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.AlertDialog_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Animation_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Animation_AppCompat_DropDownUp = global::MixologyJournalApp.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Animation_AppCompat_Tooltip = global::MixologyJournalApp.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Animation_Design_BottomSheetDialog = global::MixologyJournalApp.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.AppCompatDialogStyle = global::MixologyJournalApp.Droid.Resource.Style.AppCompatDialogStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_AlertDialog_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_AlertDialog_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Animation_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::MixologyJournalApp.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Animation_AppCompat_Tooltip = global::MixologyJournalApp.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_CardView = global::MixologyJournalApp.Droid.Resource.Style.Base_CardView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_DialogWindowTitle_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Button = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Large = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Small = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Title = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::MixologyJournalApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_CompactMenu = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_Theme_MaterialComponents = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V21_Theme_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V21_Theme_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V22_Theme_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V22_Theme_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V23_Theme_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V23_Theme_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V26_Theme_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V26_Theme_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::MixologyJournalApp.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V28_Theme_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_V28_Theme_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V28_Theme_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V7_Theme_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V7_Theme_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::MixologyJournalApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::MixologyJournalApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::MixologyJournalApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionButton = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActionMode = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Button = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Button_Small = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_EditText = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ImageButton = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ListView = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_RatingBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_SearchView = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_SeekBar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Spinner = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_TextView = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_TextView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_Design_TabLayout = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_MaterialComponents_Chip = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::MixologyJournalApp.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Style.CardView = global::MixologyJournalApp.Droid.Resource.Style.CardView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.CardView_Dark = global::MixologyJournalApp.Droid.Resource.Style.CardView_Dark;
+			global::Xamarin.Forms.Material.Android.Resource.Style.CardView_Light = global::MixologyJournalApp.Droid.Resource.Style.CardView_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.MainTheme = global::MixologyJournalApp.Droid.Resource.Style.MainTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Style.MainTheme_Base = global::MixologyJournalApp.Droid.Resource.Style.MainTheme_Base;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Platform_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_MaterialComponents = global::MixologyJournalApp.Droid.Resource.Style.Platform_MaterialComponents;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_MaterialComponents_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Platform_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_MaterialComponents_Light = global::MixologyJournalApp.Droid.Resource.Style.Platform_MaterialComponents_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_MaterialComponents_Light_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Platform_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_ThemeOverlay_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::MixologyJournalApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_V21_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_V21_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_V25_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_V25_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_Widget_AppCompat_Spinner = global::MixologyJournalApp.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::MixologyJournalApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::MixologyJournalApp.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::MixologyJournalApp.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Body1 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Body2 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Button = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Caption = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Display1 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Display2 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Display3 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Display4 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Headline = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Large = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Medium = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Menu = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Small = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Subhead = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Title = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Tooltip = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Info = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Media = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Time = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Title = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Design_Counter = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Design_Counter_Overflow = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Design_Error = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Design_HelperText = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Design_HelperText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Design_Hint = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Design_Snackbar_Message = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Design_Tab = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Button = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Button;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Caption = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Caption;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Chip = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Chip;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Headline1 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline1;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Headline2 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Headline3 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline3;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Headline4 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline4;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Headline5 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline5;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Headline6 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline6;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Overline = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Subtitle1 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Subtitle2 = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_MaterialComponents_Tab = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Tab;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::MixologyJournalApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat_Dark = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::MixologyJournalApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_CompactMenu = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_DayNight = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Light = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Light_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_AppCompat_NoActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_Design = global::MixologyJournalApp.Droid.Resource.Style.Theme_Design;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_Design_BottomSheetDialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_Design_Light = global::MixologyJournalApp.Droid.Resource.Style.Theme_Design_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_Design_Light_NoActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_Design_NoActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_CompactMenu = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_NoActionBar = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge = global::MixologyJournalApp.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActionMode = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ActivityChooserView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Button = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ButtonBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Button_Borderless = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Button_Colored = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Button_Small = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_EditText = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ImageButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_SearchView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ListMenuView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ListPopupWindow = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ListView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ListView_DropDown = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ListView_Menu = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_PopupMenu = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_PopupWindow = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ProgressBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_RatingBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_RatingBar_Small = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_SearchView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_SeekBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Spinner = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_TextView = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_TextView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Toolbar = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::MixologyJournalApp.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Compat_NotificationActionContainer = global::MixologyJournalApp.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Compat_NotificationActionText = global::MixologyJournalApp.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_AppBarLayout = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_BottomNavigationView = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_BottomSheet_Modal = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_CollapsingToolbar = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_FloatingActionButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_NavigationView = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_Snackbar = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_TabLayout = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Design_TextInputLayout = global::MixologyJournalApp.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_Icon = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_CardView = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_CardView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_ChipGroup = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Chip_Action = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_NavigationView = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Snackbar = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TabLayout = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TabLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_MaterialComponents_Toolbar = global::MixologyJournalApp.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Style.Widget_Support_CoordinatorLayout = global::MixologyJournalApp.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Style.XamarinFormsMaterialButton = global::MixologyJournalApp.Droid.Resource.Style.XamarinFormsMaterialButton;
+			global::Xamarin.Forms.Material.Android.Resource.Style.XamarinFormsMaterialButtonOutlined = global::MixologyJournalApp.Droid.Resource.Style.XamarinFormsMaterialButtonOutlined;
+			global::Xamarin.Forms.Material.Android.Resource.Style.XamarinFormsMaterialCheckBox = global::MixologyJournalApp.Droid.Resource.Style.XamarinFormsMaterialCheckBox;
+			global::Xamarin.Forms.Material.Android.Resource.Style.XamarinFormsMaterialEntryFilled = global::MixologyJournalApp.Droid.Resource.Style.XamarinFormsMaterialEntryFilled;
+			global::Xamarin.Forms.Material.Android.Resource.Style.XamarinFormsMaterialProgressBarCircular = global::MixologyJournalApp.Droid.Resource.Style.XamarinFormsMaterialProgressBarCircular;
+			global::Xamarin.Forms.Material.Android.Resource.Style.XamarinFormsMaterialProgressBarHorizontal = global::MixologyJournalApp.Droid.Resource.Style.XamarinFormsMaterialProgressBarHorizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Style.XamarinFormsMaterialSlider = global::MixologyJournalApp.Droid.Resource.Style.XamarinFormsMaterialSlider;
+			global::Xamarin.Forms.Material.Android.Resource.Style.XamarinFormsMaterialTheme = global::MixologyJournalApp.Droid.Resource.Style.XamarinFormsMaterialTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBarLayout = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBarLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_background = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_background;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_backgroundSplit = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_backgroundStacked = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_contentInsetEnd = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_contentInsetLeft = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_contentInsetRight = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_contentInsetStart = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_customNavigationLayout = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_displayOptions = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_divider = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_divider;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_elevation = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_height = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_height;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_hideOnContentScroll = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_homeAsUpIndicator = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_homeLayout = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_icon = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_itemPadding = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_logo = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_logo;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_navigationMode = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_popupTheme = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_progressBarPadding = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_progressBarStyle = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_subtitle = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_subtitleTextStyle = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_title = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_title;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionBar_titleTextStyle = global::MixologyJournalApp.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMenuItemView = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMenuItemView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMenuItemView_android_minWidth = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMenuView = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMenuView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMode = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMode_background = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMode_background;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMode_backgroundSplit = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMode_closeItemLayout = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMode_height = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMode_height;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMode_subtitleTextStyle = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActionMode_titleTextStyle = global::MixologyJournalApp.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActivityChooserView = global::MixologyJournalApp.Droid.Resource.Styleable.ActivityChooserView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ActivityChooserView_initialActivityCount = global::MixologyJournalApp.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog_android_layout = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog_buttonIconDimen = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog_buttonIconDimen;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog_listItemLayout = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog_listLayout = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog_showTitle = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::MixologyJournalApp.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableCompat = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableItem = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableItem;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableItem_android_id = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_id;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableTransition = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId = global::MixologyJournalApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayoutStates = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayoutStates_state_liftable = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayoutStates_state_lifted = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_android_background = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_elevation = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_expanded = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_Layout = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppBarLayout_liftOnScroll = global::MixologyJournalApp.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatImageView = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatImageView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatImageView_android_src = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatImageView_srcCompat = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatImageView_tint = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatImageView_tintMode = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatSeekBar = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatSeekBar_android_thumb = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatSeekBar_tickMark = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextHelper = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_android_textAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_drawableTint = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_drawableTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_drawableTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_fontFamily = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_lineHeight = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_lineHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_textAllCaps = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTextView_textLocale = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTextView_textLocale;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarDivider = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarSize = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarTheme = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeBackground = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_buttonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_checkboxStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorAccent = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorControlActivated = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorControlNormal = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorError = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorPrimary = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_controlBackground = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_dialogCornerRadius = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_dialogCornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_dialogTheme = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_dividerVertical = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_editTextBackground = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_editTextColor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_editTextStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_panelBackground = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_searchViewStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_seekBarStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_spinnerStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_switchStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_toolbarStyle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_viewInflaterClass = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_viewInflaterClass;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowActionBar = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.AppCompatTheme_windowNoTitle = global::MixologyJournalApp.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomAppBar = global::MixologyJournalApp.Droid.Resource.Styleable.BottomAppBar;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomAppBar_backgroundTint = global::MixologyJournalApp.Droid.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::MixologyJournalApp.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomAppBar_fabCradleMargin = global::MixologyJournalApp.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::MixologyJournalApp.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::MixologyJournalApp.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomAppBar_hideOnScroll = global::MixologyJournalApp.Droid.Resource.Styleable.BottomAppBar_hideOnScroll;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_elevation = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_itemBackground = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_itemIconSize = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_itemIconSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_itemIconTint = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_itemTextColor = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomNavigationView_menu = global::MixologyJournalApp.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomSheetBehavior_Layout = global::MixologyJournalApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::MixologyJournalApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::MixologyJournalApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::MixologyJournalApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::MixologyJournalApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ButtonBarLayout = global::MixologyJournalApp.Droid.Resource.Styleable.ButtonBarLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ButtonBarLayout_allowStacking = global::MixologyJournalApp.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView = global::MixologyJournalApp.Droid.Resource.Styleable.CardView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_android_minHeight = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_android_minWidth = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_cardBackgroundColor = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_cardCornerRadius = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_cardElevation = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_cardElevation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_cardMaxElevation = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_cardPreventCornerOverlap = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_cardUseCompatPadding = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_contentPadding = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_contentPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_contentPaddingBottom = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_contentPaddingLeft = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_contentPaddingRight = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CardView_contentPaddingTop = global::MixologyJournalApp.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip = global::MixologyJournalApp.Droid.Resource.Styleable.Chip;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ChipGroup = global::MixologyJournalApp.Droid.Resource.Styleable.ChipGroup;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ChipGroup_checkedChip = global::MixologyJournalApp.Droid.Resource.Styleable.ChipGroup_checkedChip;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ChipGroup_chipSpacing = global::MixologyJournalApp.Droid.Resource.Styleable.ChipGroup_chipSpacing;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::MixologyJournalApp.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ChipGroup_chipSpacingVertical = global::MixologyJournalApp.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ChipGroup_singleLine = global::MixologyJournalApp.Droid.Resource.Styleable.ChipGroup_singleLine;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ChipGroup_singleSelection = global::MixologyJournalApp.Droid.Resource.Styleable.ChipGroup_singleSelection;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_android_checkable = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_android_checkable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_android_ellipsize = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_android_ellipsize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_android_maxWidth = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_android_maxWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_android_text = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_android_text;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_android_textAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_android_textAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_checkedIcon = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_checkedIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_checkedIconEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_checkedIconEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_checkedIconVisible = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_checkedIconVisible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipBackgroundColor = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipBackgroundColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipCornerRadius = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipCornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipEndPadding = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipEndPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipIcon = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipIconEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipIconEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipIconSize = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipIconSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipIconTint = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipIconVisible = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipIconVisible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipMinHeight = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipMinHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipStartPadding = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipStartPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipStrokeColor = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipStrokeColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_chipStrokeWidth = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_chipStrokeWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_closeIcon = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_closeIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_closeIconEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_closeIconEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_closeIconEndPadding = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_closeIconEndPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_closeIconSize = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_closeIconSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_closeIconStartPadding = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_closeIconStartPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_closeIconTint = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_closeIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_closeIconVisible = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_closeIconVisible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_hideMotionSpec = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_hideMotionSpec;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_iconEndPadding = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_iconEndPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_iconStartPadding = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_iconStartPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_rippleColor = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_rippleColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_showMotionSpec = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_showMotionSpec;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_textEndPadding = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_textEndPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Chip_textStartPadding = global::MixologyJournalApp.Droid.Resource.Styleable.Chip_textStartPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_Layout = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_title = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::MixologyJournalApp.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ColorStateListItem = global::MixologyJournalApp.Droid.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ColorStateListItem_alpha = global::MixologyJournalApp.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ColorStateListItem_android_alpha = global::MixologyJournalApp.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ColorStateListItem_android_color = global::MixologyJournalApp.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CompoundButton = global::MixologyJournalApp.Droid.Resource.Styleable.CompoundButton;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CompoundButton_android_button = global::MixologyJournalApp.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CompoundButton_buttonCompat = global::MixologyJournalApp.Droid.Resource.Styleable.CompoundButton_buttonCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CompoundButton_buttonTint = global::MixologyJournalApp.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CompoundButton_buttonTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_keylines = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_Layout = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::MixologyJournalApp.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DesignTheme = global::MixologyJournalApp.Droid.Resource.Styleable.DesignTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::MixologyJournalApp.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DesignTheme_bottomSheetStyle = global::MixologyJournalApp.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle_barLength = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle_color = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle_drawableSize = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle_spinBars = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.DrawerArrowToggle_thickness = global::MixologyJournalApp.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_backgroundTint = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_borderWidth = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_elevation = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_fabCustomSize = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_fabSize = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_maxImageSize = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_maxImageSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_rippleColor = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_showMotionSpec = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FloatingActionButton_useCompatPadding = global::MixologyJournalApp.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FlowLayout = global::MixologyJournalApp.Droid.Resource.Styleable.FlowLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FlowLayout_itemSpacing = global::MixologyJournalApp.Droid.Resource.Styleable.FlowLayout_itemSpacing;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FlowLayout_lineSpacing = global::MixologyJournalApp.Droid.Resource.Styleable.FlowLayout_lineSpacing;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamily = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamily;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_android_font = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_android_fontStyle = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_android_fontWeight = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_font = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_fontStyle = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_fontWeight = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamilyFont_ttcIndex = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamily_fontProviderAuthority = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamily_fontProviderCerts = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamily_fontProviderPackage = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.FontFamily_fontProviderQuery = global::MixologyJournalApp.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ForegroundLinearLayout = global::MixologyJournalApp.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::MixologyJournalApp.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::MixologyJournalApp.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::MixologyJournalApp.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColorItem = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColorItem;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColorItem_android_color = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColorItem_android_offset = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_centerColor = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_centerX = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_centerY = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_endColor = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_endX = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_endY = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_gradientRadius = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_startColor = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_startX = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_startY = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_tileMode = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_type = global::MixologyJournalApp.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_android_gravity = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_android_orientation = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_divider = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_Layout = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_showDividers = global::MixologyJournalApp.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ListPopupWindow = global::MixologyJournalApp.Droid.Resource.Styleable.ListPopupWindow;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::MixologyJournalApp.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::MixologyJournalApp.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_android_insetBottom = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_android_insetBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_android_insetLeft = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_android_insetLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_android_insetRight = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_android_insetRight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_android_insetTop = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_android_insetTop;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_backgroundTint = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_backgroundTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_backgroundTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_backgroundTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_cornerRadius = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_cornerRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_icon = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_iconGravity = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_iconGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_iconPadding = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_iconPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_iconSize = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_iconSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_iconTint = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_iconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_iconTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_iconTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_rippleColor = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_rippleColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_strokeColor = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_strokeColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialButton_strokeWidth = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialButton_strokeWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialCardView = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialCardView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialCardView_strokeColor = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialCardView_strokeColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialCardView_strokeWidth = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_bottomSheetDialogTheme = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_bottomSheetDialogTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_bottomSheetStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_bottomSheetStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_chipGroupStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_chipGroupStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_chipStandaloneStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_chipStandaloneStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_chipStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_chipStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_colorAccent = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorAccent;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_colorBackgroundFloating = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorBackgroundFloating;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_colorPrimary = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorPrimary;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_colorPrimaryDark = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorPrimaryDark;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_colorSecondary = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorSecondary;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_editTextStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_editTextStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_floatingActionButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_floatingActionButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_materialButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_materialButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_materialCardViewStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_materialCardViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_navigationViewStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_navigationViewStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_scrimBackground = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_scrimBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_snackbarButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_snackbarButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_tabStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_tabStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody1 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody1;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody2 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody2;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceButton = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceButton;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceCaption = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceCaption;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline1 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline1;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline2 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline2;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline3 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline3;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline4 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline4;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline5 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline5;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline6 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline6;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceOverline = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceOverline;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle1 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle1;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle2 = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle2;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MaterialComponentsTheme_textInputStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MaterialComponentsTheme_textInputStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuGroup = global::MixologyJournalApp.Droid.Resource.Styleable.MenuGroup;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuGroup_android_checkableBehavior = global::MixologyJournalApp.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuGroup_android_enabled = global::MixologyJournalApp.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuGroup_android_id = global::MixologyJournalApp.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuGroup_android_menuCategory = global::MixologyJournalApp.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuGroup_android_orderInCategory = global::MixologyJournalApp.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuGroup_android_visible = global::MixologyJournalApp.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_actionLayout = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_actionProviderClass = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_actionViewClass = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_alphabeticModifiers = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_checkable = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_checked = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_enabled = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_icon = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_id = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_id;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_menuCategory = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_numericShortcut = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_onClick = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_orderInCategory = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_title = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_title;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_titleCondensed = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_android_visible = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_contentDescription = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_iconTint = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_iconTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_numericModifiers = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_showAsAction = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuItem_tooltipText = global::MixologyJournalApp.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_android_headerBackground = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_android_horizontalDivider = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_android_itemBackground = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_android_itemTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_android_verticalDivider = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_android_windowAnimationStyle = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_preserveIconSpacing = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.MenuView_subMenuArrow = global::MixologyJournalApp.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_android_background = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_android_background;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_android_maxWidth = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_elevation = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_headerLayout = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_itemBackground = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_itemHorizontalPadding = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_itemIconPadding = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_itemIconPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_itemIconTint = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_itemTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_itemTextColor = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.NavigationView_menu = global::MixologyJournalApp.Droid.Resource.Styleable.NavigationView_menu;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.PopupWindow = global::MixologyJournalApp.Droid.Resource.Styleable.PopupWindow;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.PopupWindowBackgroundState = global::MixologyJournalApp.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::MixologyJournalApp.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::MixologyJournalApp.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.PopupWindow_android_popupBackground = global::MixologyJournalApp.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.PopupWindow_overlapAnchor = global::MixologyJournalApp.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecycleListView = global::MixologyJournalApp.Droid.Resource.Styleable.RecycleListView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::MixologyJournalApp.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::MixologyJournalApp.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_android_clipToPadding = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_android_clipToPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_android_descendantFocusability = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_android_orientation = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_fastScrollEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_layoutManager = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_reverseLayout = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_spanCount = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.RecyclerView_stackFromEnd = global::MixologyJournalApp.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ScrimInsetsFrameLayout = global::MixologyJournalApp.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::MixologyJournalApp.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ScrollingViewBehavior_Layout = global::MixologyJournalApp.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::MixologyJournalApp.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_android_focusable = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_android_imeOptions = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_android_inputType = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_android_maxWidth = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_closeIcon = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_commitIcon = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_defaultQueryHint = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_goIcon = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_goIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_iconifiedByDefault = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_layout = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_queryBackground = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_queryHint = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_queryHint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_searchHintIcon = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_searchIcon = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_submitBackground = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_suggestionRowLayout = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SearchView_voiceIcon = global::MixologyJournalApp.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Snackbar = global::MixologyJournalApp.Droid.Resource.Styleable.Snackbar;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SnackbarLayout = global::MixologyJournalApp.Droid.Resource.Styleable.SnackbarLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SnackbarLayout_android_maxWidth = global::MixologyJournalApp.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SnackbarLayout_elevation = global::MixologyJournalApp.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::MixologyJournalApp.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Snackbar_snackbarButtonStyle = global::MixologyJournalApp.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Snackbar_snackbarStyle = global::MixologyJournalApp.Droid.Resource.Styleable.Snackbar_snackbarStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Spinner = global::MixologyJournalApp.Droid.Resource.Styleable.Spinner;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Spinner_android_dropDownWidth = global::MixologyJournalApp.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Spinner_android_entries = global::MixologyJournalApp.Droid.Resource.Styleable.Spinner_android_entries;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Spinner_android_popupBackground = global::MixologyJournalApp.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Spinner_android_prompt = global::MixologyJournalApp.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Spinner_popupTheme = global::MixologyJournalApp.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawableItem = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawableItem;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawableItem_android_drawable = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawableItem_android_drawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawable_android_constantSize = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawable_android_constantSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawable_android_dither = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawable_android_dither;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawable_android_enterFadeDuration = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawable_android_variablePadding = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.StateListDrawable_android_visible = global::MixologyJournalApp.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_android_textOff = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_android_textOn = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_android_thumb = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_showText = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_splitTrack = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_switchMinWidth = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_switchPadding = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_switchTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_thumbTextPadding = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_thumbTint = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_thumbTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_track = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_track;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_trackTint = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.SwitchCompat_trackTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabItem = global::MixologyJournalApp.Droid.Resource.Styleable.TabItem;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabItem_android_icon = global::MixologyJournalApp.Droid.Resource.Styleable.TabItem_android_icon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabItem_android_layout = global::MixologyJournalApp.Droid.Resource.Styleable.TabItem_android_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabItem_android_text = global::MixologyJournalApp.Droid.Resource.Styleable.TabItem_android_text;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabBackground = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabContentStart = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabGravity = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabIconTint = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabIconTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabIconTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabIconTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabIndicator = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabIndicator;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabIndicatorColor = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabIndicatorFullWidth = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabIndicatorGravity = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabIndicatorHeight = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabInlineLabel = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabInlineLabel;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabMaxWidth = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabMinWidth = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabMode = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabPadding = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabPaddingBottom = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabPaddingEnd = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabPaddingStart = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabPaddingTop = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabRippleColor = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabRippleColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabSelectedTextColor = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabTextColor = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TabLayout_tabUnboundedRipple = global::MixologyJournalApp.Droid.Resource.Styleable.TabLayout_tabUnboundedRipple;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_fontFamily = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_shadowColor = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_shadowDx = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_shadowDy = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_shadowRadius = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_textColor = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_textColorHint = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_textColorLink = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_textFontWeight = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_textFontWeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_textSize = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_textStyle = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_android_typeface = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_fontFamily = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_fontVariationSettings = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_fontVariationSettings;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_textAllCaps = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextAppearance_textLocale = global::MixologyJournalApp.Droid.Resource.Styleable.TextAppearance_textLocale;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_android_hint = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_android_textColorHint = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxBackgroundColor = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxBackgroundMode = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxStrokeColor = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_counterEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_counterMaxLength = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_counterTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_errorEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_errorTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_helperText = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_helperText;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_helperTextEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_hintEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_hintTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_passwordToggleTint = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ThemeEnforcement = global::MixologyJournalApp.Droid.Resource.Styleable.ThemeEnforcement;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::MixologyJournalApp.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ThemeEnforcement_enforceTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.ThemeEnforcement_enforceTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_android_gravity = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_android_minHeight = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_buttonGravity = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_collapseContentDescription = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_collapseIcon = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_contentInsetEnd = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_contentInsetLeft = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_contentInsetRight = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_contentInsetStart = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_logo = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_logo;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_logoDescription = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_maxButtonHeight = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_menu = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_menu;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_navigationContentDescription = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_navigationIcon = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_popupTheme = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_subtitle = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_subtitleTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_subtitleTextColor = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_title = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_title;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_titleMargin = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_titleMarginBottom = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_titleMarginEnd = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_titleMargins = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_titleMarginStart = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_titleMarginTop = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_titleTextAppearance = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.Toolbar_titleTextColor = global::MixologyJournalApp.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.View = global::MixologyJournalApp.Droid.Resource.Styleable.View;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ViewBackgroundHelper = global::MixologyJournalApp.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ViewBackgroundHelper_android_background = global::MixologyJournalApp.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::MixologyJournalApp.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::MixologyJournalApp.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ViewStubCompat = global::MixologyJournalApp.Droid.Resource.Styleable.ViewStubCompat;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ViewStubCompat_android_id = global::MixologyJournalApp.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::MixologyJournalApp.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ViewStubCompat_android_layout = global::MixologyJournalApp.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.View_android_focusable = global::MixologyJournalApp.Droid.Resource.Styleable.View_android_focusable;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.View_android_theme = global::MixologyJournalApp.Droid.Resource.Styleable.View_android_theme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.View_paddingEnd = global::MixologyJournalApp.Droid.Resource.Styleable.View_paddingEnd;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.View_paddingStart = global::MixologyJournalApp.Droid.Resource.Styleable.View_paddingStart;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.View_theme = global::MixologyJournalApp.Droid.Resource.Styleable.View_theme;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::MixologyJournalApp.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::MixologyJournalApp.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::MixologyJournalApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -3958,6 +6649,21 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f01000b
 			public const int materialCardViewStyle = 2130771979;
 			
+			// aapt resource value: 0x7f0101f0
+			public const int materialCheckBoxStyle = 2130772464;
+			
+			// aapt resource value: 0x7f0101ec
+			public const int materialOutlinedButtonStyle = 2130772460;
+			
+			// aapt resource value: 0x7f0101ef
+			public const int materialProgressBarCircularStyle = 2130772463;
+			
+			// aapt resource value: 0x7f0101ee
+			public const int materialProgressBarHorizontalStyle = 2130772462;
+			
+			// aapt resource value: 0x7f0101ed
+			public const int materialSliderStyle = 2130772461;
+			
 			// aapt resource value: 0x7f010085
 			public const int maxActionInlineWidth = 2130772101;
 			
@@ -4959,6 +7665,9 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0a0053
 			public const int tooltip_background_light = 2131361875;
 			
+			// aapt resource value: 0x7f0a0089
+			public const int white_disabled_material = 2131361929;
+			
 			static Color()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -5918,26 +8627,26 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
 			
-			// aapt resource value: 0x7f02008a
-			public const int avd_hide_password_1 = 2130837642;
-			
-			// aapt resource value: 0x7f02008b
-			public const int avd_hide_password_2 = 2130837643;
-			
 			// aapt resource value: 0x7f02008c
-			public const int avd_hide_password_3 = 2130837644;
+			public const int avd_hide_password_1 = 2130837644;
+			
+			// aapt resource value: 0x7f02008d
+			public const int avd_hide_password_2 = 2130837645;
+			
+			// aapt resource value: 0x7f02008e
+			public const int avd_hide_password_3 = 2130837646;
 			
 			// aapt resource value: 0x7f020057
 			public const int avd_show_password = 2130837591;
 			
-			// aapt resource value: 0x7f02008d
-			public const int avd_show_password_1 = 2130837645;
-			
-			// aapt resource value: 0x7f02008e
-			public const int avd_show_password_2 = 2130837646;
-			
 			// aapt resource value: 0x7f02008f
-			public const int avd_show_password_3 = 2130837647;
+			public const int avd_show_password_1 = 2130837647;
+			
+			// aapt resource value: 0x7f020090
+			public const int avd_show_password_2 = 2130837648;
+			
+			// aapt resource value: 0x7f020091
+			public const int avd_show_password_3 = 2130837649;
 			
 			// aapt resource value: 0x7f020058
 			public const int btn_checkbox_checked_mtrl = 2130837592;
@@ -6018,76 +8727,82 @@ namespace MixologyJournalApp.Droid
 			public const int LockScreenLogo = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int mtrl_snackbar_background = 2130837618;
+			public const int MaterialActivityIndicatorBackground = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int mtrl_tabs_default_indicator = 2130837619;
+			public const int MaterialProgressBar = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int navigation_empty_icon = 2130837620;
+			public const int mtrl_snackbar_background = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int notification_action_background = 2130837621;
+			public const int mtrl_tabs_default_indicator = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int notification_bg = 2130837622;
+			public const int navigation_empty_icon = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int notification_bg_low = 2130837623;
+			public const int notification_action_background = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int notification_bg_low_normal = 2130837624;
+			public const int notification_bg = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int notification_bg_low_pressed = 2130837625;
+			public const int notification_bg_low = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int notification_bg_normal = 2130837626;
+			public const int notification_bg_low_normal = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int notification_bg_normal_pressed = 2130837627;
+			public const int notification_bg_low_pressed = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int notification_icon_background = 2130837628;
-			
-			// aapt resource value: 0x7f020088
-			public const int notification_template_icon_bg = 2130837640;
-			
-			// aapt resource value: 0x7f020089
-			public const int notification_template_icon_low_bg = 2130837641;
+			public const int notification_bg_normal = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int notification_tile_bg = 2130837629;
+			public const int notification_bg_normal_pressed = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int notify_panel_notification_icon_bg = 2130837630;
+			public const int notification_icon_background = 2130837630;
+			
+			// aapt resource value: 0x7f02008a
+			public const int notification_template_icon_bg = 2130837642;
+			
+			// aapt resource value: 0x7f02008b
+			public const int notification_template_icon_low_bg = 2130837643;
 			
 			// aapt resource value: 0x7f02007f
-			public const int splash_screen = 2130837631;
+			public const int notification_tile_bg = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int SplashScreen = 2130837632;
+			public const int notify_panel_notification_icon_bg = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int Square150x150Logo = 2130837633;
+			public const int splash_screen = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int Square310x310Logo = 2130837634;
+			public const int SplashScreen = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int Square44x44Logo = 2130837635;
+			public const int Square150x150Logo = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int StoreLogo = 2130837636;
+			public const int Square310x310Logo = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int tooltip_frame_dark = 2130837637;
+			public const int Square44x44Logo = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int tooltip_frame_light = 2130837638;
+			public const int StoreLogo = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int Wide310x150Logo = 2130837639;
+			public const int tooltip_frame_dark = 2130837639;
+			
+			// aapt resource value: 0x7f020088
+			public const int tooltip_frame_light = 2130837640;
+			
+			// aapt resource value: 0x7f020089
+			public const int Wide310x150Logo = 2130837641;
 			
 			static Drawable()
 			{
@@ -6222,8 +8937,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f003c
 			public const int accessibility_custom_action_9 = 2131689532;
 			
-			// aapt resource value: 0x7f0f00df
-			public const int action0 = 2131689695;
+			// aapt resource value: 0x7f0f00e0
+			public const int action0 = 2131689696;
 			
 			// aapt resource value: 0x7f0f00b3
 			public const int action_bar = 2131689651;
@@ -6246,17 +8961,17 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f008f
 			public const int action_bar_title = 2131689615;
 			
-			// aapt resource value: 0x7f0f00dc
-			public const int action_container = 2131689692;
+			// aapt resource value: 0x7f0f00dd
+			public const int action_container = 2131689693;
 			
 			// aapt resource value: 0x7f0f00b4
 			public const int action_context_bar = 2131689652;
 			
-			// aapt resource value: 0x7f0f00e3
-			public const int action_divider = 2131689699;
+			// aapt resource value: 0x7f0f00e4
+			public const int action_divider = 2131689700;
 			
-			// aapt resource value: 0x7f0f00dd
-			public const int action_image = 2131689693;
+			// aapt resource value: 0x7f0f00de
+			public const int action_image = 2131689694;
 			
 			// aapt resource value: 0x7f0f000a
 			public const int action_menu_divider = 2131689482;
@@ -6273,11 +8988,11 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0091
 			public const int action_mode_close_button = 2131689617;
 			
-			// aapt resource value: 0x7f0f00de
-			public const int action_text = 2131689694;
+			// aapt resource value: 0x7f0f00df
+			public const int action_text = 2131689695;
 			
-			// aapt resource value: 0x7f0f00ec
-			public const int actions = 2131689708;
+			// aapt resource value: 0x7f0f00ed
+			public const int actions = 2131689709;
 			
 			// aapt resource value: 0x7f0f0092
 			public const int activity_chooser_view_content = 2131689618;
@@ -6333,8 +9048,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0098
 			public const int buttonPanel = 2131689624;
 			
-			// aapt resource value: 0x7f0f00e0
-			public const int cancel_action = 2131689696;
+			// aapt resource value: 0x7f0f00e1
+			public const int cancel_action = 2131689697;
 			
 			// aapt resource value: 0x7f0f0050
 			public const int center = 2131689552;
@@ -6348,11 +9063,11 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f00ac
 			public const int checkbox = 2131689644;
 			
-			// aapt resource value: 0x7f0f00f7
-			public const int @checked = 2131689719;
+			// aapt resource value: 0x7f0f00f8
+			public const int @checked = 2131689720;
 			
-			// aapt resource value: 0x7f0f00e8
-			public const int chronometer = 2131689704;
+			// aapt resource value: 0x7f0f00e9
+			public const int chronometer = 2131689705;
 			
 			// aapt resource value: 0x7f0f0087
 			public const int clip_horizontal = 2131689607;
@@ -6414,8 +9129,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0051
 			public const int end = 2131689553;
 			
-			// aapt resource value: 0x7f0f00ee
-			public const int end_padder = 2131689710;
+			// aapt resource value: 0x7f0f00ef
+			public const int end_padder = 2131689711;
 			
 			// aapt resource value: 0x7f0f004a
 			public const int enterAlways = 2131689546;
@@ -6474,8 +9189,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0097
 			public const int icon = 2131689623;
 			
-			// aapt resource value: 0x7f0f00ed
-			public const int icon_group = 2131689709;
+			// aapt resource value: 0x7f0f00ee
+			public const int icon_group = 2131689710;
 			
 			// aapt resource value: 0x7f0f0084
 			public const int ifRoom = 2131689604;
@@ -6486,8 +9201,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f00da
 			public const int imageView1 = 2131689690;
 			
-			// aapt resource value: 0x7f0f00e9
-			public const int info = 2131689705;
+			// aapt resource value: 0x7f0f00ea
+			public const int info = 2131689706;
 			
 			// aapt resource value: 0x7f0f008e
 			public const int italic = 2131689614;
@@ -6516,23 +9231,26 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0096
 			public const int list_item = 2131689622;
 			
-			// aapt resource value: 0x7f0f00ef
-			public const int main_appbar = 2131689711;
-			
-			// aapt resource value: 0x7f0f00f1
-			public const int main_tablayout = 2131689713;
-			
 			// aapt resource value: 0x7f0f00f0
-			public const int main_toolbar = 2131689712;
+			public const int main_appbar = 2131689712;
 			
 			// aapt resource value: 0x7f0f00f2
-			public const int main_viewpager = 2131689714;
+			public const int main_tablayout = 2131689714;
 			
-			// aapt resource value: 0x7f0f00fc
-			public const int masked = 2131689724;
+			// aapt resource value: 0x7f0f00f1
+			public const int main_toolbar = 2131689713;
 			
-			// aapt resource value: 0x7f0f00e2
-			public const int media_actions = 2131689698;
+			// aapt resource value: 0x7f0f00f3
+			public const int main_viewpager = 2131689715;
+			
+			// aapt resource value: 0x7f0f00fd
+			public const int masked = 2131689725;
+			
+			// aapt resource value: 0x7f0f00dc
+			public const int materialformsedittext = 2131689692;
+			
+			// aapt resource value: 0x7f0f00e3
+			public const int media_actions = 2131689699;
 			
 			// aapt resource value: 0x7f0f00c2
 			public const int message = 2131689666;
@@ -6564,20 +9282,20 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0062
 			public const int normal = 2131689570;
 			
-			// aapt resource value: 0x7f0f00eb
-			public const int notification_background = 2131689707;
+			// aapt resource value: 0x7f0f00ec
+			public const int notification_background = 2131689708;
+			
+			// aapt resource value: 0x7f0f00e6
+			public const int notification_main_column = 2131689702;
 			
 			// aapt resource value: 0x7f0f00e5
-			public const int notification_main_column = 2131689701;
+			public const int notification_main_column_container = 2131689701;
 			
-			// aapt resource value: 0x7f0f00e4
-			public const int notification_main_column_container = 2131689700;
+			// aapt resource value: 0x7f0f00fb
+			public const int off = 2131689723;
 			
 			// aapt resource value: 0x7f0f00fa
-			public const int off = 2131689722;
-			
-			// aapt resource value: 0x7f0f00f9
-			public const int on = 2131689721;
+			public const int on = 2131689722;
 			
 			// aapt resource value: 0x7f0f006f
 			public const int outline = 2131689583;
@@ -6606,11 +9324,11 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f005b
 			public const int right = 2131689563;
 			
-			// aapt resource value: 0x7f0f00ea
-			public const int right_icon = 2131689706;
+			// aapt resource value: 0x7f0f00eb
+			public const int right_icon = 2131689707;
 			
-			// aapt resource value: 0x7f0f00e6
-			public const int right_side = 2131689702;
+			// aapt resource value: 0x7f0f00e7
+			public const int right_side = 2131689703;
 			
 			// aapt resource value: 0x7f0f0015
 			public const int save_non_transition_alpha = 2131689493;
@@ -6672,11 +9390,11 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0054
 			public const int selected = 2131689556;
 			
-			// aapt resource value: 0x7f0f00f3
-			public const int shellcontent_appbar = 2131689715;
-			
 			// aapt resource value: 0x7f0f00f4
-			public const int shellcontent_toolbar = 2131689716;
+			public const int shellcontent_appbar = 2131689716;
+			
+			// aapt resource value: 0x7f0f00f5
+			public const int shellcontent_toolbar = 2131689717;
 			
 			// aapt resource value: 0x7f0f00a9
 			public const int shortcut = 2131689641;
@@ -6690,8 +9408,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0076
 			public const int showTitle = 2131689590;
 			
-			// aapt resource value: 0x7f0f00f5
-			public const int sliding_tabs = 2131689717;
+			// aapt resource value: 0x7f0f00f6
+			public const int sliding_tabs = 2131689718;
 			
 			// aapt resource value: 0x7f0f00cc
 			public const int smallLabel = 2131689676;
@@ -6726,8 +9444,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f005c
 			public const int start = 2131689564;
 			
-			// aapt resource value: 0x7f0f00e1
-			public const int status_bar_latest_event_content = 2131689697;
+			// aapt resource value: 0x7f0f00e2
+			public const int status_bar_latest_event_content = 2131689698;
 			
 			// aapt resource value: 0x7f0f0064
 			public const int stretch = 2131689572;
@@ -6792,8 +9510,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0006
 			public const int textinput_helper_text = 2131689478;
 			
-			// aapt resource value: 0x7f0f00e7
-			public const int time = 2131689703;
+			// aapt resource value: 0x7f0f00e8
+			public const int time = 2131689704;
 			
 			// aapt resource value: 0x7f0f0049
 			public const int title = 2131689545;
@@ -6804,8 +9522,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f00a4
 			public const int title_template = 2131689636;
 			
-			// aapt resource value: 0x7f0f00f6
-			public const int toolbar = 2131689718;
+			// aapt resource value: 0x7f0f00f7
+			public const int toolbar = 2131689719;
 			
 			// aapt resource value: 0x7f0f005d
 			public const int top = 2131689565;
@@ -6831,8 +9549,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f001b
 			public const int transition_transform = 2131689499;
 			
-			// aapt resource value: 0x7f0f00f8
-			public const int @unchecked = 2131689720;
+			// aapt resource value: 0x7f0f00f9
+			public const int @unchecked = 2131689721;
 			
 			// aapt resource value: 0x7f0f0078
 			public const int uniform = 2131689592;
@@ -6849,8 +9567,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0f0007
 			public const int view_offset_helper = 2131689479;
 			
-			// aapt resource value: 0x7f0f00fb
-			public const int visible = 2131689723;
+			// aapt resource value: 0x7f0f00fc
+			public const int visible = 2131689724;
 			
 			// aapt resource value: 0x7f0f00c3
 			public const int webview = 2131689667;
@@ -7126,79 +9844,85 @@ namespace MixologyJournalApp.Droid
 			public const int LoginScreen = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int mtrl_layout_snackbar = 2130968625;
+			public const int MaterialPickerTextInput = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int mtrl_layout_snackbar_include = 2130968626;
+			public const int mtrl_layout_snackbar = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_action = 2130968627;
+			public const int mtrl_layout_snackbar_include = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_action_tombstone = 2130968628;
+			public const int notification_action = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_media_action = 2130968629;
+			public const int notification_action_tombstone = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_media_cancel_action = 2130968630;
+			public const int notification_media_action = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_big_media = 2130968631;
+			public const int notification_media_cancel_action = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int notification_template_big_media_custom = 2130968632;
+			public const int notification_template_big_media = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int notification_template_big_media_narrow = 2130968633;
+			public const int notification_template_big_media_custom = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int notification_template_big_media_narrow_custom = 2130968634;
+			public const int notification_template_big_media_narrow = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int notification_template_custom_big = 2130968635;
+			public const int notification_template_big_media_narrow_custom = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int notification_template_icon_group = 2130968636;
+			public const int notification_template_custom_big = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int notification_template_lines_media = 2130968637;
+			public const int notification_template_icon_group = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int notification_template_media = 2130968638;
+			public const int notification_template_lines_media = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int notification_template_media_custom = 2130968639;
+			public const int notification_template_media = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int notification_template_part_chronometer = 2130968640;
+			public const int notification_template_media_custom = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int notification_template_part_time = 2130968641;
+			public const int notification_template_part_chronometer = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int RootLayout = 2130968642;
+			public const int notification_template_part_time = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int select_dialog_item_material = 2130968643;
+			public const int RootLayout = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int select_dialog_multichoice_material = 2130968644;
+			public const int select_dialog_item_material = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int select_dialog_singlechoice_material = 2130968645;
+			public const int select_dialog_multichoice_material = 2130968645;
 			
 			// aapt resource value: 0x7f040046
-			public const int ShellContent = 2130968646;
+			public const int select_dialog_singlechoice_material = 2130968646;
 			
 			// aapt resource value: 0x7f040047
-			public const int support_simple_spinner_dropdown_item = 2130968647;
+			public const int ShellContent = 2130968647;
 			
 			// aapt resource value: 0x7f040048
-			public const int Tabbar = 2130968648;
+			public const int support_simple_spinner_dropdown_item = 2130968648;
 			
 			// aapt resource value: 0x7f040049
-			public const int Toolbar = 2130968649;
+			public const int Tabbar = 2130968649;
+			
+			// aapt resource value: 0x7f04004a
+			public const int TextInputLayoutFilledBox = 2130968650;
+			
+			// aapt resource value: 0x7f04004b
+			public const int Toolbar = 2130968651;
 			
 			static Layout()
 			{
@@ -7416,8 +10140,8 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0c000c
 			public const int Animation_Design_BottomSheetDialog = 2131492876;
 			
-			// aapt resource value: 0x7f0c01fc
-			public const int AppCompatDialogStyle = 2131493372;
+			// aapt resource value: 0x7f0c0205
+			public const int AppCompatDialogStyle = 2131493381;
 			
 			// aapt resource value: 0x7f0c0126
 			public const int Base_AlertDialog_AppCompat = 2131493158;
@@ -7995,17 +10719,17 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0c01ef
 			public const int CardView_Light = 2131493359;
 			
-			// aapt resource value: 0x7f0c01fa
-			public const int MainTheme = 2131493370;
+			// aapt resource value: 0x7f0c0203
+			public const int MainTheme = 2131493379;
 			
-			// aapt resource value: 0x7f0c01fb
-			public const int MainTheme_Base = 2131493371;
+			// aapt resource value: 0x7f0c0204
+			public const int MainTheme_Base = 2131493380;
 			
-			// aapt resource value: 0x7f0c01fe
-			public const int MainTheme_Login = 2131493374;
+			// aapt resource value: 0x7f0c0207
+			public const int MainTheme_Login = 2131493383;
 			
-			// aapt resource value: 0x7f0c01fd
-			public const int MainTheme_Splash = 2131493373;
+			// aapt resource value: 0x7f0c0206
+			public const int MainTheme_Splash = 2131493382;
 			
 			// aapt resource value: 0x7f0c01f9
 			public const int NestedScrollBarStyle = 2131493369;
@@ -8880,6 +11604,9 @@ namespace MixologyJournalApp.Droid
 			// aapt resource value: 0x7f0c0086
 			public const int Widget_MaterialComponents_ChipGroup = 2131492998;
 			
+			// aapt resource value: 0x7f0c0201
+			public const int Widget_MaterialComponents_CompoundButton_CheckBox = 2131493377;
+			
 			// aapt resource value: 0x7f0c0087
 			public const int Widget_MaterialComponents_FloatingActionButton = 2131492999;
 			
@@ -8927,6 +11654,30 @@ namespace MixologyJournalApp.Droid
 			
 			// aapt resource value: 0x7f0c01f0
 			public const int Widget_Support_CoordinatorLayout = 2131493360;
+			
+			// aapt resource value: 0x7f0c01fe
+			public const int XamarinFormsMaterialButton = 2131493374;
+			
+			// aapt resource value: 0x7f0c01ff
+			public const int XamarinFormsMaterialButtonOutlined = 2131493375;
+			
+			// aapt resource value: 0x7f0c0202
+			public const int XamarinFormsMaterialCheckBox = 2131493378;
+			
+			// aapt resource value: 0x7f0c0200
+			public const int XamarinFormsMaterialEntryFilled = 2131493376;
+			
+			// aapt resource value: 0x7f0c01fd
+			public const int XamarinFormsMaterialProgressBarCircular = 2131493373;
+			
+			// aapt resource value: 0x7f0c01fc
+			public const int XamarinFormsMaterialProgressBarHorizontal = 2131493372;
+			
+			// aapt resource value: 0x7f0c01fb
+			public const int XamarinFormsMaterialSlider = 2131493371;
+			
+			// aapt resource value: 0x7f0c01fa
+			public const int XamarinFormsMaterialTheme = 2131493370;
 			
 			// aapt resource value: 0x7f0c01f8
 			public const int collectionViewStyle = 2131493368;

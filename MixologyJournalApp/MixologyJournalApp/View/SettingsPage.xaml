@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:MixologyJournalApp.View"
              mc:Ignorable="d"
-             x:Class="MixologyJournalApp.View.SettingsPage">
+             x:Class="MixologyJournalApp.View.SettingsPage"
+             Visual="Material">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Mixology Journal! Please log in with your authentication mechanism of choice."

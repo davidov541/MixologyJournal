@@ -92,6 +92,9 @@
     <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData">
       <Version>2.2.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Visual.Material">
+      <Version>4.7.0.1080</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Google.Android.Material">
       <Version>1.0.0.1</Version>
     </PackageReference>

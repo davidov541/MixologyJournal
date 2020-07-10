@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.RootPageMaster"
-             Title="MasterPage">
+             Title="MasterPage"
+             Visual="Material">
 	<StackLayout>
         <ListView x:Name="MenuItemsListView"
                   SeparatorVisibility="None"

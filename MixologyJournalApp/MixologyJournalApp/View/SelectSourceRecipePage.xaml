@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.SelectSourceRecipePage"
              x:Name="selectSourceRecipePage"
-             Title="Choose The Basis Recipe">
+             Title="Choose The Basis Recipe"
+             Visual="Material">
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listView" 
