@@ -12,7 +12,7 @@ namespace MixologyJournalApp.Platform
         {
             get
             {
-                return GetActiveLoginMethod() != null;
+                return _loginMethods.Any(m => m.IsLoggedIn);
             }
         }
 
@@ -29,19 +29,23 @@ namespace MixologyJournalApp.Platform
         {
             get
             {
-                return GetActiveLoginMethod()?.CurrentUser;
+                return _loginMethods.FirstOrDefault(m => m.IsEnabled).CurrentUser;
             }
-        }
-
-        private ILoginMethod GetActiveLoginMethod()
-        {
-            return _loginMethods.FirstOrDefault(m => m.IsLoggedIn);
         }
 
         public AuthenticationManager(IEnumerable<ILoginMethod> loginMethods)
         {
             _loginMethods.AddRange(loginMethods);
-            _loginMethods.ForEach(l => l.PropertyChanged += LoginMethod_PropertyChanged);
+            _loginMethods.ForEach(l =>
+            {
+                l.PropertyChanged += LoginMethod_PropertyChanged;
+                l.LoginEnabled += LoginMethod_LoginEnabled;
+            });
+        }
+
+        private void LoginMethod_LoginEnabled(object sender, EventArgs e)
+        {
+            LoginEnabled?.Invoke(this, new EventArgs());
         }
 
         public AuthenticationManager(params ILoginMethod[] loginMethods): this(loginMethods.AsEnumerable())
@@ -53,6 +57,8 @@ namespace MixologyJournalApp.Platform
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public event EventHandler LoginEnabled;
 
         private void LoginMethod_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {

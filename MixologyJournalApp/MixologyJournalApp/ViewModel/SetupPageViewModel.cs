@@ -36,7 +36,7 @@ namespace MixologyJournalApp.ViewModel
         public SetupPageViewModel(IPlatform platform)
         {
             _platform = platform;
-            _platform.Authentication.PropertyChanged += Authentication_PropertyChanged;
+            _platform.Authentication.LoginEnabled += Authentication_LoginEnabled;
 
             PageItems = new ObservableCollection<SetupPageItem>()
             {
@@ -51,12 +51,9 @@ namespace MixologyJournalApp.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private async void Authentication_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private async void Authentication_LoginEnabled(object sender, EventArgs e)
         {
-            if (e.PropertyName == nameof(AuthenticationManager.IsAuthenticated))
-            {
-                await (Application.Current as App).StartApp();
-            }
+            await (Application.Current as App).StartApp();
         }
     }
 }

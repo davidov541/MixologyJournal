@@ -44,19 +44,22 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        private Boolean _isLoggedIn = false;
         public Boolean IsLoggedIn
         {
             get
             {
-                return _isLoggedIn;
+                return IsEnabled;
             }
             private set
             {
-                _isLoggedIn = value;
+                IsEnabled = value;
                 OnPropertyChanged(nameof(IsLoggedIn));
+                OnPropertyChanged(nameof(IsEnabled));
             }
         }
+
+        public Boolean IsEnabled { get; private set; } = false;
+
 
         public ICommand LoginCommand
         {
@@ -115,8 +118,9 @@ namespace MixologyJournalApp.Droid.Platform
             CurrentUser = await _mainActivity.RunLoginActivity();
             if (CurrentUser != null)
             {
-                IsLoggedIn = true;
                 await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
+                IsLoggedIn = true;
+                LoginEnabled?.Invoke(this, new EventArgs());
             }
         }
 
@@ -131,5 +135,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public event EventHandler LoginEnabled;
     }
 }

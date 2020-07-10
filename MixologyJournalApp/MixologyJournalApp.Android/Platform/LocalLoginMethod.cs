@@ -1,4 +1,6 @@
-﻿using MixologyJournalApp.Platform;
+﻿using Android.Accounts;
+using Android.App;
+using MixologyJournalApp.Platform;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -41,19 +43,22 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
-        private Boolean _isLoggedIn = false;
         public Boolean IsLoggedIn
         {
             get
             {
-                return _isLoggedIn;
+                return false;
             }
-            private set
+       }
+
+        public Boolean IsEnabled
+        {
+            get
             {
-                _isLoggedIn = value;
-                OnPropertyChanged(nameof(IsLoggedIn));
+                return true;
             }
         }
+
 
         public ICommand LoginCommand
         {
@@ -73,8 +78,10 @@ namespace MixologyJournalApp.Droid.Platform
 
         public User CurrentUser
         {
-            get;
-            private set;
+            get
+            {
+                return new User("This Phone", new Uri("https://storageaccountmixolb7df.blob.core.windows.net/resources/icons8-phone-case-96.png"), "", "");
+            }
         }
 
         public LocalLoginMethod()
@@ -83,12 +90,11 @@ namespace MixologyJournalApp.Droid.Platform
 
         public async Task Init(bool setupMode)
         {
-            IsLoggedIn = true;
         }
 
         private async void Login()
         {
-            IsLoggedIn = true;
+            LoginEnabled?.Invoke(this, new EventArgs());
         }
 
         private void Logoff()
@@ -100,5 +106,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public event EventHandler LoginEnabled;
     }
 }

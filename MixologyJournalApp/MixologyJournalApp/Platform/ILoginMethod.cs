@@ -27,6 +27,11 @@ namespace MixologyJournalApp.Platform
             get;
         }
 
+        Boolean IsEnabled
+        {
+            get;
+        }
+
         Boolean IsLoggedIn
         {
             get;
@@ -49,6 +54,6 @@ namespace MixologyJournalApp.Platform
 
         Task Init(bool setupMode);
 
-
+        event EventHandler LoginEnabled;
     }
 }
