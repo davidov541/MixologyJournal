@@ -6,12 +6,12 @@
        mc:Ignorable="d"
        x:Class="MixologyJournalApp.View.CardView"
        Visual="Material"
-       VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+       Margin="10,0,10,0">
     <Frame.GestureRecognizers>
         <TapGestureRecognizer Tapped="Card_Tapped"/>
     </Frame.GestureRecognizers>
     <Frame.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
+        <StackLayout>
             <!--
             <Grid>
                 <BoxView x:Name="boxCardColor" HorizontalOptions="Fill" BackgroundColor="#00ACC1" InputTransparent="True"/>

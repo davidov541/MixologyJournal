@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.ViewModel;
 using System;
 using System.ComponentModel;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.View
@@ -19,6 +20,7 @@ namespace MixologyJournalApp.View
             _viewModel = new RecipeListPageViewModel(_app);
             BindingContext = _viewModel;
             InitializeComponent();
+
             foreach (RecipeViewModel recipe in _viewModel.Recipes)
             {
                 RecipeListLayout.Children.Add(new CardView(recipe));
