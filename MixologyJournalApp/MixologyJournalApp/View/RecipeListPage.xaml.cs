@@ -1,5 +1,6 @@
 ﻿using MixologyJournalApp.ViewModel;
 using System;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
@@ -20,14 +21,31 @@ namespace MixologyJournalApp.View
         {
             _app = app;
             _viewModel = new RecipeListPageViewModel(_app);
+            _viewModel.PropertyChanged += ViewModel_PropertyChanged;
             BindingContext = _viewModel;
             _selectionCommand = new Command(ItemSelected);
 
             InitializeComponent();
 
+            UpdateRecipeList();
+        }
+
+        private void UpdateRecipeList()
+        {
+            RecipeListLayout.Children.Clear();
             foreach (RecipeViewModel recipe in _viewModel.Recipes)
             {
                 RecipeListLayout.Children.Add(new CardView(recipe, _selectionCommand));
+            }
+        }
+
+        private void ViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch(e.PropertyName)
+            {
+                case nameof(RecipeListPageViewModel.Recipes):
+                    UpdateRecipeList();
+                    break;
             }
         }
 

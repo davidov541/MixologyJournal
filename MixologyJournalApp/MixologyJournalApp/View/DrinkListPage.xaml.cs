@@ -19,18 +19,35 @@ namespace MixologyJournalApp.View
         {
             _app = app;
             _viewModel = new DrinkListPageViewModel(_app);
+            _viewModel.PropertyChanged += ViewModel_PropertyChanged;
             BindingContext = _viewModel;
             _selectionCommand = new Command(ItemSelected);
 
             InitializeComponent();
 
+            UpdateDrinkList();
+        }
+
+        private void UpdateDrinkList()
+        {
+            RecipeListLayout.Children.Clear();
             foreach (DrinkViewModel drink in _viewModel.Drinks)
             {
                 RecipeListLayout.Children.Add(new CardView(drink, _selectionCommand));
             }
         }
 
-        private async void ItemSelected(object item)
+        private void ViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case nameof(DrinkListPageViewModel.Drinks):
+                    UpdateDrinkList();
+                    break;
+            }
+        }
+
+    private async void ItemSelected(object item)
         {
             DrinkPage drinkPage = new DrinkPage(item as DrinkViewModel);
             await Navigation.PushAsync(drinkPage);
