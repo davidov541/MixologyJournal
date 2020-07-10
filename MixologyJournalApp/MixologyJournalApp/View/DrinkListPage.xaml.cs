@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.ViewModel;
 using System;
 using System.ComponentModel;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.View
@@ -12,23 +13,26 @@ namespace MixologyJournalApp.View
     {
         private readonly DrinkListPageViewModel _viewModel;
         private readonly App _app;
+        private readonly ICommand _selectionCommand;
 
         public DrinkListPage(App app)
         {
             _app = app;
             _viewModel = new DrinkListPageViewModel(_app);
             BindingContext = _viewModel;
+            _selectionCommand = new Command(ItemSelected);
+
             InitializeComponent();
 
             foreach (DrinkViewModel drink in _viewModel.Drinks)
             {
-                RecipeListLayout.Children.Add(new CardView(drink));
+                RecipeListLayout.Children.Add(new CardView(drink, _selectionCommand));
             }
         }
 
-        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void ItemSelected(object item)
         {
-            DrinkPage drinkPage = new DrinkPage(e.Item as DrinkViewModel);
+            DrinkPage drinkPage = new DrinkPage(item as DrinkViewModel);
             await Navigation.PushAsync(drinkPage);
         }
 

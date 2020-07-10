@@ -1,5 +1,6 @@
 ﻿using MixologyJournalApp.ViewModel;
 using System;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,9 +10,11 @@ namespace MixologyJournalApp.View
     public partial class CardView : Frame
     {
         private readonly ICreationInfo _context;
+        private readonly ICommand _selectionCommand;
 
-        internal CardView(ICreationInfo recipe)
+        internal CardView(ICreationInfo recipe, ICommand selectionCommand)
         {
+            _selectionCommand = selectionCommand;
             _context = recipe;
             BindingContext = _context;
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace MixologyJournalApp.View
 
         private void Card_Tapped(object sender, EventArgs e)
         {
+            _selectionCommand.Execute(_context);
         }
     }
 }

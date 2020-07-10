@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.View
@@ -13,23 +14,26 @@ namespace MixologyJournalApp.View
     {
         private readonly RecipeListPageViewModel _viewModel;
         private readonly App _app;
+        private readonly ICommand _selectionCommand;
 
         public RecipeListPage(App app)
         {
             _app = app;
             _viewModel = new RecipeListPageViewModel(_app);
             BindingContext = _viewModel;
+            _selectionCommand = new Command(ItemSelected);
+
             InitializeComponent();
 
             foreach (RecipeViewModel recipe in _viewModel.Recipes)
             {
-                RecipeListLayout.Children.Add(new CardView(recipe));
+                RecipeListLayout.Children.Add(new CardView(recipe, _selectionCommand));
             }
         }
 
-        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void ItemSelected(object item)
         {
-            RecipePage recipePage = new RecipePage(e.Item as RecipeViewModel);
+            RecipePage recipePage = new RecipePage(item as RecipeViewModel);
             await Navigation.PushAsync(recipePage);
         }
 
