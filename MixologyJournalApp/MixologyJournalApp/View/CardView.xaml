@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       x:Class="MixologyJournalApp.View.CardView"
+       Visual="Material"
+       VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+    <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="Card_Tapped"/>
+    </Frame.GestureRecognizers>
+    <Frame.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <!--
+            <Grid>
+                <BoxView x:Name="boxCardColor" HorizontalOptions="Fill" BackgroundColor="#00ACC1" InputTransparent="True"/>
+                <Image x:Name="imgCard" HorizontalOptions="Fill" Aspect="AspectFill" Source="cardimage1.PNG" InputTransparent="True"/>
+            </Grid>
+            -->
+            <StackLayout Margin="10" VerticalOptions="FillAndExpand">
+                <Label Text="{Binding Name}" FontSize="Large" Opacity="0.8"/>
+                <Label Text="{Binding IngredientList}" FontSize="Small" Opacity="0.6"/>
+                <!--
+                <Label Text="Some Title Text" FontSize="Small" Opacity="0.8"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="SHARE"/>
+                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="EXPLORE"/>
+                </StackLayout>
+                -->
+            </StackLayout>
+        </StackLayout>
+    </Frame.Content>
+</Frame>

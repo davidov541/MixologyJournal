@@ -19,6 +19,10 @@ namespace MixologyJournalApp.View
             _viewModel = new RecipeListPageViewModel(_app);
             BindingContext = _viewModel;
             InitializeComponent();
+            foreach (RecipeViewModel recipe in _viewModel.Recipes)
+            {
+                RecipeListLayout.Children.Add(new CardView(recipe));
+            }
         }
 
         private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)

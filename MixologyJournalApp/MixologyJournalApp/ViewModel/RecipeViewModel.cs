@@ -46,6 +46,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String IngredientList
+        {
+            get
+            {
+                return String.Join(", ", IngredientUsages.Select(u => u.Ingredient.Name));
+            }
+        }
+
         public ObservableCollection<StepViewModel> Steps { get; } = new ObservableCollection<StepViewModel>();
 
         public ObservableCollection<IngredientUsageViewModel> IngredientUsages { get; } = new ObservableCollection<IngredientUsageViewModel>();

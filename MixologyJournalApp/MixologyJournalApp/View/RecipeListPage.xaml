@@ -3,24 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:MixologyJournalApp.View"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.RecipeListPage"
              Title="Recipe List"
              Visual="Material">
     <AbsoluteLayout VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand">
-        <StackLayout>
-            <ListView x:Name="listView" 
-                  ItemsSource="{Binding Path=Recipes}" 
-                  ItemTapped="ListView_ItemTapped">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding Path=Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="10, 0, 0, 0" />
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+        <StackLayout VerticalOptions="FillAndExpand"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="SizeProportional">
+            <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="RecipeListLayout" Orientation="Vertical" VerticalOptions="FillAndExpand" />
+            </ScrollView>
         </StackLayout>
         <Button x:Name="addRecipeButton2" 
                 Image="@drawable/ic_add_white_48dp"
