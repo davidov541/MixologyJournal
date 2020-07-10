@@ -55,7 +55,6 @@
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
-                        <Button x:Name="SkipButton" Text="Skip" HeightRequest="50" Clicked="SkipButton_Clicked" />
                     </StackLayout>
                 </Frame>
             </StackLayout>
