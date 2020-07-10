@@ -43,13 +43,13 @@
                                      BindableLayout.ItemsSource="{Binding LoginMethods}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
-                                    <Button Text="{Binding Name, StringFormat='Login with {0}'}"
+                                    <Button Text="{Binding Name, StringFormat='Use {0}'}"
                                             ImageSource="{Binding Icon}"
                                             HeightRequest="50"
                                             TextColor="{Binding ForegroundColor}"
                                             BackgroundColor="{Binding BackgroundColor}"
                                             Command="{Binding LoginCommand}"
-                                            WidthRequest="200"
+                                            WidthRequest="250"
                                             HorizontalOptions="CenterAndExpand"
                                             VerticalOptions="FillAndExpand" />
                                 </DataTemplate>

@@ -13,7 +13,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             get
             {
-                return "Local Account";
+                return "Local Storage";
             }
         }
 

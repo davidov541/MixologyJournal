@@ -16,7 +16,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             get
             {
-                return "Auth0";
+                return "Cloud Storage";
             }
         }
 
