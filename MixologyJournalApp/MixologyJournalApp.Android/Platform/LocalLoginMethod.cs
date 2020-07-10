@@ -1,6 +1,4 @@
-﻿using Android.Accounts;
-using Android.App;
-using MixologyJournalApp.Platform;
+﻿using MixologyJournalApp.Platform;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -15,7 +13,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             get
             {
-                return "Local Android Account";
+                return "Local Account";
             }
         }
 
@@ -23,7 +21,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             get
             {
-                return "icon_auth0";
+                return "local_login_48";
             }
         }
 
