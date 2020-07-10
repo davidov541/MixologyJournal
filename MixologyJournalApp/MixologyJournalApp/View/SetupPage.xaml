@@ -9,39 +9,55 @@
              Visual="Material">
     <ContentPage.Resources>
         <DataTemplate x:Key="DescriptionTemplate">
-            <Label Text="{Binding Caption}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" 
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Margin="10"/>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand">
+                <Frame Margin="10,10,10,10"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand">
+                    <Label Text="{Binding Caption}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" 
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontSize="Large" 
+                           Opacity="0.8"/>
+                </Frame>
+            </StackLayout>
         </DataTemplate>
 
         <DataTemplate x:Key="LoginTemplate">
             <StackLayout>
-                <Label Text="{Binding Caption}"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand"
-                       Margin="10"/>
-                <StackLayout Padding="20"
-                             VerticalOptions="CenterAndExpand"
-                             x:Name="mainLayout"
-                             BindableLayout.ItemsSource="{Binding LoginMethods}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <Button Text="{Binding Name, StringFormat='Login with {0}'}"
-                                    ImageSource="{Binding Icon}"
-                                    HeightRequest="50"
-                                    TextColor="{Binding ForegroundColor}"
-                                    BackgroundColor="{Binding BackgroundColor}"
-                                    Command="{Binding LoginCommand}"
-                                    WidthRequest="200"
-                                    HorizontalOptions="CenterAndExpand"
-                                    VerticalOptions="FillAndExpand" />
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
-                <Button x:Name="SkipButton" Text="Skip" HeightRequest="50" Clicked="SkipButton_Clicked" />
+                <Frame Margin="10,10,10,10"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Label Text="{Binding Caption}"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"
+                               Margin="10"
+                               FontSize="Small" 
+                               Opacity="0.6"/>
+                        <StackLayout Padding="20"
+                                     VerticalOptions="CenterAndExpand"
+                                     x:Name="mainLayout"
+                                     BindableLayout.ItemsSource="{Binding LoginMethods}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Text="{Binding Name, StringFormat='Login with {0}'}"
+                                            ImageSource="{Binding Icon}"
+                                            HeightRequest="50"
+                                            TextColor="{Binding ForegroundColor}"
+                                            BackgroundColor="{Binding BackgroundColor}"
+                                            Command="{Binding LoginCommand}"
+                                            WidthRequest="200"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="FillAndExpand" />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <Button x:Name="SkipButton" Text="Skip" HeightRequest="50" Clicked="SkipButton_Clicked" />
+                    </StackLayout>
+                </Frame>
             </StackLayout>
         </DataTemplate>
 
@@ -65,7 +81,7 @@
                           Grid.ColumnSpan="3"
                           ItemTemplate="{StaticResource setupItemSelector}"
                           Position="{Binding Position, Mode=TwoWay}"
-                          PeekAreaInsets="50"
+                          PeekAreaInsets="25"
                           IsBounceEnabled="True"/>
             <IndicatorView x:Name="indicatorView"
                            IndicatorColor="LightGray"

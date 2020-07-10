@@ -42,7 +42,7 @@ namespace MixologyJournalApp.ViewModel
             PageItems = new ObservableCollection<SetupPageItem>()
             {
                 new SetupPageItem("Welcome to Mixology Journal!\n\nYou've taken your first step to\nimproving your cocktail making skills!"),
-                new SetupPageItem("With Mixology Journal, you can log\nevery variation of a recipe you create. \n\nWhen you find a favorite variation,\nyou can keep that for use later!"),
+                new SetupPageItem("With Mixology Journal, you can log every variation of a recipe you create. \n\nWhen you find a favorite variation, you can keep that for use later!"),
                 new SetupPageItem("In order to create custom recipes and log your drinks,\nyou need to log in using your Google account.\n\nIf you decide not to you can do so later.\nRegardless, you will have access to classic recipes.", _platform.Backend.LoginMethods)
             };
         }
