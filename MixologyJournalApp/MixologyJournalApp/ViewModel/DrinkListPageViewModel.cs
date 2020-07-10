@@ -19,7 +19,7 @@ namespace MixologyJournalApp.ViewModel
                 bool authenticated = false;
                 try
                 {
-                    authenticated = _app.PlatformInfo.Backend.IsAuthenticated;
+                    authenticated = _app.PlatformInfo.Authentication.IsAuthenticated;
                 } catch (InvalidOperationException)
                 {
                     // We haven't created the App object yet, so we should just return that we aren't authenticated.

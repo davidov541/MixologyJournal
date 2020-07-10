@@ -2,7 +2,6 @@
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
@@ -37,13 +36,13 @@ namespace MixologyJournalApp.ViewModel
         public SetupPageViewModel(IPlatform platform)
         {
             _platform = platform;
-            _platform.Backend.PropertyChanged += Backend_PropertyChanged;
+            _platform.Authentication.PropertyChanged += Authentication_PropertyChanged;
 
             PageItems = new ObservableCollection<SetupPageItem>()
             {
                 new SetupPageItem("Welcome to Mixology Journal!\n\nYou've taken your first step to\nimproving your cocktail making skills!"),
                 new SetupPageItem("With Mixology Journal, you can log every variation of a recipe you create. \n\nWhen you find a favorite variation, you can keep that for use later!"),
-                new SetupPageItem("In order to create custom recipes and log your drinks,\nyou need to log in using your Google account.\n\nIf you decide not to you can do so later.\nRegardless, you will have access to classic recipes.", _platform.Backend.LoginMethods)
+                new SetupPageItem("In order to create custom recipes and log your drinks,\nyou need to log in using your Google account.\n\nIf you decide not to you can do so later.\nRegardless, you will have access to classic recipes.", _platform.Authentication.LoginMethods)
             };
         }
 
@@ -52,9 +51,9 @@ namespace MixologyJournalApp.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private async void Backend_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private async void Authentication_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(IBackend.IsAuthenticated))
+            if (e.PropertyName == nameof(AuthenticationManager.IsAuthenticated))
             {
                 await (Application.Current as App).StartApp();
             }

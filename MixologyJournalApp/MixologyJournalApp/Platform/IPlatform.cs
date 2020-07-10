@@ -1,5 +1,8 @@
 ﻿using MixologyJournalApp.Model;
-using MixologyJournalApp.View;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Platform
 {
@@ -11,6 +14,11 @@ namespace MixologyJournalApp.Platform
         }
 
         IBackend Backend
+        {
+            get;
+        }
+
+        AuthenticationManager Authentication
         {
             get;
         }

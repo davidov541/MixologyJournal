@@ -1,4 +1,5 @@
 ﻿using MixologyJournalApp.Platform;
+using System.ComponentModel;
 
 namespace MixologyJournalApp.Droid.Platform
 {
@@ -22,10 +23,15 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
+        public AuthenticationManager Authentication { get; }
+
         internal AndroidPlatform(MainActivity context)
         {
+            Authentication = new AuthenticationManager(new Auth0LoginMethod(context));
+
             _factory = new AlertDialogFactory(context);
-            _backend = new BackendManager(context);
+
+            _backend = new BackendManager(Authentication);
         }
     }
 }

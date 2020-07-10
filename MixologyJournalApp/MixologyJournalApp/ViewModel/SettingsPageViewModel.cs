@@ -16,7 +16,7 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _platform.Backend.LoginMethods;
+                return _platform.Authentication.LoginMethods;
             }
         }
 
@@ -24,14 +24,14 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _platform.Backend.IsAuthenticated;
+                return _platform.Authentication.IsAuthenticated;
             }
         }
 
         public SettingsPageViewModel(App app)
         {
             _platform = app.PlatformInfo;
-            _platform.Backend.PropertyChanged += Backend_PropertyChanged;
+            _platform.Authentication.PropertyChanged += Authentication_PropertyChanged;
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -39,11 +39,11 @@ namespace MixologyJournalApp.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void Backend_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void Authentication_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             switch (e.PropertyName)
             {
-                case nameof(IBackend.IsAuthenticated):
+                case nameof(AuthenticationManager.IsAuthenticated):
                     OnPropertyChanged(nameof(IsLoggedIn));
                     break;
                 default:

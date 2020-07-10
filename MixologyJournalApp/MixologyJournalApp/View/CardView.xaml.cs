@@ -8,7 +8,7 @@ namespace MixologyJournalApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CardView : Frame
     {
-        private ICreationInfo _context;
+        private readonly ICreationInfo _context;
 
         internal CardView(ICreationInfo recipe)
         {

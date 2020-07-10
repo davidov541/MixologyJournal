@@ -9,7 +9,7 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class RootPageMasterViewModel : INotifyPropertyChanged
     {
-        private IBackend _backend;
+        private readonly AuthenticationManager _authentication;
 
         public ObservableCollection<IMasterMenuItem> MenuItems { get; set; }
 
@@ -17,7 +17,7 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _backend.User?.Name;
+                return _authentication.User?.Name;
             }
         }
 
@@ -25,7 +25,7 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _backend.User?.IconPath;
+                return _authentication.User?.IconPath;
             }
         }
 
@@ -36,19 +36,19 @@ namespace MixologyJournalApp.ViewModel
                     new MasterMenuItem<RecipeListPage>("Recipes"),
                     new MasterMenuItem<SettingsPage>("Settings")
             });
-            if (app.PlatformInfo.Backend.IsAuthenticated)
+            if (app.PlatformInfo.Authentication.IsAuthenticated)
             {
                 MenuItems.Insert(1, new MasterMenuItem<DrinkListPage>("Drinks"));
             }
-            _backend = app.PlatformInfo.Backend;
-            _backend.PropertyChanged += Backend_PropertyChanged;
+            _authentication = app.PlatformInfo.Authentication;
+            _authentication.PropertyChanged += Authentication_PropertyChanged;
         }
 
-        private void Backend_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void Authentication_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             switch (e.PropertyName)
             {
-                case nameof(IBackend.User):
+                case nameof(AuthenticationManager.User):
                     OnPropertyChanged(nameof(UserName));
                     OnPropertyChanged(nameof(UserIcon));
                     break;

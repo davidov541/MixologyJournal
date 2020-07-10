@@ -2,9 +2,7 @@
 using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -15,67 +13,11 @@ namespace MixologyJournalApp.Droid.Platform
     {
         private readonly String _basePath = AppConfigManager.Settings["BackendAddress"];
 
-        public Boolean IsAuthenticated
+        private readonly AuthenticationManager _authentication;
+
+        public BackendManager(AuthenticationManager authentication)
         {
-            get
-            {
-                return GetActiveLoginMethod() != null;
-            }
-        }
-
-        private readonly List<ILoginMethod> _loginMethods = new List<ILoginMethod>();
-
-        public IEnumerable<ILoginMethod> LoginMethods
-        {
-            get
-            {
-                return _loginMethods;
-            }
-        }
-
-        public User User 
-        { 
-            get
-            {
-                ILoginMethod method = GetActiveLoginMethod();
-                return method?.CurrentUser;
-            }
-        }
-
-        public BackendManager(MainActivity mainActivity)
-        {
-            _loginMethods.Add(new Auth0LoginMethod(mainActivity));
-            _loginMethods.ForEach(l => l.PropertyChanged += LoginMethod_PropertyChanged);
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(String propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void LoginMethod_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            switch (e.PropertyName)
-            {
-                case nameof(ILoginMethod.IsLoggedIn):
-                    OnPropertyChanged(nameof(IsAuthenticated));
-                    OnPropertyChanged(nameof(User));
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        public async Task Init(bool setupMode)
-        {
-            IEnumerable<Task> initializationTasks = _loginMethods.Select(l => l.Init(setupMode));
-            await Task.WhenAll(initializationTasks);
-        }
-
-        private ILoginMethod GetActiveLoginMethod()
-        {
-            return _loginMethods.FirstOrDefault(l => l.IsLoggedIn);
+            _authentication = authentication;
         }
 
         public async Task<String> GetResult(String path)
@@ -87,9 +29,9 @@ namespace MixologyJournalApp.Droid.Platform
                 RequestUri = new Uri(fullPath),
                 Method = HttpMethod.Get,
             };
-            if (IsAuthenticated)
+            if (_authentication.IsAuthenticated)
             {
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _authentication.User.AuthToken);
             }
             request.Headers.Add("apiversion", "1");
             HttpResponseMessage response = await client.SendAsync(request);
@@ -125,9 +67,9 @@ namespace MixologyJournalApp.Droid.Platform
                 Method = method,
                 Content = new StringContent(JsonConvert.SerializeObject(body))
             };
-            if (IsAuthenticated)
+            if (_authentication.IsAuthenticated)
             {
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", User.AuthToken);
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _authentication.User.AuthToken);
             }
             request.Headers.Add("apiversion", "1");
             HttpResponseMessage response = await client.SendAsync(request);
