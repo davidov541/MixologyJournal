@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class RecipeViewModel: INotifyPropertyChanged
+    internal class RecipeViewModel: INotifyPropertyChanged, ICreationInfo
     {
         private readonly Recipe _model;
         private readonly App _app;

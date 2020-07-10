@@ -8,9 +8,9 @@ namespace MixologyJournalApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CardView : Frame
     {
-        private RecipeViewModel _context;
+        private ICreationInfo _context;
 
-        internal CardView(RecipeViewModel recipe)
+        internal CardView(ICreationInfo recipe)
         {
             _context = recipe;
             BindingContext = _context;
