@@ -9,25 +9,20 @@
              Visual="Material">
     <AbsoluteLayout VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand">
-        <AbsoluteLayout>
-            <ListView x:Name="listView"
-                      ItemsSource="{Binding Path=Drinks}"
-                      ItemTapped="ListView_ItemTapped">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding Path=Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="10, 0, 0, 0" />
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Label IsVisible="{Binding IsEmpty}"
-                   Text="No Drinks Yet! Good Excuse to Make a Drink Tonight!" 
-                   VerticalTextAlignment="Center"
-                   HorizontalTextAlignment="Center"
-                   AbsoluteLayout.LayoutBounds="0,0,1,1"
-                   AbsoluteLayout.LayoutFlags="SizeProportional"/>
-        </AbsoluteLayout>
+
+        <StackLayout VerticalOptions="FillAndExpand"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="SizeProportional">
+            <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="RecipeListLayout" Orientation="Vertical" VerticalOptions="FillAndExpand" />
+            </ScrollView>
+        </StackLayout>
+        <Label IsVisible="{Binding IsEmpty}"
+               Text="No Drinks Yet! Good Excuse to Make a Drink Tonight!" 
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="SizeProportional"/>
         <Button x:Name="addDrinkButton" 
                 Image="@drawable/ic_add_white_48dp"
                 Clicked="AddDrinkButton_Clicked" 

@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class DrinkViewModel : INotifyPropertyChanged
+    internal class DrinkViewModel : INotifyPropertyChanged, ICreationInfo
     {
         private readonly Drink _model;
         private readonly App _app;
@@ -82,6 +82,14 @@ namespace MixologyJournalApp.ViewModel
             {
                 _model.Review = value.Replace("\n", "\\n");
                 OnPropertyChanged(nameof(Review));
+            }
+        }
+
+        public String IngredientList
+        {
+            get
+            {
+                return String.Join(", ", IngredientUsages.Select(u => u.Ingredient.Name));
             }
         }
 
