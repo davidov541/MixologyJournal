@@ -24,7 +24,8 @@
                        Keyboard="Default" />
                 <Label Text="Ingredients" />
                 <ListView x:Name="IngredientUsagesList" 
-                          ItemsSource="{Binding IngredientUsages}">
+                          ItemsSource="{Binding IngredientUsages}"
+                          RowHeight="100">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
