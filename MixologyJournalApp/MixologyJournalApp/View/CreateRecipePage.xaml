@@ -37,28 +37,28 @@
                                         <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
                                     <Entry x:Name="amountEntry"
-                                               Grid.Row="0"
-                                               Grid.Column="0"
-                                               Keyboard="Numeric"
-                                               Text="{Binding Amount}" />
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           Keyboard="Numeric"
+                                           Text="{Binding Amount}" />
                                     <Picker x:Name="unitPicker" 
-                                                Grid.Row="0" 
-                                                Grid.Column="1" 
-                                                ItemsSource="{Binding AvailableUnits}" 
-                                                Title="Unit" 
-                                                SelectedItem="{Binding Unit}" />
+                                            Grid.Row="0" 
+                                            Grid.Column="1" 
+                                            ItemsSource="{Binding AvailableUnits}" 
+                                            Title="Unit" 
+                                            SelectedItem="{Binding Unit}" />
                                     <Picker x:Name="ingredientPicker" 
-                                                Grid.Row="0" 
-                                                Grid.Column="2" 
-                                                ItemsSource="{Binding AvailableIngredients}" 
-                                                Title="Ingredient" 
-                                                SelectedItem="{Binding Ingredient}" />
+                                            Grid.Row="0" 
+                                            Grid.Column="2" 
+                                            ItemsSource="{Binding AvailableIngredients}" 
+                                            Title="Ingredient" 
+                                            SelectedItem="{Binding Ingredient}" />
                                     <Button Grid.Row="0" 
-                                                Grid.Column="3" 
-                                                x:Name="deleteIngredientButton" 
-                                                Text="Delete" 
-                                                Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
-                                                CommandParameter="{Binding}"/>
+                                            Grid.Column="3" 
+                                            x:Name="deleteIngredientButton" 
+                                            Text="Delete" 
+                                            Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
+                                            CommandParameter="{Binding}"/>
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
@@ -80,8 +80,8 @@
                                         <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
                                     <Entry Grid.Row="0" 
-                                            Grid.Column="0" 
-                                            Text="{Binding Path=Text, Mode=TwoWay}" />
+                                           Grid.Column="0" 
+                                           Text="{Binding Path=Text, Mode=TwoWay}" />
                                     <Button Grid.Row="0" 
                                             Grid.Column="1" 
                                             x:Name="deleteStepButton" 
