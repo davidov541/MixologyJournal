@@ -41,7 +41,7 @@ namespace MixologyJournalApp.ViewModel
         public LocalDataCache(App app)
         {
             _app = app;
-            _modelCache = ModelCache.Create(app.PlatformInfo.Backend);
+            _modelCache = ModelCache.Create(app);
         }
 
         private void OnPropertyChanged(String propertyName)

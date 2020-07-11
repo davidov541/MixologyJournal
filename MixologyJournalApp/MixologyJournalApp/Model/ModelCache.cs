@@ -76,17 +76,17 @@ namespace MixologyJournalApp.Model
 
         public double InitProgress { get; private set; } = 0.0;
 
-        public static ModelCache Create(IBackend backend)
+        public static ModelCache Create(App app)
         {
             String fileName = GetSerializationPath();
             if (File.Exists(fileName))
             {
                 String jsonString = File.ReadAllText(fileName);
                 ModelCache cache = JsonConvert.DeserializeObject<ModelCache>(jsonString);
-                cache._backend = backend;
+                cache._app = app;
                 return cache;
             }
-            return new ModelCache(backend);
+            return new ModelCache(app);
         }
 
         public ModelCache()
@@ -94,10 +94,10 @@ namespace MixologyJournalApp.Model
             LastLoadedTime = DateTime.MinValue;
         }
 
-        private IBackend _backend;
-        private ModelCache(IBackend backend) : this()
+        private App _app;
+        private ModelCache(App app) : this()
         {
-            _backend = backend;
+            _app = app;
         }
 
         public async Task Init()
@@ -111,10 +111,10 @@ namespace MixologyJournalApp.Model
                 await UpdateAvailableIngredients();
 
                 InitProgress = 0.5;
-                List<Recipe> recipeModels = await UpdateRecipes();
+                await UpdateRecipes();
 
                 InitProgress = 0.75;
-                await UpdateDrinks(recipeModels);
+                await UpdateDrinks();
 
                 InitProgress = 1.0;
                 LastLoadedTime = DateTime.UtcNow;
@@ -126,23 +126,22 @@ namespace MixologyJournalApp.Model
             await Init();
         }
 
-        private async Task<List<Recipe>> UpdateRecipes()
+        private async Task UpdateRecipes()
         {
-            String jsonResult = await _backend.GetResult("/insecure/recipes");
+            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/recipes");
             List<Recipe> recipeModels = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult);
             _recipes.Clear();
             foreach (Recipe r in recipeModels.OrderBy(i => i.Name))
             {
                 _recipes.Add(r);
             }
-            return recipeModels;
         }
 
-        private async Task UpdateDrinks(List<Recipe> recipeModels)
+        private async Task UpdateDrinks()
         {
-            String jsonResult = await _backend.GetResult("/insecure/drinks");
+            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/drinks");
             List<Drink> drinkModels = JsonConvert.DeserializeObject<List<Drink>>(jsonResult);
-            drinkModels.ForEach(d => d.Init(recipeModels.FirstOrDefault(r => r.Id.Equals(d.SourceRecipeID))));
+            drinkModels.ForEach(d => d.Init(Recipes.FirstOrDefault(r => r.Id.Equals(d.SourceRecipeID))));
             _drinks.Clear();
             foreach (Drink d in drinkModels.OrderBy(i => i.Name))
             {
@@ -152,7 +151,7 @@ namespace MixologyJournalApp.Model
 
         private async Task UpdateAvailableIngredients()
         {
-            String jsonResult = await _backend.GetResult("/insecure/ingredients");
+            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/ingredients");
             List<Ingredient> ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResult).ToList();
             _ingredients.Clear();
             foreach (Ingredient i in ingredients.OrderBy(i => i.Name))
@@ -163,7 +162,7 @@ namespace MixologyJournalApp.Model
 
         private async Task UpdateAvailableUnits()
         {
-            String jsonResult = await _backend.GetResult("/insecure/units");
+            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/units");
             List<Unit> units = JsonConvert.DeserializeObject<List<Unit>>(jsonResult).ToList();
             _units.Clear();
             foreach (Unit u in units.OrderBy(i => i.Name))
@@ -191,7 +190,7 @@ namespace MixologyJournalApp.Model
 
         internal async Task<Boolean> CreateRecipe(Recipe model)
         {
-            QueryResult result = await _backend.PostResult("/secure/recipes", model);
+            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/recipes", model);
 
             if (result.Result)
             {
@@ -216,7 +215,7 @@ namespace MixologyJournalApp.Model
 
         internal async Task<Boolean> DeleteRecipe(Recipe recipe)
         {
-            QueryResult result = await _backend.DeleteResult("/secure/recipes", recipe);
+            QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/recipes", recipe);
             if (result.Result)
             {
                 _recipes.Remove(recipe);
@@ -229,7 +228,7 @@ namespace MixologyJournalApp.Model
 
         internal async Task<Boolean> CreateDrink(Drink model)
         {
-            QueryResult result = await _backend.PostResult("/secure/drinks", model);
+            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", model);
 
             if (result.Result)
             {
@@ -254,7 +253,7 @@ namespace MixologyJournalApp.Model
 
         internal async Task<Boolean> DeleteDrink(Drink drink)
         {
-            QueryResult result = await _backend.DeleteResult("/secure/drinks", drink);
+            QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", drink);
             if (result.Result)
             {
                 _drinks.Remove(drink);
@@ -267,7 +266,7 @@ namespace MixologyJournalApp.Model
 
         internal async Task UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
         {
-            await _backend.PostResult("/secure/favorite", new FavoriteRequest(drink.SourceRecipeID, drink.Id, isFavorite));
+            await _app.PlatformInfo.Backend.PostResult("/secure/favorite", new FavoriteRequest(drink.SourceRecipeID, drink.Id, isFavorite));
 
             Save();
         }
