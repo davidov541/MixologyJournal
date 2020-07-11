@@ -14,21 +14,18 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout>
-            <StackLayout Orientation="Vertical"
-                         Margin="10,5"
-                         AbsoluteLayout.LayoutBounds="0,0,1,1"
-                         AbsoluteLayout.LayoutFlags="SizeProportional">
-                <Label Text="Title" />
-                <Entry x:Name="NameEntry"
-                       Text="{Binding Name}"
-                       Keyboard="Default" />
-                <Label Text="Ingredients" />
-                <ListView x:Name="IngredientUsagesList" 
-                          ItemsSource="{Binding IngredientUsages}"
-                          RowHeight="100">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
+                <StackLayout Orientation="Vertical"
+                             Margin="10,5"
+                             VerticalOptions="FillAndExpand">
+                    <Label Text="Title" />
+                    <Entry x:Name="NameEntry"
+                           Text="{Binding Name}"
+                           Keyboard="Default" />
+                    <Label Text="Ingredients" />
+                    <StackLayout BindableLayout.ItemsSource="{Binding IngredientUsages}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="auto" />
@@ -40,54 +37,51 @@
                                         <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
                                     <Entry x:Name="amountEntry"
-                                           Grid.Row="0"
-                                           Grid.Column="0"
-                                           Keyboard="Numeric"
-                                           Text="{Binding Amount}" />
+                                               Grid.Row="0"
+                                               Grid.Column="0"
+                                               Keyboard="Numeric"
+                                               Text="{Binding Amount}" />
                                     <Picker x:Name="unitPicker" 
-                                            Grid.Row="0" 
-                                            Grid.Column="1" 
-                                            ItemsSource="{Binding AvailableUnits}" 
-                                            Title="Unit" 
-                                            SelectedItem="{Binding Unit}" />
+                                                Grid.Row="0" 
+                                                Grid.Column="1" 
+                                                ItemsSource="{Binding AvailableUnits}" 
+                                                Title="Unit" 
+                                                SelectedItem="{Binding Unit}" />
                                     <Picker x:Name="ingredientPicker" 
-                                            Grid.Row="0" 
-                                            Grid.Column="2" 
-                                            ItemsSource="{Binding AvailableIngredients}" 
-                                            Title="Ingredient" 
-                                            SelectedItem="{Binding Ingredient}" />
+                                                Grid.Row="0" 
+                                                Grid.Column="2" 
+                                                ItemsSource="{Binding AvailableIngredients}" 
+                                                Title="Ingredient" 
+                                                SelectedItem="{Binding Ingredient}" />
                                     <Button Grid.Row="0" 
-                                            Grid.Column="3" 
-                                            x:Name="deleteIngredientButton" 
-                                            Text="Delete" 
-                                            Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
-                                            CommandParameter="{Binding}"/>
+                                                Grid.Column="3" 
+                                                x:Name="deleteIngredientButton" 
+                                                Text="Delete" 
+                                                Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
+                                                CommandParameter="{Binding}"/>
                                 </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <Button x:Name="addIngredientButton" 
-                        Text="Add Ingredient" 
-                        MinimumHeightRequest="30" 
-                        Command="{Binding AddIngredientCommand}"/>
-                <Label Text="Steps" />
-                <ListView x:Name="StepsList"
-                          ItemsSource="{Binding Path=Steps}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <Button x:Name="addIngredientButton" 
+                            Text="Add Ingredient" 
+                            MinimumHeightRequest="30" 
+                            Command="{Binding AddIngredientCommand}"/>
+                    <Label Text="Steps" />
+                    <StackLayout BindableLayout.ItemsSource="{Binding Steps}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
                                     <Entry Grid.Row="0" 
-                                           Grid.Column="0" 
-                                           Text="{Binding Path=Text, Mode=TwoWay}" />
+                                            Grid.Column="0" 
+                                            Text="{Binding Path=Text, Mode=TwoWay}" />
                                     <Button Grid.Row="0" 
                                             Grid.Column="1" 
                                             x:Name="deleteStepButton" 
@@ -95,19 +89,19 @@
                                             Command="{Binding Path=BindingContext.DeleteStepCommand, Source={x:Reference rootPage}}"
                                             CommandParameter="{Binding}" />
                                 </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <Button x:Name="addStepButton" 
-                        Text="Add Step" 
-                        MinimumHeightRequest="30" 
-                        Command="{Binding AddStepCommand}"/>
-                <Button x:Name="createButton" 
-                        Text="Create" 
-                        MinimumHeightRequest="30" 
-                        Clicked="CreateButton_Clicked" />
-            </StackLayout>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <Button x:Name="addStepButton" 
+                            Text="Add Step" 
+                            MinimumHeightRequest="30" 
+                            Command="{Binding AddStepCommand}"/>
+                    <Button x:Name="createButton" 
+                            Text="Create" 
+                            MinimumHeightRequest="30" 
+                            Clicked="CreateButton_Clicked" />
+                </StackLayout>
+            </ScrollView>
             <AbsoluteLayout BackgroundColor="{Binding ProcessIsRunning, Converter={StaticResource runningConverter}}" 
                             AbsoluteLayout.LayoutBounds="0,0,1,1" 
                             AbsoluteLayout.LayoutFlags="SizeProportional" 
