@@ -1,5 +1,4 @@
 ﻿using MixologyJournalApp.Model;
-using MixologyJournalApp.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
