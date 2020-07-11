@@ -33,12 +33,12 @@ namespace MixologyJournalApp.ViewModel
         {
             MenuItems = new ObservableCollection<IMasterMenuItem>(new IMasterMenuItem[]
             {
-                    new MasterMenuItem<RecipeListPage>("Recipes"),
-                    new MasterMenuItem<SettingsPage>("Settings")
+                new MasterMenuItem<RecipeListPage>("Recipes"),
+                new MasterMenuItem<DrinkListPage>("Drinks"),
+                new MasterMenuItem<SettingsPage>("Settings")
             });
             if (app.PlatformInfo.Authentication.IsAuthenticated)
             {
-                MenuItems.Insert(1, new MasterMenuItem<DrinkListPage>("Drinks"));
             }
             _authentication = app.PlatformInfo.Authentication;
             _authentication.PropertyChanged += Authentication_PropertyChanged;

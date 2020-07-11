@@ -22,7 +22,6 @@
                 Clicked="AddRecipeButton_Clicked" 
                 AbsoluteLayout.LayoutFlags="PositionProportional"
                 AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
-                Style="{StaticResource FloatingButton}"
-                IsVisible="{Binding Path=IsAuthenticated}" />
+                Style="{StaticResource FloatingButton}" />
     </AbsoluteLayout>
 </ContentPage>

@@ -26,7 +26,6 @@
         <Button x:Name="addDrinkButton" 
                 Image="@drawable/ic_add_white_48dp"
                 Clicked="AddDrinkButton_Clicked" 
-                IsVisible="{Binding Path=IsAuthenticated}"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
                 AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
                 Style="{StaticResource FloatingButton}" />

@@ -12,22 +12,6 @@ namespace MixologyJournalApp.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public bool IsAuthenticated
-        {
-            get
-            {
-                bool authenticated = false;
-                try
-                {
-                    authenticated = _app.PlatformInfo.Authentication.IsAuthenticated;
-                } catch (InvalidOperationException)
-                {
-                    // We haven't created the App object yet, so we should just return that we aren't authenticated.
-                }
-                return authenticated;
-            }
-        }
-
         public ObservableCollection<RecipeViewModel> Recipes
         {
             get
