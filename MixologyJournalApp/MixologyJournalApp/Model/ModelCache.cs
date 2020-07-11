@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -68,8 +69,25 @@ namespace MixologyJournalApp.Model
 
         public double InitProgress { get; private set; } = 0.0;
 
+        public static ModelCache Create(IBackend backend)
+        {
+            String fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "modelcache.json");
+            if (File.Exists(fileName))
+            {
+                String jsonString = File.ReadAllText(fileName);
+                ModelCache cache = JsonConvert.DeserializeObject<ModelCache>(jsonString);
+                cache._backend = backend;
+                return cache;
+            }
+            return new ModelCache(backend);
+        }
+
+        public ModelCache()
+        {
+        }
+
         private IBackend _backend;
-        public ModelCache(IBackend backend)
+        private ModelCache(IBackend backend) : this()
         {
             _backend = backend;
         }
