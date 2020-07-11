@@ -67,6 +67,13 @@ namespace MixologyJournalApp.Model
             }
         }
 
+        [JsonProperty("lastLoadedTime")]
+        public DateTime LastLoadedTime
+        {
+            get;
+            set;
+        }
+
         public double InitProgress { get; private set; } = 0.0;
 
         public static ModelCache Create(IBackend backend)
@@ -84,6 +91,7 @@ namespace MixologyJournalApp.Model
 
         public ModelCache()
         {
+            LastLoadedTime = DateTime.MinValue;
         }
 
         private IBackend _backend;
@@ -94,19 +102,23 @@ namespace MixologyJournalApp.Model
 
         public async Task Init()
         {
-            InitProgress = 0.0;
-            await UpdateAvailableUnits();
+            if (DateTime.UtcNow.Subtract(LastLoadedTime).TotalMilliseconds > TimeSpan.FromHours(1).TotalMilliseconds)
+            {
+                InitProgress = 0.0;
+                await UpdateAvailableUnits();
 
-            InitProgress = 0.25;
-            await UpdateAvailableIngredients();
+                InitProgress = 0.25;
+                await UpdateAvailableIngredients();
 
-            InitProgress = 0.5;
-            List<Recipe> recipeModels = await UpdateRecipes();
+                InitProgress = 0.5;
+                List<Recipe> recipeModels = await UpdateRecipes();
 
-            InitProgress = 0.75;
-            await UpdateDrinks(recipeModels);
+                InitProgress = 0.75;
+                await UpdateDrinks(recipeModels);
 
-            InitProgress = 1.0;
+                InitProgress = 1.0;
+                LastLoadedTime = DateTime.UtcNow;
+            }
         }
 
         public async Task Resync()
