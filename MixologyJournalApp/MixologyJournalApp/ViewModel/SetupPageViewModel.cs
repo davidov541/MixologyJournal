@@ -41,8 +41,8 @@ namespace MixologyJournalApp.ViewModel
             PageItems = new ObservableCollection<SetupPageItem>()
             {
                 new SetupPageItem("Welcome to Mixology Journal!\n\nYou've taken your first step to\nimproving your cocktail making skills!"),
-                new SetupPageItem("With Mixology Journal, you can log every variation of a recipe you create. \n\nWhen you find a favorite variation, you can keep that for use later!"),
-                new SetupPageItem("In order to create custom recipes and log your drinks,\nyou need to log in using your Google account.\n\nIf you decide not to you can do so later.\nRegardless, you will have access to classic recipes.", _platform.Authentication.LoginMethods)
+                new SetupPageItem("With Mixology Journal, you can log every variation of a recipe you create.\n\nWhen you find a favorite variation, you can keep that for use later!"),
+                new SetupPageItem("You can choose to save your recipes and drinks locally, or store them in the cloud, secured with your Google account or a custom account.\n\nIf you save your data in the cloud, you will be able to access it on other devices and platforms!", _platform.Authentication.LoginMethods)
             };
         }
 
