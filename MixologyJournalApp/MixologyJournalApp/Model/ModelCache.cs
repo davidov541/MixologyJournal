@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MixologyJournalApp.Model
 {
     [JsonObject(MemberSerialization.OptIn)]
-    internal class ModelCache
+    internal class ModelCache: IDisposable
     {
         private List<Recipe> _recipes = new List<Recipe>();
         [JsonProperty("recipes")]
@@ -71,7 +71,7 @@ namespace MixologyJournalApp.Model
 
         public static ModelCache Create(IBackend backend)
         {
-            String fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "modelcache.json");
+            String fileName = GetSerializationPath();
             if (File.Exists(fileName))
             {
                 String jsonString = File.ReadAllText(fileName);
@@ -160,7 +160,24 @@ namespace MixologyJournalApp.Model
             }
         }
 
-        public async Task<Boolean> CreateRecipe(Recipe model)
+        private static String GetSerializationPath()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "modelcache.json");
+        }
+
+        private void Save()
+        {
+            String serializationPath = GetSerializationPath();
+            String serializedCache = JsonConvert.SerializeObject(this);
+            File.WriteAllText(serializationPath, serializedCache);
+        }
+
+        public void Dispose()
+        {
+            Save();
+        }
+
+        internal async Task<Boolean> CreateRecipe(Recipe model)
         {
             QueryResult result = await _backend.PostResult("/secure/recipes", model);
 
@@ -179,20 +196,26 @@ namespace MixologyJournalApp.Model
                     _recipes.Insert(insertIndex, model);
                 }
             }
+
+            Save();
+
             return result.Result;
         }
 
-        public async Task<Boolean> DeleteRecipe(Recipe recipe)
+        internal async Task<Boolean> DeleteRecipe(Recipe recipe)
         {
             QueryResult result = await _backend.DeleteResult("/secure/recipes", recipe);
             if (result.Result)
             {
                 _recipes.Remove(recipe);
             }
+
+            Save();
+
             return result.Result;
         }
 
-        public async Task<Boolean> CreateDrink(Drink model)
+        internal async Task<Boolean> CreateDrink(Drink model)
         {
             QueryResult result = await _backend.PostResult("/secure/drinks", model);
 
@@ -211,22 +234,30 @@ namespace MixologyJournalApp.Model
                     _drinks.Insert(insertIndex, model);
                 }
             }
+
+            Save();
+
             return result.Result;
         }
 
-        public async Task<Boolean> DeleteDrink(Drink drink)
+        internal async Task<Boolean> DeleteDrink(Drink drink)
         {
             QueryResult result = await _backend.DeleteResult("/secure/drinks", drink);
             if (result.Result)
             {
                 _drinks.Remove(drink);
             }
+
+            Save();
+
             return result.Result;
         }
 
-        public async Task UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
+        internal async Task UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
         {
             await _backend.PostResult("/secure/favorite", new FavoriteRequest(drink.SourceRecipeID, drink.Id, isFavorite));
+
+            Save();
         }
     }
 }

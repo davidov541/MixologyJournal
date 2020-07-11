@@ -72,5 +72,11 @@ namespace MixologyJournalApp
         {
             await (MainPage as RootPage).Detail.Navigation.PopToRootAsync();
         }
+
+        protected override void OnSleep()
+        {
+            base.OnSleep();
+            Cache.Dispose();
+        }
     }
 }

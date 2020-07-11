@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class LocalDataCache: INotifyPropertyChanged
+    internal class LocalDataCache: INotifyPropertyChanged, IDisposable
     {
         private readonly App _app;
 
@@ -112,6 +112,11 @@ namespace MixologyJournalApp.ViewModel
             {
                 AvailableUnits.Add(u);
             }
+        }
+
+        public void Dispose()
+        {
+            _modelCache.Dispose();
         }
 
         public async Task<Boolean> CreateRecipe(RecipeViewModel viewModel, Recipe model)
