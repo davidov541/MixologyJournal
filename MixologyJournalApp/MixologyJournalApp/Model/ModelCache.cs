@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,8 +10,10 @@ using System.Threading.Tasks;
 namespace MixologyJournalApp.Model
 {
     [JsonObject(MemberSerialization.OptIn)]
-    internal class ModelCache : IDisposable
+    internal class ModelCache : IDisposable, INotifyPropertyChanged
     {
+        internal const int InitStepsCount = 4;
+
         private List<Recipe> _recipes = new List<Recipe>();
         [JsonProperty("recipes")]
         public IEnumerable<Recipe> Recipes
@@ -79,7 +82,19 @@ namespace MixologyJournalApp.Model
             return _app.PlatformInfo.Authentication.IsAuthenticated;
         }
 
-        public double InitProgress { get; private set; } = 0.0;
+        private double _initProgress = 0.0;
+        public double InitProgress
+        {
+            get
+            {
+                return _initProgress / InitStepsCount;
+            }
+            private set
+            {
+                _initProgress = value;
+                OnPropertyChanged(nameof(InitProgress));
+            }
+        }
 
         public static ModelCache Create(App app)
         {
@@ -100,6 +115,7 @@ namespace MixologyJournalApp.Model
         }
 
         private App _app;
+
         private ModelCache(App app) : this()
         {
             _app = app;
@@ -112,18 +128,18 @@ namespace MixologyJournalApp.Model
                 InitProgress = 0.0;
                 await UpdateAvailableUnits();
 
-                InitProgress = 0.25;
+                InitProgress = 1.0;
                 await UpdateAvailableIngredients();
 
-                InitProgress = 0.5;
+                InitProgress = 2.0;
                 await UpdateRecipes();
 
-                InitProgress = 0.75;
+                InitProgress = 3.0;
                 await UpdateDrinks();
 
-                InitProgress = 1.0;
                 LastLoadedTime = DateTime.UtcNow;
             }
+            InitProgress = 4.0;
         }
 
         public async Task Resync()
@@ -323,6 +339,12 @@ namespace MixologyJournalApp.Model
             }
 
             Save();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(String propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

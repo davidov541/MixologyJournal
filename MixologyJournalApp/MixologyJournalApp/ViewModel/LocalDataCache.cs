@@ -10,6 +10,7 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class LocalDataCache: INotifyPropertyChanged, IDisposable
     {
+        private const int InitStepsCount = 4 + ModelCache.InitStepsCount;
         private readonly App _app;
 
         private readonly ModelCache _modelCache;
@@ -24,16 +25,17 @@ namespace MixologyJournalApp.ViewModel
 
         public ObservableCollection<UnitViewModel> AvailableUnits { get; } = new ObservableCollection<UnitViewModel>();
 
-        private double _initProgress = 0.0;
+        private double _initStepsCompleted = 0.0;
         public double InitProgress
         {
             get
             {
-                return _initProgress;
+                double modelCacheSteps = _modelCache.InitProgress * ModelCache.InitStepsCount;
+                return (_initStepsCompleted + modelCacheSteps) / InitStepsCount;
             }
             private set
             {
-                _initProgress = value;
+                _initStepsCompleted = value;
                 OnPropertyChanged(nameof(InitProgress));
             }
         }
@@ -42,6 +44,17 @@ namespace MixologyJournalApp.ViewModel
         {
             _app = app;
             _modelCache = ModelCache.Create(app);
+            _modelCache.PropertyChanged += ModelCache_PropertyChanged;
+        }
+
+        private void ModelCache_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch(e.PropertyName)
+            {
+                case nameof(ModelCache.InitProgress):
+                    OnPropertyChanged(nameof(InitProgress));
+                    break;
+            }
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -54,19 +67,18 @@ namespace MixologyJournalApp.ViewModel
             InitProgress = 0.0;
             await _modelCache.Init();
 
-            InitProgress = 0.2;
             UpdateAvailableUnits();
 
-            InitProgress = 0.4;
+            InitProgress = 1.0;
             UpdateAvailableIngredients();
 
-            InitProgress = 0.6;
+            InitProgress = 2.0;
             UpdateRecipes();
 
-            InitProgress = 0.8;
+            InitProgress = 3.0;
             UpdateDrinks();
 
-            InitProgress = 1.0;
+            InitProgress = 4.0;
         }
 
         public async Task Resync()
