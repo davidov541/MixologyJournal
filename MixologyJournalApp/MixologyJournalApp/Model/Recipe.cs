@@ -35,6 +35,13 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty("isBuiltIn")]
+        public Boolean IsBuiltIn
+        {
+            get;
+            set;
+        }
+
         public Drink FavoriteDrink
         {
             get;

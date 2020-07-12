@@ -109,14 +109,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public Boolean IsAdminUser
+        public Boolean CanBeDeleted
         {
             get
             {
 #if DEBUG
                 return true;
 #else
-                return false;
+                return _model.IsBuiltIn;
 #endif
             }
         }
@@ -208,7 +208,7 @@ namespace MixologyJournalApp.ViewModel
                 },
                 canExecute: () =>
                 {
-                    return IsAdminUser;
+                    return CanBeDeleted;
                 });
         }
 

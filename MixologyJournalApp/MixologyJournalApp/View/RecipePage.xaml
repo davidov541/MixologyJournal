@@ -45,7 +45,7 @@
             <Button x:Name="deleteRecipe" 
                     Image="@drawable/ic_trash_48dp"
                     Command="{Binding DeleteRecipeCommand}"
-                    IsVisible="{Binding Path=IsAdminUser}"
+                    IsVisible="{Binding Path=CanBeDeleted}"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
                     Style="{StaticResource FloatingButton}" />
