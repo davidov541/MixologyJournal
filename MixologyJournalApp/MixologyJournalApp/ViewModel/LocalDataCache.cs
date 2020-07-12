@@ -114,6 +114,11 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        internal void Save()
+        {
+            _modelCache.Save();
+        }
+
         public void Dispose()
         {
             _modelCache.Dispose();

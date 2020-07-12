@@ -8,7 +8,7 @@ using Xamarin.Essentials;
 
 namespace MixologyJournalApp.Droid.Platform
 {
-    internal class Auth0LoginMethod : ILoginMethod
+    internal class Auth0LoginMethod : IRemoteLoginMethod
     {
         private const String RenewalTokenKey = "RenewalToken";
 
@@ -126,6 +126,7 @@ namespace MixologyJournalApp.Droid.Platform
 
         private void Logoff()
         {
+            LoggingOff?.Invoke(this, new EventArgs());
             SecureStorage.Remove(RenewalTokenKey);
             IsLoggedIn = false;
         }
@@ -137,5 +138,7 @@ namespace MixologyJournalApp.Droid.Platform
         }
 
         public event EventHandler LoginEnabled;
+
+        public event EventHandler LoggingOff;
     }
 }

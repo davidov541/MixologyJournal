@@ -32,11 +32,6 @@ namespace MixologyJournalApp.Platform
             get;
         }
 
-        Boolean IsLoggedIn
-        {
-            get;
-        }
-
         ICommand LoginCommand
         {
             get;
@@ -51,8 +46,6 @@ namespace MixologyJournalApp.Platform
         {
             get;
         }
-
-        Task Init(bool setupMode);
 
         event EventHandler LoginEnabled;
     }

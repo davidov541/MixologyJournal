@@ -31,6 +31,13 @@ namespace MixologyJournalApp
             Cache = new LocalDataCache(this);
 
             InitializeComponent();
+
+            platform.Authentication.LoggingOff += Authentication_LoggingOff;
+        }
+
+        private void Authentication_LoggingOff(object sender, EventArgs e)
+        {
+            Cache.Save();
         }
 
         public async Task InitAsync()

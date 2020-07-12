@@ -202,7 +202,7 @@ namespace MixologyJournalApp.Model
             return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "modelcache.json");
         }
 
-        private void Save()
+        internal void Save()
         {
             String serializationPath = GetSerializationPath();
             String serializedCache = JsonConvert.SerializeObject(this);

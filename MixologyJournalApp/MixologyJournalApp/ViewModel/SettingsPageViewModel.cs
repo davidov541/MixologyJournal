@@ -12,11 +12,11 @@ namespace MixologyJournalApp.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public IEnumerable<ILoginMethod> LoginMethods
+        public IEnumerable<IRemoteLoginMethod> LoginMethods
         {
             get
             {
-                return _platform.Authentication.LoginMethods;
+                return _platform.Authentication.LoginMethods.OfType<IRemoteLoginMethod>();
             }
         }
 

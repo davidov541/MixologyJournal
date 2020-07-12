@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using Xamarin.Forms.Internals;
 
 namespace MixologyJournalApp.Platform
 {
@@ -12,7 +13,7 @@ namespace MixologyJournalApp.Platform
         {
             get
             {
-                return _loginMethods.Any(m => m.IsLoggedIn);
+                return _loginMethods.OfType<IRemoteLoginMethod>().Any(m => m.IsLoggedIn);
             }
         }
 
@@ -33,6 +34,8 @@ namespace MixologyJournalApp.Platform
             }
         }
 
+        public event EventHandler LoggingOff;
+
         public AuthenticationManager(IEnumerable<ILoginMethod> loginMethods)
         {
             _loginMethods.AddRange(loginMethods);
@@ -41,6 +44,15 @@ namespace MixologyJournalApp.Platform
                 l.PropertyChanged += LoginMethod_PropertyChanged;
                 l.LoginEnabled += LoginMethod_LoginEnabled;
             });
+            _loginMethods.OfType<IRemoteLoginMethod>().ForEach(l =>
+            {
+                l.LoggingOff += Method_LoggingOff;
+            });
+        }
+
+        private void Method_LoggingOff(object sender, EventArgs e)
+        {
+            LoggingOff?.Invoke(this, new EventArgs());
         }
 
         private void LoginMethod_LoginEnabled(object sender, EventArgs e)
@@ -64,7 +76,7 @@ namespace MixologyJournalApp.Platform
         {
             switch (e.PropertyName)
             {
-                case nameof(ILoginMethod.IsLoggedIn):
+                case nameof(IRemoteLoginMethod.IsLoggedIn):
                     OnPropertyChanged(nameof(IsAuthenticated));
                     OnPropertyChanged(nameof(User));
                     break;
@@ -75,7 +87,7 @@ namespace MixologyJournalApp.Platform
 
         public async Task Init(bool setupMode)
         {
-            IEnumerable<Task> initializationTasks = _loginMethods.Select(l => l.Init(setupMode));
+            IEnumerable<Task> initializationTasks = _loginMethods.OfType<IRemoteLoginMethod>().Select(l => l.Init(setupMode));
             await Task.WhenAll(initializationTasks);
         }
     }

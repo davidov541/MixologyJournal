@@ -19,7 +19,7 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <RelativeLayout>
-                            <Button Text="{Binding Name, StringFormat='Login with {0}'}"
+                            <Button Text="{Binding Name, StringFormat='Use {0}'}"
                                 ImageSource="{Binding Icon}"
                                 HeightRequest="48"
                                 TextColor="{Binding ForegroundColor}"
@@ -29,7 +29,7 @@
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="FillAndExpand"
                                 IsVisible="{Binding IsLoggedIn, Converter={local:InvertBooleanConverter}}"/>
-                            <Button Text="{Binding Name, StringFormat='Log out of {0}'}"
+                            <Button Text="{Binding Name, StringFormat='Disable {0}'}"
                                 ImageSource="{Binding Icon}"
                                 HeightRequest="48"
                                 TextColor="{Binding ForegroundColor}"
