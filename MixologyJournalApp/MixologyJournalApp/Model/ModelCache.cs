@@ -109,12 +109,12 @@ namespace MixologyJournalApp.Model
             return new ModelCache(app);
         }
 
+        private App _app;
+
         public ModelCache()
         {
             LastLoadedTime = DateTime.MinValue;
         }
-
-        private App _app;
 
         private ModelCache(App app) : this()
         {
@@ -159,6 +159,7 @@ namespace MixologyJournalApp.Model
 
             foreach (Recipe r in recipeModels.OrderBy(i => i.Name))
             {
+                r.Uploaded = true;
                 _recipes.Add(r);
             }
         }
@@ -239,6 +240,7 @@ namespace MixologyJournalApp.Model
                 if (result.Result)
                 {
                     model.Id = result.Content["createdId"];
+                    model.Uploaded = true;
                 }
                 finalResult = result.Result;
             }

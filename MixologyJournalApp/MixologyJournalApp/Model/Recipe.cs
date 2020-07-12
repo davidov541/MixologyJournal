@@ -42,6 +42,13 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty("uploaded")]
+        public Boolean Uploaded
+        {
+            get;
+            set;
+        }
+
         public Drink FavoriteDrink
         {
             get;
@@ -62,6 +69,7 @@ namespace MixologyJournalApp.Model
         {
             Steps = new List<String>();
             Ingredients = new List<IngredientUsage>();
+            Uploaded = false;
         }
     }
 }
