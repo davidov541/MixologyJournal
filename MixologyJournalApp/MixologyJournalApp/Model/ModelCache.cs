@@ -142,9 +142,17 @@ namespace MixologyJournalApp.Model
             InitProgress = 4.0;
         }
 
-        public async Task Resync()
+        public async Task UploadRecentItems()
         {
-            await Init();
+            foreach (Recipe recipe in Recipes.Where(r => !r.Uploaded))
+            {
+                await UploadRecipe(recipe);
+            }
+
+            foreach(Drink drink in Drinks.Where(d => !d.Uploaded))
+            {
+                await UploadDrink(drink);
+            }
         }
 
         private async Task UpdateRecipes()
@@ -177,6 +185,7 @@ namespace MixologyJournalApp.Model
 
                 foreach (Drink d in drinkModels.OrderBy(i => i.Name))
                 {
+                    d.Uploaded = true;
                     _drinks.Add(d);
                 }
             }
@@ -236,13 +245,7 @@ namespace MixologyJournalApp.Model
             Boolean finalResult = true;
             if (GetUseRemote())
             {
-                QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/recipes", model);
-                if (result.Result)
-                {
-                    model.Id = result.Content["createdId"];
-                    model.Uploaded = true;
-                }
-                finalResult = result.Result;
+                finalResult = await UploadRecipe(model);
             }
 
             if (finalResult)
@@ -262,6 +265,17 @@ namespace MixologyJournalApp.Model
             }
 
             return finalResult;
+        }
+
+        private async Task<bool> UploadRecipe(Recipe model)
+        {
+            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/recipes", model);
+            if (result.Result)
+            {
+                model.Id = result.Content["createdId"];
+                model.Uploaded = true;
+            }
+            return result.Result;
         }
 
         internal async Task<Boolean> DeleteRecipe(Recipe recipe)
@@ -288,12 +302,7 @@ namespace MixologyJournalApp.Model
             Boolean finalResult = true;
             if (GetUseRemote())
             {
-                QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", model);
-                finalResult = result.Result;
-                if (finalResult)
-                {
-                    model.Id = result.Content["createdId"];
-                }
+                finalResult = await UploadDrink(model);
             }
 
             if (finalResult)
@@ -313,6 +322,18 @@ namespace MixologyJournalApp.Model
             }
 
             return finalResult;
+        }
+
+        private async Task<bool> UploadDrink(Drink model)
+        {
+            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", model);
+            if (result.Result)
+            {
+                model.Uploaded = true;
+                model.Id = result.Content["createdId"];
+            }
+
+            return result.Result;
         }
 
         internal async Task<Boolean> DeleteDrink(Drink drink)

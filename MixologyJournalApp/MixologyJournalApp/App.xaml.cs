@@ -31,13 +31,6 @@ namespace MixologyJournalApp
             Cache = new LocalDataCache(this);
 
             InitializeComponent();
-
-            platform.Authentication.LoggingOff += Authentication_LoggingOff;
-        }
-
-        private void Authentication_LoggingOff(object sender, EventArgs e)
-        {
-            Cache.Save();
         }
 
         public async Task InitAsync()
@@ -73,6 +66,19 @@ namespace MixologyJournalApp
             Properties[_hasBeenSetupKey] = true.ToString();
             await SavePropertiesAsync();
             MainPage = new RootPage(this);
+
+            PlatformInfo.Authentication.LoginEnabled += Authentication_LoginEnabled;
+            PlatformInfo.Authentication.LoggingOff += Authentication_LoggingOff;
+        }
+
+        private async void Authentication_LoginEnabled(object sender, EventArgs e)
+        {
+            await Cache.UploadRecentItems();
+        }
+
+        private void Authentication_LoggingOff(object sender, EventArgs e)
+        {
+            Cache.Save();
         }
 
         internal async Task PopToRoot()

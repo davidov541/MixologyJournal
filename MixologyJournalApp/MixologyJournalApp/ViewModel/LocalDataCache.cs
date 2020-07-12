@@ -81,9 +81,9 @@ namespace MixologyJournalApp.ViewModel
             InitProgress = 4.0;
         }
 
-        public async Task Resync()
+        public async Task UploadRecentItems()
         {
-            await Init();
+            await _modelCache.UploadRecentItems();
         }
 
         private void UpdateRecipes()

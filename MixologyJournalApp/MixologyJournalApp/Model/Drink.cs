@@ -92,6 +92,13 @@ namespace MixologyJournalApp.Model
             }
         }
 
+        [JsonProperty("uploaded")]
+        public Boolean Uploaded
+        {
+            get;
+            set;
+        }
+
         public static Drink CreateEmptyDrink(Recipe basis)
         {
             Drink drink = new Drink
