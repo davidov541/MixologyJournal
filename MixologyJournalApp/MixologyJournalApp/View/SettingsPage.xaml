@@ -9,10 +9,19 @@
              Visual="Material">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Mixology Journal! Please log in with your authentication mechanism of choice."
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
+            <Label VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FontSize="Large" 
+                   Opacity="0.8">
+                <Label.Text>
+Welcome to Mixology Journal!
+Please log-in with your authentication mechanism of choice.
+                </Label.Text>
+            </Label>
             <StackLayout Padding="20"
+                         HorizontalOptions="CenterAndExpand"
                          VerticalOptions="CenterAndExpand" 
                          x:Name="mainLayout"
                          BindableLayout.ItemsSource="{Binding LoginMethods}">
@@ -20,25 +29,25 @@
                     <DataTemplate>
                         <RelativeLayout>
                             <Button Text="{Binding Name, StringFormat='Use {0}'}"
-                                ImageSource="{Binding Icon}"
-                                HeightRequest="48"
-                                TextColor="{Binding ForegroundColor}"
-                                BackgroundColor="{Binding BackgroundColor}"
-                                Command="{Binding LoginCommand}"
-                                WidthRequest="200"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="FillAndExpand"
-                                IsVisible="{Binding IsLoggedIn, Converter={local:InvertBooleanConverter}}"/>
+                                    ImageSource="{Binding Icon}"
+                                    HeightRequest="48"
+                                    TextColor="{Binding ForegroundColor}"
+                                    BackgroundColor="{Binding BackgroundColor}"
+                                    Command="{Binding LoginCommand}"
+                                    WidthRequest="200"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    IsVisible="{Binding IsLoggedIn, Converter={local:InvertBooleanConverter}}"/>
                             <Button Text="{Binding Name, StringFormat='Disable {0}'}"
-                                ImageSource="{Binding Icon}"
-                                HeightRequest="48"
-                                TextColor="{Binding ForegroundColor}"
-                                BackgroundColor="{Binding BackgroundColor}"
-                                Command="{Binding LogoffCommand}"
-                                WidthRequest="200"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="FillAndExpand"
-                                IsVisible="{Binding IsLoggedIn}"/>
+                                    ImageSource="{Binding Icon}"
+                                    HeightRequest="48"
+                                    TextColor="{Binding ForegroundColor}"
+                                    BackgroundColor="{Binding BackgroundColor}"
+                                    Command="{Binding LogoffCommand}"
+                                    WidthRequest="200"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    IsVisible="{Binding IsLoggedIn}"/>
                         </RelativeLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
