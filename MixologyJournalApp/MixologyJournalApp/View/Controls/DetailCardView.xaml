@@ -28,14 +28,16 @@
     </Frame.GestureRecognizers>
     <Frame.Content>
         <StackLayout>
-            <StackLayout Margin="10" VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand">
                 <ListView x:Name="ingredientUsageList"
                             ItemTemplate="{StaticResource alternateColorDataTemplateSelector}"
                             ItemsSource="{Binding IngredientUsages}"
                             RowHeight="40"
                             Margin="0,0,0,10" 
                             VerticalScrollBarVisibility="Never" />
+                <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
                 <Label Text="{Binding Path=FormattedSteps}" />
+                <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="DELETE" IsVisible="{Binding CanBeDeleted}">
                         <Label.GestureRecognizers>
