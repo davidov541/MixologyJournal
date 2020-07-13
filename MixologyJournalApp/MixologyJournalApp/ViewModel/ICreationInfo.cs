@@ -35,5 +35,20 @@ namespace MixologyJournalApp.ViewModel
         {
             get;
         }
+
+        ICommand ToggleFavoriteCommand
+        {
+            get;
+        }
+
+        Boolean CanBeFavorited
+        {
+            get;
+        }
+
+        Boolean CanBeUnfavorited
+        {
+            get;
+        }
     }
 }

@@ -121,6 +121,30 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public ICommand ToggleFavoriteCommand
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        public Boolean CanBeFavorited
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        public Boolean CanBeUnfavorited
+        {
+            get
+            {
+                return false;
+            }
+        }
+
         public RecipeViewModel(App app) : this(Recipe.CreateEmptyRecipe(), app)
         {
         }

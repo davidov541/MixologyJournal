@@ -1,4 +1,5 @@
-﻿using MixologyJournalApp.ViewModel;
+﻿using MixologyJournalApp.View.Controls;
+using MixologyJournalApp.ViewModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +16,8 @@ namespace MixologyJournalApp.View
             _viewModel = viewModel;
             BindingContext = _viewModel;
             InitializeComponent();
+
+            CreationList.Children.Add(new DetailCardView(_viewModel, null));
         }
 
         protected override async void OnDisappearing()

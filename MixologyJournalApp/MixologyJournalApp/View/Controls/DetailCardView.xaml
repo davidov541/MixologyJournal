@@ -47,6 +47,16 @@
                 <Label Text="{Binding Path=FormattedSteps}" />
                 <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
                 <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="FAVORITE" IsVisible="{Binding CanBeFavorited}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleFavoriteCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="UNFAVORITE" IsVisible="{Binding CanBeUnfavorited}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleFavoriteCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
                     <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="DELETE" IsVisible="{Binding CanBeDeleted}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding DeleteCommand}" />

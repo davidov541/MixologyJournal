@@ -138,10 +138,26 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ICommand FavoriteDrinkCommand
+        public ICommand ToggleFavoriteCommand
         {
             get;
             private set;
+        }
+
+        public Boolean CanBeFavorited
+        {
+            get
+            {
+                return !IsFavorite;
+            }
+        }
+
+        public Boolean CanBeUnfavorited
+        {
+            get
+            {
+                return IsFavorite;
+            }
         }
 
         private Boolean _processIsRunning = false;
@@ -170,6 +186,8 @@ namespace MixologyJournalApp.ViewModel
                 _model.IsFavorite = value;
                 _favoriteHasChanged = !_favoriteHasChanged;
                 OnPropertyChanged(nameof(IsFavorite));
+                OnPropertyChanged(nameof(CanBeFavorited));
+                OnPropertyChanged(nameof(CanBeUnfavorited));
             }
         }
 
@@ -264,7 +282,7 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return CanBeDeleted;
                 });
-            FavoriteDrinkCommand = new Command(
+            ToggleFavoriteCommand = new Command(
                 execute: () =>
                 {
                     IsFavorite = !IsFavorite;

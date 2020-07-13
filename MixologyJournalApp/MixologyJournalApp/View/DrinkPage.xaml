@@ -15,40 +15,13 @@
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand"
                         HorizontalOptions="FillAndExpand">
-            <StackLayout>
-                <Label Text="{Binding Path=FormattedIngredients}"
-                       VerticalOptions="CenterAndExpand" 
-                       HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding Path=FormattedSteps}"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding Path=Rating}"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding Path=Review}"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand" />
-            </StackLayout>
-            <Button x:Name="favoriteDrink" 
-                    Image="@drawable/emptyStar_48"
-                    Command="{Binding FavoriteDrinkCommand}"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="1, 0.85, AutoSize, AutoSize" 
-                    Style="{StaticResource FloatingButton}"
-                    IsVisible="{Binding IsFavorite, Converter={StaticResource invertConverter}}"/>
-            <Button x:Name="unfavoriteDrink" 
-                    Image="@drawable/filledStar_48"
-                    Command="{Binding FavoriteDrinkCommand}"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="1, 0.85, AutoSize, AutoSize" 
-                    Style="{StaticResource FloatingButton}"
-                    IsVisible="{Binding IsFavorite}"/>
-            <Button x:Name="deleteDrink" 
-                    Image="@drawable/ic_trash_48dp"
-                    Command="{Binding DeleteCommand}"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
-                    Style="{StaticResource FloatingButton}" />
+            <ScrollView Orientation="Vertical" 
+                        Margin="5" 
+                        VerticalOptions="StartAndExpand" 
+                        AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                        AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Orientation="Vertical" x:Name="CreationList" />
+            </ScrollView>
             <AbsoluteLayout BackgroundColor="{Binding ProcessIsRunning, Converter={StaticResource runningConverter}}" 
                             AbsoluteLayout.LayoutBounds="0,0,1,1" 
                             AbsoluteLayout.LayoutFlags="SizeProportional" 
