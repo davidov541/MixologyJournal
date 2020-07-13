@@ -38,6 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\Controls\DetailCardView.xaml.cs">
+      <DependentUpon>DetailCardView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\CreateDrinkPage.xaml.cs">
       <DependentUpon>CreateDrinkPage.xaml</DependentUpon>
     </Compile>
