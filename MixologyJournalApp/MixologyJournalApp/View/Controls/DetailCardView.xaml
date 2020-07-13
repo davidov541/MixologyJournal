@@ -30,11 +30,19 @@
         <StackLayout>
             <StackLayout VerticalOptions="FillAndExpand">
                 <ListView x:Name="ingredientUsageList"
-                            ItemTemplate="{StaticResource alternateColorDataTemplateSelector}"
-                            ItemsSource="{Binding IngredientUsages}"
-                            RowHeight="40"
-                            Margin="0,0,0,10" 
-                            VerticalScrollBarVisibility="Never" />
+                          ItemsSource="{Binding IngredientUsages}"
+                          RowHeight="40"
+                          Margin="0,0,0,10" 
+                          VerticalScrollBarVisibility="Never"
+                          SeparatorColor="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding}" TextColor="Black" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
                 <Label Text="{Binding Path=FormattedSteps}" />
                 <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
