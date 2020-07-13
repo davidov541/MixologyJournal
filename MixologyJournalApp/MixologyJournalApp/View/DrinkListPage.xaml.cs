@@ -33,7 +33,7 @@ namespace MixologyJournalApp.View
             RecipeListLayout.Children.Clear();
             foreach (DrinkViewModel drink in _viewModel.Drinks)
             {
-                RecipeListLayout.Children.Add(new CardView(drink, _selectionCommand));
+                RecipeListLayout.Children.Add(new SummaryCardView(drink, _selectionCommand));
             }
         }
 

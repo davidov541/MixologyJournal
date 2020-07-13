@@ -7,12 +7,12 @@ using Xamarin.Forms.Xaml;
 namespace MixologyJournalApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CardView : Frame
+    public partial class SummaryCardView : Frame
     {
         private readonly ICreationInfo _context;
         private readonly ICommand _selectionCommand;
 
-        internal CardView(ICreationInfo recipe, ICommand selectionCommand)
+        internal SummaryCardView(ICreationInfo recipe, ICommand selectionCommand)
         {
             _selectionCommand = selectionCommand;
             _context = recipe;

@@ -35,7 +35,7 @@ namespace MixologyJournalApp.View
             RecipeListLayout.Children.Clear();
             foreach (RecipeViewModel recipe in _viewModel.Recipes)
             {
-                RecipeListLayout.Children.Add(new CardView(recipe, _selectionCommand));
+                RecipeListLayout.Children.Add(new SummaryCardView(recipe, _selectionCommand));
             }
         }
 
