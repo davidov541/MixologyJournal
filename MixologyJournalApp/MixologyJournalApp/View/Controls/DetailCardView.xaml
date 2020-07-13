@@ -3,75 +3,52 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-       xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
        mc:Ignorable="d"
        x:Class="MixologyJournalApp.View.Controls.DetailCardView"
-       Visual="Material"
-       Margin="10,0,10,0">
-    <Frame.Resources>
-        <DataTemplate x:Key="evenTemplate">
-            <ViewCell>
-                <Label BackgroundColor="LightGray" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
-            </ViewCell>
-        </DataTemplate>
-        <DataTemplate x:Key="unevenTemplate">
-            <ViewCell>
-                <Label BackgroundColor="WhiteSmoke" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
-            </ViewCell>
-        </DataTemplate>
-        <controls:AlternateColorDataTemplateSelector x:Key="alternateColorDataTemplateSelector"
-                                                     EvenTemplate="{StaticResource evenTemplate}"
-                                                     UnevenTemplate="{StaticResource unevenTemplate}" />
-    </Frame.Resources>
+       Style="{StaticResource Card}">
     <Frame.GestureRecognizers>
         <TapGestureRecognizer Tapped="Card_Tapped"/>
     </Frame.GestureRecognizers>
     <Frame.Content>
-        <StackLayout>
-            <StackLayout VerticalOptions="FillAndExpand">
-                <ListView x:Name="ingredientUsageList"
-                          ItemsSource="{Binding IngredientUsages}"
-                          RowHeight="40"
-                          Margin="0,0,0,10" 
-                          VerticalScrollBarVisibility="Never"
-                          SeparatorColor="Transparent">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Text="{Binding}" TextColor="Black" />
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
-                <Label Text="{Binding Path=FormattedSteps}" />
-                <BoxView BackgroundColor="#607D8B" HeightRequest="1" IsVisible="{Binding HasReview}" />
-                <Label Text="{Binding Path=Rating}"
-                       VerticalOptions="StartAndExpand"
-                       HorizontalOptions="StartAndExpand"
-                       IsVisible="{Binding HasReview}"/>
-                <Label Text="{Binding Path=Review}"
-                       VerticalOptions="StartAndExpand"
-                       HorizontalOptions="StartAndExpand"
-                       IsVisible="{Binding HasReview}"/>
-                <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="FAVORITE" IsVisible="{Binding CanBeFavorited}">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ToggleFavoriteCommand}" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="UNFAVORITE" IsVisible="{Binding CanBeUnfavorited}">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ToggleFavoriteCommand}" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="DELETE" IsVisible="{Binding CanBeDeleted}">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding DeleteCommand}" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                </StackLayout>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <ListView x:Name="ingredientUsageList"
+                        Style="{StaticResource ContentList}"
+                        ItemsSource="{Binding IngredientUsages}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding}" Style="{StaticResource ContentText}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView Style="{StaticResource CardDivider}"  />
+            <Label Text="{Binding Path=FormattedSteps}" 
+                    Style="{StaticResource ContentText}" />
+            <BoxView Style="{StaticResource CardDivider}" IsVisible="{Binding HasReview}" />
+            <Label Text="{Binding Path=Rating}"
+                    Style="{StaticResource ContentText}"
+                    IsVisible="{Binding HasReview}"/>
+            <Label Text="{Binding Path=Review}"
+                    Style="{StaticResource ContentText}"
+                    IsVisible="{Binding HasReview}"/>
+            <BoxView Style="{StaticResource CardDivider}"  />
+            <StackLayout Style="{StaticResource CardActionLayout}">
+                <Label Style="{StaticResource TextButton}" Text="FAVORITE" IsVisible="{Binding CanBeFavorited}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ToggleFavoriteCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Style="{StaticResource TextButton}" Text="UNFAVORITE" IsVisible="{Binding CanBeUnfavorited}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ToggleFavoriteCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Style="{StaticResource TextButton}" Text="DELETE" IsVisible="{Binding CanBeDeleted}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DeleteCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
         </StackLayout>
     </Frame.Content>

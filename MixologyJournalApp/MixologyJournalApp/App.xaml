@@ -30,6 +30,43 @@
             <Style x:Key="Categories" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium" />
             </Style>
+
+            <!-- Card Styles -->
+            <Style TargetType="Label" x:Key="TextButton">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Default" />
+                <Setter Property="TextColor" Value="#FFB300" />
+            </Style>
+            <Style TargetType="BoxView" x:Key="CardDivider">
+                <Setter Property="BackgroundColor" Value="#607D8B" />
+                <Setter Property="HeightRequest" Value="1" />
+            </Style>
+            <Style TargetType="ListView" x:Key="ContentList">
+                <Setter Property="RowHeight" Value="40" />
+                <Setter Property="Margin" Value="0,0,0,10" />
+                <Setter Property="VerticalScrollBarVisibility" Value="Never" />
+                <Setter Property="SeparatorColor" Value="Transparent" />
+            </Style>
+            <Style TargetType="Label" x:Key="ContentText">
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Opacity" Value="0.6" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="StackLayout" x:Key="CardActionLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Spacing" Value="30" />
+            </Style>
+            <Style TargetType="Label" x:Key="CardTitle">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Opacity" Value="0.8" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Frame" x:Key="Card">
+                <Setter Property="Visual" Value="Material" />
+                <Setter Property="Margin" Value="10,0,10,0" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

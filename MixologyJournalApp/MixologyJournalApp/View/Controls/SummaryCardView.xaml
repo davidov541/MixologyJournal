@@ -5,8 +5,7 @@
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        mc:Ignorable="d"
        x:Class="MixologyJournalApp.View.Controls.SummaryCardView"
-       Visual="Material"
-       Margin="10,0,10,0">
+       Style="{StaticResource Card}">
     <Frame.GestureRecognizers>
         <TapGestureRecognizer Tapped="Card_Tapped"/>
     </Frame.GestureRecognizers>
@@ -19,8 +18,8 @@
             </Grid>
             -->
             <StackLayout Margin="10" VerticalOptions="FillAndExpand">
-                <Label Text="{Binding Name}" FontSize="Large" Opacity="0.8"/>
-                <Label Text="{Binding IngredientList}" FontSize="Small" Opacity="0.6"/>
+                <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
+                <Label Text="{Binding IngredientList}" Style="{StaticResource ContentText}"/>
                 <!--
                 <Label Text="Some Title Text" FontSize="Small" Opacity="0.8"/>
                 <StackLayout Orientation="Horizontal" Spacing="10">
