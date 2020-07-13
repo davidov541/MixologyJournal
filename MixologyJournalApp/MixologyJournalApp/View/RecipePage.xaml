@@ -21,13 +21,6 @@
                         AbsoluteLayout.LayoutFlags="All">
                 <StackLayout Orientation="Vertical" x:Name="CreationList" />
             </ScrollView>
-            <Button x:Name="deleteRecipe" 
-                    Image="@drawable/ic_trash_48dp"
-                    Command="{Binding DeleteRecipeCommand}"
-                    IsVisible="{Binding Path=CanBeDeleted}"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
-                    Style="{StaticResource FloatingButton}" />
             <AbsoluteLayout BackgroundColor="{Binding ProcessIsRunning, Converter={StaticResource runningConverter}}" 
                             AbsoluteLayout.LayoutBounds="0,0,1,1" 
                             AbsoluteLayout.LayoutFlags="SizeProportional" 

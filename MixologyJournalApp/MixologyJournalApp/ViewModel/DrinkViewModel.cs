@@ -124,7 +124,7 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
-        public ICommand DeleteDrinkCommand
+        public ICommand DeleteCommand
         {
             get;
             private set;
@@ -259,7 +259,7 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return Steps.Count > 1;
                 });
-            DeleteDrinkCommand = new Command(
+            DeleteCommand = new Command(
                 execute: async () =>
                 {
                     await Delete();

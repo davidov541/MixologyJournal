@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -23,6 +24,11 @@ namespace MixologyJournalApp.ViewModel
         ObservableCollection<IngredientUsageViewModel> IngredientUsages 
         {
             get; 
+        }
+
+        ICommand DeleteCommand
+        {
+            get;
         }
     }
 }
