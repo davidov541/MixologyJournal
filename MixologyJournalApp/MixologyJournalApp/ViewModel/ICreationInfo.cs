@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -12,6 +13,16 @@ namespace MixologyJournalApp.ViewModel
         String IngredientList
         {
             get;
+        }
+
+        String FormattedSteps
+        {
+            get;
+        }
+
+        ObservableCollection<IngredientUsageViewModel> IngredientUsages 
+        {
+            get; 
         }
     }
 }

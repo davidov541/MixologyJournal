@@ -9,19 +9,6 @@
              Title="{Binding Path=Name}"
              Visual="Material">
     <ContentPage.Resources>
-        <DataTemplate x:Key="evenTemplate">
-            <ViewCell>
-                <Label BackgroundColor="LightGray" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
-            </ViewCell>
-        </DataTemplate>
-        <DataTemplate x:Key="unevenTemplate">
-            <ViewCell>
-                <Label BackgroundColor="WhiteSmoke" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
-            </ViewCell>
-        </DataTemplate>
-        <controls:AlternateColorDataTemplateSelector x:Key="alternateColorDataTemplateSelector"
-                                                  EvenTemplate="{StaticResource evenTemplate}"
-                                                  UnevenTemplate="{StaticResource unevenTemplate}" />
         <controls:IsRunningToTintColorConverter x:Key="runningConverter" />
         <controls:InvertBooleanConverter x:Key="invertConverter" />
     </ContentPage.Resources>

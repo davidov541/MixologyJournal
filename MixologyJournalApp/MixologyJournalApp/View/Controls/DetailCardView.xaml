@@ -3,31 +3,39 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
        mc:Ignorable="d"
        x:Class="MixologyJournalApp.View.Controls.DetailCardView"
        Visual="Material"
        Margin="10,0,10,0">
+    <Frame.Resources>
+        <DataTemplate x:Key="evenTemplate">
+            <ViewCell>
+                <Label BackgroundColor="LightGray" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
+            </ViewCell>
+        </DataTemplate>
+        <DataTemplate x:Key="unevenTemplate">
+            <ViewCell>
+                <Label BackgroundColor="WhiteSmoke" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
+            </ViewCell>
+        </DataTemplate>
+        <controls:AlternateColorDataTemplateSelector x:Key="alternateColorDataTemplateSelector"
+                                                     EvenTemplate="{StaticResource evenTemplate}"
+                                                     UnevenTemplate="{StaticResource unevenTemplate}" />
+    </Frame.Resources>
     <Frame.GestureRecognizers>
         <TapGestureRecognizer Tapped="Card_Tapped"/>
     </Frame.GestureRecognizers>
     <Frame.Content>
         <StackLayout>
-            <!--
-            <Grid>
-                <BoxView x:Name="boxCardColor" HorizontalOptions="Fill" BackgroundColor="#00ACC1" InputTransparent="True"/>
-                <Image x:Name="imgCard" HorizontalOptions="Fill" Aspect="AspectFill" Source="cardimage1.PNG" InputTransparent="True"/>
-            </Grid>
-            -->
             <StackLayout Margin="10" VerticalOptions="FillAndExpand">
-                <Label Text="{Binding Name}" FontSize="Large" Opacity="0.8"/>
-                <Label Text="{Binding IngredientList}" FontSize="Small" Opacity="0.6"/>
-                <!--
-                <Label Text="Some Title Text" FontSize="Small" Opacity="0.8"/>
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="SHARE"/>
-                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="EXPLORE"/>
-                </StackLayout>
-                -->
+                <ListView x:Name="ingredientUsageList"
+                            ItemTemplate="{StaticResource alternateColorDataTemplateSelector}"
+                            ItemsSource="{Binding IngredientUsages}"
+                            RowHeight="40"
+                            Margin="0,0,0,10" 
+                            VerticalScrollBarVisibility="Never" />
+                <Label Text="{Binding Path=FormattedSteps}" />
             </StackLayout>
         </StackLayout>
     </Frame.Content>
