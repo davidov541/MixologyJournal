@@ -30,5 +30,10 @@ namespace MixologyJournalApp.ViewModel
         {
             get;
         }
+
+        Boolean CanBeDeleted
+        {
+            get;
+        }
     }
 }

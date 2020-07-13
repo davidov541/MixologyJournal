@@ -37,7 +37,7 @@
                             VerticalScrollBarVisibility="Never" />
                 <Label Text="{Binding Path=FormattedSteps}" />
                 <StackLayout Orientation="Horizontal" Spacing="10">
-                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="DELETE">
+                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="DELETE" IsVisible="{Binding CanBeDeleted}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding DeleteCommand}" />
                         </Label.GestureRecognizers>

@@ -130,6 +130,14 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
+        public Boolean CanBeDeleted
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         public ICommand FavoriteDrinkCommand
         {
             get;
@@ -147,18 +155,6 @@ namespace MixologyJournalApp.ViewModel
             {
                 _processIsRunning = value;
                 OnPropertyChanged(nameof(ProcessIsRunning));
-            }
-        }
-
-        public Boolean IsAdminUser
-        {
-            get
-            {
-#if DEBUG
-                return true;
-#else
-                return false;
-#endif
             }
         }
 
@@ -266,7 +262,7 @@ namespace MixologyJournalApp.ViewModel
                 },
                 canExecute: () =>
                 {
-                    return IsAdminUser;
+                    return CanBeDeleted;
                 });
             FavoriteDrinkCommand = new Command(
                 execute: () =>
