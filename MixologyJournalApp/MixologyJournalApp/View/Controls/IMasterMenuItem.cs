@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace MixologyJournalApp.View
+namespace MixologyJournalApp.View.Controls
 {
     public interface IMasterMenuItem
     {

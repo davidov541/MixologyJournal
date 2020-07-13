@@ -1,5 +1,6 @@
 ﻿using MixologyJournalApp.Platform;
 using MixologyJournalApp.View;
+using MixologyJournalApp.View.Controls;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;

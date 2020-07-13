@@ -1,10 +1,7 @@
 ﻿using MixologyJournalApp.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
-namespace MixologyJournalApp.View
+namespace MixologyJournalApp.View.Controls
 {
     public class SetupItemDataTemplateSelector: DataTemplateSelector
     {

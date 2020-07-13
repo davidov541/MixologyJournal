@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.SetupPage"
-             xmlns:controls="clr-namespace:MixologyJournalApp.View"
+             xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
              Visual="Material">
     <ContentPage.Resources>
         <DataTemplate x:Key="DescriptionTemplate">

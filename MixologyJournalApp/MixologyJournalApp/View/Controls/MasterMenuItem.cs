@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace MixologyJournalApp.View
+namespace MixologyJournalApp.View.Controls
 {
     public class MasterMenuItem<T>: IMasterMenuItem where T: ContentPage
     {

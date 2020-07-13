@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:MixologyJournalApp.View"
+             xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.SettingsPage"
              Visual="Material">
@@ -37,7 +37,7 @@ Please log-in with your authentication mechanism of choice.
                                     WidthRequest="200"
                                     HorizontalOptions="CenterAndExpand"
                                     VerticalOptions="FillAndExpand"
-                                    IsVisible="{Binding IsLoggedIn, Converter={local:InvertBooleanConverter}}"/>
+                                    IsVisible="{Binding IsLoggedIn, Converter={controls:InvertBooleanConverter}}"/>
                             <Button Text="{Binding Name, StringFormat='Disable {0}'}"
                                     ImageSource="{Binding Icon}"
                                     HeightRequest="48"

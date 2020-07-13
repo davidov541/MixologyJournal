@@ -59,7 +59,7 @@
     <Compile Update="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\SummaryCardView.xaml.cs">
+    <Compile Update="View\Controls\SummaryCardView.xaml.cs">
       <DependentUpon>SummaryCardView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -83,7 +83,7 @@
     <EmbeddedResource Update="View\SetupPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\SummaryCardView.xaml">
+    <EmbeddedResource Update="View\Controls\SummaryCardView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

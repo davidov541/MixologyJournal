@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using Xamarin.Forms;
 
-namespace MixologyJournalApp.View
+namespace MixologyJournalApp.View.Controls
 {
     public class AlternateColorDataTemplateSelector : DataTemplateSelector
     {

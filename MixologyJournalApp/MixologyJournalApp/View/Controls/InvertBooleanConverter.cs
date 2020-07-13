@@ -3,7 +3,7 @@ using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MixologyJournalApp.View
+namespace MixologyJournalApp.View.Controls
 {
     internal class InvertBooleanConverter : IValueConverter, IMarkupExtension
     {

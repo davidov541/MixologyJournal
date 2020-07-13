@@ -1,4 +1,5 @@
-﻿using MixologyJournalApp.ViewModel;
+﻿using MixologyJournalApp.View.Controls;
+using MixologyJournalApp.ViewModel;
 using System;
 
 using Xamarin.Forms;

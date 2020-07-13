@@ -1,8 +1,7 @@
-﻿using MixologyJournalApp.ViewModel;
+﻿using MixologyJournalApp.View.Controls;
+using MixologyJournalApp.ViewModel;
 using System;
-using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 

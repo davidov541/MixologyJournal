@@ -4,7 +4,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MixologyJournalApp.View
+namespace MixologyJournalApp.View.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SummaryCardView : Frame

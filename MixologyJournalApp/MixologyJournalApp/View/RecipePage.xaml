@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:MixologyJournalApp.View"
+             xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.RecipePage"
              Title="{Binding Path=Name}"
@@ -19,11 +19,11 @@
                 <Label BackgroundColor="WhiteSmoke" Text="{Binding}" VerticalTextAlignment="Center" Padding="5,0" TextColor="Black" />
             </ViewCell>
         </DataTemplate>
-        <local:AlternateColorDataTemplateSelector x:Key="alternateColorDataTemplateSelector"
+        <controls:AlternateColorDataTemplateSelector x:Key="alternateColorDataTemplateSelector"
                                                   EvenTemplate="{StaticResource evenTemplate}"
                                                   UnevenTemplate="{StaticResource unevenTemplate}" />
-        <local:IsRunningToTintColorConverter x:Key="runningConverter" />
-        <local:InvertBooleanConverter x:Key="invertConverter" />
+        <controls:IsRunningToTintColorConverter x:Key="runningConverter" />
+        <controls:InvertBooleanConverter x:Key="invertConverter" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
