@@ -145,6 +145,30 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public Boolean HasReview
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        public String Rating
+        {
+            get
+            {
+                return String.Empty;
+            }
+        }
+
+        public String Review
+        {
+            get
+            {
+                return String.Empty;
+            }
+        }
+
         public RecipeViewModel(App app) : this(Recipe.CreateEmptyRecipe(), app)
         {
         }

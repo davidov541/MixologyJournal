@@ -45,6 +45,15 @@
                 </ListView>
                 <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
                 <Label Text="{Binding Path=FormattedSteps}" />
+                <BoxView BackgroundColor="#607D8B" HeightRequest="1" IsVisible="{Binding HasReview}" />
+                <Label Text="{Binding Path=Rating}"
+                       VerticalOptions="StartAndExpand"
+                       HorizontalOptions="StartAndExpand"
+                       IsVisible="{Binding HasReview}"/>
+                <Label Text="{Binding Path=Review}"
+                       VerticalOptions="StartAndExpand"
+                       HorizontalOptions="StartAndExpand"
+                       IsVisible="{Binding HasReview}"/>
                 <BoxView BackgroundColor="#607D8B" HeightRequest="1" />
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="FAVORITE" IsVisible="{Binding CanBeFavorited}">

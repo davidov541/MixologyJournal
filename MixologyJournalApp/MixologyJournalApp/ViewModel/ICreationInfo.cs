@@ -50,5 +50,20 @@ namespace MixologyJournalApp.ViewModel
         {
             get;
         }
+
+        Boolean HasReview
+        {
+            get;
+        }
+
+        String Rating
+        {
+            get;
+        }
+
+        String Review
+        {
+            get;
+        }
     }
 }

@@ -65,6 +65,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public Boolean HasReview
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         public String Rating
         {
             get
