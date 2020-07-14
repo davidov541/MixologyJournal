@@ -3,14 +3,19 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
        mc:Ignorable="d"
        x:Class="MixologyJournalApp.View.Controls.DetailCardView"
        Style="{StaticResource Card}">
     <Frame.GestureRecognizers>
         <TapGestureRecognizer Tapped="Card_Tapped"/>
     </Frame.GestureRecognizers>
+    <Frame.Resources>
+        <controls:CreationTypeToNameConverter x:Key="CreationNameConverter" />
+    </Frame.Resources>
     <Frame.Content>
         <StackLayout VerticalOptions="FillAndExpand">
+            <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" Style="{StaticResource CardTypeCaption}" />
             <ListView x:Name="ingredientUsageList"
                         Style="{StaticResource ContentList}"
                         ItemsSource="{Binding IngredientUsages}">

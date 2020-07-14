@@ -199,6 +199,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public CreationType Type
+        {
+            get
+            {
+                return CreationType.Drink;
+            }
+        }
+
         public DrinkViewModel(RecipeViewModel basis, App app) : this(basis.CreateDerivedDrink(), app)
         {
         }

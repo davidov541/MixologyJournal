@@ -169,6 +169,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public CreationType Type
+        {
+            get
+            {
+                return CreationType.Recipe;
+            }
+        }
+
         public RecipeViewModel(App app) : this(Recipe.CreateEmptyRecipe(), app)
         {
         }

@@ -67,6 +67,12 @@
                 <Setter Property="Visual" Value="Material" />
                 <Setter Property="Margin" Value="10,0,10,0" />
             </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardTypeCaption">
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="VerticalTextAlignment" Value="Start" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

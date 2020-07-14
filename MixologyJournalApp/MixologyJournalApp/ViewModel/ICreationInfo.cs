@@ -65,5 +65,10 @@ namespace MixologyJournalApp.ViewModel
         {
             get;
         }
+
+        CreationType Type
+        {
+            get;
+        }
     }
 }
