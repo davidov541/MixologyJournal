@@ -50,7 +50,7 @@ namespace MixologyJournalApp.View
 
         private async void ItemSelected(object item)
         {
-            RecipePage recipePage = new RecipePage(item as RecipeViewModel);
+            RecipePage recipePage = new RecipePage(_app, item as RecipeViewModel);
             await Navigation.PushAsync(recipePage);
         }
 

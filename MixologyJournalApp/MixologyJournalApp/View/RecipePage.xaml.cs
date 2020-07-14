@@ -10,12 +10,14 @@ namespace MixologyJournalApp.View
     public partial class RecipePage : ContentPage
     {
         private readonly RecipeViewModel _viewModel;
+        private readonly App _app;
 
         private ICommand DrinkSelectedCommand;
 
-        internal RecipePage(RecipeViewModel viewModel)
+        internal RecipePage(App app, RecipeViewModel viewModel)
         {
             _viewModel = viewModel;
+            _app = app;
             BindingContext = _viewModel;
             InitializeComponent();
 
@@ -33,6 +35,12 @@ namespace MixologyJournalApp.View
             DrinkViewModel drink = parameter as DrinkViewModel;
 
             DrinkPage drinkPage = new DrinkPage(drink);
+            await Navigation.PushAsync(drinkPage);
+        }
+
+        private async void AddDrinkButton_Clicked(object sender, System.EventArgs e)
+        {
+            CreateDrinkPage drinkPage = new CreateDrinkPage(_app, _viewModel);
             await Navigation.PushAsync(drinkPage);
         }
     }

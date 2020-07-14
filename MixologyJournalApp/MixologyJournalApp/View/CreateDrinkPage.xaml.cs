@@ -25,7 +25,7 @@ namespace MixologyJournalApp.View
             bool result = await _vm.SaveNew();
             if (result)
             {
-                await Navigation.PopModalAsync();
+                await Navigation.PopToRootAsync();
             }
             else
             {

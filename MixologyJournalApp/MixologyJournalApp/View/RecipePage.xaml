@@ -35,6 +35,12 @@
                                AbsoluteLayout.LayoutFlags="All" 
                                Color="White" 
                                IsRunning="{Binding ProcessIsRunning}" />
+            <Button x:Name="addDrinkButton" 
+                    Image="@drawable/ic_add_white_48dp"
+                    Clicked="AddDrinkButton_Clicked"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
+                    Style="{StaticResource FloatingButton}" />
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
