@@ -39,6 +39,11 @@
                 <Setter Property="Opacity" Value="1.0" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="EmptyText">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontAttributes" Value="Italic" />
+            </Style>
 
             <!-- Card Styles -->
             <Color x:Key="RecipeCardBackground">#00B2D6</Color>

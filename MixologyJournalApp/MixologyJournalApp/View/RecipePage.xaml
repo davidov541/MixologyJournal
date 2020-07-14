@@ -22,6 +22,7 @@
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Vertical" x:Name="RecipeList" />
                     <BoxView Style="{StaticResource CardDivider}" IsVisible="{Binding AnyDrinks}" />
+                    <Label Text="You haven't made this recipe yet!" Style="{StaticResource EmptyText}" IsVisible="{Binding AnyDrinks, Converter={StaticResource invertConverter}}" />
                     <Label Text="Associated Drinks:" Style="{StaticResource ContentText}" IsVisible="{Binding AnyDrinks}" />
                     <StackLayout Orientation="Vertical" x:Name="DrinkList" IsVisible="{Binding AnyDrinks}" />
                 </StackLayout>

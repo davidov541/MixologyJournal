@@ -19,8 +19,7 @@
         </StackLayout>
         <Label IsVisible="{Binding IsEmpty}"
                Text="No Drinks Yet! Good Excuse to Make a Drink Tonight!" 
-               VerticalTextAlignment="Center"
-               HorizontalTextAlignment="Center"
+               Style="{StaticResource EmptyText}"
                AbsoluteLayout.LayoutBounds="0,0,1,1"
                AbsoluteLayout.LayoutFlags="SizeProportional"/>
         <Button x:Name="addDrinkButton" 
