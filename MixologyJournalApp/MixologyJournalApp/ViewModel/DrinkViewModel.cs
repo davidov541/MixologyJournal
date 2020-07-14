@@ -191,6 +191,13 @@ namespace MixologyJournalApp.ViewModel
             }
             set
             {
+                if (value && !IsFavorite)
+                {
+                    foreach(DrinkViewModel other in _app.Cache.Drinks.Where(d => d.BasisId.Equals(BasisId) && !d.Id.Equals(Id) && d.IsFavorite))
+                    {
+                        other.IsFavorite = false;
+                    }
+                }
                 _model.IsFavorite = value;
                 _favoriteHasChanged = !_favoriteHasChanged;
                 OnPropertyChanged(nameof(IsFavorite));
