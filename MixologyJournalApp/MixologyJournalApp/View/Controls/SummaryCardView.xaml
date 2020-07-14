@@ -6,7 +6,8 @@
        xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
        mc:Ignorable="d"
        x:Class="MixologyJournalApp.View.Controls.SummaryCardView"
-       Style="{StaticResource Card}">
+       Style="{StaticResource Card}"
+       BackgroundColor="{Binding Type, Converter={StaticResource CardColorConverter}}">
     <Frame.GestureRecognizers>
         <TapGestureRecognizer Tapped="Card_Tapped"/>
     </Frame.GestureRecognizers>

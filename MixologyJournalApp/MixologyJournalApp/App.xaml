@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.App">
     <Application.Resources>
+        <controls:CreationTypeToBackgroundColorConverter x:Key="CardColorConverter" />
         <ResourceDictionary>
             <Color x:Key="LightThemeColor">#2196F3</Color>
             <Color x:Key="DarkButtonBackground">#303F9F</Color>
@@ -32,6 +34,8 @@
             </Style>
 
             <!-- Card Styles -->
+            <Color x:Key="RecipeCardBackground">#0000FF</Color>
+            <Color x:Key="DrinkCardBackground">#FF0000</Color>
             <Style TargetType="Label" x:Key="TextButton">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Default" />
@@ -50,22 +54,24 @@
             <Style TargetType="Label" x:Key="ContentText">
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="FontSize" Value="Small" />
-                <Setter Property="Opacity" Value="0.6" />
-                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Opacity" Value="1.0" />
+                <Setter Property="TextColor" Value="White" />
             </Style>
             <Style TargetType="StackLayout" x:Key="CardActionLayout">
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="Spacing" Value="30" />
             </Style>
-            <Style TargetType="Label" x:Key="CardTitle">
+            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardTitle">
                 <Setter Property="FontSize" Value="Large" />
-                <Setter Property="Opacity" Value="0.8" />
-                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Opacity" Value="1.0" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
             </Style>
             <Style TargetType="Frame" x:Key="Card">
                 <Setter Property="Visual" Value="Material" />
                 <Setter Property="Margin" Value="10,0,10,0" />
+                <Setter Property="BackgroundColor" Value="White" />
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardTypeCaption">
                 <Setter Property="HorizontalOptions" Value="EndAndExpand" />
