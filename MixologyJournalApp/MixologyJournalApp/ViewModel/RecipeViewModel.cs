@@ -177,6 +177,15 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public IEnumerable<DrinkViewModel> AssociatedDrinks
+        {
+            get
+            {
+                IEnumerable<DrinkViewModel> drinks = _app.Cache.Drinks.Where(d => d.BasisId.Equals(_model.Id));
+                return drinks.OrderBy(d => !d.IsFavorite);
+            }
+        }
+
         public RecipeViewModel(App app) : this(Recipe.CreateEmptyRecipe(), app)
         {
         }

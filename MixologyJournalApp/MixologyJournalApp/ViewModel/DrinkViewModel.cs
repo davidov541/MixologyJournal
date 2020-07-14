@@ -215,6 +215,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String BasisId
+        {
+            get
+            {
+                return _model.SourceRecipeID;
+            }
+        }
+
         public DrinkViewModel(RecipeViewModel basis, App app) : this(basis.CreateDerivedDrink(), app)
         {
         }

@@ -46,6 +46,7 @@
                 <Setter Property="Margin" Value="0,0,0,10" />
                 <Setter Property="VerticalScrollBarVisibility" Value="Never" />
                 <Setter Property="SeparatorColor" Value="Transparent" />
+                <Setter Property="InputTransparent" Value="True" />
             </Style>
             <Style TargetType="Label" x:Key="ContentText">
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
@@ -56,7 +57,6 @@
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="TextButton">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="Default" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="TextDecorations" Value="Underline" />
             </Style>
@@ -79,6 +79,7 @@
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="HorizontalTextAlignment" Value="End" />
                 <Setter Property="VerticalTextAlignment" Value="Start" />
+                <Setter Property="FontAttributes" Value="Italic" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
