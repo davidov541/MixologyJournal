@@ -34,13 +34,9 @@
             </Style>
 
             <!-- Card Styles -->
-            <Color x:Key="RecipeCardBackground">#0000FF</Color>
-            <Color x:Key="DrinkCardBackground">#FF0000</Color>
-            <Style TargetType="Label" x:Key="TextButton">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="Default" />
-                <Setter Property="TextColor" Value="#FFB300" />
-            </Style>
+            <Color x:Key="RecipeCardBackground">#00B2D6</Color>
+            <Color x:Key="DrinkCardBackground">#00D68F</Color>
+            <Color x:Key="FavoriteCardBackground">#E0C200</Color>
             <Style TargetType="BoxView" x:Key="CardDivider">
                 <Setter Property="BackgroundColor" Value="#607D8B" />
                 <Setter Property="HeightRequest" Value="1" />
@@ -56,7 +52,13 @@
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="Opacity" Value="1.0" />
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="TextButton">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Default" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="TextDecorations" Value="Underline" />
             </Style>
             <Style TargetType="StackLayout" x:Key="CardActionLayout">
                 <Setter Property="Orientation" Value="Horizontal" />
@@ -65,7 +67,6 @@
             <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardTitle">
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="Opacity" Value="1.0" />
-                <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
             <Style TargetType="Frame" x:Key="Card">

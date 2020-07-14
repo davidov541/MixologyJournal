@@ -16,6 +16,8 @@ namespace MixologyJournalApp.View.Controls
                     return "Drink";
                 case CreationType.Recipe:
                     return "Recipe";
+                case CreationType.Favorite:
+                    return "Favorite Drink";
                 default:
                     throw new NotSupportedException("Invalid creation type: " + type.ToString());
             }

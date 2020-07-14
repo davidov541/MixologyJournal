@@ -196,6 +196,7 @@ namespace MixologyJournalApp.ViewModel
                 OnPropertyChanged(nameof(IsFavorite));
                 OnPropertyChanged(nameof(CanBeFavorited));
                 OnPropertyChanged(nameof(CanBeUnfavorited));
+                OnPropertyChanged(nameof(Type));
             }
         }
 
@@ -203,7 +204,14 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return CreationType.Drink;
+                if (IsFavorite)
+                {
+                    return CreationType.Favorite;
+                }
+                else
+                {
+                    return CreationType.Drink;
+                }
             }
         }
 
@@ -219,7 +227,7 @@ namespace MixologyJournalApp.ViewModel
             InitCommands();
 
             IEnumerable<StepViewModel> steps = _model.Steps.Select((s, i) => new StepViewModel(s, i));
-            foreach(StepViewModel s in steps)
+            foreach (StepViewModel s in steps)
             {
                 s.PropertyChanged += StepChanged;
                 Steps.Add(s);

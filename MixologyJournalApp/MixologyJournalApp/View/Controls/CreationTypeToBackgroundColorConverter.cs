@@ -19,6 +19,9 @@ namespace MixologyJournalApp.View.Controls
                 case CreationType.Drink:
                     App.Current.Resources.TryGetValue("DrinkCardBackground", out color);
                     break;
+                case CreationType.Favorite:
+                    App.Current.Resources.TryGetValue("FavoriteCardBackground", out color);
+                    break;
                 default:
                     throw new NotSupportedException("Invalid creation type: " + type.ToString());
             }

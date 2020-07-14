@@ -3,6 +3,7 @@
     internal enum CreationType
     {
         Drink,
-        Recipe
+        Recipe,
+        Favorite
     }
 }
