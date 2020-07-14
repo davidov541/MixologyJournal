@@ -23,20 +23,20 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding}" Style="{StaticResource ContentText}" />
+                            <Label Text="{Binding}" Style="{StaticResource CardContentText}" />
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <BoxView Style="{StaticResource CardDivider}"  />
             <Label Text="{Binding Path=FormattedSteps}" 
-                    Style="{StaticResource ContentText}" />
+                    Style="{StaticResource CardContentText}" />
             <BoxView Style="{StaticResource CardDivider}" IsVisible="{Binding HasReview}" />
             <Label Text="{Binding Path=Rating}"
-                    Style="{StaticResource ContentText}"
+                    Style="{StaticResource CardContentText}"
                     IsVisible="{Binding HasReview}"/>
             <Label Text="{Binding Path=Review}"
-                    Style="{StaticResource ContentText}"
+                    Style="{StaticResource CardContentText}"
                     IsVisible="{Binding HasReview}"/>
             <BoxView Style="{StaticResource CardDivider}"  />
             <StackLayout Style="{StaticResource CardActionLayout}">

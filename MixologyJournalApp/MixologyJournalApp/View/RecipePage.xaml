@@ -19,7 +19,12 @@
                         VerticalOptions="StartAndExpand" 
                         AbsoluteLayout.LayoutBounds="0,0,1,1" 
                         AbsoluteLayout.LayoutFlags="All">
-                <StackLayout Orientation="Vertical" x:Name="CreationList" />
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Vertical" x:Name="RecipeList" />
+                    <BoxView Style="{StaticResource CardDivider}" IsVisible="{Binding AnyDrinks}" />
+                    <Label Text="Associated Drinks:" Style="{StaticResource ContentText}" IsVisible="{Binding AnyDrinks}" />
+                    <StackLayout Orientation="Vertical" x:Name="DrinkList" IsVisible="{Binding AnyDrinks}" />
+                </StackLayout>
             </ScrollView>
             <AbsoluteLayout BackgroundColor="{Binding ProcessIsRunning, Converter={StaticResource runningConverter}}" 
                             AbsoluteLayout.LayoutBounds="0,0,1,1" 

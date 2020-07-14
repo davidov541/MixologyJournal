@@ -186,6 +186,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public Boolean AnyDrinks
+        {
+            get
+            {
+                return AssociatedDrinks.Any();
+            }
+        }
+
         public RecipeViewModel(App app) : this(Recipe.CreateEmptyRecipe(), app)
         {
         }

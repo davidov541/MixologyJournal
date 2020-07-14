@@ -19,12 +19,12 @@ namespace MixologyJournalApp.View
             BindingContext = _viewModel;
             InitializeComponent();
 
-            CreationList.Children.Add(new DetailCardView(_viewModel, null));
+            RecipeList.Children.Add(new DetailCardView(_viewModel, null));
 
-             DrinkSelectedCommand = new Command(DrinkSelected);
+            DrinkSelectedCommand = new Command(DrinkSelected);
             foreach (DrinkViewModel recipe in _viewModel.AssociatedDrinks)
             {
-                CreationList.Children.Add(new DetailCardView(recipe, DrinkSelectedCommand));
+                DrinkList.Children.Add(new DetailCardView(recipe, DrinkSelectedCommand));
             }
         }
 

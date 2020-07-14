@@ -32,6 +32,13 @@
             <Style x:Key="Categories" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium" />
             </Style>
+            <Style TargetType="Label" x:Key="ContentText">
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Opacity" Value="1.0" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
 
             <!-- Card Styles -->
             <Color x:Key="RecipeCardBackground">#00B2D6</Color>
@@ -48,14 +55,9 @@
                 <Setter Property="SeparatorColor" Value="Transparent" />
                 <Setter Property="InputTransparent" Value="True" />
             </Style>
-            <Style TargetType="Label" x:Key="ContentText">
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="Opacity" Value="1.0" />
-                <Setter Property="TextColor" Value="Black" />
+            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardContentText">
             </Style>
-            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="TextButton">
+            <Style TargetType="Label" BasedOn="{StaticResource CardContentText}" x:Key="TextButton">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="TextDecorations" Value="Underline" />
@@ -64,7 +66,7 @@
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="Spacing" Value="30" />
             </Style>
-            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardTitle">
+            <Style TargetType="Label" BasedOn="{StaticResource CardContentText}" x:Key="CardTitle">
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="Opacity" Value="1.0" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -74,7 +76,7 @@
                 <Setter Property="Margin" Value="10,0,10,0" />
                 <Setter Property="BackgroundColor" Value="White" />
             </Style>
-            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardTypeCaption">
+            <Style TargetType="Label" BasedOn="{StaticResource CardContentText}" x:Key="CardTypeCaption">
                 <Setter Property="HorizontalOptions" Value="EndAndExpand" />
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="HorizontalTextAlignment" Value="End" />

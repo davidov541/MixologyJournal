@@ -25,7 +25,7 @@
             </Grid>
             <StackLayout Margin="10" VerticalOptions="FillAndExpand">
                 <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
-                <Label Text="{Binding IngredientList}" Style="{StaticResource ContentText}"/>
+                <Label Text="{Binding IngredientList}" Style="{StaticResource CardContentText}"/>
                 <!--
                 <Label Text="Some Title Text" FontSize="Small" Opacity="0.8"/>
                 <StackLayout Orientation="Horizontal" Spacing="10">
