@@ -49,6 +49,13 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty("picture")]
+        public PictureInfo Picture
+        {
+            get;
+            set;
+        }
+
         public Drink FavoriteDrink
         {
             get;

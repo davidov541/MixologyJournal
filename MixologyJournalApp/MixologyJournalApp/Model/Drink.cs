@@ -99,6 +99,13 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty("picture")]
+        public PictureInfo Picture
+        {
+            get;
+            set;
+        }
+
         public static Drink CreateEmptyDrink(Recipe basis)
         {
             Drink drink = new Drink

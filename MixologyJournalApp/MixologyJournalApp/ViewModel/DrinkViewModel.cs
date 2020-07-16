@@ -108,6 +108,19 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String PictureUrl
+        {
+            get
+            {
+                return _model.Picture.Url;
+            }
+            set
+            {
+                _model.Picture.Url = value;
+                OnPropertyChanged(nameof(PictureUrl));
+            }
+        }
+
         public ICommand AddIngredientCommand
         {
             get;

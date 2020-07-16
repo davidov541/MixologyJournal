@@ -61,6 +61,19 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String PictureUrl
+        {
+            get
+            {
+                return _model.Picture.Url;
+            }
+            set
+            {
+                _model.Picture.Url = value;
+                OnPropertyChanged(nameof(PictureUrl));
+            }
+        }
+
         public ObservableCollection<StepViewModel> Steps { get; } = new ObservableCollection<StepViewModel>();
 
         public ObservableCollection<IngredientUsageViewModel> IngredientUsages { get; } = new ObservableCollection<IngredientUsageViewModel>();
