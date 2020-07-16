@@ -18,21 +18,11 @@
         <StackLayout>
             <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" Style="{StaticResource CardTypeCaption}" />
             <Grid>
-                <!--
-                <BoxView x:Name="boxCardColor" HorizontalOptions="Fill" BackgroundColor="#00ACC1" InputTransparent="True"/>
-                <Image x:Name="imgCard" HorizontalOptions="Fill" Aspect="AspectFill" Source="cardimage1.PNG" InputTransparent="True"/>
-                -->
+                <Image x:Name="imgCard" Source="{Binding PictureUrl}"  HorizontalOptions="Fill" Aspect="AspectFill" InputTransparent="True" Opacity="1.0" BackgroundColor="Transparent" />
             </Grid>
             <StackLayout Margin="10" VerticalOptions="FillAndExpand">
                 <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
                 <Label Text="{Binding IngredientList}" Style="{StaticResource CardContentText}"/>
-                <!--
-                <Label Text="Some Title Text" FontSize="Small" Opacity="0.8"/>
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="SHARE"/>
-                    <Label FontAttributes="Bold" FontSize="Default" TextColor="#FFB300" Text="EXPLORE"/>
-                </StackLayout>
-                -->
             </StackLayout>
         </StackLayout>
     </Frame.Content>

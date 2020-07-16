@@ -70,5 +70,10 @@ namespace MixologyJournalApp.ViewModel
         {
             get;
         }
+
+        String PictureUrl
+        {
+            get;
+        }
     }
 }
