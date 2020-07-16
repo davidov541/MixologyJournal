@@ -17,6 +17,7 @@
     <Frame.Content>
         <StackLayout VerticalOptions="FillAndExpand">
             <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" Style="{StaticResource CardTypeCaption}" />
+            <Image x:Name="imgCard" Source="{Binding PictureUrl}"  HorizontalOptions="Fill" Aspect="AspectFit" InputTransparent="True" Opacity="1.0" BackgroundColor="Transparent" />
             <ListView x:Name="ingredientUsageList"
                         Style="{StaticResource ContentList}"
                         ItemsSource="{Binding IngredientUsages}">
