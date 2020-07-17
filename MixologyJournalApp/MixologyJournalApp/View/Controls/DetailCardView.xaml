@@ -16,11 +16,18 @@
     </Frame.Resources>
     <Frame.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" Style="{StaticResource CardTypeCaption}" />
-            <Image x:Name="imgCard" Source="{Binding PictureUrl}"  HorizontalOptions="Fill" Aspect="AspectFit" InputTransparent="True" Opacity="1.0" BackgroundColor="Transparent" />
+            <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" 
+                   Style="{StaticResource CardTypeCaption}" />
+            <Grid HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="FillAndExpand">
+                <Image x:Name="imgCard" 
+                       Source="{Binding PictureUrl}"
+                       Aspect="AspectFit"
+                       InputTransparent="True" />
+            </Grid>
             <ListView x:Name="ingredientUsageList"
-                        Style="{StaticResource ContentList}"
-                        ItemsSource="{Binding IngredientUsages}">
+                      Style="{StaticResource ContentList}"
+                      ItemsSource="{Binding IngredientUsages}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

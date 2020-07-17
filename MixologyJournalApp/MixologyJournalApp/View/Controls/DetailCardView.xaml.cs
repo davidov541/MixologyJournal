@@ -20,13 +20,6 @@ namespace MixologyJournalApp.View.Controls
             InitializeComponent();
         }
 
-        protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height);
-            // boxCardColor.HeightRequest = boxCardColor.Width / 16 * 9;
-            // imgCard.HeightRequest = imgCard.Width / 16 * 9;
-        }
-
         private void Card_Tapped(object sender, EventArgs e)
         {
             if (_selectionCommand != null)
