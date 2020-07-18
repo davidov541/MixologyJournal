@@ -17,10 +17,16 @@ namespace MixologyJournalApp.Droid.Platform
         public void ShowDialog(String title, String message)
         {
             // Display the success or failure message.
-            AlertDialog.Builder builder = new AlertDialog.Builder(_context);
-            builder.SetMessage(message);
-            builder.SetTitle(title);
-            builder.Create().Show();
+            new AlertDialog.Builder(_context)
+                .SetMessage(message)
+                .SetTitle(title)
+                .SetPositiveButton("OK", OKEventHandler)
+                .Create()
+                .Show();
+        }
+
+        private void OKEventHandler(Object source, DialogClickEventArgs args)
+        {
         }
     }
 }

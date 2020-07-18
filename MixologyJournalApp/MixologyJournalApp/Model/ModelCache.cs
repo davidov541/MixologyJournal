@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Model
@@ -125,19 +126,27 @@ namespace MixologyJournalApp.Model
         {
             if (DateTime.UtcNow.Subtract(LastLoadedTime).TotalMilliseconds > TimeSpan.FromHours(1).TotalMilliseconds)
             {
-                InitProgress = 0.0;
-                await UpdateAvailableUnits();
+                try
+                {
+                    InitProgress = 0.0;
+                    await UpdateAvailableUnits();
 
-                InitProgress = 1.0;
-                await UpdateAvailableIngredients();
+                    InitProgress = 1.0;
+                    await UpdateAvailableIngredients();
 
-                InitProgress = 2.0;
-                await UpdateRecipes();
+                    InitProgress = 2.0;
+                    await UpdateRecipes();
 
-                InitProgress = 3.0;
-                await UpdateDrinks();
+                    InitProgress = 3.0;
+                    await UpdateDrinks();
 
-                LastLoadedTime = DateTime.UtcNow;
+                    LastLoadedTime = DateTime.UtcNow;
+                }
+                catch (HttpRequestException)
+                {
+                    _app.PlatformInfo.AlertDialogFactory.ShowDialog("Server Down", 
+                        "The backend server appears to be down. We will use the local cache, but are unable to retrieve any updated content from the servers at this time.");
+                }
             }
             InitProgress = 4.0;
         }
@@ -149,7 +158,7 @@ namespace MixologyJournalApp.Model
                 await UploadRecipe(recipe);
             }
 
-            foreach(Drink drink in Drinks.Where(d => !d.Uploaded))
+            foreach (Drink drink in Drinks.Where(d => !d.Uploaded))
             {
                 await UploadDrink(drink);
             }
