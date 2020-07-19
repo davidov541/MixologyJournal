@@ -10,7 +10,7 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class LocalDataCache: INotifyPropertyChanged, IDisposable
     {
-        private const int InitStepsCount = 4 + ModelCache.InitStepsCount;
+        private const int InitStepsCount = 5 + ModelCache.InitStepsCount;
         private readonly App _app;
 
         private readonly ModelCache _modelCache;
@@ -65,25 +65,31 @@ namespace MixologyJournalApp.ViewModel
         public async Task Init()
         {
             InitProgress = 0.0;
-            await _modelCache.Init();
+            Boolean success = await UploadRecentItems();
+
+            InitProgress = 1.0;
+            if (success)
+            {
+                await _modelCache.Init();
+            }
 
             UpdateAvailableUnits();
 
-            InitProgress = 1.0;
+            InitProgress = 2.0;
             UpdateAvailableIngredients();
 
-            InitProgress = 2.0;
+            InitProgress = 3.0;
             UpdateRecipes();
 
-            InitProgress = 3.0;
+            InitProgress = 4.0;
             UpdateDrinks();
 
-            InitProgress = 4.0;
+            InitProgress = 5.0;
         }
 
-        public async Task UploadRecentItems()
+        public async Task<Boolean> UploadRecentItems()
         {
-            await _modelCache.UploadRecentItems();
+            return await _modelCache.UploadRecentItems();
         }
 
         private void UpdateRecipes()
@@ -140,18 +146,15 @@ namespace MixologyJournalApp.ViewModel
         {
             Boolean result = await _modelCache.CreateRecipe(model);
 
-            if (result)
+            RecipeViewModel insertBeforeRecipe = Recipes.FirstOrDefault(r => viewModel.Name.CompareTo(r.Name) < 0);
+            if (insertBeforeRecipe == null)
             {
-                RecipeViewModel insertBeforeRecipe = Recipes.FirstOrDefault(r => viewModel.Name.CompareTo(r.Name) < 0);
-                if (insertBeforeRecipe == null)
-                {
-                    Recipes.Add(viewModel);
-                }
-                else
-                {
-                    int insertIndex = Recipes.IndexOf(insertBeforeRecipe);
-                    Recipes.Insert(insertIndex, viewModel);
-                }
+                Recipes.Add(viewModel);
+            }
+            else
+            {
+                int insertIndex = Recipes.IndexOf(insertBeforeRecipe);
+                Recipes.Insert(insertIndex, viewModel);
             }
             return result;
         }
@@ -170,18 +173,15 @@ namespace MixologyJournalApp.ViewModel
         {
             Boolean result = await _modelCache.CreateDrink(model);
 
-            if (result)
+            DrinkViewModel insertBeforeRecipe = Drinks.FirstOrDefault(d => viewModel.Name.CompareTo(d.Name) < 0);
+            if (insertBeforeRecipe == null)
             {
-                DrinkViewModel insertBeforeRecipe = Drinks.FirstOrDefault(d => viewModel.Name.CompareTo(d.Name) < 0);
-                if (insertBeforeRecipe == null)
-                {
-                    Drinks.Add(viewModel);
-                }
-                else
-                {
-                    int insertIndex = Drinks.IndexOf(insertBeforeRecipe);
-                    Drinks.Insert(insertIndex, viewModel);
-                }
+                Drinks.Add(viewModel);
+            }
+            else
+            {
+                int insertIndex = Drinks.IndexOf(insertBeforeRecipe);
+                Drinks.Insert(insertIndex, viewModel);
             }
             return result;
         }

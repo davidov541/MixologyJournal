@@ -112,6 +112,10 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
+                if (_model == null || _model.Picture == null)
+                {
+                    return String.Empty;
+                }
                 return _model.Picture.Url;
             }
             set

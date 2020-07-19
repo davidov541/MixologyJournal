@@ -23,14 +23,12 @@ namespace MixologyJournalApp.View
         private async void CreateButton_Clicked(object sender, EventArgs e)
         {
             bool result = await _vm.SaveNew();
-            if (result)
+            if (!result)
             {
-                await Navigation.PopAsync();
+                _app.PlatformInfo.AlertDialogFactory.ShowDialog("Server Unavailable",
+                    "We were unable to add the recipe to the server. The drink is saved in the local cache, and will be uploaded once possible.");
             }
-            else
-            {
-                _app.PlatformInfo.AlertDialogFactory.ShowDialog("Save Failed", "Could not save the new recipe. Please try again.");
-            }
+            await Navigation.PopToRootAsync();
         }
 
         private void AddStepButton_Clicked(object sender, EventArgs e)

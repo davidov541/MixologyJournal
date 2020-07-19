@@ -151,17 +151,31 @@ namespace MixologyJournalApp.Model
             InitProgress = 4.0;
         }
 
-        public async Task UploadRecentItems()
+        public async Task<Boolean> UploadRecentItems()
         {
-            foreach (Recipe recipe in Recipes.Where(r => !r.Uploaded))
+            Boolean result = true;
+            try
             {
-                await UploadRecipe(recipe);
-            }
+                foreach (Recipe recipe in Recipes.Where(r => !r.Uploaded))
+                {
+                    result = result && await UploadRecipe(recipe);
+                }
 
-            foreach (Drink drink in Drinks.Where(d => !d.Uploaded))
+                foreach (Drink drink in Drinks.Where(d => !d.Uploaded))
+                {
+                    result = result && await UploadDrink(drink);
+                }
+            } 
+            catch (HttpRequestException)
             {
-                await UploadDrink(drink);
+                result = false;
             }
+            if (!result)
+            {
+                _app.PlatformInfo.AlertDialogFactory.ShowDialog("Server Down",
+                    "The backend server appears to be down. We will use the local cache, but are unable to retrieve any updated content from the servers at this time.");
+            }
+            return result;
         }
 
         private async Task UpdateRecipes()
@@ -256,22 +270,25 @@ namespace MixologyJournalApp.Model
             {
                 finalResult = await UploadRecipe(model);
             }
-
-            if (finalResult)
+            else
             {
-                Recipe insertBeforeRecipe = Recipes.FirstOrDefault(r => model.Name.CompareTo(r.Name) < 0);
-                if (insertBeforeRecipe == null)
-                {
-                    _recipes.Add(model);
-                }
-                else
-                {
-                    int insertIndex = _recipes.IndexOf(insertBeforeRecipe);
-                    _recipes.Insert(insertIndex, model);
-                }
-
-                Save();
+                // Make a random GUID for us to use in the meantime.
+                model.Id = Guid.NewGuid().ToString();
             }
+
+            Recipe insertBeforeRecipe = Recipes.FirstOrDefault(r => model.Name.CompareTo(r.Name) < 0);
+            if (insertBeforeRecipe == null)
+            {
+                _recipes.Add(model);
+            }
+            
+            if (String.IsNullOrEmpty(model.Id))
+            {
+                int insertIndex = _recipes.IndexOf(insertBeforeRecipe);
+                _recipes.Insert(insertIndex, model);
+            }
+
+            Save();
 
             return finalResult;
         }
@@ -314,21 +331,24 @@ namespace MixologyJournalApp.Model
                 finalResult = await UploadDrink(model);
             }
 
-            if (finalResult)
+            if (String.IsNullOrEmpty(model.Id))
             {
-                Drink insertBeforeRecipe = Drinks.FirstOrDefault(d => model.Name.CompareTo(d.Name) < 0);
-                if (insertBeforeRecipe == null)
-                {
-                    _drinks.Add(model);
-                }
-                else
-                {
-                    int insertIndex = _drinks.IndexOf(insertBeforeRecipe);
-                    _drinks.Insert(insertIndex, model);
-                }
-
-                Save();
+                // Make a random GUID for us to use in the meantime.
+                model.Id = Guid.NewGuid().ToString();
             }
+
+            Drink insertBeforeRecipe = Drinks.FirstOrDefault(d => model.Name.CompareTo(d.Name) < 0);
+            if (insertBeforeRecipe == null)
+            {
+                _drinks.Add(model);
+            }
+            else
+            {
+                int insertIndex = _drinks.IndexOf(insertBeforeRecipe);
+                _drinks.Insert(insertIndex, model);
+            }
+
+            Save();
 
             return finalResult;
         }
