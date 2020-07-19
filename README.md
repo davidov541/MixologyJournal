@@ -9,5 +9,5 @@ projects in it:
 * MixologyJournalApp: This library contains all of the common code between all of
 the platforms, including source model and view model, as well as generic
 persistence mechanisms.
-* MixologyJournalApp.Droid: The Android specific application. This portion 
+* MixologyJournalApp.Android: The Android specific application. This portion 
 contains only the view code for the Android app.
