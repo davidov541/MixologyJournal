@@ -1,6 +1,6 @@
 ﻿using MixologyJournalApp.ViewModel;
 using System;
-
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,10 +25,19 @@ namespace MixologyJournalApp.View
             bool result = await _vm.SaveNew();
             if (!result)
             {
-                _app.PlatformInfo.AlertDialogFactory.ShowDialog("Server Unavailable", 
+                _app.PlatformInfo.AlertDialogFactory.ShowDialog("Server Unavailable",
                     "We were unable to add the drink to the server. The drink is saved in the local cache, and will be uploaded once possible.");
             }
-            await Navigation.PopToRootAsync();
+            if (Navigation.ModalStack.Any())
+            {
+                // We created the drink from the root page, in which case the basis recipe choice screen was modal and we need to handle that.
+                await Navigation.PopModalAsync();
+            }
+            else
+            {
+                // We created the drink from the recipe page, so we didn't have any modal pages to deal with.
+                await Navigation.PopToRootAsync();
+            }
         }
 
         private void AddStepButton_Clicked(object sender, EventArgs e)
