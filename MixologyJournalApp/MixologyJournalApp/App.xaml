@@ -88,6 +88,10 @@
                 <Setter Property="VerticalTextAlignment" Value="Start" />
                 <Setter Property="FontAttributes" Value="Italic" />
             </Style>
+            <Style TargetType="ImageButton" x:Key="DeleteButton">
+                <Setter Property="BackgroundColor" Value="Red" />
+                <Setter Property="Source" Value="ic_trash_48dp.png" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

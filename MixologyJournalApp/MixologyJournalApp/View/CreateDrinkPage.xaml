@@ -53,12 +53,12 @@
                                             ItemsSource="{Binding AvailableIngredients}" 
                                             Title="Ingredient" 
                                             SelectedItem="{Binding Ingredient}" />
-                                    <Button Grid.Row="0" 
-                                            Grid.Column="3" 
-                                            x:Name="deleteIngredientButton" 
-                                            Text="Delete" 
-                                            Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
-                                            CommandParameter="{Binding}"/>
+                                    <ImageButton Grid.Row="0" 
+                                                 Grid.Column="3" 
+                                                 x:Name="deleteIngredientButton" 
+                                                 Style="{StaticResource DeleteButton}"
+                                                 Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
+                                                 CommandParameter="{Binding}"/>
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
@@ -82,12 +82,12 @@
                                     <Entry Grid.Row="0" 
                                            Grid.Column="0" 
                                            Text="{Binding Path=Text, Mode=TwoWay}" />
-                                    <Button Grid.Row="0" 
-                                            Grid.Column="1" 
-                                            x:Name="deleteStepButton" 
-                                            Text="Delete" 
-                                            Command="{Binding Path=BindingContext.DeleteStepCommand, Source={x:Reference rootPage}}"
-                                            CommandParameter="{Binding}" />
+                                    <ImageButton Grid.Row="0" 
+                                                 Grid.Column="1" 
+                                                 x:Name="deleteStepButton" 
+                                                 Style="{StaticResource DeleteButton}"
+                                                 Command="{Binding Path=BindingContext.DeleteStepCommand, Source={x:Reference rootPage}}"
+                                                 CommandParameter="{Binding}" />
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
