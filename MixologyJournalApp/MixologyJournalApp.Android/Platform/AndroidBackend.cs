@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Droid.Platform
 {
-    internal class BackendManager: IBackend
+    internal class AndroidBackend: IBackend
     {
         private readonly String _basePath = AppConfigManager.Settings["BackendAddress"];
 
         private readonly AuthenticationManager _authentication;
 
-        public BackendManager(AuthenticationManager authentication)
+        public AndroidBackend(AuthenticationManager authentication)
         {
             _authentication = authentication;
         }

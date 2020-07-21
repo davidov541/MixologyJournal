@@ -107,7 +107,7 @@
     <Compile Include="Platform\LocalLoginMethod.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Platform\BackendManager.cs" />
+    <Compile Include="Platform\AndroidBackend.cs" />
     <Compile Include="Platform\AlertDialogFactory.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
   </ItemGroup>
@@ -288,7 +288,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadUnhandledDeviceExceptionMixologyJournalAppAndroidHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarMixologyJournalAppAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarMixologyJournalAppAndroidHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionMixologyJournalAppAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
