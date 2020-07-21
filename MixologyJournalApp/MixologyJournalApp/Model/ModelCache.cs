@@ -166,6 +166,11 @@ namespace MixologyJournalApp.Model
                 {
                     result = result && await UploadDrink(drink);
                 }
+
+                foreach (Drink drink in Drinks.Where(d => !d.IsFavoriteUploaded))
+                {
+                    result = result && await UpdateFavoriteDrink(drink, drink.IsFavorite);
+                }
             }
             catch (HttpRequestException)
             {
@@ -174,6 +179,90 @@ namespace MixologyJournalApp.Model
             return result;
         }
 
+        private static String GetSerializationPath()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "modelcache.json");
+        }
+
+        internal void Save()
+        {
+            String serializationPath = GetSerializationPath();
+            String serializedCache = JsonConvert.SerializeObject(this);
+            File.WriteAllText(serializationPath, serializedCache);
+        }
+
+        public void Dispose()
+        {
+            Save();
+        }
+
+        internal async Task<Boolean> CreateRecipe(Recipe model)
+        {
+            Boolean finalResult = true;
+            if (GetUseRemote())
+            {
+                finalResult = await UploadRecipe(model);
+            }
+            else
+            {
+                // Make a random GUID for us to use in the meantime.
+                model.Id = Guid.NewGuid().ToString();
+            }
+
+            Recipe insertBeforeRecipe = Recipes.FirstOrDefault(r => model.Name.CompareTo(r.Name) < 0);
+            if (insertBeforeRecipe == null)
+            {
+                _recipes.Add(model);
+            }
+
+            if (String.IsNullOrEmpty(model.Id))
+            {
+                int insertIndex = _recipes.IndexOf(insertBeforeRecipe);
+                _recipes.Insert(insertIndex, model);
+            }
+
+            Save();
+
+            return finalResult;
+        }
+
+        internal async Task<Boolean> CreateDrink(Drink model)
+        {
+            Boolean finalResult = true;
+            if (GetUseRemote())
+            {
+                finalResult = await UploadDrink(model);
+            }
+
+            if (String.IsNullOrEmpty(model.Id))
+            {
+                // Make a random GUID for us to use in the meantime.
+                model.Id = Guid.NewGuid().ToString();
+            }
+
+            Drink insertBeforeRecipe = Drinks.FirstOrDefault(d => model.Name.CompareTo(d.Name) < 0);
+            if (insertBeforeRecipe == null)
+            {
+                _drinks.Add(model);
+            }
+            else
+            {
+                int insertIndex = _drinks.IndexOf(insertBeforeRecipe);
+                _drinks.Insert(insertIndex, model);
+            }
+
+            Save();
+
+            return finalResult;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(String propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        #region BackendInterface
         private async Task UpdateRecipes()
         {
             if (_canAccessRemote)
@@ -220,6 +309,7 @@ namespace MixologyJournalApp.Model
                     foreach (Drink d in drinkModels.OrderBy(i => i.Name))
                     {
                         d.Uploaded = true;
+                        d.IsFavoriteUploaded = true;
                         _drinks.Add(d);
                     }
                 }
@@ -282,46 +372,22 @@ namespace MixologyJournalApp.Model
             }
         }
 
-        private static String GetSerializationPath()
-        {
-            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "modelcache.json");
-        }
-
-        internal void Save()
-        {
-            String serializationPath = GetSerializationPath();
-            String serializedCache = JsonConvert.SerializeObject(this);
-            File.WriteAllText(serializationPath, serializedCache);
-        }
-
-        public void Dispose()
-        {
-            Save();
-        }
-
-        internal async Task<Boolean> CreateRecipe(Recipe model)
+        internal async Task<Boolean> UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
         {
             Boolean finalResult = true;
+            drink.IsFavoriteUploaded = false;
             if (GetUseRemote())
             {
-                finalResult = await UploadRecipe(model);
-            }
-            else
-            {
-                // Make a random GUID for us to use in the meantime.
-                model.Id = Guid.NewGuid().ToString();
-            }
-
-            Recipe insertBeforeRecipe = Recipes.FirstOrDefault(r => model.Name.CompareTo(r.Name) < 0);
-            if (insertBeforeRecipe == null)
-            {
-                _recipes.Add(model);
-            }
-
-            if (String.IsNullOrEmpty(model.Id))
-            {
-                int insertIndex = _recipes.IndexOf(insertBeforeRecipe);
-                _recipes.Insert(insertIndex, model);
+                QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/favorite", new FavoriteRequest(drink.SourceRecipeID, drink.Id, isFavorite));
+                if (result.Result)
+                {
+                    drink.IsFavoriteUploaded = true;
+                }
+                else
+                {
+                    WarnAboutRemoteAccessibility();
+                }
+                finalResult = result.Result;
             }
 
             Save();
@@ -348,6 +414,26 @@ namespace MixologyJournalApp.Model
             return false;
         }
 
+        private async Task<bool> UploadDrink(Drink model)
+        {
+            if (_canAccessRemote)
+            {
+                QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", model);
+                if (result.Result)
+                {
+                    model.Uploaded = true;
+                    model.Id = result.Content["createdId"];
+                }
+                else
+                {
+                    WarnAboutRemoteAccessibility();
+                }
+
+                return result.Result;
+            }
+            return false;
+        }
+
         internal async Task<Boolean> DeleteRecipe(Recipe recipe)
         {
             Boolean finalResult = true;
@@ -367,56 +453,6 @@ namespace MixologyJournalApp.Model
             Save();
 
             return finalResult;
-        }
-
-        internal async Task<Boolean> CreateDrink(Drink model)
-        {
-            Boolean finalResult = true;
-            if (GetUseRemote())
-            {
-                finalResult = await UploadDrink(model);
-            }
-
-            if (String.IsNullOrEmpty(model.Id))
-            {
-                // Make a random GUID for us to use in the meantime.
-                model.Id = Guid.NewGuid().ToString();
-            }
-
-            Drink insertBeforeRecipe = Drinks.FirstOrDefault(d => model.Name.CompareTo(d.Name) < 0);
-            if (insertBeforeRecipe == null)
-            {
-                _drinks.Add(model);
-            }
-            else
-            {
-                int insertIndex = _drinks.IndexOf(insertBeforeRecipe);
-                _drinks.Insert(insertIndex, model);
-            }
-
-            Save();
-
-            return finalResult;
-        }
-
-        private async Task<bool> UploadDrink(Drink model)
-        {
-            if (_canAccessRemote)
-            {
-                QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", model);
-                if (result.Result)
-                {
-                    model.Uploaded = true;
-                    model.Id = result.Content["createdId"];
-                }
-                else
-                {
-                    WarnAboutRemoteAccessibility();
-                }
-
-                return result.Result;
-            }
-            return false;
         }
 
         internal async Task<Boolean> DeleteDrink(Drink drink)
@@ -440,26 +476,6 @@ namespace MixologyJournalApp.Model
             return finalResult;
         }
 
-        internal async Task UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
-        {
-            if (GetUseRemote())
-            {
-                QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/favorite", new FavoriteRequest(drink.SourceRecipeID, drink.Id, isFavorite));
-                if (!result.Result)
-                {
-                    WarnAboutRemoteAccessibility();
-                }
-            }
-
-            Save();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(String propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         private void WarnAboutRemoteAccessibility()
         {
             if (_canAccessRemote)
@@ -470,5 +486,6 @@ namespace MixologyJournalApp.Model
             }
             _canAccessRemote = false;
         }
+        #endregion
     }
 }

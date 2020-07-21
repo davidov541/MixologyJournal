@@ -85,11 +85,19 @@ namespace MixologyJournalApp.Model
             set
             {
                 _isFavorite = value;
+                IsFavoriteUploaded = false;
                 if (SourceRecipe != null)
                 {
                     SourceRecipe.FavoriteDrink = this;
                 }
             }
+        }
+
+        [JsonProperty("isFavoriteUploaded")]
+        public Boolean IsFavoriteUploaded
+        {
+            get;
+            set;
         }
 
         [JsonProperty("uploaded")]
@@ -126,6 +134,7 @@ namespace MixologyJournalApp.Model
             Ingredients = new List<IngredientUsage>();
             Rating = 0.0f;
             Review = "";
+            IsFavoriteUploaded = true;
         }
 
         public void Init(Recipe basisRecipe)
