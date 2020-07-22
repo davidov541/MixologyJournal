@@ -31,28 +31,20 @@
                                         <RowDefinition Height="auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="1.5*" />
-                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="2.5*" />
+                                        <ColumnDefinition Width="auto" />
                                         <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
-                                    <Entry x:Name="amountEntry"
+                                    <Label Text="{Binding FullDescription}"
                                            Grid.Row="0"
                                            Grid.Column="0"
-                                           Keyboard="Numeric"
-                                           Text="{Binding Amount}" />
-                                    <Picker x:Name="unitPicker" 
-                                            Grid.Row="0" 
-                                            Grid.Column="1" 
-                                            ItemsSource="{Binding AvailableUnits}" 
-                                            Title="Unit" 
-                                            SelectedItem="{Binding Unit}" />
-                                    <Picker x:Name="ingredientPicker" 
-                                            Grid.Row="0" 
-                                            Grid.Column="2" 
-                                            ItemsSource="{Binding AvailableIngredients}" 
-                                            Title="Ingredient" 
-                                            SelectedItem="{Binding Ingredient}" />
+                                           VerticalTextAlignment="Center"
+                                           Style="{StaticResource CardContentText}"/>
+                                    <ImageButton Source="configure_48.png"
+                                                 Grid.Row="0"
+                                                 Grid.Column="1"
+                                                 Style="{StaticResource IconButton}"
+                                                 Clicked="ModifyIngredientButton_Clicked"/>
                                     <controls:DeleteButton Grid.Row="0" 
                                                            Grid.Column="3" 
                                                            x:Name="deleteIngredientButton" 
