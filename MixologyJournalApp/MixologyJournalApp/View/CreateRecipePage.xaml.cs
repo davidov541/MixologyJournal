@@ -41,5 +41,11 @@ namespace MixologyJournalApp.View
             StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
             _vm.DeleteStep(vm);
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            IngredientUsageViewModel viewModel = (sender as Button).BindingContext as IngredientUsageViewModel;
+            await Navigation.PushModalAsync(new ModifyIngredientPage(viewModel), true);
+        }
     }
 }

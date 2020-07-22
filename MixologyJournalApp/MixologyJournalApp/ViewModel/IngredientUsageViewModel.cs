@@ -28,6 +28,7 @@ namespace MixologyJournalApp.ViewModel
                     _model.Ingredient = _ingredient.Model;
                 }
                 OnPropertyChanged(nameof(Ingredient));
+                OnPropertyChanged(nameof(FullDescription));
             }
         }
 
@@ -49,6 +50,7 @@ namespace MixologyJournalApp.ViewModel
             {
                 _model.Amount = value;
                 OnPropertyChanged(nameof(Amount));
+                OnPropertyChanged(nameof(FullDescription));
             }
         }
 
@@ -67,6 +69,7 @@ namespace MixologyJournalApp.ViewModel
                     _model.Unit = _unit.Model;
                 }
                 OnPropertyChanged(nameof(Unit));
+                OnPropertyChanged(nameof(FullDescription));
             }
         }
 
@@ -83,6 +86,14 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return _cache.AvailableUnits;
+            }
+        }
+
+        public String FullDescription
+        {
+            get
+            {
+                return ToString();
             }
         }
 
