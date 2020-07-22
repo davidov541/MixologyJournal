@@ -114,6 +114,10 @@ namespace MixologyJournalApp.ViewModel
 
         public override string ToString()
         {
+            if (String.IsNullOrEmpty(Amount.ToString()) || String.IsNullOrEmpty(Unit.Name) || String.IsNullOrEmpty(Ingredient.Name))
+            {
+                return String.Empty;
+            }
             return String.Format("{0} {1}s of {2}", Amount, Unit.Name, Ingredient.Name);
         }
     }
