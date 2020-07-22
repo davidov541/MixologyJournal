@@ -37,11 +37,13 @@
                                     </Grid.ColumnDefinitions>
                                     <Label Text="{Binding FullDescription}"
                                            Grid.Row="0"
-                                           Grid.Column="0"/>
+                                           Grid.Column="0"
+                                           VerticalTextAlignment="Center"
+                                           Style="{StaticResource CardContentText}"/>
                                     <Button Text="Modify"
                                             Grid.Row="0"
                                             Grid.Column="1"
-                                            Clicked="Button_Clicked"/>
+                                            Clicked="ModifyIngredientButton_Clicked"/>
                                     <controls:DeleteButton Grid.Row="0" 
                                                            Grid.Column="2"
                                                            x:Name="deleteIngredientButton"

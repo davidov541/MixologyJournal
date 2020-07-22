@@ -9,7 +9,8 @@
         <StackLayout Orientation="Vertical">
             <Entry x:Name="amountEntry"
                    Keyboard="Numeric"
-                   Text="{Binding Amount}" />
+                   Text="{Binding Amount}" 
+                   Placeholder="Amount" />
             <Picker x:Name="unitPicker" 
                     ItemsSource="{Binding AvailableUnits}" 
                     Title="Unit" 
