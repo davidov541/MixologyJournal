@@ -9,10 +9,6 @@ namespace MixologyJournalApp.View.Controls
         public DeleteButton()
         {
             Source = ImageSource.FromFile("ic_trash_48dp.png");
-            HorizontalOptions = LayoutOptions.FillAndExpand;
-            VerticalOptions = LayoutOptions.FillAndExpand;
-            WidthRequest = 50;
-            HeightRequest = 50;
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)

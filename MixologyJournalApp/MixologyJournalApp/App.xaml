@@ -88,6 +88,17 @@
                 <Setter Property="VerticalTextAlignment" Value="Start" />
                 <Setter Property="FontAttributes" Value="Italic" />
             </Style>
+            <Style TargetType="ImageButton" x:Key="IconButton">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="BackgroundColor" Value="#0047D6" />
+            </Style>
+            <Style TargetType="controls:DeleteButton" BasedOn="{StaticResource IconButton}">
+                <Setter Property="Padding" Value="0" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

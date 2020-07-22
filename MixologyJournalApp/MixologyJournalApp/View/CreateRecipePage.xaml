@@ -40,10 +40,11 @@
                                            Grid.Column="0"
                                            VerticalTextAlignment="Center"
                                            Style="{StaticResource CardContentText}"/>
-                                    <Button Text="Modify"
-                                            Grid.Row="0"
-                                            Grid.Column="1"
-                                            Clicked="ModifyIngredientButton_Clicked"/>
+                                    <ImageButton Source="configure_48.png"
+                                                 Grid.Row="0"
+                                                 Grid.Column="1"
+                                                 Style="{StaticResource IconButton}"
+                                                 Clicked="ModifyIngredientButton_Clicked"/>
                                     <controls:DeleteButton Grid.Row="0" 
                                                            Grid.Column="2"
                                                            x:Name="deleteIngredientButton"
