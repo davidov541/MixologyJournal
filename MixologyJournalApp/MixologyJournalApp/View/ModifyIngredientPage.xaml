@@ -19,6 +19,9 @@
                     ItemsSource="{Binding AvailableIngredients}" 
                     Title="Ingredient" 
                     SelectedItem="{Binding Ingredient}" />
+            <Button x:Name="CancelButton"
+                    Text="Cancel"
+                    Clicked="CancelButton_Clicked" />
             <Button x:Name="SubmitButton"
                     Text="OK"
                     Clicked="SubmitButton_Clicked" />
