@@ -17,7 +17,7 @@
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
                 <StackLayout Orientation="Vertical"
                              Margin="10,5"
-                             VerticalOptions="FillAndExpand">
+                             VerticalOptions="Fill">
                     <Label Text="Title" />
                     <Entry x:Name="NameEntry"
                            Text="{Binding Name}"
@@ -54,10 +54,9 @@
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
-                    <Button x:Name="addIngredientButton" 
-                            Text="Add Ingredient" 
-                            MinimumHeightRequest="30" 
-                            Command="{Binding AddIngredientCommand}"/>
+                    <ImageButton x:Name="addIngredientButton" 
+                                 Style="{StaticResource AddButton}"
+                                 Command="{Binding AddIngredientCommand}"/>
                     <Label Text="Steps" />
                     <StackLayout BindableLayout.ItemsSource="{Binding Steps}">
                         <BindableLayout.ItemTemplate>
@@ -82,10 +81,9 @@
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
-                    <Button x:Name="addStepButton" 
-                            Text="Add Step" 
-                            MinimumHeightRequest="30" 
-                            Command="{Binding AddStepCommand}"/>
+                    <ImageButton x:Name="addStepButton" 
+                                 Style="{StaticResource AddButton}"
+                                 Command="{Binding AddStepCommand}"/>
                     <Button x:Name="createButton" 
                             Text="Create" 
                             MinimumHeightRequest="30" 

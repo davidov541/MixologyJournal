@@ -96,6 +96,11 @@
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackground}" />
             </Style>
+            <Style TargetType="ImageButton" x:Key="AddButton">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackground}" />
+                <Setter Property="Source" Value="@drawable/ic_add_white_48dp" />
+            </Style>
             <Style TargetType="controls:DeleteButton" BasedOn="{StaticResource IconButton}">
                 <Setter Property="Padding" Value="0" />
             </Style>

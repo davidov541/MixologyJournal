@@ -54,10 +54,9 @@
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
-                    <Button x:Name="addIngredientButton" 
-                            Text="Add Ingredient" 
-                            MinimumHeightRequest="30" 
-                            Command="{Binding AddIngredientCommand}"/>
+                    <ImageButton x:Name="addIngredientButton"
+                                 Style="{StaticResource AddButton}"
+                                 Command="{Binding AddIngredientCommand}"/>
                     <Label Text="Steps" />
                     <StackLayout BindableLayout.ItemsSource="{Binding Steps}">
                         <BindableLayout.ItemTemplate>
@@ -82,10 +81,9 @@
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
-                    <Button x:Name="addStepButton" 
-                            Text="Add Step" 
-                            MinimumHeightRequest="30" 
-                            Command="{Binding AddStepCommand}"/>
+                    <ImageButton x:Name="addStepButton" 
+                                 Style="{StaticResource AddButton}"
+                                 Command="{Binding AddStepCommand}"/>
                     <Picker x:Name="RatingPicker" SelectedItem="{Binding Rating}">
                         <Picker.Items>
                             <x:String>0.0 Stars</x:String>
