@@ -106,10 +106,6 @@
                             Text="{Binding Review}"
                             IsSpellCheckEnabled="True"
                             AutoSize="TextChanges"/>
-                    <Button x:Name="createButton" 
-                            Text="Create" 
-                            MinimumHeightRequest="30" 
-                            Clicked="CreateButton_Clicked" />
                 </StackLayout>
             </ScrollView>
             <AbsoluteLayout BackgroundColor="{Binding ProcessIsRunning, Converter={StaticResource runningConverter}}" 
@@ -120,6 +116,18 @@
                                AbsoluteLayout.LayoutFlags="All" 
                                Color="White" 
                                IsRunning="{Binding ProcessIsRunning}" />
+            <Button x:Name="cancelButton" 
+                    Image="@drawable/cancel_48"
+                    Clicked="CancelButton_Clicked"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
+                    Style="{StaticResource FloatingButton}" />
+            <Button x:Name="submitButton" 
+                    Image="@drawable/check_48"
+                    Clicked="CreateButton_Clicked" 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 0.85, AutoSize, AutoSize" 
+                    Style="{StaticResource FloatingButton}" />
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

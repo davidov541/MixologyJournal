@@ -31,6 +31,11 @@ namespace MixologyJournalApp.View
             await Navigation.PopToRootAsync();
         }
 
+        private async void CancelButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopToRootAsync();
+        }
+
         private void AddStepButton_Clicked(object sender, EventArgs e)
         {
             _vm.AddStep();

@@ -40,6 +40,20 @@ namespace MixologyJournalApp.View
             }
         }
 
+        private async void CancelButton_Clicked(object sender, EventArgs e)
+        {
+            if (Navigation.ModalStack.Any())
+            {
+                // We created the drink from the root page, in which case the basis recipe choice screen was modal and we need to handle that.
+                await Navigation.PopModalAsync();
+            }
+            else
+            {
+                // We created the drink from the recipe page, so we didn't have any modal pages to deal with.
+                await Navigation.PopToRootAsync();
+            }
+        }
+
         private void AddStepButton_Clicked(object sender, EventArgs e)
         {
             _vm.AddStep();
