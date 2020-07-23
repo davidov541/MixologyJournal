@@ -7,7 +7,8 @@
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.CreateRecipePage"
              x:Name="rootPage"
-             Visual="Material">
+             Visual="Material"
+             Title="New Recipe">
     <ContentPage.Resources>
         <controls:IsRunningToTintColorConverter x:Key="runningConverter" />
         <controls:InvertBooleanConverter x:Key="invertConverter" />
