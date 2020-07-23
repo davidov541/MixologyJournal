@@ -7,12 +7,40 @@
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.CreateDrinkPage"
              x:Name="rootPage"
-             Visual="Material"
-             Title="New Drink">
+             Visual="Material">
     <ContentPage.Resources>
         <controls:IsRunningToTintColorConverter x:Key="runningConverter" />
         <controls:InvertBooleanConverter x:Key="invertConverter" />
     </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Text="New Drink"
+                   Style="{StaticResource PageTitle}"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   HorizontalOptions="End"
+                   Text="SUBMIT"
+                   Margin="0,0,10,0"
+                   Style="{StaticResource PageCommand}"
+                   BackgroundColor="Transparent">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="CreateButton_Clicked" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <AbsoluteLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">

@@ -24,6 +24,14 @@
                 <Setter Property="Padding" Value="15"/>
                 <Setter Property="Margin" Value="0,0,15,15"/>
             </Style>
+            <Style x:Key="PageCommand" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            <Style x:Key="PageTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
             <Style x:Key="Subtitle" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
