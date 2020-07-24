@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -71,7 +72,7 @@ namespace MixologyJournalApp.ViewModel
             get;
         }
 
-        String PictureUrl
+        ImageSource Image
         {
             get;
         }

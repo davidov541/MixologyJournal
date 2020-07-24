@@ -21,7 +21,7 @@
             <Grid HorizontalOptions="FillAndExpand" 
                   VerticalOptions="FillAndExpand">
                 <Image x:Name="imgCard" 
-                       Source="{Binding PictureUrl}"
+                       Source="{Binding Image}"
                        Aspect="AspectFit"
                        InputTransparent="True" />
             </Grid>

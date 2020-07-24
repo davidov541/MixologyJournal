@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class RecipeViewModel: INotifyPropertyChanged, ICreationInfo
+    internal class RecipeViewModel : INotifyPropertyChanged, ICreationInfo
     {
         private readonly Recipe _model;
         private readonly App _app;
@@ -61,20 +61,15 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public String PictureUrl
+        public ImageSource Image
         {
             get
             {
                 if (_model == null || _model.Picture == null)
                 {
-                    return String.Empty;
+                    return ImageSource.FromFile("drawable/DefaultContentPic.png");
                 }
-                return _model.Picture.Url;
-            }
-            set
-            {
-                _model.Picture.Url = value;
-                OnPropertyChanged(nameof(PictureUrl));
+                return _model.Picture.Image;
             }
         }
 
@@ -223,7 +218,7 @@ namespace MixologyJournalApp.ViewModel
             InitCommands();
 
             IEnumerable<StepViewModel> steps = _model.Steps.Select((s, i) => new StepViewModel(s, i));
-            foreach(StepViewModel s in steps)
+            foreach (StepViewModel s in steps)
             {
                 s.PropertyChanged += StepChanged;
                 Steps.Add(s);

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using Xamarin.Forms;
 
 namespace MixologyJournalApp.Model
 {
@@ -20,11 +21,19 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        public ImageSource Image
+        {
+            get
+            {
+                return ImageSource.FromUri(new Uri(Url));
+            }
+        }
+
         public PictureInfo()
         {
         }
 
-        public PictureInfo(String path, String url): this()
+        public PictureInfo(String path, String url) : this()
         {
             Path = path;
             Url = url;

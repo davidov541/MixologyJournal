@@ -108,20 +108,15 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public String PictureUrl
+        public ImageSource Image
         {
             get
             {
                 if (_model == null || _model.Picture == null)
                 {
-                    return String.Empty;
+                    return ImageSource.FromFile("drawable/DefaultContentPic.png");
                 }
-                return _model.Picture.Url;
-            }
-            set
-            {
-                _model.Picture.Url = value;
-                OnPropertyChanged(nameof(PictureUrl));
+                return _model.Picture.Image;
             }
         }
 
