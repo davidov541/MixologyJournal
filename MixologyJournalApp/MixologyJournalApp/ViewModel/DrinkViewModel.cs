@@ -150,6 +150,12 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
+        public ICommand ChangePictureCommand
+        {
+            get;
+            private set;
+        }
+
         public Boolean CanBeDeleted
         {
             get
@@ -205,7 +211,7 @@ namespace MixologyJournalApp.ViewModel
             {
                 if (value && !IsFavorite)
                 {
-                    foreach(DrinkViewModel other in _app.Cache.Drinks.Where(d => d.BasisId.Equals(BasisId) && !d.Id.Equals(Id) && d.IsFavorite))
+                    foreach (DrinkViewModel other in _app.Cache.Drinks.Where(d => d.BasisId.Equals(BasisId) && !d.Id.Equals(Id) && d.IsFavorite))
                     {
                         other.IsFavorite = false;
                     }
@@ -342,6 +348,15 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return true;
                 });
+            ChangePictureCommand = new Command(
+                execute: async () =>
+                {
+                    await ChangePicture();
+                },
+                canExecute: () =>
+                {
+                    return true;
+                });
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -419,6 +434,11 @@ namespace MixologyJournalApp.ViewModel
                 ProcessIsRunning = false;
                 _favoriteHasChanged = false;
             }
+        }
+
+        private async Task ChangePicture()
+        {
+
         }
     }
 }
