@@ -55,31 +55,18 @@
                     <StackLayout BindableLayout.ItemsSource="{Binding IngredientUsages}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2.5*" />
-                                        <ColumnDefinition Width="auto" />
-                                        <ColumnDefinition Width="auto" />
-                                    </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding FullDescription}"
-                                           Grid.Row="0"
-                                           Grid.Column="0"
                                            VerticalTextAlignment="Center"
+                                           HorizontalOptions="StartAndExpand"
                                            Style="{StaticResource CardContentText}"/>
                                     <ImageButton Source="configure_48.png"
-                                                 Grid.Row="0"
-                                                 Grid.Column="1"
                                                  Style="{StaticResource IconButton}"
                                                  Clicked="ModifyIngredientButton_Clicked"/>
-                                    <controls:DeleteButton Grid.Row="0" 
-                                                           Grid.Column="3" 
-                                                           x:Name="deleteIngredientButton" 
+                                    <controls:DeleteButton x:Name="deleteIngredientButton" 
                                                            Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
                                                            CommandParameter="{Binding}"/>
-                                </Grid>
+                                </StackLayout>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
