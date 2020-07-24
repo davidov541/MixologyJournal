@@ -107,6 +107,12 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
+        public ICommand ChangePictureCommand
+        {
+            get;
+            private set;
+        }
+
         private Boolean _processIsRunning = false;
         public Boolean ProcessIsRunning
         {
@@ -295,6 +301,15 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return CanBeDeleted;
                 });
+            ChangePictureCommand = new Command(
+                execute: async () =>
+                {
+                    await ChangePicture();
+                },
+                canExecute: () =>
+                {
+                    return true;
+                });
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -366,6 +381,11 @@ namespace MixologyJournalApp.ViewModel
             await _app.Cache.DeleteRecipe(_model);
             await _app.PopToRoot();
             ProcessIsRunning = false;
+        }
+
+        private async Task ChangePicture()
+        {
+
         }
     }
 }
