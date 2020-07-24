@@ -135,6 +135,7 @@ namespace MixologyJournalApp.Model
             Rating = 0.0f;
             Review = "";
             IsFavoriteUploaded = true;
+            Picture = new PictureInfo();
         }
 
         public void Init(Recipe basisRecipe)

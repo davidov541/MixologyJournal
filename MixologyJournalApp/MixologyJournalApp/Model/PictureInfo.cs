@@ -37,6 +37,7 @@ namespace MixologyJournalApp.Model
 
         public PictureInfo()
         {
+            Path = DefaultIconPath;
         }
 
         public PictureInfo(String path, String url) : this()
