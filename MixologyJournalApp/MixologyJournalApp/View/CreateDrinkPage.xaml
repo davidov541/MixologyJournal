@@ -51,7 +51,8 @@
                     <Entry x:Name="NameEntry"
                            Text="{Binding Name}"
                            Keyboard="Default" />
-                    <Label Text="Ingredients" />
+
+                    <Label Text="Ingredients" Style="{StaticResource FormHeaderText}" />
                     <StackLayout BindableLayout.ItemsSource="{Binding IngredientUsages}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
@@ -73,7 +74,10 @@
                     <ImageButton x:Name="addIngredientButton"
                                  Style="{StaticResource AddButton}"
                                  Command="{Binding AddIngredientCommand}"/>
-                    <Label Text="Steps" />
+                    
+                    <BoxView Style="{StaticResource CardDivider}"  />
+
+                    <Label Text="Steps" Style="{StaticResource FormHeaderText}" />
                     <StackLayout BindableLayout.ItemsSource="{Binding Steps}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
@@ -100,6 +104,10 @@
                     <ImageButton x:Name="addStepButton" 
                                  Style="{StaticResource AddButton}"
                                  Command="{Binding AddStepCommand}"/>
+                    
+                    <BoxView Style="{StaticResource CardDivider}"  />
+
+                    <Label Text="Review" Style="{StaticResource FormHeaderText}" />
                     <Picker x:Name="RatingPicker" SelectedItem="{Binding Rating}">
                         <Picker.Items>
                             <x:String>0.0 Stars</x:String>
