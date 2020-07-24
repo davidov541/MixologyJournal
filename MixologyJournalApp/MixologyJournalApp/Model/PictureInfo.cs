@@ -7,6 +7,8 @@ namespace MixologyJournalApp.Model
     [JsonObject(MemberSerialization.OptIn)]
     internal class PictureInfo
     {
+        private const String DefaultIconPath = "creation-pics/default.png";
+
         [JsonProperty("path")]
         public String Path
         {
@@ -25,6 +27,10 @@ namespace MixologyJournalApp.Model
         {
             get
             {
+                if (String.IsNullOrEmpty(Path) || Path.Equals("null") || Path.Equals(DefaultIconPath))
+                {
+                    return ImageSource.FromFile("@drawable/DefaultContentPic.png");
+                }
                 return ImageSource.FromUri(new Uri(Url));
             }
         }
