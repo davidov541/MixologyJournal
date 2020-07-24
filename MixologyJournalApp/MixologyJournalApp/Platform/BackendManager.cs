@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -186,6 +187,19 @@ namespace MixologyJournalApp.Platform
             }
 
             return finalResult;
+        }
+
+        internal async Task<PictureInfo> UploadPicture(String path)
+        {
+            Byte[] content = File.ReadAllBytes(path);
+            QueryResult result = await _backend.SendFile(content, "/secure/addpicture");
+            if (result.Result)
+            {
+                String remotePath = result.Content["filePath"];
+                String sasPath = result.Content["fileSAS"];
+                return new PictureInfo(remotePath, sasPath);
+            }
+            return new PictureInfo();
         }
 
         private void WarnAboutRemoteAccessibility()

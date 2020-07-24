@@ -255,6 +255,11 @@ namespace MixologyJournalApp.Model
             return finalResult;
         }
 
+        public async Task AddPicture(Recipe model, String path)
+        {
+            model.Picture = await _app.PlatformInfo.Backend.UploadPicture(path);
+        }
+
         #region BackendInterface
         private async Task UpdateRecipes()
         {

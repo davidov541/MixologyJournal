@@ -2,8 +2,11 @@
 using MixologyJournalApp.Platform;
 using Newtonsoft.Json;
 using System;
+using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Droid.Platform
@@ -43,8 +46,7 @@ namespace MixologyJournalApp.Droid.Platform
                     throw new HttpRequestException(message);
                 }
 
-                String result = await response.Content.ReadAsStringAsync();
-                return result;
+                return await response.Content.ReadAsStringAsync();
             }
         }
 
@@ -84,6 +86,33 @@ namespace MixologyJournalApp.Droid.Platform
                 }
 
                 return await QueryResult.Create(response);
+            }
+        }
+
+        public async Task<QueryResult> SendFile(Byte[] fileContents, String remotePath)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                String fullPath = _basePath + "/" + remotePath;
+                using (MultipartFormDataContent formData = new MultipartFormDataContent("--------------------------848882407475721692347387"))
+                {
+                    if (_authentication.IsAuthenticated)
+                    {
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authentication.User.AuthToken);
+                    }
+                    client.DefaultRequestHeaders.Add("apiversion", "1");
+                    formData.Add(new StringContent("Hello", Encoding.ASCII), "file", "test.txt");
+                    String resultForm = await formData.ReadAsStringAsync();
+                    HttpResponseMessage response = await client.PostAsync(fullPath, formData);
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        Console.WriteLine("Request failed. See below for the error message.");
+                        Console.WriteLine(response.ReasonPhrase);
+                        Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    }
+
+                    return await QueryResult.Create(response);
+                }
             }
         }
     }

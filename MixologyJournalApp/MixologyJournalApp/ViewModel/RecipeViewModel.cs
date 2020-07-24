@@ -1,4 +1,6 @@
 ﻿using MixologyJournalApp.Model;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -385,7 +387,17 @@ namespace MixologyJournalApp.ViewModel
 
         private async Task ChangePicture()
         {
-
+            ProcessIsRunning = true;
+            PickMediaOptions options = new PickMediaOptions()
+            {
+            };
+            MediaFile result = await CrossMedia.Current.PickPhotoAsync(options);
+            if (result != null)
+            {
+                await _app.Cache.AddPicture(_model, result.Path);
+                OnPropertyChanged(nameof(Image));
+            }
+            ProcessIsRunning = false;
         }
     }
 }

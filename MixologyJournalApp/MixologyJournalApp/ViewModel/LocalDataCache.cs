@@ -196,6 +196,11 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public async Task AddPicture(Recipe model, String path)
+        {
+            await _modelCache.AddPicture(model, path);
+        }
+
         public async Task UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
         {
             await _modelCache.UpdateFavoriteDrink(drink, isFavorite);
