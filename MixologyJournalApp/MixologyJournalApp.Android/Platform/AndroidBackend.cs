@@ -101,7 +101,7 @@ namespace MixologyJournalApp.Droid.Platform
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _authentication.User.AuthToken);
                     }
                     client.DefaultRequestHeaders.Add("apiversion", "1");
-                    formData.Add(new StringContent("Hello", Encoding.ASCII), "file", "test.txt");
+                    formData.Add(new ByteArrayContent(fileContents), "file", "test.txt");
                     String resultForm = await formData.ReadAsStringAsync();
                     HttpResponseMessage response = await client.PostAsync(fullPath, formData);
                     if (!response.IsSuccessStatusCode)
