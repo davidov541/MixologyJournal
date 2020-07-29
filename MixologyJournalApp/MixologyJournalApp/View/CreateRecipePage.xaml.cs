@@ -1,4 +1,5 @@
-﻿using MixologyJournalApp.ViewModel;
+﻿using MixologyJournalApp.View.Controls;
+using MixologyJournalApp.ViewModel;
 using System;
 
 using Xamarin.Forms;
@@ -53,9 +54,22 @@ namespace MixologyJournalApp.View
             await Navigation.PushModalAsync(new ModifyIngredientPage(viewModel), true);
         }
 
-        private async void ChangePictureRecognizer_Tapped(object sender, EventArgs e)
+        private void ChangePictureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await _vm.ChoosePicture();
+            ImageChooser.IsVisible = true;
+        }
+
+        private async void ImageChooser_ImageSourceMade(object sender, ImageSourceChooser.ImageSourceChoiceEventArgs e)
+        {
+            ImageChooser.IsVisible = false;
+            switch (e.Choice)
+            {
+                case ImageSourceChooser.ImageSourceChoice.ChooseFromGallery:
+                    await _vm.ChoosePicture();
+                    break;
+                case ImageSourceChooser.ImageSourceChoice.TakeAPhoto:
+                    break;
+            }
         }
     }
 }

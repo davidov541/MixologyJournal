@@ -146,6 +146,11 @@
                                AbsoluteLayout.LayoutFlags="All" 
                                Color="White" 
                                IsRunning="{Binding ProcessIsRunning}" />
+            <controls:ImageSourceChooser x:Name="ImageChooser"
+                                         ImageSourceMade="ImageChooser_ImageSourceMade"
+                                         AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                         AbsoluteLayout.LayoutFlags="All"
+                                         IsVisible="False"/>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
