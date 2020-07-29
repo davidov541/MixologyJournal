@@ -109,12 +109,6 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
-        public ICommand ChangePictureCommand
-        {
-            get;
-            private set;
-        }
-
         private Boolean _processIsRunning = false;
         public Boolean ProcessIsRunning
         {
@@ -136,7 +130,7 @@ namespace MixologyJournalApp.ViewModel
 #if DEBUG
                 return true;
 #else
-                return _model.IsBuiltIn;
+                return !_model.IsBuiltIn;
 #endif
             }
         }
@@ -303,15 +297,6 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return CanBeDeleted;
                 });
-            ChangePictureCommand = new Command(
-                execute: async () =>
-                {
-                    await ChangePicture();
-                },
-                canExecute: () =>
-                {
-                    return true;
-                });
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -385,7 +370,7 @@ namespace MixologyJournalApp.ViewModel
             ProcessIsRunning = false;
         }
 
-        private async Task ChangePicture()
+        internal async Task ChangePicture()
         {
             ProcessIsRunning = true;
             PickMediaOptions options = new PickMediaOptions()

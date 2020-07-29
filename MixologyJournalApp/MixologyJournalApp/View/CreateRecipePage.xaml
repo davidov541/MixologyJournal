@@ -56,7 +56,7 @@
                         <AbsoluteLayout HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand">
                             <AbsoluteLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ChangePictureCommand}" />
+                                <TapGestureRecognizer Tapped="ChangePictureRecognizer_Tapped" />
                             </AbsoluteLayout.GestureRecognizers>
                             <Button x:Name="changePhotoButton" 
                                     Image="@drawable/camera_24"
