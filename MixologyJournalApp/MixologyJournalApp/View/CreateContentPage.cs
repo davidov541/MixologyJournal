@@ -9,13 +9,14 @@ namespace MixologyJournalApp.View
     {
         private ICreationInfo _vm;
         private ImageSourceChooser _imageChooser;
-        internal CreateContentPage(ICreationInfo viewModel): base()
+        internal CreateContentPage(): base()
         {
-            _vm = viewModel;
         }
 
-        protected void Init(ImageSourceChooser imageChooser, TapGestureRecognizer choosePictureGesture)
+        internal void Init(ICreationInfo viewModel, ImageSourceChooser imageChooser, TapGestureRecognizer choosePictureGesture)
         {
+            _vm = viewModel;
+
             _imageChooser = imageChooser;
             _imageChooser.ImageSourceMade += ImageChooser_ImageSourceMade;
 

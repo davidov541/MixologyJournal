@@ -6,18 +6,20 @@ using Xamarin.Forms.Xaml;
 namespace MixologyJournalApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CreateDrinkPage : ContentPage
+    public partial class CreateDrinkPage : CreateContentPage
     {
         private readonly App _app;
         private DrinkViewModel _vm;
         private SelectSourceRecipePage _selectPage;
 
-        internal CreateDrinkPage(App app, RecipeViewModel basis)
+        internal CreateDrinkPage(App app, RecipeViewModel basis): base()
         {
             _vm = new DrinkViewModel(basis, app);
             _app = app;
             BindingContext = _vm;
             InitializeComponent();
+
+            Init(_vm, ImageChooser, ChoosePictureGesture);
         }
 
         internal CreateDrinkPage(App app)
@@ -44,6 +46,8 @@ namespace MixologyJournalApp.View
             BindingContext = _vm;
             _selectPage.BasisChanged -= SelectPage_BasisChanged;
             _selectPage = null;
+
+            Init(_vm, ImageChooser, ChoosePictureGesture);
         }
 
         private async void CreateButton_Clicked(object sender, EventArgs e)

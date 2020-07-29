@@ -12,14 +12,14 @@ namespace MixologyJournalApp.View
         private readonly RecipeViewModel _vm;
         private readonly App _app;
 
-        internal CreateRecipePage(App app, RecipeViewModel recipe): base(recipe)
+        internal CreateRecipePage(App app, RecipeViewModel recipe): base()
         {
             _vm = recipe;
             _app = app;
             BindingContext = _vm;
             InitializeComponent();
 
-            Init(ImageChooser, ChoosePictureGesture);
+            Init(recipe, ImageChooser, ChoosePictureGesture);
         }
 
         private async void CreateButton_Clicked(object sender, EventArgs e)

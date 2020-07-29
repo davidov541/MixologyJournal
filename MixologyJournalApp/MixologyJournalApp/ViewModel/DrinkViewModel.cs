@@ -152,12 +152,6 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
-        public ICommand ChangePictureCommand
-        {
-            get;
-            private set;
-        }
-
         public Boolean CanBeDeleted
         {
             get
