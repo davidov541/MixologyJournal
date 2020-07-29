@@ -370,7 +370,7 @@ namespace MixologyJournalApp.ViewModel
             ProcessIsRunning = false;
         }
 
-        internal async Task ChangePicture()
+        internal async Task ChoosePicture()
         {
             ProcessIsRunning = true;
             PickMediaOptions options = new PickMediaOptions()

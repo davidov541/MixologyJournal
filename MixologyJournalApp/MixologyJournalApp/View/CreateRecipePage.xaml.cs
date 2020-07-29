@@ -55,7 +55,7 @@ namespace MixologyJournalApp.View
 
         private async void ChangePictureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await _vm.ChangePicture();
+            await _vm.ChoosePicture();
         }
     }
 }
