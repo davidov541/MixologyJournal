@@ -1,5 +1,4 @@
-﻿using MixologyJournalApp.View.Controls;
-using MixologyJournalApp.ViewModel;
+﻿using MixologyJournalApp.ViewModel;
 using System;
 
 using Xamarin.Forms;
@@ -19,10 +18,8 @@ namespace MixologyJournalApp.View
             _app = app;
             BindingContext = _vm;
             InitializeComponent();
-            Init(ImageChooser);
 
-            ChoosePictureGesture.Tapped += ChangePictureRecognizer_Tapped;
-            ImageChooser.ImageSourceMade += ImageChooser_ImageSourceMade;
+            Init(ImageChooser, ChoosePictureGesture);
         }
 
         private async void CreateButton_Clicked(object sender, EventArgs e)

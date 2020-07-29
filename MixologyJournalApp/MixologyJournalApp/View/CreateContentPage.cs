@@ -14,17 +14,20 @@ namespace MixologyJournalApp.View
             _vm = viewModel;
         }
 
-        protected void Init(ImageSourceChooser imageChooser)
+        protected void Init(ImageSourceChooser imageChooser, TapGestureRecognizer choosePictureGesture)
         {
             _imageChooser = imageChooser;
+            _imageChooser.ImageSourceMade += ImageChooser_ImageSourceMade;
+
+            choosePictureGesture.Tapped += ChangePictureRecognizer_Tapped;
         }
 
-        protected void ChangePictureRecognizer_Tapped(object sender, EventArgs e)
+        private void ChangePictureRecognizer_Tapped(object sender, EventArgs e)
         {
             _imageChooser.IsVisible = true;
         }
 
-        internal async void ImageChooser_ImageSourceMade(object sender, ImageSourceChooser.ImageSourceChoiceEventArgs e)
+        private async void ImageChooser_ImageSourceMade(object sender, ImageSourceChooser.ImageSourceChoiceEventArgs e)
         {
             _imageChooser.IsVisible = false;
             switch (e.Choice)
