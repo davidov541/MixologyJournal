@@ -32,6 +32,10 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="3*" />
                         </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0"
+                               Grid.Column="0"
+                               HorizontalOptions="Center"
+                               Source="@drawable/camera_48" />
                         <Label Grid.Row="0"
                                Grid.Column="1"
                                Text="Take New Photo"
@@ -48,6 +52,10 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="3*" />
                         </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0"
+                               Grid.Column="0"
+                               HorizontalOptions="Center"
+                               Source="@drawable/gallery_48" />
                         <Label Grid.Row="0"
                                Grid.Column="1"
                                Text="Select from Gallery"
