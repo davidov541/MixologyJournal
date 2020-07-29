@@ -370,6 +370,23 @@ namespace MixologyJournalApp.ViewModel
             ProcessIsRunning = false;
         }
 
+        internal async Task TakePicture()
+        {
+            ProcessIsRunning = true;
+            StoreCameraMediaOptions options = new StoreCameraMediaOptions()
+            {
+                PhotoSize = PhotoSize.Medium,
+                RotateImage = true,
+            };
+            MediaFile result = await CrossMedia.Current.TakePhotoAsync(options);
+            if (result != null)
+            {
+                await _app.Cache.AddPicture(_model, result.Path);
+                OnPropertyChanged(nameof(Image));
+            }
+            ProcessIsRunning = false;
+        }
+
         internal async Task ChoosePicture()
         {
             ProcessIsRunning = true;
