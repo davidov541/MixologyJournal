@@ -1,4 +1,6 @@
 ﻿using MixologyJournalApp.Model;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -348,15 +350,6 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return true;
                 });
-            ChangePictureCommand = new Command(
-                execute: async () =>
-                {
-                    await ChangePicture();
-                },
-                canExecute: () =>
-                {
-                    return true;
-                });
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -436,9 +429,36 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        private async Task ChangePicture()
+        public async Task TakePicture()
         {
+            ProcessIsRunning = true;
+            StoreCameraMediaOptions options = new StoreCameraMediaOptions()
+            {
+                PhotoSize = PhotoSize.Medium,
+                RotateImage = true,
+            };
+            MediaFile result = await CrossMedia.Current.TakePhotoAsync(options);
+            if (result != null)
+            {
+                await _app.Cache.AddPicture(_model, result.Path);
+                OnPropertyChanged(nameof(Image));
+            }
+            ProcessIsRunning = false;
+        }
 
+        public async Task ChoosePicture()
+        {
+            ProcessIsRunning = true;
+            PickMediaOptions options = new PickMediaOptions()
+            {
+            };
+            MediaFile result = await CrossMedia.Current.PickPhotoAsync(options);
+            if (result != null)
+            {
+                await _app.Cache.AddPicture(_model, result.Path);
+                OnPropertyChanged(nameof(Image));
+            }
+            ProcessIsRunning = false;
         }
     }
 }

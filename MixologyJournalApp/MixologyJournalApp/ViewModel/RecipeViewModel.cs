@@ -370,7 +370,7 @@ namespace MixologyJournalApp.ViewModel
             ProcessIsRunning = false;
         }
 
-        internal async Task TakePicture()
+        public async Task TakePicture()
         {
             ProcessIsRunning = true;
             StoreCameraMediaOptions options = new StoreCameraMediaOptions()
@@ -387,7 +387,7 @@ namespace MixologyJournalApp.ViewModel
             ProcessIsRunning = false;
         }
 
-        internal async Task ChoosePicture()
+        public async Task ChoosePicture()
         {
             ProcessIsRunning = true;
             PickMediaOptions options = new PickMediaOptions()

@@ -260,6 +260,11 @@ namespace MixologyJournalApp.Model
             model.Picture = await _app.PlatformInfo.Backend.UploadPicture(path);
         }
 
+        public async Task AddPicture(Drink model, String path)
+        {
+            model.Picture = await _app.PlatformInfo.Backend.UploadPicture(path);
+        }
+
         #region BackendInterface
         private async Task UpdateRecipes()
         {

@@ -8,17 +8,21 @@ using Xamarin.Forms.Xaml;
 namespace MixologyJournalApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CreateRecipePage : ContentPage
+    public partial class CreateRecipePage : CreateContentPage
     {
         private readonly RecipeViewModel _vm;
         private readonly App _app;
 
-        internal CreateRecipePage(App app, RecipeViewModel recipe)
+        internal CreateRecipePage(App app, RecipeViewModel recipe): base(recipe)
         {
             _vm = recipe;
             _app = app;
             BindingContext = _vm;
             InitializeComponent();
+            Init(ImageChooser);
+
+            ChoosePictureGesture.Tapped += ChangePictureRecognizer_Tapped;
+            ImageChooser.ImageSourceMade += ImageChooser_ImageSourceMade;
         }
 
         private async void CreateButton_Clicked(object sender, EventArgs e)
@@ -52,25 +56,6 @@ namespace MixologyJournalApp.View
         {
             IngredientUsageViewModel viewModel = (sender as ImageButton).BindingContext as IngredientUsageViewModel;
             await Navigation.PushModalAsync(new ModifyIngredientPage(viewModel), true);
-        }
-
-        private void ChangePictureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            ImageChooser.IsVisible = true;
-        }
-
-        private async void ImageChooser_ImageSourceMade(object sender, ImageSourceChooser.ImageSourceChoiceEventArgs e)
-        {
-            ImageChooser.IsVisible = false;
-            switch (e.Choice)
-            {
-                case ImageSourceChooser.ImageSourceChoice.ChooseFromGallery:
-                    await _vm.ChoosePicture();
-                    break;
-                case ImageSourceChooser.ImageSourceChoice.TakeAPhoto:
-                    await _vm.TakePicture();
-                    break;
-            }
         }
     }
 }

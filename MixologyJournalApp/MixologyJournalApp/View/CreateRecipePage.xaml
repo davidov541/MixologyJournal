@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
-             mc:Ignorable="d"
-             x:Class="MixologyJournalApp.View.CreateRecipePage"
-             x:Name="rootPage"
-             Visual="Material">
+<view:CreateContentPage  xmlns:view="clr-namespace:MixologyJournalApp.View"
+                         xmlns="http://xamarin.com/schemas/2014/forms"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
+                         mc:Ignorable="d"
+                         x:Class="MixologyJournalApp.View.CreateRecipePage"
+                         x:Name="rootPage"
+                         Visual="Material">
     <ContentPage.Resources>
         <controls:IsRunningToTintColorConverter x:Key="runningConverter" />
         <controls:InvertBooleanConverter x:Key="invertConverter" />
@@ -56,7 +57,7 @@
                         <AbsoluteLayout HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand">
                             <AbsoluteLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ChangePictureRecognizer_Tapped" />
+                                <TapGestureRecognizer x:Name="ChoosePictureGesture" />
                             </AbsoluteLayout.GestureRecognizers>
                             <Button x:Name="changePhotoButton" 
                                     Image="@drawable/camera_24"
@@ -147,10 +148,9 @@
                                Color="White" 
                                IsRunning="{Binding ProcessIsRunning}" />
             <controls:ImageSourceChooser x:Name="ImageChooser"
-                                         ImageSourceMade="ImageChooser_ImageSourceMade"
                                          AbsoluteLayout.LayoutBounds="0,0,1,1"
                                          AbsoluteLayout.LayoutFlags="All"
                                          IsVisible="False"/>
         </AbsoluteLayout>
     </ContentPage.Content>
-</ContentPage>
+</view:CreateContentPage>
