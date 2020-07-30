@@ -7,13 +7,13 @@ namespace MixologyJournalApp.View
 {
     public class CreateContentPage: ContentPage
     {
-        private ICreationInfo _vm;
+        private IPictureCreation _vm;
         private ImageSourceChooser _imageChooser;
         internal CreateContentPage(): base()
         {
         }
 
-        internal void Init(ICreationInfo viewModel, ImageSourceChooser imageChooser, TapGestureRecognizer choosePictureGesture)
+        internal void Init(IPictureCreation viewModel, ImageSourceChooser imageChooser, TapGestureRecognizer choosePictureGesture)
         {
             _vm = viewModel;
 

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -28,31 +25,6 @@ namespace MixologyJournalApp.ViewModel
             get; 
         }
 
-        ICommand DeleteCommand
-        {
-            get;
-        }
-
-        Boolean CanBeDeleted
-        {
-            get;
-        }
-
-        ICommand ToggleFavoriteCommand
-        {
-            get;
-        }
-
-        Boolean CanBeFavorited
-        {
-            get;
-        }
-
-        Boolean CanBeUnfavorited
-        {
-            get;
-        }
-
         Boolean HasReview
         {
             get;
@@ -72,14 +44,5 @@ namespace MixologyJournalApp.ViewModel
         {
             get;
         }
-
-        ImageSource Image
-        {
-            get;
-        }
-
-        Task TakePicture();
-
-        Task ChoosePicture();
     }
 }

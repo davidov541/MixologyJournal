@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class RecipeViewModel : INotifyPropertyChanged, ICreationInfo
+    internal class RecipeViewModel : INotifyPropertyChanged, IPictureCreation
     {
         private readonly Recipe _model;
         private readonly App _app;
