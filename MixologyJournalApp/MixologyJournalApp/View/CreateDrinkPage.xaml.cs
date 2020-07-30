@@ -19,7 +19,7 @@ namespace MixologyJournalApp.View
             BindingContext = _vm;
             InitializeComponent();
 
-            Init(_vm, ImageChooser, ChoosePictureGesture);
+            Init(_vm, ImageChooser);
         }
 
         internal CreateDrinkPage(App app)
@@ -47,7 +47,7 @@ namespace MixologyJournalApp.View
             _selectPage.BasisChanged -= SelectPage_BasisChanged;
             _selectPage = null;
 
-            Init(_vm, ImageChooser, ChoosePictureGesture);
+            Init(_vm, ImageChooser);
         }
 
         private async void CreateButton_Clicked(object sender, EventArgs e)

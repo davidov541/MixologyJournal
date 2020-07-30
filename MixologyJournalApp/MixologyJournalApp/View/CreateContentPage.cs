@@ -1,31 +1,30 @@
 ﻿using MixologyJournalApp.View.Controls;
 using MixologyJournalApp.ViewModel;
-using System;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.View
 {
-    public class CreateContentPage: ContentPage
+    public class CreateContentPage : ContentPage
     {
-        private IPictureCreation _vm;
-        private ImageSourceChooser _imageChooser;
-        internal CreateContentPage(): base()
+        public ICommand ChangeImageCommand
         {
+            get
+            {
+                return new Command(() => _imageChooser.IsVisible = true);
+            }
+
         }
 
-        internal void Init(IPictureCreation viewModel, ImageSourceChooser imageChooser, TapGestureRecognizer choosePictureGesture)
+        private IPictureCreation _vm;
+        private ImageSourceChooser _imageChooser;
+
+        internal void Init(IPictureCreation viewModel, ImageSourceChooser imageChooser)
         {
             _vm = viewModel;
 
             _imageChooser = imageChooser;
             _imageChooser.ImageSourceMade += ImageChooser_ImageSourceMade;
-
-            choosePictureGesture.Tapped += ChangePictureRecognizer_Tapped;
-        }
-
-        private void ChangePictureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            _imageChooser.IsVisible = true;
         }
 
         private async void ImageChooser_ImageSourceMade(object sender, ImageSourceChooser.ImageSourceChoiceEventArgs e)

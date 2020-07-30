@@ -48,25 +48,9 @@
                 <StackLayout Orientation="Vertical"
                              Margin="10,5"
                              VerticalOptions="Fill">
-                    <Grid HorizontalOptions="FillAndExpand" 
-                          VerticalOptions="FillAndExpand">
-                        <Image x:Name="imgCard" 
-                               Source="{Binding Image}"
-                               Aspect="AspectFit"
-                               InputTransparent="True" />
-                        <AbsoluteLayout HorizontalOptions="FillAndExpand"
-                                        VerticalOptions="FillAndExpand">
-                            <AbsoluteLayout.GestureRecognizers>
-                                <TapGestureRecognizer x:Name="ChoosePictureGesture" />
-                            </AbsoluteLayout.GestureRecognizers>
-                            <Button x:Name="changePhotoButton" 
-                                    Image="@drawable/camera_24"
-                                    InputTransparent="True"
-                                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
-                                    Style="{StaticResource FloatingButton}" />
-                        </AbsoluteLayout>
-                    </Grid>
+                    <controls:EditableImage x:Name="EditableImage"
+                                            Image="{Binding Image}"
+                                            UpdateImageCommand="{Binding ChangeImageCommand, Source={x:Reference rootPage}}" />
                     <Label Text="Title" />
                     <Entry x:Name="NameEntry"
                            Text="{Binding Name}"
