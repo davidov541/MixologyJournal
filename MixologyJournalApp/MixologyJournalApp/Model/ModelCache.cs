@@ -78,9 +78,10 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        private Boolean _canAccessRemote = true;
         private Boolean GetUseRemote()
         {
-            return _app.PlatformInfo.Authentication.IsAuthenticated;
+            return _app.PlatformInfo.Authentication.IsAuthenticated && _canAccessRemote;
         }
 
         private double _initProgress = 0.0;
@@ -122,128 +123,58 @@ namespace MixologyJournalApp.Model
             _app = app;
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(String propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public async Task Init()
         {
             if (DateTime.UtcNow.Subtract(LastLoadedTime).TotalMilliseconds > TimeSpan.FromHours(1).TotalMilliseconds)
             {
-                try
-                {
-                    InitProgress = 0.0;
-                    await UpdateAvailableUnits();
+                InitProgress = 0.0;
+                await UpdateAvailableUnits();
 
-                    InitProgress = 1.0;
-                    await UpdateAvailableIngredients();
+                InitProgress = 1.0;
+                await UpdateAvailableIngredients();
 
-                    InitProgress = 2.0;
-                    await UpdateRecipes();
+                InitProgress = 2.0;
+                await UpdateRecipes();
 
-                    InitProgress = 3.0;
-                    await UpdateDrinks();
+                InitProgress = 3.0;
+                await UpdateDrinks();
 
-                    LastLoadedTime = DateTime.UtcNow;
-                }
-                catch (HttpRequestException)
-                {
-                    _app.PlatformInfo.AlertDialogFactory.ShowDialog("Server Down", 
-                        "The backend server appears to be down. We will use the local cache, but are unable to retrieve any updated content from the servers at this time.");
-                }
+                LastLoadedTime = DateTime.UtcNow;
             }
             InitProgress = 4.0;
         }
 
-        public async Task<Boolean> UploadRecentItems()
+        internal async Task<Boolean> UploadRecentItems()
         {
             Boolean result = true;
             try
             {
                 foreach (Recipe recipe in Recipes.Where(r => !r.Uploaded))
                 {
-                    result = result && await UploadRecipe(recipe);
+                    result = result && await _app.PlatformInfo.Backend.UploadRecipe(recipe);
                 }
 
                 foreach (Drink drink in Drinks.Where(d => !d.Uploaded))
                 {
-                    result = result && await UploadDrink(drink);
+                    result = result && await _app.PlatformInfo.Backend.UploadDrink(drink);
                 }
-            } 
+
+                foreach (Drink drink in Drinks.Where(d => !d.IsFavoriteUploaded))
+                {
+                    result = result && await UpdateFavoriteDrink(drink, drink.IsFavorite);
+                }
+            }
             catch (HttpRequestException)
             {
                 result = false;
             }
-            if (!result)
-            {
-                _app.PlatformInfo.AlertDialogFactory.ShowDialog("Server Down",
-                    "The backend server appears to be down. We will use the local cache, but are unable to retrieve any updated content from the servers at this time.");
-            }
             return result;
-        }
-
-        private async Task UpdateRecipes()
-        {
-            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/recipes");
-            List<Recipe> recipeModels = JsonConvert.DeserializeObject<List<Recipe>>(jsonResult);
-
-            if (GetUseRemote())
-            {
-                _recipes.Clear();
-            }
-
-            foreach (Recipe r in recipeModels.OrderBy(i => i.Name))
-            {
-                r.Uploaded = true;
-                _recipes.Add(r);
-            }
-        }
-
-        private async Task UpdateDrinks()
-        {
-            // If we are local only, then we won't get any drinks from the remote backend.
-            if (GetUseRemote())
-            {
-                String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/drinks");
-                List<Drink> drinkModels = JsonConvert.DeserializeObject<List<Drink>>(jsonResult);
-                drinkModels.ForEach(d => d.Init(Recipes.FirstOrDefault(r => r.Id.Equals(d.SourceRecipeID))));
-
-                _drinks.Clear();
-
-                foreach (Drink d in drinkModels.OrderBy(i => i.Name))
-                {
-                    d.Uploaded = true;
-                    _drinks.Add(d);
-                }
-            }
-        }
-
-        private async Task UpdateAvailableIngredients()
-        {
-            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/ingredients");
-            List<Ingredient> ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResult).ToList();
-
-            if (GetUseRemote())
-            {
-                _ingredients.Clear();
-            }
-
-            foreach (Ingredient i in ingredients.OrderBy(i => i.Name))
-            {
-                _ingredients.Add(i);
-            }
-        }
-
-        private async Task UpdateAvailableUnits()
-        {
-            String jsonResult = await _app.PlatformInfo.Backend.GetResult("/insecure/units");
-            List<Unit> units = JsonConvert.DeserializeObject<List<Unit>>(jsonResult).ToList();
-
-            if (GetUseRemote())
-            {
-                _units.Clear();
-            }
-
-            foreach (Unit u in units.OrderBy(i => i.Name))
-            {
-                _units.Add(u);
-            }
         }
 
         private static String GetSerializationPath()
@@ -268,9 +199,10 @@ namespace MixologyJournalApp.Model
             Boolean finalResult = true;
             if (GetUseRemote())
             {
-                finalResult = await UploadRecipe(model);
+                finalResult = await _app.PlatformInfo.Backend.UploadRecipe(model);
             }
-            else
+
+            if (String.IsNullOrEmpty(model.Id))
             {
                 // Make a random GUID for us to use in the meantime.
                 model.Id = Guid.NewGuid().ToString();
@@ -281,7 +213,7 @@ namespace MixologyJournalApp.Model
             {
                 _recipes.Add(model);
             }
-            
+
             if (String.IsNullOrEmpty(model.Id))
             {
                 int insertIndex = _recipes.IndexOf(insertBeforeRecipe);
@@ -293,42 +225,12 @@ namespace MixologyJournalApp.Model
             return finalResult;
         }
 
-        private async Task<bool> UploadRecipe(Recipe model)
-        {
-            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/recipes", model);
-            if (result.Result)
-            {
-                model.Id = result.Content["createdId"];
-                model.Uploaded = true;
-            }
-            return result.Result;
-        }
-
-        internal async Task<Boolean> DeleteRecipe(Recipe recipe)
-        {
-            Boolean finalResult = true;
-            if (GetUseRemote())
-            {
-                QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/recipes", recipe);
-                finalResult = result.Result;
-            }
-
-            if (finalResult)
-            {
-                _recipes.Remove(recipe);
-
-                Save();
-            }
-
-            return finalResult;
-        }
-
         internal async Task<Boolean> CreateDrink(Drink model)
         {
             Boolean finalResult = true;
             if (GetUseRemote())
             {
-                finalResult = await UploadDrink(model);
+                finalResult = await _app.PlatformInfo.Backend.UploadDrink(model);
             }
 
             if (String.IsNullOrEmpty(model.Id))
@@ -353,16 +255,107 @@ namespace MixologyJournalApp.Model
             return finalResult;
         }
 
-        private async Task<bool> UploadDrink(Drink model)
+        public async Task AddPicture(Recipe model, String path)
         {
-            QueryResult result = await _app.PlatformInfo.Backend.PostResult("/secure/drinks", model);
-            if (result.Result)
+            model.Picture = await _app.PlatformInfo.Backend.UploadPicture(path);
+        }
+
+        public async Task AddPicture(Drink model, String path)
+        {
+            model.Picture = await _app.PlatformInfo.Backend.UploadPicture(path);
+        }
+
+        #region BackendInterface
+        private async Task UpdateRecipes()
+        {
+            List<Recipe> recipeModels = await _app.PlatformInfo.Backend.UpdateRecipes();
+
+            if (GetUseRemote() && recipeModels.Any())
             {
-                model.Uploaded = true;
-                model.Id = result.Content["createdId"];
+                _recipes.Clear();
             }
 
-            return result.Result;
+            foreach (Recipe r in recipeModels.OrderBy(i => i.Name))
+            {
+                r.Uploaded = true;
+                _recipes.Add(r);
+            }
+        }
+
+        private async Task UpdateDrinks()
+        {
+            List<Drink> drinkModels = await _app.PlatformInfo.Backend.UpdateDrinks();
+            drinkModels.ForEach(d => d.Init(Recipes.FirstOrDefault(r => r.Id.Equals(d.SourceRecipeID))));
+
+            if (GetUseRemote() && drinkModels.Any())
+            {
+                _drinks.Clear();
+            }
+
+            foreach (Drink d in drinkModels.OrderBy(i => i.Name))
+            {
+                d.Uploaded = true;
+                d.IsFavoriteUploaded = true;
+                _drinks.Add(d);
+            }
+        }
+
+        private async Task UpdateAvailableIngredients()
+        {
+            List<Ingredient> ingredients = await _app.PlatformInfo.Backend.UpdateAvailableIngredients();
+
+            if (GetUseRemote() && ingredients.Any())
+            {
+                _ingredients.Clear();
+            }
+
+            foreach (Ingredient i in ingredients.OrderBy(i => i.Name))
+            {
+                _ingredients.Add(i);
+            }
+        }
+
+        private async Task UpdateAvailableUnits()
+        {
+            List<Unit> units = await _app.PlatformInfo.Backend.UpdateAvailableUnits();
+
+            if (GetUseRemote() && units.Any())
+            {
+                _units.Clear();
+            }
+
+            foreach (Unit u in units.OrderBy(i => i.Name))
+            {
+                _units.Add(u);
+            }
+        }
+
+        internal async Task<Boolean> UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
+        {
+            Boolean finalResult = true;
+            if (GetUseRemote())
+            {
+                finalResult = await _app.PlatformInfo.Backend.UpdateFavoriteDrink(drink, isFavorite);
+            }
+
+            Save();
+
+            return finalResult;
+        }
+
+        internal async Task<Boolean> DeleteRecipe(Recipe recipe)
+        {
+            Boolean finalResult = true;
+            if (GetUseRemote())
+            {
+                finalResult = await _app.PlatformInfo.Backend.DeleteRecipe(recipe);
+            }
+
+            _recipes.Remove(recipe);
+
+            Save();
+
+            return finalResult;
         }
 
         internal async Task<Boolean> DeleteDrink(Drink drink)
@@ -370,33 +363,15 @@ namespace MixologyJournalApp.Model
             Boolean finalResult = true;
             if (GetUseRemote())
             {
-                QueryResult result = await _app.PlatformInfo.Backend.DeleteResult("/secure/drinks", drink);
-                finalResult = result.Result;
+                finalResult = await _app.PlatformInfo.Backend.DeleteDrink(drink);
             }
-            if (finalResult)
-            {
-                _drinks.Remove(drink);
 
-                Save();
-            }
+            _drinks.Remove(drink);
+
+            Save();
 
             return finalResult;
         }
-
-        internal async Task UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
-        {
-            if (GetUseRemote())
-            {
-                await _app.PlatformInfo.Backend.PostResult("/secure/favorite", new FavoriteRequest(drink.SourceRecipeID, drink.Id, isFavorite));
-            }
-
-            Save();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(String propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        #endregion
     }
 }

@@ -7,6 +7,34 @@ namespace MixologyJournalApp.ViewModel
 {
     internal class IngredientUsageViewModel : INotifyPropertyChanged
     {
+        internal struct State
+        {
+            public IngredientViewModel Ingredient
+            {
+                get;
+                set;
+            }
+
+            public String Amount
+            {
+                get;
+                set;
+            }
+
+            public UnitViewModel Unit
+            {
+                get;
+                set;
+            }
+
+            internal State(IngredientUsageViewModel viewModel)
+            {
+                Ingredient = viewModel.Ingredient;
+                Amount = viewModel.Amount;
+                Unit = viewModel.Unit;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly IngredientUsage _model;
@@ -28,6 +56,7 @@ namespace MixologyJournalApp.ViewModel
                     _model.Ingredient = _ingredient.Model;
                 }
                 OnPropertyChanged(nameof(Ingredient));
+                OnPropertyChanged(nameof(FullDescription));
             }
         }
 
@@ -49,6 +78,7 @@ namespace MixologyJournalApp.ViewModel
             {
                 _model.Amount = value;
                 OnPropertyChanged(nameof(Amount));
+                OnPropertyChanged(nameof(FullDescription));
             }
         }
 
@@ -67,6 +97,7 @@ namespace MixologyJournalApp.ViewModel
                     _model.Unit = _unit.Model;
                 }
                 OnPropertyChanged(nameof(Unit));
+                OnPropertyChanged(nameof(FullDescription));
             }
         }
 
@@ -83,6 +114,14 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return _cache.AvailableUnits;
+            }
+        }
+
+        public String FullDescription
+        {
+            get
+            {
+                return ToString();
             }
         }
 
@@ -103,7 +142,18 @@ namespace MixologyJournalApp.ViewModel
 
         public override string ToString()
         {
+            if (String.IsNullOrEmpty(Amount.ToString()) || String.IsNullOrEmpty(Unit.Name) || String.IsNullOrEmpty(Ingredient.Name))
+            {
+                return String.Empty;
+            }
             return String.Format("{0} {1}s of {2}", Amount, Unit.Name, Ingredient.Name);
+        }
+
+        public void RestoreFromState(State state)
+        {
+            Ingredient = state.Ingredient;
+            Unit = state.Unit;
+            Amount = state.Amount;
         }
     }
 }

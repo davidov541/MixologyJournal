@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MixologyJournalApp.View.Controls.EditableImage"
+             x:Name="thisView">
+    <ContentView.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
+              BindingContext="{x:Reference thisView}">
+            <Image x:Name="imgCard" 
+                   Source="{Binding Image}"
+                   Aspect="AspectFit"
+                   InputTransparent="True" />
+            <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                <AbsoluteLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding UpdateImageCommand}" />
+                </AbsoluteLayout.GestureRecognizers>
+                <Button x:Name="changePhotoButton" 
+                        Image="@drawable/camera_24"
+                        InputTransparent="True"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
+                        Style="{StaticResource FloatingButton}" />
+            </AbsoluteLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

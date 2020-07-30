@@ -1,4 +1,6 @@
 ﻿using MixologyJournalApp.Model;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +12,7 @@ using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class DrinkViewModel : INotifyPropertyChanged, ICreationInfo
+    internal class DrinkViewModel : INotifyPropertyChanged, IPictureCreation
     {
         private readonly Drink _model;
         private readonly App _app;
@@ -108,20 +110,15 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public String PictureUrl
+        public ImageSource Image
         {
             get
             {
                 if (_model == null || _model.Picture == null)
                 {
-                    return String.Empty;
+                    return ImageSource.FromFile("drawable/DefaultContentPic.png");
                 }
-                return _model.Picture.Url;
-            }
-            set
-            {
-                _model.Picture.Url = value;
-                OnPropertyChanged(nameof(PictureUrl));
+                return _model.Picture.Image;
             }
         }
 
@@ -210,7 +207,7 @@ namespace MixologyJournalApp.ViewModel
             {
                 if (value && !IsFavorite)
                 {
-                    foreach(DrinkViewModel other in _app.Cache.Drinks.Where(d => d.BasisId.Equals(BasisId) && !d.Id.Equals(Id) && d.IsFavorite))
+                    foreach (DrinkViewModel other in _app.Cache.Drinks.Where(d => d.BasisId.Equals(BasisId) && !d.Id.Equals(Id) && d.IsFavorite))
                     {
                         other.IsFavorite = false;
                     }
@@ -424,6 +421,38 @@ namespace MixologyJournalApp.ViewModel
                 ProcessIsRunning = false;
                 _favoriteHasChanged = false;
             }
+        }
+
+        public async Task TakePicture()
+        {
+            ProcessIsRunning = true;
+            StoreCameraMediaOptions options = new StoreCameraMediaOptions()
+            {
+                PhotoSize = PhotoSize.Medium,
+                RotateImage = true,
+            };
+            MediaFile result = await CrossMedia.Current.TakePhotoAsync(options);
+            if (result != null)
+            {
+                await _app.Cache.AddPicture(_model, result.Path);
+                OnPropertyChanged(nameof(Image));
+            }
+            ProcessIsRunning = false;
+        }
+
+        public async Task ChoosePicture()
+        {
+            ProcessIsRunning = true;
+            PickMediaOptions options = new PickMediaOptions()
+            {
+            };
+            MediaFile result = await CrossMedia.Current.PickPhotoAsync(options);
+            if (result != null)
+            {
+                await _app.Cache.AddPicture(_model, result.Path);
+                OnPropertyChanged(nameof(Image));
+            }
+            ProcessIsRunning = false;
         }
     }
 }

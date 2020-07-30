@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Platform
@@ -10,5 +11,7 @@ namespace MixologyJournalApp.Platform
         Task<QueryResult> DeleteResult(String path, Object body);
 
         Task<String> GetResult(String path);
+
+        Task<QueryResult> SendFile(Byte[] fileContents, String remotePath);
     }
 }

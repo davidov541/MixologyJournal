@@ -5,6 +5,8 @@ using Android.OS;
 using Android.Runtime;
 using MixologyJournalApp.Droid.Platform;
 using MixologyJournalApp.Platform;
+using Plugin.CurrentActivity;
+using Plugin.Permissions;
 using System;
 using System.Threading.Tasks;
 
@@ -26,6 +28,8 @@ namespace MixologyJournalApp.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
             _app = App.Create(new AndroidPlatform(this));
 
             await _app.InitAsync();
@@ -38,6 +42,7 @@ namespace MixologyJournalApp.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }

@@ -24,6 +24,14 @@
                 <Setter Property="Padding" Value="15"/>
                 <Setter Property="Margin" Value="0,0,15,15"/>
             </Style>
+            <Style x:Key="PageCommand" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            <Style x:Key="PageTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
             <Style x:Key="Subtitle" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -52,6 +60,7 @@
             <Style TargetType="BoxView" x:Key="CardDivider">
                 <Setter Property="BackgroundColor" Value="#607D8B" />
                 <Setter Property="HeightRequest" Value="1" />
+                <Setter Property="Margin" Value="0,5,0,5" />
             </Style>
             <Style TargetType="ListView" x:Key="ContentList">
                 <Setter Property="RowHeight" Value="40" />
@@ -61,6 +70,9 @@
                 <Setter Property="InputTransparent" Value="True" />
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardContentText">
+            </Style>
+            <Style TargetType="Label"  x:Key="FormHeaderText">
+                <Setter Property="Margin" Value="0,15,0,0" />
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource CardContentText}" x:Key="TextButton">
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -87,6 +99,22 @@
                 <Setter Property="HorizontalTextAlignment" Value="End" />
                 <Setter Property="VerticalTextAlignment" Value="Start" />
                 <Setter Property="FontAttributes" Value="Italic" />
+            </Style>
+            <Style TargetType="ImageButton" x:Key="IconButton">
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackground}" />
+            </Style>
+            <Style TargetType="ImageButton" x:Key="AddButton">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackground}" />
+                <Setter Property="Source" Value="@drawable/ic_add_white_48dp" />
+            </Style>
+            <Style TargetType="controls:DeleteButton" BasedOn="{StaticResource IconButton}">
+                <Setter Property="Padding" Value="0" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
