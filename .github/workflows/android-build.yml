@@ -64,6 +64,11 @@ jobs:
           
     - name: Restore Nuget Packages
       run: mono $NUGET_EXE restore MixologyJournal.sln -source "https://api.nuget.org/v3/index.json"
+      
+    - name: Create App Settings Files
+      run: |
+          echo "${{ secrets.APPSETTINGSDEV }}" > MixologyJournalApp/MixologyJournalApp/appsettings.dev.json
+          echo "${{ secrets.APPSETTINGSPROD }}" > MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
 
     - name: Build Code
       run: msbuild /p:Configuration="Release" /p:Platform="Any CPU" /t:Build MixologyJournal.sln
