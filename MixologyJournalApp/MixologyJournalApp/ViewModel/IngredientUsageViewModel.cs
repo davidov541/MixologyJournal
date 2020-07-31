@@ -142,7 +142,7 @@ namespace MixologyJournalApp.ViewModel
 
         public override string ToString()
         {
-            if (String.IsNullOrEmpty(Amount.ToString()) || String.IsNullOrEmpty(Unit.Name) || String.IsNullOrEmpty(Ingredient.Name))
+            if (String.IsNullOrEmpty(Amount) || Unit == null || String.IsNullOrEmpty(Unit.Name) || Ingredient == null || String.IsNullOrEmpty(Ingredient.Name))
             {
                 return String.Empty;
             }
