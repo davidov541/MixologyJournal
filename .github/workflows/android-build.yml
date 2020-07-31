@@ -2,7 +2,7 @@ name: Nightly Build - Android
 
 on:
   schedule:
-  - cron: "45 * * * *"    
+  - cron: "*/10 * * * *"    
   repository_dispatch:
    types: androidnightly
   
@@ -66,7 +66,7 @@ jobs:
       run: mono $NUGET_EXE restore MixologyJournal.sln -source "https://api.nuget.org/v3/index.json"
 
     - name: Build Code
-      run: msbuild /p:Configuration="Release" /p:Platform="iPhoneSimulator" /t:Build MixologyJournal.sln
+      run: msbuild /p:Configuration="Release" /p:Platform="Any CPU" /t:Build MixologyJournal.sln
 
     - name: Build APK
       run: msbuild MixologyJournalApp/MixologyJournalApp.Android/MixologyJournalApp.Android.csproj -target:SignAndroidPackage /p:Configuration=Release
