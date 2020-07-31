@@ -29,6 +29,12 @@ namespace MixologyJournalApp.View
             UpdateDrinkList();
         }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _viewModel.PropertyChanged -= ViewModel_PropertyChanged;
+        }
+
         private void UpdateDrinkList()
         {
             RecipeListLayout.Children.Clear();
