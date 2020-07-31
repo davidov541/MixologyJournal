@@ -3,7 +3,6 @@ using Android.Graphics;
 using Android.Support.V7.Widget;
 using MixologyJournalApp.Droid.Renderers;
 using MixologyJournalApp.View;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android.AppCompat;
 
@@ -12,11 +11,8 @@ namespace MixologyJournalApp.Droid.Renderers
 {
     public class IconNavigationPageRenderer : MasterDetailPageRenderer
     {
-        private Context _context;
-
         public IconNavigationPageRenderer(Context context) : base(context)
         {
-            _context = context;
         }
 
         protected override void OnLayout(bool changed, int left, int top, int right, int bottom)
