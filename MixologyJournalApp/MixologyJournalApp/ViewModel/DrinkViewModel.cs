@@ -445,6 +445,7 @@ namespace MixologyJournalApp.ViewModel
             ProcessIsRunning = true;
             PickMediaOptions options = new PickMediaOptions()
             {
+                RotateImage = true
             };
             MediaFile result = await CrossMedia.Current.PickPhotoAsync(options);
             if (result != null)

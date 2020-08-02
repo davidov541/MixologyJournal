@@ -1,5 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.Model
@@ -31,7 +35,12 @@ namespace MixologyJournalApp.Model
                 {
                     return ImageSource.FromFile("@drawable/DefaultContentPic.png");
                 }
-                return ImageSource.FromUri(new Uri(Url));
+                return new UriImageSource()
+                {
+                    CachingEnabled = true,
+                    CacheValidity = TimeSpan.FromDays(1.0),
+                    Uri = new Uri(Url)
+                };
             }
         }
 
