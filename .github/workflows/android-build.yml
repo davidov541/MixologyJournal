@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Install VirtualBox
-      run: apt-get install virtualbox      
+      run: brew cask install virtualbox      
           
     - name: Create Docker VM
       shell: bash
