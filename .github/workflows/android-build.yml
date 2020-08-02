@@ -2,7 +2,7 @@ name: Nightly Build - Android
 
 on:
   release: 
-    types: [published, prereleased]
+    types: [published]
     
   
 jobs:  
