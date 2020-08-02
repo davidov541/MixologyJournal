@@ -1,6 +1,8 @@
 name: Nightly Build - Android
 
 on:
+  schedule:
+    - cron: "*/5 * * * *"
   repository_dispatch:
    types: androidnightly
   
@@ -71,9 +73,12 @@ jobs:
         PASSPHRASE: ${{ secrets.APPSETTINGS_PASSPHRASE }}
   
     - name: Move Decrypted Files Settings
+      env:
+        DEV_SETTINGS: ${{ secrets.APPSETTINGSDEV }}
+        PROD_SETTINGS: ${{ secrets.APPSETTINGSPROD }}
       run: |
-        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.APPSETTINGS_PASSPHRASE }}" --output MixologyJournalApp/MixologyJournalApp/appsettings.dev.json .github/workflows/appsettings.dev.json.gpg
-        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.APPSETTINGS_PASSPHRASE }}" --output MixologyJournalApp/MixologyJournalApp/appsettings.prod.json .github/workflows/appsettings.prod.json.gpg
+        echo "$DEV_SETTINGS" > MixologyJournalApp/MixologyJournalApp/appsettings.dev.json
+        echo "$PROD_SETTINGS" > MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
         
     - name: Build Code
       run: msbuild /p:Configuration="Release" /p:Platform="Any CPU" /t:Build MixologyJournal.sln
