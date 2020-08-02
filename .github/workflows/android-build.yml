@@ -80,8 +80,8 @@ jobs:
   
     - name: Move Decrypted Files Settings
       run: |
-        mv .github/workflows/appsettings.dev.json MixologyJournalApp/MixologyJournalApp/appsettings.dev.json
-        mv .github/workflows/appsettings.prod.json MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.APPSETTINGS_PASSPHRASE }}" --output MixologyJournalApp/MixologyJournalApp/appsettings.dev.json .github/workflows/appsettings.dev.json.gpg
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.APPSETTINGS_PASSPHRASE }}" --output MixologyJournalApp/MixologyJournalApp/appsettings.prod.json .github/workflows/appsettings.prod.json.gpg
         
     - name: Build Code
       run: msbuild /p:Configuration="Release" /p:Platform="Any CPU" /t:Build MixologyJournal.sln
