@@ -1,4 +1,4 @@
-name: Nightly Build - Android
+name: Release Build - Android
 
 on:
   release: 
@@ -6,7 +6,7 @@ on:
       
 jobs:  
   build:
-    name: "Nightly Build - Android"
+    name: "Release Build - Android"
     env:
         ANDROID_HOME: "/Users/runner/Library/Android/sdk"
     runs-on: macos-latest
@@ -63,7 +63,7 @@ jobs:
     - name: Restore Nuget Packages
       run: mono $NUGET_EXE restore MixologyJournal.sln -source "https://api.nuget.org/v3/index.json"
     
-    - name: Move Decrypted Files Settings
+    - name: Deploy App Settings Files
       env:
         DEV_SETTINGS: ${{ secrets.APPSETTINGSDEV }}
         PROD_SETTINGS: ${{ secrets.APPSETTINGSPROD }}
@@ -83,4 +83,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Built Packages
-        path: "**/*.aab"
+        path: "MixologyJournalApp/MixologyJournalApp.Android/bin/Release/net.davidmcginnis.mixologyjournal.android-Signed.aab"
