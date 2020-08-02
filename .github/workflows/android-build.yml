@@ -3,8 +3,7 @@ name: Nightly Build - Android
 on:
   release: 
     types: [published]
-    
-  
+      
 jobs:  
   build:
     name: "Nightly Build - Android"
@@ -76,7 +75,7 @@ jobs:
       run: msbuild /p:Configuration="Release" /p:Platform="Any CPU" /t:Build MixologyJournal.sln
 
     - name: Build APK
-      run: msbuild MixologyJournalApp/MixologyJournalApp.Android/MixologyJournalApp.Android.csproj -target:SignAndroidPackage /p:Configuration=Release /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=mcginnda "/p:AndroidSigningKeyPass=$KEYSTORE_PASSWORD" "/p:AndroidSigningKeyStore=.github/workflows/playstore.keystore" "/p:AndroidSigningStorePass=$KEYSTORE_PASSWORD"
+      run: msbuild MixologyJournalApp/MixologyJournalApp.Android/MixologyJournalApp.Android.csproj -target:SignAndroidPackage /p:Configuration=Release /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=mcginnda "/p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASSWORD }}" "/p:AndroidSigningKeyStore=.github/workflows/playstore.keystore" "/p:AndroidSigningStorePass=${{ secrets.KEYSTORE_PASSWORD }}"
       env:
         KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
       
