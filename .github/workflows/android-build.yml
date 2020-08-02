@@ -65,13 +65,6 @@ jobs:
     - name: Restore Nuget Packages
       run: mono $NUGET_EXE restore MixologyJournal.sln -source "https://api.nuget.org/v3/index.json"
     
-    - name: Import GPG key
-      id: import_gpg
-      uses: crazy-max/ghaction-import-gpg@v2
-      env:
-        GPG_PRIVATE_KEY: ${{ secrets.APPSETTINGS_GPG_PRIVATE_KEY }}
-        PASSPHRASE: ${{ secrets.APPSETTINGS_PASSPHRASE }}
-  
     - name: Move Decrypted Files Settings
       env:
         DEV_SETTINGS: ${{ secrets.APPSETTINGSDEV }}
@@ -86,7 +79,8 @@ jobs:
     - name: Build APK
       run: msbuild MixologyJournalApp/MixologyJournalApp.Android/MixologyJournalApp.Android.csproj -target:SignAndroidPackage /p:Configuration=Release
       
-    - uses: actions/upload-artifact@v2
+    - name: Export Built Packages
+      uses: actions/upload-artifact@v2
       with:
         name: Built Packages
         path: "**/*.aab"
