@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -26,31 +25,6 @@ namespace MixologyJournalApp.ViewModel
             get; 
         }
 
-        ICommand DeleteCommand
-        {
-            get;
-        }
-
-        Boolean CanBeDeleted
-        {
-            get;
-        }
-
-        ICommand ToggleFavoriteCommand
-        {
-            get;
-        }
-
-        Boolean CanBeFavorited
-        {
-            get;
-        }
-
-        Boolean CanBeUnfavorited
-        {
-            get;
-        }
-
         Boolean HasReview
         {
             get;
@@ -67,11 +41,6 @@ namespace MixologyJournalApp.ViewModel
         }
 
         CreationType Type
-        {
-            get;
-        }
-
-        String PictureUrl
         {
             get;
         }

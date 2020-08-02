@@ -9,13 +9,13 @@ namespace MixologyJournalApp.View.Controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailCardView : Frame
     {
-        private readonly ICreationInfo _context;
+        private readonly IPictureCreation _context;
         private readonly ICommand _selectionCommand;
 
-        internal DetailCardView(ICreationInfo recipe, ICommand selectionCommand)
+        internal DetailCardView(IPictureCreation creation, ICommand selectionCommand)
         {
             _selectionCommand = selectionCommand;
-            _context = recipe;
+            _context = creation;
             BindingContext = _context;
             InitializeComponent();
         }

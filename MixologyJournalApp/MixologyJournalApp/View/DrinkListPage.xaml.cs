@@ -29,6 +29,12 @@ namespace MixologyJournalApp.View
             UpdateDrinkList();
         }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _viewModel.PropertyChanged -= ViewModel_PropertyChanged;
+        }
+
         private void UpdateDrinkList()
         {
             RecipeListLayout.Children.Clear();
@@ -48,7 +54,7 @@ namespace MixologyJournalApp.View
             }
         }
 
-    private async void ItemSelected(object item)
+        private async void ItemSelected(object item)
         {
             DrinkPage drinkPage = new DrinkPage(item as DrinkViewModel);
             await Navigation.PushAsync(drinkPage);
@@ -56,8 +62,8 @@ namespace MixologyJournalApp.View
 
         private async void AddDrinkButton_Clicked(object sender, EventArgs e)
         {
-            SelectSourceRecipePage recipePage = new SelectSourceRecipePage(_app);
-            await Navigation.PushModalAsync(new NavigationPage(recipePage));
+            CreateDrinkPage drinkPage = new CreateDrinkPage(_app);
+            await Navigation.PushAsync(drinkPage);
         }
     }
 }

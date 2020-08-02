@@ -7,7 +7,7 @@ using Xamarin.Forms.Xaml;
 namespace MixologyJournalApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CreateRecipePage : ContentPage
+    public partial class CreateRecipePage : CreateContentPage
     {
         private readonly RecipeViewModel _vm;
         private readonly App _app;
@@ -18,6 +18,8 @@ namespace MixologyJournalApp.View
             _app = app;
             BindingContext = _vm;
             InitializeComponent();
+
+            Init(recipe, ImageChooser);
         }
 
         private async void CreateButton_Clicked(object sender, EventArgs e)
@@ -31,6 +33,11 @@ namespace MixologyJournalApp.View
             await Navigation.PopToRootAsync();
         }
 
+        private async void CancelButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopToRootAsync();
+        }
+
         private void AddStepButton_Clicked(object sender, EventArgs e)
         {
             _vm.AddStep();
@@ -40,6 +47,12 @@ namespace MixologyJournalApp.View
         {
             StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
             _vm.DeleteStep(vm);
+        }
+
+        private async void ModifyIngredientButton_Clicked(object sender, EventArgs e)
+        {
+            IngredientUsageViewModel viewModel = (sender as ImageButton).BindingContext as IngredientUsageViewModel;
+            await Navigation.PushModalAsync(new ModifyIngredientPage(viewModel), true);
         }
     }
 }

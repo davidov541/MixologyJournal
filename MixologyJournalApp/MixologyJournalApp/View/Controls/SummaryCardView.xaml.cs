@@ -9,10 +9,10 @@ namespace MixologyJournalApp.View.Controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SummaryCardView : Frame
     {
-        private readonly ICreationInfo _context;
+        private readonly IPictureCreationInfo _context;
         private readonly ICommand _selectionCommand;
 
-        internal SummaryCardView(ICreationInfo recipe, ICommand selectionCommand)
+        internal SummaryCardView(IPictureCreationInfo recipe, ICommand selectionCommand)
         {
             _selectionCommand = selectionCommand;
             _context = recipe;

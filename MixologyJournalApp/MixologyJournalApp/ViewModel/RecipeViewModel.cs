@@ -1,4 +1,6 @@
 ﻿using MixologyJournalApp.Model;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +12,7 @@ using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class RecipeViewModel: INotifyPropertyChanged, ICreationInfo
+    internal class RecipeViewModel : INotifyPropertyChanged, IPictureCreation
     {
         private readonly Recipe _model;
         private readonly App _app;
@@ -61,20 +63,15 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public String PictureUrl
+        public ImageSource Image
         {
             get
             {
                 if (_model == null || _model.Picture == null)
                 {
-                    return String.Empty;
+                    return ImageSource.FromFile("drawable/DefaultContentPic.png");
                 }
-                return _model.Picture.Url;
-            }
-            set
-            {
-                _model.Picture.Url = value;
-                OnPropertyChanged(nameof(PictureUrl));
+                return _model.Picture.Image;
             }
         }
 
@@ -133,7 +130,7 @@ namespace MixologyJournalApp.ViewModel
 #if DEBUG
                 return true;
 #else
-                return _model.IsBuiltIn;
+                return !_model.IsBuiltIn;
 #endif
             }
         }
@@ -223,7 +220,7 @@ namespace MixologyJournalApp.ViewModel
             InitCommands();
 
             IEnumerable<StepViewModel> steps = _model.Steps.Select((s, i) => new StepViewModel(s, i));
-            foreach(StepViewModel s in steps)
+            foreach (StepViewModel s in steps)
             {
                 s.PropertyChanged += StepChanged;
                 Steps.Add(s);
@@ -370,6 +367,39 @@ namespace MixologyJournalApp.ViewModel
             ProcessIsRunning = true;
             await _app.Cache.DeleteRecipe(_model);
             await _app.PopToRoot();
+            ProcessIsRunning = false;
+        }
+
+        public async Task TakePicture()
+        {
+            ProcessIsRunning = true;
+            StoreCameraMediaOptions options = new StoreCameraMediaOptions()
+            {
+                PhotoSize = PhotoSize.Medium,
+                RotateImage = true,
+            };
+            MediaFile result = await CrossMedia.Current.TakePhotoAsync(options);
+            if (result != null)
+            {
+                await _app.Cache.AddPicture(_model, result.Path);
+                OnPropertyChanged(nameof(Image));
+            }
+            ProcessIsRunning = false;
+        }
+
+        public async Task ChoosePicture()
+        {
+            ProcessIsRunning = true;
+            PickMediaOptions options = new PickMediaOptions()
+            {
+                RotateImage = true
+            };
+            MediaFile result = await CrossMedia.Current.PickPhotoAsync(options);
+            if (result != null)
+            {
+                await _app.Cache.AddPicture(_model, result.Path);
+                OnPropertyChanged(nameof(Image));
+            }
             ProcessIsRunning = false;
         }
     }

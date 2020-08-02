@@ -1,11 +1,18 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace MixologyJournalApp.Model
 {
     [JsonObject(MemberSerialization.OptIn)]
     internal class PictureInfo
     {
+        private const String DefaultIconPath = "creation-pics/default.png";
+
         [JsonProperty("path")]
         public String Path
         {
@@ -20,11 +27,29 @@ namespace MixologyJournalApp.Model
             set;
         }
 
-        public PictureInfo()
+        public ImageSource Image
         {
+            get
+            {
+                if (String.IsNullOrEmpty(Path) || Path.Equals("null") || Path.Equals(DefaultIconPath))
+                {
+                    return ImageSource.FromFile("@drawable/DefaultContentPic.png");
+                }
+                return new UriImageSource()
+                {
+                    CachingEnabled = true,
+                    CacheValidity = TimeSpan.FromDays(1.0),
+                    Uri = new Uri(Url)
+                };
+            }
         }
 
-        public PictureInfo(String path, String url): this()
+        public PictureInfo()
+        {
+            Path = DefaultIconPath;
+        }
+
+        public PictureInfo(String path, String url) : this()
         {
             Path = path;
             Url = url;

@@ -1,23 +1,53 @@
 ﻿using MixologyJournalApp.ViewModel;
 using System;
-using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace MixologyJournalApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CreateDrinkPage : ContentPage
+    public partial class CreateDrinkPage : CreateContentPage
     {
-        private readonly DrinkViewModel _vm;
         private readonly App _app;
+        private DrinkViewModel _vm;
+        private SelectSourceRecipePage _selectPage;
 
-        internal CreateDrinkPage(App app, RecipeViewModel basis)
+        internal CreateDrinkPage(App app, RecipeViewModel basis): base()
         {
             _vm = new DrinkViewModel(basis, app);
             _app = app;
             BindingContext = _vm;
             InitializeComponent();
+
+            Init(_vm, ImageChooser);
+        }
+
+        internal CreateDrinkPage(App app)
+        {
+            _app = app;
+            InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (_vm == null && _selectPage == null)
+            {
+                _selectPage = new SelectSourceRecipePage(_app);
+                _selectPage.BasisChanged += SelectPage_BasisChanged;
+                await Navigation.PushModalAsync(new NavigationPage(_selectPage));
+            }
+        }
+
+        private void SelectPage_BasisChanged(object sender, SelectSourceRecipePage.BasisChangedEventArgs e)
+        {
+            _vm = new DrinkViewModel(e.NewBasis, _app);
+            BindingContext = _vm;
+            _selectPage.BasisChanged -= SelectPage_BasisChanged;
+            _selectPage = null;
+
+            Init(_vm, ImageChooser);
         }
 
         private async void CreateButton_Clicked(object sender, EventArgs e)
@@ -28,16 +58,12 @@ namespace MixologyJournalApp.View
                 _app.PlatformInfo.AlertDialogFactory.ShowDialog("Server Unavailable",
                     "We were unable to add the drink to the server. The drink is saved in the local cache, and will be uploaded once possible.");
             }
-            if (Navigation.ModalStack.Any())
-            {
-                // We created the drink from the root page, in which case the basis recipe choice screen was modal and we need to handle that.
-                await Navigation.PopModalAsync();
-            }
-            else
-            {
-                // We created the drink from the recipe page, so we didn't have any modal pages to deal with.
-                await Navigation.PopToRootAsync();
-            }
+            await Navigation.PopToRootAsync();
+        }
+
+        private async void CancelButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopToRootAsync();
         }
 
         private void AddStepButton_Clicked(object sender, EventArgs e)
@@ -49,6 +75,12 @@ namespace MixologyJournalApp.View
         {
             StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
             _vm.DeleteStep(vm);
+        }
+
+        private async void ModifyIngredientButton_Clicked(object sender, EventArgs e)
+        {
+            IngredientUsageViewModel viewModel = (sender as ImageButton).BindingContext as IngredientUsageViewModel;
+            await Navigation.PushModalAsync(new ModifyIngredientPage(viewModel), true);
         }
     }
 }
