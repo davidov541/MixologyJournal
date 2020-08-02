@@ -1,6 +1,8 @@
 name: Nightly Build - Android
 
 on:
+  schedule:
+    - cron: "*/5 * * * *"
   repository_dispatch:
    types: androidnightly
   
@@ -62,12 +64,19 @@ jobs:
           
     - name: Restore Nuget Packages
       run: mono $NUGET_EXE restore MixologyJournal.sln -source "https://api.nuget.org/v3/index.json"
-      
-    - name: Create App Settings Files
+    
+    - name: Import GPG key
+      id: import_gpg
+      uses: crazy-max/ghaction-import-gpg@v2
+      env:
+        GPG_PRIVATE_KEY: ${{ secrets.APPSETTINGS_GPG_PRIVATE_KEY }}
+        PASSPHRASE: ${{ secrets.APPSETTINGS_PASSPHRASE }}
+        
+    - name: Decrypt Settings
       run: |
-          echo '${{ secrets.APPSETTINGSDEV }}' > MixologyJournalApp/MixologyJournalApp/appsettings.dev.json
-          echo '${{ secrets.APPSETTINGSPROD }}' > MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
-
+        gpg --output MixologyJournal/MixologyJournalApp/appsettings.dev.json --decrypt .github/workflows/appsettings.dev.json.gpg
+        gpg --output MixologyJournal/MixologyJournalApp/appsettings.prod.json --decrypt .github/workflows/appsettings.prod.json.gpg
+      
     - name: Build Code
       run: msbuild /p:Configuration="Release" /p:Platform="Any CPU" /t:Build MixologyJournal.sln
 
