@@ -11,13 +11,13 @@ jobs:
     name: "Nightly Build - Android"
     env:
         ANDROID_HOME: "/Users/runner/Library/Android/sdk"
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
 
     - name: Install VirtualBox
-      run: brew cask install virtualbox      
+      run: apt-get install virtualbox      
           
     - name: Create Docker VM
       shell: bash
@@ -76,7 +76,7 @@ jobs:
       uses: minddocdev/decrypt-action@master
       with:
         files: .github/workflows/appsettings.dev.json.gpg,.github/workflows/appsettings.prod.json.gpg
-        passphrase: ${{ secrets.SECRETS_PASSPHRASE }}
+        passphrase: ${{ secrets.APPSETTINGS_PASSPHRASE }}
   
     - name: Move Decrypted Files Settings
       run: |
