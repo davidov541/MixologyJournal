@@ -1,14 +1,12 @@
-name: Nightly Build - Android
+name: Release Build - Android
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
-  repository_dispatch:
-   types: androidnightly
-  
+  release: 
+    types: [published]
+      
 jobs:  
   build:
-    name: "Nightly Build - Android"
+    name: "Release Build - Android"
     env:
         ANDROID_HOME: "/Users/runner/Library/Android/sdk"
     runs-on: macos-latest
@@ -65,20 +63,24 @@ jobs:
     - name: Restore Nuget Packages
       run: mono $NUGET_EXE restore MixologyJournal.sln -source "https://api.nuget.org/v3/index.json"
     
-    - name: Import GPG key
-      id: import_gpg
-      uses: crazy-max/ghaction-import-gpg@v2
+    - name: Deploy App Settings Files
       env:
-        GPG_PRIVATE_KEY: ${{ secrets.APPSETTINGS_GPG_PRIVATE_KEY }}
-        PASSPHRASE: ${{ secrets.APPSETTINGS_PASSPHRASE }}
-        
-    - name: Decrypt Settings
+        DEV_SETTINGS: ${{ secrets.APPSETTINGSDEV }}
+        PROD_SETTINGS: ${{ secrets.APPSETTINGSPROD }}
       run: |
-        gpg --output MixologyJournal/MixologyJournalApp/appsettings.dev.json --decrypt .github/workflows/appsettings.dev.json.gpg
-        gpg --output MixologyJournal/MixologyJournalApp/appsettings.prod.json --decrypt .github/workflows/appsettings.prod.json.gpg
-      
+        echo "$DEV_SETTINGS" > MixologyJournalApp/MixologyJournalApp/appsettings.dev.json
+        echo "$PROD_SETTINGS" > MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
+        
     - name: Build Code
       run: msbuild /p:Configuration="Release" /p:Platform="Any CPU" /t:Build MixologyJournal.sln
 
     - name: Build APK
-      run: msbuild MixologyJournalApp/MixologyJournalApp.Android/MixologyJournalApp.Android.csproj -target:SignAndroidPackage /p:Configuration=Release
+      run: msbuild MixologyJournalApp/MixologyJournalApp.Android/MixologyJournalApp.Android.csproj -target:SignAndroidPackage /p:Configuration=Release /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=mcginnda /p:AndroidSigningKeyPass=\"${{ secrets.KEYSTORE_PASSWORD }}\" "/p:AndroidSigningKeyStore=../../.github/workflows/playstore.keystore" /p:AndroidSigningStorePass=\"${{ secrets.KEYSTORE_PASSWORD }}\"
+      env:
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+      
+    - name: Export Built Packages
+      uses: actions/upload-artifact@v2
+      with:
+        name: Built Packages
+        path: "MixologyJournalApp/MixologyJournalApp.Android/bin/Release/net.davidmcginnis.mixologyjournal.android-Signed.aab"
