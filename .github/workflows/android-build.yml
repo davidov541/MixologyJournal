@@ -71,12 +71,6 @@ jobs:
       env:
         GPG_PRIVATE_KEY: ${{ secrets.APPSETTINGS_GPG_PRIVATE_KEY }}
         PASSPHRASE: ${{ secrets.APPSETTINGS_PASSPHRASE }}
-      
-    - name: Decrypt Settings
-      uses: minddocdev/decrypt-action@master
-      with:
-        files: .github/workflows/appsettings.dev.json.gpg,.github/workflows/appsettings.prod.json.gpg
-        passphrase: ${{ secrets.APPSETTINGS_PASSPHRASE }}
   
     - name: Move Decrypted Files Settings
       run: |
