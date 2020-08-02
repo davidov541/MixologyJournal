@@ -1,73 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
-             mc:Ignorable="d"
-             x:Class="MixologyJournalApp.View.CreateDrinkPage"
-             x:Name="rootPage"
-             Visual="Material">
+<view:CreateContentPage xmlns:view="clr-namespace:MixologyJournalApp.View"
+                        xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
+                        mc:Ignorable="d"
+                        x:Class="MixologyJournalApp.View.CreateDrinkPage"
+                        x:Name="rootPage"
+                        Visual="Material">
     <ContentPage.Resources>
         <controls:IsRunningToTintColorConverter x:Key="runningConverter" />
         <controls:InvertBooleanConverter x:Key="invertConverter" />
     </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Text="New Drink"
+                   Style="{StaticResource PageTitle}"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   HorizontalOptions="End"
+                   Text="SUBMIT"
+                   Margin="0,0,10,0"
+                   Style="{StaticResource PageCommand}"
+                   BackgroundColor="Transparent">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="CreateButton_Clicked" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <AbsoluteLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
                 <StackLayout Orientation="Vertical"
                              Margin="10,5"
                              VerticalOptions="FillAndExpand">
+                    <controls:EditableImage x:Name="EditableImage"
+                                            Image="{Binding Image}"
+                                            UpdateImageCommand="{Binding ChangeImageCommand, Source={x:Reference rootPage}}" />
                     <Label Text="Title" />
                     <Entry x:Name="NameEntry"
                            Text="{Binding Name}"
                            Keyboard="Default" />
-                    <Label Text="Ingredients" />
+
+                    <Label Text="Ingredients" Style="{StaticResource FormHeaderText}" />
                     <StackLayout BindableLayout.ItemsSource="{Binding IngredientUsages}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="1.5*" />
-                                        <ColumnDefinition Width="2*" />
-                                        <ColumnDefinition Width="auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Entry x:Name="amountEntry"
-                                           Grid.Row="0"
-                                           Grid.Column="0"
-                                           Keyboard="Numeric"
-                                           Text="{Binding Amount}" />
-                                    <Picker x:Name="unitPicker" 
-                                            Grid.Row="0" 
-                                            Grid.Column="1" 
-                                            ItemsSource="{Binding AvailableUnits}" 
-                                            Title="Unit" 
-                                            SelectedItem="{Binding Unit}" />
-                                    <Picker x:Name="ingredientPicker" 
-                                            Grid.Row="0" 
-                                            Grid.Column="2" 
-                                            ItemsSource="{Binding AvailableIngredients}" 
-                                            Title="Ingredient" 
-                                            SelectedItem="{Binding Ingredient}" />
-                                    <Button Grid.Row="0" 
-                                            Grid.Column="3" 
-                                            x:Name="deleteIngredientButton" 
-                                            Text="Delete" 
-                                            Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
-                                            CommandParameter="{Binding}"/>
-                                </Grid>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding FullDescription}"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalOptions="StartAndExpand"
+                                           Style="{StaticResource CardContentText}"/>
+                                    <ImageButton Source="configure_48.png"
+                                                 Style="{StaticResource IconButton}"
+                                                 Clicked="ModifyIngredientButton_Clicked"/>
+                                    <controls:DeleteButton x:Name="deleteIngredientButton" 
+                                                           Command="{Binding Path=BindingContext.DeleteIngredientCommand, Source={x:Reference rootPage}}"
+                                                           CommandParameter="{Binding}"/>
+                                </StackLayout>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
-                    <Button x:Name="addIngredientButton" 
-                            Text="Add Ingredient" 
-                            MinimumHeightRequest="30" 
-                            Command="{Binding AddIngredientCommand}"/>
-                    <Label Text="Steps" />
+                    <ImageButton x:Name="addIngredientButton"
+                                 Style="{StaticResource AddButton}"
+                                 Command="{Binding AddIngredientCommand}"/>
+                    
+                    <BoxView Style="{StaticResource CardDivider}"  />
+
+                    <Label Text="Steps" Style="{StaticResource FormHeaderText}" />
                     <StackLayout BindableLayout.ItemsSource="{Binding Steps}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
@@ -82,20 +96,22 @@
                                     <Entry Grid.Row="0" 
                                            Grid.Column="0" 
                                            Text="{Binding Path=Text, Mode=TwoWay}" />
-                                    <Button Grid.Row="0" 
-                                            Grid.Column="1" 
-                                            x:Name="deleteStepButton" 
-                                            Text="Delete" 
-                                            Command="{Binding Path=BindingContext.DeleteStepCommand, Source={x:Reference rootPage}}"
-                                            CommandParameter="{Binding}" />
+                                    <controls:DeleteButton Grid.Row="0" 
+                                                           Grid.Column="1" 
+                                                           x:Name="deleteStepButton"
+                                                           Command="{Binding Path=BindingContext.DeleteStepCommand, Source={x:Reference rootPage}}"
+                                                           CommandParameter="{Binding}" />
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
-                    <Button x:Name="addStepButton" 
-                            Text="Add Step" 
-                            MinimumHeightRequest="30" 
-                            Command="{Binding AddStepCommand}"/>
+                    <ImageButton x:Name="addStepButton" 
+                                 Style="{StaticResource AddButton}"
+                                 Command="{Binding AddStepCommand}"/>
+                    
+                    <BoxView Style="{StaticResource CardDivider}"  />
+
+                    <Label Text="Review" Style="{StaticResource FormHeaderText}" />
                     <Picker x:Name="RatingPicker" SelectedItem="{Binding Rating}">
                         <Picker.Items>
                             <x:String>0.0 Stars</x:String>
@@ -118,10 +134,6 @@
                             Text="{Binding Review}"
                             IsSpellCheckEnabled="True"
                             AutoSize="TextChanges"/>
-                    <Button x:Name="createButton" 
-                            Text="Create" 
-                            MinimumHeightRequest="30" 
-                            Clicked="CreateButton_Clicked" />
                 </StackLayout>
             </ScrollView>
             <AbsoluteLayout BackgroundColor="{Binding ProcessIsRunning, Converter={StaticResource runningConverter}}" 
@@ -132,6 +144,10 @@
                                AbsoluteLayout.LayoutFlags="All" 
                                Color="White" 
                                IsRunning="{Binding ProcessIsRunning}" />
+            <controls:ImageSourceChooser x:Name="ImageChooser"
+                                         AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                         AbsoluteLayout.LayoutFlags="All"
+                                         IsVisible="False"/>
         </AbsoluteLayout>
     </ContentPage.Content>
-</ContentPage>
+</view:CreateContentPage>

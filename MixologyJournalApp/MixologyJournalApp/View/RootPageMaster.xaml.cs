@@ -17,7 +17,5 @@ namespace MixologyJournalApp.View
             BindingContext = viewModel;
             ListView = MenuItemsListView;
         }
-
-        
     }
 }

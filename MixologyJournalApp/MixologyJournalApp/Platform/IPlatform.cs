@@ -1,10 +1,4 @@
-﻿using MixologyJournalApp.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading.Tasks;
-
-namespace MixologyJournalApp.Platform
+﻿namespace MixologyJournalApp.Platform
 {
     public interface IPlatform
     {
@@ -13,7 +7,7 @@ namespace MixologyJournalApp.Platform
             get;
         }
 
-        IBackend Backend
+        BackendManager Backend
         {
             get;
         }

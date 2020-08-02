@@ -23,6 +23,12 @@ namespace MixologyJournalApp.View
             _master.ListView.ItemSelected += ListView_ItemSelected;
         }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _master.ListView.ItemSelected -= ListView_ItemSelected;
+        }
+
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (!(e.SelectedItem is IMasterMenuItem item))

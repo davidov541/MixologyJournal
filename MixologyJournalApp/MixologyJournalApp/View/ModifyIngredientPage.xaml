@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MixologyJournalApp.View.ModifyIngredientPage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Entry x:Name="amountEntry"
+                       Keyboard="Numeric"
+                       Text="{Binding Amount}" 
+                       Placeholder="Amount" />
+                <Picker x:Name="unitPicker" 
+                        ItemsSource="{Binding AvailableUnits}" 
+                        Title="Unit" 
+                        SelectedItem="{Binding Unit}" />
+                <Picker x:Name="ingredientPicker" 
+                        ItemsSource="{Binding AvailableIngredients}" 
+                        Title="Ingredient" 
+                        SelectedItem="{Binding Ingredient}" />
+            </StackLayout>
+            <Button x:Name="cancelButton" 
+                    Image="@drawable/cancel_48"
+                    Clicked="CancelButton_Clicked"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
+                    Style="{StaticResource FloatingButton}" />
+            <Button x:Name="submitButton" 
+                    Image="@drawable/check_48"
+                    Clicked="SubmitButton_Clicked" 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 0.9, AutoSize, AutoSize" 
+                    Style="{StaticResource FloatingButton}" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

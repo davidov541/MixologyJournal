@@ -78,7 +78,7 @@ namespace MixologyJournalApp.Droid.Platform
         {
             get
             {
-                return new User("This Phone", new Uri("https://storageaccountmixolb7df.blob.core.windows.net/resources/icons8-phone-case-96.png"), "", "");
+                return new User("This Phone", new Uri("https://mixologyjournalbackend.blob.core.windows.net/user/phone-96.png"), "", "");
             }
         }
 

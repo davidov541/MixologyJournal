@@ -6,7 +6,7 @@ namespace MixologyJournalApp.Droid.Platform
     {
         public IAlertDialogFactory AlertDialogFactory { get; }
 
-        public IBackend Backend { get; }
+        public BackendManager Backend { get; }
 
         public AuthenticationManager Authentication { get; }
 
@@ -16,7 +16,7 @@ namespace MixologyJournalApp.Droid.Platform
 
             AlertDialogFactory = new AlertDialogFactory(context);
 
-            Backend = new BackendManager(Authentication);
+            Backend = new BackendManager(new AndroidBackend(Authentication), AlertDialogFactory);
         }
     }
 }

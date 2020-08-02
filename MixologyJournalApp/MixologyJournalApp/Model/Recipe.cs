@@ -77,6 +77,7 @@ namespace MixologyJournalApp.Model
             Steps = new List<String>();
             Ingredients = new List<IngredientUsage>();
             Uploaded = false;
+            Picture = new PictureInfo();
         }
     }
 }
