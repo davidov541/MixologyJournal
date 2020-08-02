@@ -71,12 +71,18 @@ jobs:
       env:
         GPG_PRIVATE_KEY: ${{ secrets.APPSETTINGS_GPG_PRIVATE_KEY }}
         PASSPHRASE: ${{ secrets.APPSETTINGS_PASSPHRASE }}
-        
-    - name: Decrypt Settings
-      run: |
-        gpg --output MixologyJournal/MixologyJournalApp/appsettings.dev.json --decrypt .github/workflows/appsettings.dev.json.gpg
-        gpg --output MixologyJournal/MixologyJournalApp/appsettings.prod.json --decrypt .github/workflows/appsettings.prod.json.gpg
       
+    - name: Decrypt Settings
+      uses: minddocdev/decrypt-action@master
+      with:
+        files: .github/workflows/appsettings.dev.json.gpg,.github/workflows/appsettings.prod.json.gpg
+        passphrase: ${{ secrets.SECRETS_PASSPHRASE }}
+  
+    - name: Move Decrypted Files Settings
+      run: |
+        mv .github/workflows/appsettings.dev.json MixologyJournalApp/MixologyJournalApp/appsettings.dev.json
+        mv .github/workflows/appsettings.prod.json MixologyJournalApp/MixologyJournalApp/appsettings.prod.json
+        
     - name: Build Code
       run: msbuild /p:Configuration="Release" /p:Platform="Any CPU" /t:Build MixologyJournal.sln
 
