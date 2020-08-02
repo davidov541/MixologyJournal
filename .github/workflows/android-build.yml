@@ -11,7 +11,7 @@ jobs:
     name: "Nightly Build - Android"
     env:
         ANDROID_HOME: "/Users/runner/Library/Android/sdk"
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v1
