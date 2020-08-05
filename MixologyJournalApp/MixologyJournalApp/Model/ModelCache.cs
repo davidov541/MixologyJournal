@@ -272,7 +272,8 @@ namespace MixologyJournalApp.Model
 
             if (GetUseRemote() && recipeModels.Any())
             {
-                _recipes.Clear();
+                IEnumerable<String> newIds = recipeModels.Select(model => model.Id);
+                _recipes.RemoveAll(d => newIds.Contains(d.Id));
             }
 
             foreach (Recipe r in recipeModels.OrderBy(i => i.Name))
@@ -289,7 +290,8 @@ namespace MixologyJournalApp.Model
 
             if (GetUseRemote() && drinkModels.Any())
             {
-                _drinks.Clear();
+                IEnumerable<String> newIds = drinkModels.Select(model => model.Id);
+                _drinks.RemoveAll(d => newIds.Contains(d.Id));
             }
 
             foreach (Drink d in drinkModels.OrderBy(i => i.Name))
