@@ -31,14 +31,12 @@ namespace MixologyJournalApp.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _viewModel.PropertyChanged += ViewModel_PropertyChanged;
             UpdateDrinkList();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            _viewModel.PropertyChanged -= ViewModel_PropertyChanged;
         }
 
         private void UpdateDrinkList()
