@@ -2,16 +2,16 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Android.Widget;
 using Auth0.OidcClient;
 using IdentityModel.OidcClient;
+using IdentityModel.OidcClient.Browser;
 using IdentityModel.OidcClient.Results;
+using Java.Net;
 using MixologyJournalApp.Model;
 using System;
-using System.Threading.Tasks;
 using System.Linq;
-using IdentityModel.OidcClient.Browser;
-using Android.Widget;
-using MixologyJournalApp.Droid.Platform;
+using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Droid
 {
@@ -47,27 +47,35 @@ namespace MixologyJournalApp.Droid
                 LoadProfile = true
             });
 
-            Intent result = null;
-            switch (Intent.GetStringExtra(ModeKey))
+            try
             {
-                case LoginActivityMode:
-                    captionText.Text = "Logging In...";
-                    result = await LoginAsync();
-                    break;
-                case RenewalActivityMode:
-                    captionText.Text = "Retrieving User Information...";
-                    String renewalToken = Intent.GetStringExtra(RenewalToken);
-                    result = await RenewAsync(renewalToken);
-                    break;
-                case LogOffActivityMode:
-                    captionText.Text = "Logging Off...";
-                    result = await LogOffAsync();
-                    break;
-                default:
-                    break;
+                Intent result = null;
+                switch (Intent.GetStringExtra(ModeKey))
+                {
+                    case LoginActivityMode:
+                        captionText.Text = "Logging In...";
+                        result = await LoginAsync();
+                        break;
+                    case RenewalActivityMode:
+                        captionText.Text = "Retrieving User Information...";
+                        String renewalToken = Intent.GetStringExtra(RenewalToken);
+                        result = await RenewAsync(renewalToken);
+                        break;
+                    case LogOffActivityMode:
+                        captionText.Text = "Logging Off...";
+                        result = await LogOffAsync();
+                        break;
+                    default:
+                        break;
+                }
+                SetResult(Android.App.Result.Ok, result);
+                Finish();
             }
-            SetResult(Android.App.Result.Ok, result);
-            Finish();
+            catch (Exception)
+            {
+                SetResult(Android.App.Result.Ok, null);
+                Finish();
+            }
        }
 
         protected override void OnNewIntent(Intent intent)

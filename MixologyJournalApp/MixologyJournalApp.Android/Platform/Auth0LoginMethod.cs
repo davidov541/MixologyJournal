@@ -101,7 +101,7 @@ namespace MixologyJournalApp.Droid.Platform
                     if (!String.IsNullOrEmpty(renewalToken))
                     {
                         CurrentUser = await _mainActivity.RunRenewalActivity(renewalToken);
-                        IsLoggedIn = true;
+                        IsLoggedIn = CurrentUser != null;
                         await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
                     }
                 }
@@ -121,6 +121,10 @@ namespace MixologyJournalApp.Droid.Platform
                 await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
                 IsLoggedIn = true;
                 LoginEnabled?.Invoke(this, new EventArgs());
+            }
+            else
+            {
+                IsLoggedIn = false;
             }
         }
 
