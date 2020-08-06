@@ -1,5 +1,4 @@
-﻿using MixologyJournalApp.Platform;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +28,20 @@ namespace MixologyJournalApp.Model
             }
         }
 
+        private List<String> _deletedRecipes = new List<String>();
+        [JsonProperty("deleted_recipes")]
+        internal IEnumerable<String> DeletedRecipes
+        {
+            get
+            {
+                return _deletedRecipes;
+            }
+            set
+            {
+                _deletedRecipes = new List<String>(value);
+            }
+        }
+
         private List<Drink> _drinks = new List<Drink>();
         [JsonProperty("drinks")]
         public IEnumerable<Drink> Drinks
@@ -40,6 +53,20 @@ namespace MixologyJournalApp.Model
             set
             {
                 _drinks = new List<Drink>(value);
+            }
+        }
+
+        private List<String> _deletedDrinks = new List<String>();
+        [JsonProperty("deleted_drinks")]
+        internal IEnumerable<String> DeletedDrinks
+        {
+            get
+            {
+                return _deletedDrinks;
+            }
+            set
+            {
+                _deletedDrinks = new List<String>(value);
             }
         }
 
