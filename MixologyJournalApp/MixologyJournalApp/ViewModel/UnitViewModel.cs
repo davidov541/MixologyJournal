@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.Model;
 using System;
 using System.ComponentModel;
+using System.Linq;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -23,6 +24,22 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return _model.Plural;
+            }
+        }
+
+        private readonly Char[] Vowels = new Char[] { 'a', 'e', 'i', 'o', 'u' };
+        public String SingularArticle
+        {
+            get
+            {
+                if (Vowels.Contains(_model.Name.ToLower()[0]))
+                {
+                    return "An";
+                }
+                else
+                {
+                    return "A";
+                }
             }
         }
 
