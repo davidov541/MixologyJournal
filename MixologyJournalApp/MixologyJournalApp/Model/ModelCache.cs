@@ -28,9 +28,9 @@ namespace MixologyJournalApp.Model
             }
         }
 
-        private List<String> _deletedRecipes = new List<String>();
+        private List<Recipe> _deletedRecipes = new List<Recipe>();
         [JsonProperty("deleted_recipes")]
-        internal IEnumerable<String> DeletedRecipes
+        internal IEnumerable<Recipe> DeletedRecipes
         {
             get
             {
@@ -38,7 +38,7 @@ namespace MixologyJournalApp.Model
             }
             set
             {
-                _deletedRecipes = new List<String>(value);
+                _deletedRecipes = new List<Recipe>(value);
             }
         }
 
@@ -56,9 +56,9 @@ namespace MixologyJournalApp.Model
             }
         }
 
-        private List<String> _deletedDrinks = new List<String>();
+        private List<Drink> _deletedDrinks = new List<Drink>();
         [JsonProperty("deleted_drinks")]
-        internal IEnumerable<String> DeletedDrinks
+        internal IEnumerable<Drink> DeletedDrinks
         {
             get
             {
@@ -66,7 +66,7 @@ namespace MixologyJournalApp.Model
             }
             set
             {
-                _deletedDrinks = new List<String>(value);
+                _deletedDrinks = new List<Drink>(value);
             }
         }
 
@@ -195,6 +195,28 @@ namespace MixologyJournalApp.Model
                 foreach (Drink drink in Drinks.Where(d => !d.IsFavoriteUploaded))
                 {
                     result = result && await UpdateFavoriteDrink(drink, drink.IsFavorite);
+                }
+
+                List<Recipe> deletedRecipes = new List<Recipe>(DeletedRecipes);
+                foreach (Recipe recipe in deletedRecipes)
+                {
+                    Boolean removeResult = await DeleteRecipe(recipe);
+                    result = result && removeResult;
+                    if (removeResult)
+                    {
+                        _deletedRecipes.Remove(recipe);
+                    }
+                }
+
+                List<Drink> deletedDrinks = new List<Drink>(DeletedDrinks);
+                foreach (Drink drink in deletedDrinks)
+                {
+                    Boolean removeResult = await DeleteDrink(drink);
+                    result = result && removeResult;
+                    if (removeResult)
+                    {
+                        _deletedDrinks.Remove(drink);
+                    }
                 }
             }
             catch (HttpRequestException)
@@ -378,6 +400,17 @@ namespace MixologyJournalApp.Model
             if (GetUseRemote())
             {
                 finalResult = await _app.PlatformInfo.Backend.DeleteRecipe(recipe);
+                if (!finalResult)
+                {
+                    _deletedRecipes.Add(recipe);
+                }
+            }
+            else
+            {
+                if (_app.PlatformInfo.Authentication.IsUsingRemote)
+                {
+                    _deletedRecipes.Add(recipe);
+                }
             }
 
             _recipes.Remove(recipe);
@@ -393,6 +426,17 @@ namespace MixologyJournalApp.Model
             if (GetUseRemote())
             {
                 finalResult = await _app.PlatformInfo.Backend.DeleteDrink(drink);
+                if (!finalResult)
+                {
+                    _deletedDrinks.Add(drink);
+                }
+            }
+            else
+            {
+                if (_app.PlatformInfo.Authentication.IsUsingRemote)
+                {
+                    _deletedDrinks.Add(drink);
+                }
             }
 
             _drinks.Remove(drink);

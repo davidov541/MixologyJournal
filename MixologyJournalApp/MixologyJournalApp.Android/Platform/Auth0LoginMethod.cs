@@ -44,22 +44,33 @@ namespace MixologyJournalApp.Droid.Platform
             }
         }
 
+        private Boolean _isLoggedIn = false;
         public Boolean IsLoggedIn
         {
             get
             {
-                return IsEnabled;
+                return _isLoggedIn;
             }
             private set
             {
-                IsEnabled = value;
+                _isLoggedIn = value;
                 OnPropertyChanged(nameof(IsLoggedIn));
-                OnPropertyChanged(nameof(IsEnabled));
             }
         }
 
-        public Boolean IsEnabled { get; private set; } = false;
-
+        private Boolean _isEnabled = false;
+        public Boolean IsEnabled
+        {
+            get
+            {
+                return _isEnabled;
+            }
+            private set
+            {
+                _isEnabled = value;
+                OnPropertyChanged(nameof(IsEnabled));
+            }
+        }
 
         public ICommand LoginCommand
         {
@@ -100,6 +111,7 @@ namespace MixologyJournalApp.Droid.Platform
                     String renewalToken = await SecureStorage.GetAsync(RenewalTokenKey);
                     if (!String.IsNullOrEmpty(renewalToken))
                     {
+                        IsEnabled = true;
                         CurrentUser = await _mainActivity.RunRenewalActivity(renewalToken);
                         IsLoggedIn = CurrentUser != null;
                         await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
@@ -115,16 +127,13 @@ namespace MixologyJournalApp.Droid.Platform
 
         private async void Login()
         {
+            IsEnabled = true;
             CurrentUser = await _mainActivity.RunLoginActivity();
-            if (CurrentUser != null)
+            IsLoggedIn = CurrentUser != null;
+            if (IsLoggedIn)
             {
                 await SecureStorage.SetAsync(RenewalTokenKey, CurrentUser.RefreshToken);
-                IsLoggedIn = true;
                 LoginEnabled?.Invoke(this, new EventArgs());
-            }
-            else
-            {
-                IsLoggedIn = false;
             }
         }
 
@@ -133,6 +142,7 @@ namespace MixologyJournalApp.Droid.Platform
             LoggingOff?.Invoke(this, new EventArgs());
             SecureStorage.Remove(RenewalTokenKey);
             IsLoggedIn = false;
+            IsEnabled = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

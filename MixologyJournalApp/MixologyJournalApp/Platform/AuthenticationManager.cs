@@ -17,6 +17,14 @@ namespace MixologyJournalApp.Platform
             }
         }
 
+        public Boolean IsUsingRemote
+        {
+            get
+            {
+                return _loginMethods.OfType<IRemoteLoginMethod>().Any(m => m.IsEnabled);
+            }
+        }
+
         private readonly List<ILoginMethod> _loginMethods = new List<ILoginMethod>();
         public IEnumerable<ILoginMethod> LoginMethods
         {
