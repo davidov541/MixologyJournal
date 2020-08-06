@@ -146,7 +146,14 @@ namespace MixologyJournalApp.ViewModel
             {
                 return String.Empty;
             }
-            return String.Format("{0} {1}s of {2}", Amount, Unit.Name, Ingredient.Name);
+            else if (Double.Parse(Amount) == 1.0)
+            {
+                return String.Format("A {0} of {1}", Unit.Name, Ingredient.Name);
+            }
+            else
+            {
+                return String.Format("{0} {1} of {2}", Amount, Unit.Plural, Ingredient.Name);
+            }
         }
 
         public void RestoreFromState(State state)

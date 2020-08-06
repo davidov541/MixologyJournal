@@ -18,6 +18,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String Plural
+        {
+            get
+            {
+                return _model.Plural;
+            }
+        }
+
         public String Id
         {
             get
