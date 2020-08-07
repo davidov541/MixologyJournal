@@ -30,7 +30,7 @@ Please log-in with your authentication mechanism of choice.
                          BindableLayout.ItemsSource="{Binding LoginMethods}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="platform:IRemoteLoginMethod">
-                        <RelativeLayout>
+                        <Grid>
                             <Button Text="{Binding Name, StringFormat='Use {0}'}"
                                     ImageSource="{Binding Icon}"
                                     HeightRequest="48"
@@ -51,7 +51,7 @@ Please log-in with your authentication mechanism of choice.
                                     HorizontalOptions="CenterAndExpand"
                                     VerticalOptions="FillAndExpand"
                                     IsVisible="{Binding IsLoggedIn}"/>
-                        </RelativeLayout>
+                        </Grid>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
