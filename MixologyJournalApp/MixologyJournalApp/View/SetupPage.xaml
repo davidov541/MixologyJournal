@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
+             xmlns:platform="clr-namespace:MixologyJournalApp.Platform"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.SetupPage"
+             x:DataType="viewmodel:SetupPageViewModel"
              xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
              Visual="Material">
     <ContentPage.Resources>
@@ -42,7 +45,7 @@
                                      x:Name="mainLayout"
                                      BindableLayout.ItemsSource="{Binding LoginMethods}">
                             <BindableLayout.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:DataType="platform:IRemoteLoginMethod">
                                     <Button Text="{Binding Name, StringFormat='Use {0}'}"
                                             ImageSource="{Binding Icon}"
                                             HeightRequest="50"

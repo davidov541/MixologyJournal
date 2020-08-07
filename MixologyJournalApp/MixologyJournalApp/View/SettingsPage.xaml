@@ -4,8 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
+             xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
+             xmlns:platform="clr-namespace:MixologyJournalApp.Platform"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.SettingsPage"
+             x:DataType="viewmodel:SettingsPageViewModel"
              Visual="Material">
     <ContentPage.Content>
         <StackLayout>
@@ -26,7 +29,7 @@ Please log-in with your authentication mechanism of choice.
                          x:Name="mainLayout"
                          BindableLayout.ItemsSource="{Binding LoginMethods}">
                 <BindableLayout.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="platform:IRemoteLoginMethod">
                         <RelativeLayout>
                             <Button Text="{Binding Name, StringFormat='Use {0}'}"
                                     ImageSource="{Binding Icon}"
