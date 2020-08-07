@@ -45,7 +45,7 @@
                                      x:Name="mainLayout"
                                      BindableLayout.ItemsSource="{Binding LoginMethods}">
                             <BindableLayout.ItemTemplate>
-                                <DataTemplate x:DataType="platform:IRemoteLoginMethod">
+                                <DataTemplate x:DataType="platform:ILoginMethod">
                                     <Button Text="{Binding Name, StringFormat='Use {0}'}"
                                             ImageSource="{Binding Icon}"
                                             HeightRequest="50"
@@ -70,7 +70,7 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="30" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
