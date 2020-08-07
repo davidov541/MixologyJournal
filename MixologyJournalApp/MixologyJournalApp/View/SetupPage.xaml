@@ -12,14 +12,11 @@
              Visual="Material">
     <ContentPage.Resources>
         <DataTemplate x:Key="DescriptionTemplate">
-            <StackLayout HorizontalOptions="FillAndExpand"
-                         VerticalOptions="FillAndExpand">
+            <StackLayout>
                 <Frame Margin="10,10,10,10"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand">
                     <Label Text="{Binding Caption}"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center" 
                            HorizontalTextAlignment="Center"
                            VerticalTextAlignment="Center"
                            FontSize="Large" 
@@ -30,18 +27,14 @@
 
         <DataTemplate x:Key="LoginTemplate">
             <StackLayout>
-                <Frame Margin="10,10,10,10"
-                       HorizontalOptions="FillAndExpand"
+                <Frame Margin="10,10,10,10" 
                        VerticalOptions="FillAndExpand">
-                    <StackLayout>
+                    <StackLayout VerticalOptions="Center">
                         <Label Text="{Binding Caption}"
-                               VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="CenterAndExpand"
                                Margin="10"
                                FontSize="Small" 
                                Opacity="0.6"/>
                         <StackLayout Padding="20"
-                                     VerticalOptions="CenterAndExpand"
                                      x:Name="mainLayout"
                                      BindableLayout.ItemsSource="{Binding LoginMethods}">
                             <BindableLayout.ItemTemplate>
@@ -52,9 +45,7 @@
                                             TextColor="{Binding ForegroundColor}"
                                             BackgroundColor="{Binding BackgroundColor}"
                                             Command="{Binding LoginCommand}"
-                                            WidthRequest="250"
-                                            HorizontalOptions="CenterAndExpand"
-                                            VerticalOptions="FillAndExpand" />
+                                            WidthRequest="250" />
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
@@ -83,6 +74,7 @@
                           Grid.ColumnSpan="3"
                           ItemTemplate="{StaticResource setupItemSelector}"
                           Position="{Binding Position, Mode=TwoWay}"
+                          VerticalOptions="FillAndExpand"
                           PeekAreaInsets="25"
                           IsBounceEnabled="True"/>
             <IndicatorView x:Name="indicatorView"
@@ -90,7 +82,6 @@
                            SelectedIndicatorColor="DarkGray"
                            IndicatorView.ItemsSourceBy="setupView"
                            HorizontalOptions="Center"
-                           VerticalOptions="Center"
                            Grid.Row="1"
                            Grid.Column="1"/>
         </Grid>

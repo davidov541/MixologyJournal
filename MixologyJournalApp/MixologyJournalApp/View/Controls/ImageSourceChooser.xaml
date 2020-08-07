@@ -7,10 +7,11 @@
              x:Class="MixologyJournalApp.View.Controls.ImageSourceChooser">
     <ContentView.Content>
         <RelativeLayout InputTransparent="False">
+            <RelativeLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="CancelGesture_Tapped" />
+            </RelativeLayout.GestureRecognizers>
             <AbsoluteLayout BackgroundColor="#000000"
                             Opacity="0.666"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="FillAndExpand"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=1.0, Constant=0.0}"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1.0, Constant=0.0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1.0, Constant=0.0}"
@@ -21,7 +22,7 @@
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0,Constant=-40.0}"
                    HeightRequest="100">
                 <StackLayout>
-                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid>
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TakeNewPhoto_Tapped" />
                         </Grid.GestureRecognizers>
@@ -41,7 +42,7 @@
                                Text="Take New Photo"
                                VerticalTextAlignment="Center"/>
                     </Grid>
-                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid>
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="ChooseFromGallery_Tapped" />
                         </Grid.GestureRecognizers>

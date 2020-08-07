@@ -48,8 +48,7 @@
         <AbsoluteLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
                 <StackLayout Orientation="Vertical"
-                             Margin="10,5"
-                             VerticalOptions="FillAndExpand">
+                             Margin="10,5">
                     <controls:EditableImage x:Name="EditableImage"
                                             Image="{Binding Image}"
                                             UpdateImageCommand="{Binding ChangeImageCommand, Source={x:Reference rootPage}}" />

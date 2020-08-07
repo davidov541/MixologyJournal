@@ -17,11 +17,10 @@
         <controls:CreationTypeToNameConverter x:Key="CreationNameConverter" />
     </Frame.Resources>
     <Frame.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
+        <StackLayout>
             <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" 
                    Style="{StaticResource CardTypeCaption}" />
-            <Grid HorizontalOptions="FillAndExpand" 
-                  VerticalOptions="FillAndExpand">
+            <Grid>
                 <Image x:Name="imgCard" 
                        Source="{Binding Image}"
                        Aspect="AspectFit"

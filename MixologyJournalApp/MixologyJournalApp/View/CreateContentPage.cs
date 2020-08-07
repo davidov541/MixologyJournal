@@ -38,6 +38,8 @@ namespace MixologyJournalApp.View
                 case ImageSourceChooser.ImageSourceChoice.TakeAPhoto:
                     await _vm.TakePicture();
                     break;
+                case ImageSourceChooser.ImageSourceChoice.NoChoice:
+                    break;
             }
         }
     }

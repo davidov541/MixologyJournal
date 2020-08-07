@@ -8,16 +8,13 @@
              x:Class="MixologyJournalApp.View.Controls.EditableImage"
              x:Name="thisView">
     <ContentView.Content>
-        <Grid HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand"
-              BindingContext="{x:Reference thisView}"
+        <Grid BindingContext="{x:Reference thisView}"
               x:DataType="controls:EditableImage">
             <Image x:Name="imgCard" 
                    Source="{Binding Image}"
                    Aspect="AspectFit"
                    InputTransparent="True" />
-            <AbsoluteLayout HorizontalOptions="FillAndExpand"
-                            VerticalOptions="FillAndExpand">
+            <AbsoluteLayout>
                 <AbsoluteLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding UpdateImageCommand}" />
                 </AbsoluteLayout.GestureRecognizers>

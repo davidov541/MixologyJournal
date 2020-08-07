@@ -9,13 +9,11 @@
              x:DataType="viewmodel:RecipeListPageViewModel"
              Title="Recipe List"
              Visual="Material">
-    <AbsoluteLayout VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand">
-        <StackLayout VerticalOptions="FillAndExpand"
-                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="SizeProportional">
-            <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always" VerticalOptions="FillAndExpand">
-                <StackLayout x:Name="RecipeListLayout" Orientation="Vertical" VerticalOptions="FillAndExpand" />
+            <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always">
+                <StackLayout x:Name="RecipeListLayout" Orientation="Vertical" />
             </ScrollView>
         </StackLayout>
         <Button x:Name="addRecipeButton2" 

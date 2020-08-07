@@ -19,8 +19,6 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackground}"/>
                 <Setter Property="HeightRequest" Value="55"/>
                 <Setter Property="WidthRequest" Value="55"/>
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
                 <Setter Property="Padding" Value="15"/>
                 <Setter Property="Margin" Value="0,0,15,15"/>
             </Style>
@@ -41,8 +39,6 @@
                 <Setter Property="FontSize" Value="Medium" />
             </Style>
             <Style TargetType="Label" x:Key="ContentText">
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="Opacity" Value="1.0" />
                 <Setter Property="TextColor" Value="Black" />
@@ -94,15 +90,12 @@
                 <Setter Property="BackgroundColor" Value="White" />
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource CardContentText}" x:Key="CardTypeCaption">
-                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
-                <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="HorizontalTextAlignment" Value="End" />
                 <Setter Property="VerticalTextAlignment" Value="Start" />
                 <Setter Property="FontAttributes" Value="Italic" />
             </Style>
             <Style TargetType="ImageButton" x:Key="IconButton">
                 <Setter Property="HorizontalOptions" Value="End" />
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
                 <Setter Property="Padding" Value="5" />
                 <Setter Property="WidthRequest" Value="50" />
                 <Setter Property="HeightRequest" Value="50" />

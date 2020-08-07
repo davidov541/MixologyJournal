@@ -11,7 +11,8 @@ namespace MixologyJournalApp.View.Controls
         internal enum ImageSourceChoice
         {
             TakeAPhoto,
-            ChooseFromGallery
+            ChooseFromGallery,
+            NoChoice
         }
 
         internal class ImageSourceChoiceEventArgs: EventArgs
@@ -43,6 +44,11 @@ namespace MixologyJournalApp.View.Controls
         private void ChooseFromGallery_Tapped(object sender, EventArgs e)
         {
             ImageSourceMade?.Invoke(this, new ImageSourceChoiceEventArgs(ImageSourceChoice.ChooseFromGallery));
+        }
+
+        private void CancelGesture_Tapped(object sender, EventArgs e)
+        {
+            ImageSourceMade?.Invoke(this, new ImageSourceChoiceEventArgs(ImageSourceChoice.NoChoice));
         }
     }
 }
