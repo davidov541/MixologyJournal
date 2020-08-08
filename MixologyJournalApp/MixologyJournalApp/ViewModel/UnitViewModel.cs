@@ -9,13 +9,11 @@ namespace MixologyJournalApp.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private readonly Unit _model;
-
         public String Name
         {
             get
             {
-                return _model.Name;
+                return Model.Name;
             }
         }
 
@@ -23,7 +21,15 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _model.Plural;
+                return Model.Plural;
+            }
+        }
+
+        public String Format
+        {
+            get
+            {
+                return Model.Format;
             }
         }
 
@@ -32,7 +38,7 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                if (Vowels.Contains(_model.Name.ToLower()[0]))
+                if (Vowels.Contains(Model.Name.ToLower()[0]))
                 {
                     return "An";
                 }
@@ -47,21 +53,15 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _model.Id;
+                return Model.Id;
             }
         }
 
-        internal Unit Model
-        {
-            get
-            {
-                return _model;
-            }
-        }
+        internal Unit Model { get; }
 
         public UnitViewModel(Unit model)
         {
-            _model = model;
+            Model = model;
         }
 
         public override string ToString()

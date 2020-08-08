@@ -148,11 +148,11 @@ namespace MixologyJournalApp.ViewModel
             }
             else if (Double.Parse(Amount) == 1.0)
             {
-                return String.Format("{0} {1} of {2}", Unit.SingularArticle, Unit.Name, Ingredient.Name);
+                return String.Format(Unit.Format, Unit.SingularArticle, Unit.Name, Ingredient.Name);
             }
             else
             {
-                return String.Format("{0} {1} of {2}", Amount, Unit.Plural, Ingredient.Name);
+                return String.Format(Unit.Format, Amount, Unit.Plural, Ingredient.Name);
             }
         }
 
