@@ -152,7 +152,7 @@ namespace MixologyJournalApp.ViewModel
             }
             else
             {
-                return String.Format(Unit.Format, Amount, Unit.Plural, Ingredient.Name);
+                return String.Format(Unit.Format, Amount, Unit.Plural, Ingredient.Plural);
             }
         }
 

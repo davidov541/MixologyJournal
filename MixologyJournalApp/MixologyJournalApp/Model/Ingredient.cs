@@ -13,6 +13,13 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty("plural")]
+        public String Plural
+        {
+            get;
+            set;
+        }
+
         [JsonProperty("id")]
         public String Id
         {
@@ -25,7 +32,8 @@ namespace MixologyJournalApp.Model
             Ingredient ingredient = new Ingredient
             {
                 Name = "",
-                Id = ""
+                Id = "",
+                Plural = ""
             };
             return ingredient;
         }
@@ -39,7 +47,8 @@ namespace MixologyJournalApp.Model
             Ingredient clone = new Ingredient
             {
                 Id = Id,
-                Name = Name
+                Name = Name,
+                Plural = Plural
             };
             return clone;
         }
