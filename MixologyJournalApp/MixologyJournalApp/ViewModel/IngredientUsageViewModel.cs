@@ -21,6 +21,12 @@ namespace MixologyJournalApp.ViewModel
                 set;
             }
 
+            public String Brand
+            {
+                get;
+                set;
+            }
+
             public UnitViewModel Unit
             {
                 get;
@@ -32,6 +38,7 @@ namespace MixologyJournalApp.ViewModel
                 Ingredient = viewModel.Ingredient;
                 Amount = viewModel.Amount;
                 Unit = viewModel.Unit;
+                Brand = viewModel.Brand;
             }
         }
 
@@ -65,6 +72,20 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return Amount + " " + _unit.ToString();
+            }
+        }
+
+        public String Brand
+        {
+            get
+            {
+                return _model.Brand;
+            }
+            set
+            {
+                _model.Brand = value;
+                OnPropertyChanged(nameof(Brand));
+                OnPropertyChanged(nameof(FullDescription));
             }
         }
 
@@ -148,11 +169,23 @@ namespace MixologyJournalApp.ViewModel
             }
             else if (Double.Parse(Amount) == 1.0)
             {
-                return String.Format(Unit.Format, Unit.SingularArticle, Unit.Name, Ingredient.Name);
+                return String.Format(Unit.Format, Unit.SingularArticle, Unit.Name, GetIngredientDescription(Ingredient.Name, Brand));
             }
             else
             {
-                return String.Format(Unit.Format, Amount, Unit.Plural, Ingredient.Plural);
+                return String.Format(Unit.Format, Amount, Unit.Plural, GetIngredientDescription(Ingredient.Plural, Brand));
+            }
+        }
+
+        private static String GetIngredientDescription(String name, String brand)
+        {
+            if (String.IsNullOrEmpty(brand))
+            {
+                return name;
+            }
+            else
+            {
+                return String.Format("{0} {1}", brand, name);
             }
         }
 
@@ -161,6 +194,7 @@ namespace MixologyJournalApp.ViewModel
             Ingredient = state.Ingredient;
             Unit = state.Unit;
             Amount = state.Amount;
+            Brand = state.Brand;
         }
     }
 }
