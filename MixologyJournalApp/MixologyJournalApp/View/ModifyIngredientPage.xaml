@@ -22,6 +22,10 @@
                         ItemsSource="{Binding AvailableIngredients}" 
                         Title="Ingredient" 
                         SelectedItem="{Binding Ingredient}" />
+                <Entry x:Name="brandEntry"
+                       Keyboard="Text"
+                       Text="{Binding Brand}" 
+                       Placeholder="Brand (Optional)" />
             </StackLayout>
             <Button x:Name="cancelButton" 
                     Image="@drawable/cancel_48"
