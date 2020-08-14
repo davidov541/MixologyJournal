@@ -12,7 +12,7 @@ namespace MixologyJournalApp.Model
     [JsonObject(MemberSerialization.OptIn)]
     internal class ModelCache : IDisposable, INotifyPropertyChanged
     {
-        internal const int InitStepsCount = 4;
+        internal const int InitStepsCount = 5;
 
         private List<Recipe> _recipes = new List<Recipe>();
         [JsonProperty("recipes")]
@@ -98,6 +98,20 @@ namespace MixologyJournalApp.Model
             }
         }
 
+        private List<Category> _topLevelCategories = new List<Category>();
+        [JsonProperty("categories")]
+        public IEnumerable<Category> TopLevelCategories
+        {
+            get
+            {
+                return _topLevelCategories;
+            }
+            set
+            {
+                _topLevelCategories = new List<Category>(value);
+            }
+        }
+
         [JsonProperty("lastLoadedTime")]
         public DateTime LastLoadedTime
         {
@@ -158,7 +172,7 @@ namespace MixologyJournalApp.Model
 
         public async Task Init()
         {
-            if (DateTime.UtcNow.Subtract(LastLoadedTime).TotalMilliseconds > TimeSpan.FromHours(1).TotalMilliseconds)
+            if (true || DateTime.UtcNow.Subtract(LastLoadedTime).TotalMilliseconds > TimeSpan.FromHours(1).TotalMilliseconds)
             {
                 InitProgress = 0.0;
                 await UpdateAvailableUnits();
@@ -172,9 +186,12 @@ namespace MixologyJournalApp.Model
                 InitProgress = 3.0;
                 await UpdateDrinks();
 
+                InitProgress = 4.0;
+                await UpdateCategories();
+
                 LastLoadedTime = DateTime.UtcNow;
             }
-            InitProgress = 4.0;
+            InitProgress = 5.0;
         }
 
         internal async Task<Boolean> UploadRecentItems()
@@ -378,6 +395,27 @@ namespace MixologyJournalApp.Model
             foreach (Unit u in units.OrderBy(i => i.Name))
             {
                 _units.Add(u);
+            }
+        }
+
+        private async Task UpdateCategories()
+        {
+            List<Category> categories = await _app.PlatformInfo.Backend.UpdateCategories();
+
+            if (GetUseRemote() && categories.Any())
+            {
+                _topLevelCategories.Clear();
+            }
+
+            foreach (Category c in categories.OrderBy(i => i.Name))
+            {
+                _topLevelCategories.Add(c);
+            }
+
+            Dictionary<String, Ingredient> ingreds = _ingredients.ToDictionary(i => i.Id);
+            foreach (Category c in _topLevelCategories)
+            {
+                c.Init(ingreds);
             }
         }
 
