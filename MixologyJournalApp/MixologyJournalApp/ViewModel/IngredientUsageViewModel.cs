@@ -4,43 +4,8 @@ using System.ComponentModel;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class IngredientUsageViewModel : INotifyPropertyChanged
+    internal class IngredientUsageViewModel : INotifyPropertyChanged, ICloneable
     {
-        internal struct State
-        {
-            public IngredientViewModel Ingredient
-            {
-                get;
-                set;
-            }
-
-            public String Amount
-            {
-                get;
-                set;
-            }
-
-            public String Brand
-            {
-                get;
-                set;
-            }
-
-            public UnitViewModel Unit
-            {
-                get;
-                set;
-            }
-
-            internal State(IngredientUsageViewModel viewModel)
-            {
-                Ingredient = viewModel.Ingredient;
-                Amount = viewModel.Amount;
-                Unit = viewModel.Unit;
-                Brand = viewModel.Brand;
-            }
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly IngredientUsage _model;
@@ -135,6 +100,10 @@ namespace MixologyJournalApp.ViewModel
             Unit = new UnitViewModel(_model.Unit);
         }
 
+        private IngredientUsageViewModel(IngredientUsageViewModel other): this(other._model.Clone() as IngredientUsage)
+        {
+        }
+
         private void OnPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -168,12 +137,17 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public void RestoreFromState(State state)
+        public void RestoreFromState(IngredientUsageViewModel other)
         {
-            Ingredient = state.Ingredient;
-            Unit = state.Unit;
-            Amount = state.Amount;
-            Brand = state.Brand;
+            Ingredient = other.Ingredient;
+            Unit = other.Unit;
+            Amount = other.Amount;
+            Brand = other.Brand;
+        }
+
+        public object Clone()
+        {
+            return new IngredientUsageViewModel(this);
         }
     }
 }

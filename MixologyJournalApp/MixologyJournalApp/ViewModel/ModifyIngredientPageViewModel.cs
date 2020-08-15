@@ -107,11 +107,11 @@ namespace MixologyJournalApp.ViewModel
         }
 
         #region State Management
-        private IngredientUsageViewModel.State? _state;
+        private IngredientUsageViewModel _state;
 
         internal void SaveCurrentState()
         {
-            _state = new IngredientUsageViewModel.State(_ingredient);
+            _state = _ingredient.Clone() as IngredientUsageViewModel;
         }
 
 
@@ -119,7 +119,7 @@ namespace MixologyJournalApp.ViewModel
         {
             if (_state != null)
             {
-                _ingredient.RestoreFromState(_state.Value);
+                _ingredient.RestoreFromState(_state);
                 _state = null;
             }
         }
