@@ -1,6 +1,5 @@
 ﻿using MixologyJournalApp.Model;
 using System;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace MixologyJournalApp.ViewModel
@@ -45,8 +44,6 @@ namespace MixologyJournalApp.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly IngredientUsage _model;
-        private readonly LocalDataCache _cache;
-        private readonly App _app;
 
         private IngredientViewModel _ingredient;
         public IngredientViewModel Ingredient
@@ -122,22 +119,6 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ObservableCollection<IngredientViewModel> AvailableIngredients
-        {
-            get
-            {
-                return _cache.AvailableIngredients;
-            }
-        }
-
-        public ObservableCollection<UnitViewModel> AvailableUnits
-        {
-            get
-            {
-                return _cache.AvailableUnits;
-            }
-        }
-
         public String FullDescription
         {
             get
@@ -146,11 +127,9 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public IngredientUsageViewModel(IngredientUsage model, App app)
+        public IngredientUsageViewModel(IngredientUsage model)
         {
             _model = model;
-            _app = app;
-            _cache = _app.Cache;
 
             Ingredient = new IngredientViewModel(_model.Ingredient);
             Unit = new UnitViewModel(_model.Unit);

@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
              mc:Ignorable="d"
-             x:DataType="viewmodel:IngredientUsageViewModel"
+             x:DataType="viewmodel:ModifyIngredientPageViewModel"
              x:Class="MixologyJournalApp.View.ModifyIngredientPage">
     <ContentPage.Content>
         <AbsoluteLayout>

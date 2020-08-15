@@ -226,7 +226,7 @@ namespace MixologyJournalApp.ViewModel
                 Steps.Add(s);
             }
 
-            IEnumerable<IngredientUsageViewModel> usages = _model.Ingredients.Select(u => new IngredientUsageViewModel(u, _app));
+            IEnumerable<IngredientUsageViewModel> usages = _model.Ingredients.Select(u => new IngredientUsageViewModel(u));
             foreach (IngredientUsageViewModel u in usages)
             {
                 IngredientUsages.Add(u);
@@ -341,7 +341,7 @@ namespace MixologyJournalApp.ViewModel
         public void AddIngredient()
         {
             IngredientUsage usage = IngredientUsage.CreateEmpty();
-            IngredientUsageViewModel viewModel = new IngredientUsageViewModel(usage, _app);
+            IngredientUsageViewModel viewModel = new IngredientUsageViewModel(usage);
             IngredientUsages.Add(viewModel);
             _model.Ingredients.Add(usage);
 
