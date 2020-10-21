@@ -12,6 +12,14 @@ namespace MixologyJournalApp.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public bool IsEmpty
+        {
+            get
+            {
+                return _cache.Drinks.Count == 0;
+            }
+        }
+
         public ObservableCollection<RecipeViewModel> Recipes
         {
             get
@@ -30,6 +38,7 @@ namespace MixologyJournalApp.ViewModel
         private void Recipes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             OnPropertyChanged(nameof(Recipes));
+            OnPropertyChanged(nameof(IsEmpty));
         }
 
         private void OnPropertyChanged(String propertyName)

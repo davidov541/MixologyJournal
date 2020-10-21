@@ -16,6 +16,11 @@
                 <StackLayout x:Name="RecipeListLayout" Orientation="Vertical" VerticalOptions="FillAndExpand" />
             </ScrollView>
         </StackLayout>
+        <Label IsVisible="{Binding IsEmpty}"
+               Text="No Recipes Yet!&#10;Add Your Favorite Recipes Here!" 
+               Style="{StaticResource EmptyText}"
+               AbsoluteLayout.LayoutBounds="0.5,0.0,0.9,1.0"
+               AbsoluteLayout.LayoutFlags="All"/>
         <Button x:Name="addRecipeButton2" 
                 Image="@drawable/ic_add_white_48dp"
                 Clicked="AddRecipeButton_Clicked" 
