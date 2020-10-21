@@ -20,8 +20,8 @@
         <Label IsVisible="{Binding IsEmpty}"
                Text="No Drinks Yet! Good Excuse to Make a Drink Tonight!" 
                Style="{StaticResource EmptyText}"
-               AbsoluteLayout.LayoutBounds="0,0,1,1"
-               AbsoluteLayout.LayoutFlags="SizeProportional"/>
+               AbsoluteLayout.LayoutBounds="0.5,0.0,0.9,1.0"
+               AbsoluteLayout.LayoutFlags="All"/>
         <Button x:Name="addDrinkButton" 
                 Image="@drawable/ic_add_white_48dp"
                 Clicked="AddDrinkButton_Clicked" 
