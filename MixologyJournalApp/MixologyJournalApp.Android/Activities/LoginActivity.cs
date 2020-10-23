@@ -2,16 +2,15 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Android.Widget;
 using Auth0.OidcClient;
 using IdentityModel.OidcClient;
+using IdentityModel.OidcClient.Browser;
 using IdentityModel.OidcClient.Results;
 using MixologyJournalApp.Model;
 using System;
-using System.Threading.Tasks;
 using System.Linq;
-using IdentityModel.OidcClient.Browser;
-using Android.Widget;
-using MixologyJournalApp.Droid.Platform;
+using System.Threading.Tasks;
 
 namespace MixologyJournalApp.Droid
 {
@@ -34,41 +33,49 @@ namespace MixologyJournalApp.Droid
 
         protected override async void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
-
-            SetContentView(Resource.Layout.LoginScreen);
-            TextView captionText = FindViewById<TextView>(Resource.Id.CaptionText);
-
-            _auth0Client = new Auth0Client(new Auth0ClientOptions
+            try
             {
-                Domain = AppConfigManager.Settings["Auth0Domain"],
-                ClientId = AppConfigManager.Settings["ClientID"],
-                Scope = "openid profile email offline_access permissions read:recipes delete:recipes modify:recipes",
-                LoadProfile = true
-            });
+                base.OnCreate(bundle);
 
-            Intent result = null;
-            switch (Intent.GetStringExtra(ModeKey))
-            {
-                case LoginActivityMode:
-                    captionText.Text = "Logging In...";
-                    result = await LoginAsync();
-                    break;
-                case RenewalActivityMode:
-                    captionText.Text = "Retrieving User Information...";
-                    String renewalToken = Intent.GetStringExtra(RenewalToken);
-                    result = await RenewAsync(renewalToken);
-                    break;
-                case LogOffActivityMode:
-                    captionText.Text = "Logging Off...";
-                    result = await LogOffAsync();
-                    break;
-                default:
-                    break;
+                SetContentView(Resource.Layout.LoginScreen);
+                TextView captionText = FindViewById<TextView>(Resource.Id.CaptionText);
+
+                _auth0Client = new Auth0Client(new Auth0ClientOptions
+                {
+                    Domain = AppConfigManager.Settings["Auth0Domain"],
+                    ClientId = AppConfigManager.Settings["ClientID"],
+                    Scope = "openid profile email offline_access permissions read:recipes delete:recipes modify:recipes",
+                    LoadProfile = true
+                });
+
+                Intent result = null;
+                switch (Intent.GetStringExtra(ModeKey))
+                {
+                    case LoginActivityMode:
+                        captionText.Text = "Logging In...";
+                        result = await LoginAsync();
+                        break;
+                    case RenewalActivityMode:
+                        captionText.Text = "Retrieving User Information...";
+                        String renewalToken = Intent.GetStringExtra(RenewalToken);
+                        result = await RenewAsync(renewalToken);
+                        break;
+                    case LogOffActivityMode:
+                        captionText.Text = "Logging Off...";
+                        result = await LogOffAsync();
+                        break;
+                    default:
+                        break;
+                }
+                SetResult(Android.App.Result.Ok, result);
+                Finish();
             }
-            SetResult(Android.App.Result.Ok, result);
-            Finish();
-       }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine("Uncaught Exception: \n" + e.ToString());
+                throw;
+            }
+        }
 
         protected override void OnNewIntent(Intent intent)
         {

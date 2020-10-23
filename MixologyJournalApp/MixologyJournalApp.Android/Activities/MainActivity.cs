@@ -43,6 +43,7 @@ namespace MixologyJournalApp.Droid
             catch (Exception e)
             {
                 Console.Error.WriteLine("Uncaught Exception: \n" + e.ToString());
+                throw;
             }
         }
 
