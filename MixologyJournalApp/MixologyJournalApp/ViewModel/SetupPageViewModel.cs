@@ -40,7 +40,7 @@ namespace MixologyJournalApp.ViewModel
 
             PageItems = new ObservableCollection<SetupPageItem>()
             {
-                new SetupPageItem("Welcome to Mixology Journal!\n\nYou've taken your first step to\nimproving your cocktail making skills."),
+                new SetupPageItem("Welcome to Mixology Journal!\n\nYou've taken your first step to\nimproving your cocktail making skills.", ImageSource.FromFile("icon_auth0")),
                 new SetupPageItem("With Mixology Journal, you can log every variation of a recipe you create.\n\nWhen you find a favorite variation, you can keep that for use later."),
                 new SetupPageItem("First, add recipes for cocktails that you like to make often.\n\nThese can be from books, your notes, or from your head."),
                 new SetupPageItem("Then, when you create drinks based on those recipes, you can log how it turned out.\n\nThis might include new brands or ingredients, or different amounts."),

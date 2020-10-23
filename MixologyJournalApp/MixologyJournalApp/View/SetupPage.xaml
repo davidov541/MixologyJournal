@@ -19,6 +19,26 @@
                 </Frame>
             </StackLayout>
         </DataTemplate>
+        <DataTemplate x:Key="DescriptionAndImageTemplate">
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand">
+                <Frame Margin="10,10,10,10"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding ImageSource}"
+                               Grid.Row="0" />
+                        <Label Text="{Binding Caption}"
+                               Grid.Row="1"
+                               Style="{StaticResource Key=SetupWizardText}" />
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </DataTemplate>
 
         <DataTemplate x:Key="LoginTemplate">
             <StackLayout>
@@ -60,7 +80,8 @@
 
         <controls:SetupItemDataTemplateSelector x:Key="setupItemSelector"
                                                 DescriptionTemplate="{StaticResource DescriptionTemplate}"
-                                                LoginTemplate="{StaticResource LoginTemplate}" />
+                                                LoginTemplate="{StaticResource LoginTemplate}"
+                                                ImageTemplate="{StaticResource DescriptionAndImageTemplate}"/>
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>

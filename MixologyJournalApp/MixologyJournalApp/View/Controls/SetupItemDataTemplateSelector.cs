@@ -7,6 +7,7 @@ namespace MixologyJournalApp.View.Controls
     {
         public DataTemplate DescriptionTemplate { get; set; }
         public DataTemplate LoginTemplate { get; set; }
+        public DataTemplate ImageTemplate { get; set; }
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
@@ -14,6 +15,8 @@ namespace MixologyJournalApp.View.Controls
             {
                 case SetupPageItem.ItemType.Description:
                     return DescriptionTemplate;
+                case SetupPageItem.ItemType.Image:
+                    return ImageTemplate;
                 case SetupPageItem.ItemType.Login:
                     return LoginTemplate;
             }
