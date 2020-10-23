@@ -15,12 +15,7 @@
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand">
                     <Label Text="{Binding Caption}"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center" 
-                           HorizontalTextAlignment="Center"
-                           VerticalTextAlignment="Center"
-                           FontSize="Large" 
-                           Opacity="0.8"/>
+                           Style="{StaticResource Key=SetupWizardText}" />
                 </Frame>
             </StackLayout>
         </DataTemplate>
@@ -30,16 +25,19 @@
                 <Frame Margin="10,10,10,10"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand">
-                    <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
                         <Label Text="{Binding Caption}"
                                VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="CenterAndExpand"
-                               Margin="10"
-                               FontSize="Small" 
-                               Opacity="0.6"/>
+                               Grid.Row="0"
+                               Style="{StaticResource Key=SetupWizardText}"/>
                         <StackLayout Padding="20"
-                                     VerticalOptions="CenterAndExpand"
+                                     VerticalOptions="End"
                                      x:Name="mainLayout"
+                                     Grid.Row="1"
                                      BindableLayout.ItemsSource="{Binding LoginMethods}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
@@ -55,7 +53,7 @@
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
-                    </StackLayout>
+                    </Grid>
                 </Frame>
             </StackLayout>
         </DataTemplate>

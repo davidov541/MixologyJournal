@@ -52,6 +52,14 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="FontAttributes" Value="Italic" />
             </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="SetupWizardText">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Opacity" Value="0.8" />
+            </Style>
 
             <!-- Card Styles -->
             <Color x:Key="RecipeCardBackground">#00B2D6</Color>
