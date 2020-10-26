@@ -9,6 +9,10 @@
     <Application.Resources>
         <controls:CreationTypeToBackgroundColorConverter x:Key="CardColorConverter" />
         <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="ChalkFont">
+                <On Platform="Android" Value="Filmcryptic.ttf#Film Cryptic" />
+            </OnPlatform>
+
             <Color x:Key="LightThemeColor">#2196F3</Color>
             <Color x:Key="DarkButtonBackground">#303F9F</Color>
             <Style TargetType="Label">
@@ -59,6 +63,8 @@
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="Opacity" Value="0.8" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="{StaticResource ChalkFont}" />
             </Style>
 
             <!-- Card Styles -->
