@@ -33,10 +33,13 @@
             <StackLayout Orientation="Vertical" Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" HorizontalOptions="Center">
                 <Image Source="{Binding ImageSource}"
                        Aspect="AspectFill"
-                       IsVisible="{Binding ImageVisible}"/>
+                       IsVisible="{Binding ImageVisible}"
+                       Margin="0,10,0,0"/>
                 <Label Text="{Binding Caption}"
-                       Margin="10,0,10,20"
-                       Style="{StaticResource Key=SetupWizardText}" />
+                       Margin="10,20,10,20"
+                       Style="{StaticResource Key=SetupWizardText}"
+                       VerticalOptions="CenterAndExpand"
+                       VerticalTextAlignment="Center"/>
                 <StackLayout Padding="20"
                              VerticalOptions="End"
                              x:Name="mainLayout"
