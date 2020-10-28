@@ -16,7 +16,7 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _cache.Drinks.Count == 0;
+                return _cache.Recipes.Count == 0;
             }
         }
 
