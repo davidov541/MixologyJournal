@@ -58,8 +58,8 @@
                 </StackLayout>
             </StackLayout>
             <IndicatorView x:Name="indicatorView"
-                           IndicatorColor="LightGray"
-                           SelectedIndicatorColor="DarkGray"
+                           IndicatorColor="DarkSlateGray"
+                           SelectedIndicatorColor="White"
                            ItemsSource="{Binding PageItems}"
                            Position="{Binding Position}"
                            HorizontalOptions="Center"
