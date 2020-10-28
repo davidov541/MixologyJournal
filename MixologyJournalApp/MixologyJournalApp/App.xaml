@@ -63,7 +63,8 @@
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="Opacity" Value="0.8" />
-                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="TextColor" Value="WhiteSmoke" />
+                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontFamily" Value="{StaticResource ChalkFont}" />
             </Style>
 

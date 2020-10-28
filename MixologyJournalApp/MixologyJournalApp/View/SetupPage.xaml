@@ -30,6 +30,12 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
+                        <Image Grid.Row="0"
+                               Grid.RowSpan="2"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               Aspect="Fill"
+                               Source="blackboard_background.jpg" />
                         <Image Source="{Binding ImageSource}"
                                Grid.Row="0" />
                         <Label Text="{Binding Caption}"
