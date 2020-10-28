@@ -2,6 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
@@ -30,6 +31,33 @@ namespace MixologyJournalApp.ViewModel
             {
                 _position = value;
                 OnPropertyChanged(nameof(Position));
+                OnPropertyChanged(nameof(ImageSource));
+                OnPropertyChanged(nameof(CurrentItem));
+                OnPropertyChanged(nameof(Caption));
+            }
+        }
+
+        private SetupPageItem CurrentItem
+        {
+            get
+            {
+                return PageItems.ElementAt(Position);
+            }
+        }
+
+        public ImageSource ImageSource
+        {
+            get
+            {
+                return CurrentItem.ImageSource;
+            }
+        }
+
+        public String Caption
+        {
+            get
+            {
+                return CurrentItem.Caption;
             }
         }
 

@@ -98,30 +98,39 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
+            <Grid.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped" />
+                <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped" />
+            </Grid.GestureRecognizers>
             <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="30" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <CarouselView x:Name="setupView"
-                          ItemsSource="{Binding PageItems}"
-                          Grid.Row="0"
-                          Grid.Column="0"
-                          Grid.ColumnSpan="3"
-                          ItemTemplate="{StaticResource setupItemSelector}"
-                          Position="{Binding Position, Mode=TwoWay}"
-                          PeekAreaInsets="25"
-                          IsBounceEnabled="True"/>
+            <Image Grid.Row="0"
+                   Grid.RowSpan="3"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Aspect="Fill"
+                   Source="blackboard_background.jpg" />
+            <Image Source="{Binding ImageSource}"
+                   Grid.Row="0" />
+            <Label Text="{Binding Caption}"
+                   Grid.Row="1"
+                   Margin="10,0,10,20"
+                   Style="{StaticResource Key=SetupWizardText}" />
             <IndicatorView x:Name="indicatorView"
                            IndicatorColor="LightGray"
                            SelectedIndicatorColor="DarkGray"
-                           IndicatorView.ItemsSourceBy="setupView"
+                           ItemsSource="{Binding PageItems}"
+                           Position="{Binding Position}"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
-                           Grid.Row="1"
-                           Grid.Column="1"/>
+                           Grid.Row="2"
+                           Grid.Column="0"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
