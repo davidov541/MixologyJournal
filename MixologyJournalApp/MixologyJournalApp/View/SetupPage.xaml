@@ -11,19 +11,25 @@
         <DataTemplate x:Key="DescriptionTemplate">
             <StackLayout HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
-                <Frame Margin="10,10,10,10"
-                       HorizontalOptions="FillAndExpand"
+                <Frame HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand">
-                    <Label Text="{Binding Caption}"
-                           Style="{StaticResource Key=SetupWizardText}" />
+                    <Grid>
+                        <Image Grid.Row="0"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               Aspect="Fill"
+                               Source="blackboard_background.jpg" />
+                        <Label Text="{Binding Caption}"
+                               Margin="10,0,10,20"
+                               Style="{StaticResource Key=SetupWizardText}" />
+                    </Grid>
                 </Frame>
             </StackLayout>
         </DataTemplate>
         <DataTemplate x:Key="DescriptionAndImageTemplate">
             <StackLayout HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
-                <Frame Margin="10,10,10,10"
-                       HorizontalOptions="FillAndExpand"
+                <Frame HorizontalOptions="FillAndExpand"
                        VerticalOptions="FillAndExpand">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -40,6 +46,7 @@
                                Grid.Row="0" />
                         <Label Text="{Binding Caption}"
                                Grid.Row="1"
+                               Margin="10,0,10,20"
                                Style="{StaticResource Key=SetupWizardText}" />
                     </Grid>
                 </Frame>
