@@ -1,5 +1,6 @@
 ﻿using MixologyJournalApp.Platform;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -34,6 +35,9 @@ namespace MixologyJournalApp.ViewModel
                 OnPropertyChanged(nameof(ImageSource));
                 OnPropertyChanged(nameof(CurrentItem));
                 OnPropertyChanged(nameof(Caption));
+                OnPropertyChanged(nameof(ImageVisible));
+                OnPropertyChanged(nameof(LoginButtonsVisible));
+                OnPropertyChanged(nameof(LoginMethods));
             }
         }
 
@@ -58,6 +62,30 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return CurrentItem.Caption;
+            }
+        }
+
+        public Boolean LoginButtonsVisible
+        {
+            get
+            {
+                return CurrentItem.Type == SetupPageItem.ItemType.Login;
+            }
+        }
+
+        public Boolean ImageVisible
+        {
+            get
+            {
+                return CurrentItem.Type == SetupPageItem.ItemType.Image;
+            }
+        }
+
+        public IEnumerable<ILoginMethod> LoginMethods
+        {
+            get
+            {
+                return CurrentItem.LoginMethods;
             }
         }
 
