@@ -32,7 +32,7 @@ namespace MixologyJournalApp.View
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            _viewModel.PropertyChanged -= ViewModel_PropertyChanged;
+            // _viewModel.PropertyChanged -= ViewModel_PropertyChanged;
         }
 
         private void UpdateRecipeList()
