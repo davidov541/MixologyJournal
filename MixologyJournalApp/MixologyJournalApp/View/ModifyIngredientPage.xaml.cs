@@ -9,14 +9,13 @@ namespace MixologyJournalApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ModifyIngredientPage : ContentPage
     {
-        private IngredientUsageViewModel _viewModel;
-        private IngredientUsageViewModel.State _previousState;
+        private ModifyIngredientPageViewModel _viewModel;
 
-        internal ModifyIngredientPage(IngredientUsageViewModel viewModel)
+        internal ModifyIngredientPage(IngredientUsageViewModel viewModel, App currentApp)
         {
-            _viewModel = viewModel;
+            _viewModel = new ModifyIngredientPageViewModel(viewModel, currentApp);
             BindingContext = _viewModel;
-            _previousState = new IngredientUsageViewModel.State(_viewModel);
+            _viewModel.SaveCurrentState();
 
             InitializeComponent();
         }
@@ -28,7 +27,7 @@ namespace MixologyJournalApp.View
 
         private async void CancelButton_Clicked(object sender, EventArgs e)
         {
-            _viewModel.RestoreFromState(_previousState);
+            _viewModel.RestoreFromState();
             await Navigation.PopModalAsync(true);
         }
     }

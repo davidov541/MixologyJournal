@@ -4,8 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
+             xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.RecipePage"
+             x:DataType="viewmodel:RecipeViewModel"
              Title="{Binding Path=Name}"
              Visual="Material">
     <ContentPage.Resources>
@@ -13,10 +15,9 @@
         <controls:InvertBooleanConverter x:Key="invertConverter" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <AbsoluteLayout>
             <ScrollView Orientation="Vertical" 
                         Margin="5" 
-                        VerticalOptions="StartAndExpand" 
                         AbsoluteLayout.LayoutBounds="0,0,1,1" 
                         AbsoluteLayout.LayoutFlags="All">
                 <StackLayout Orientation="Vertical">

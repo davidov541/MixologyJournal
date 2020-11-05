@@ -20,6 +20,13 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty("brand")]
+        public String Brand
+        {
+            get;
+            set;
+        }
+
         [JsonProperty("amount")]
         public String Amount
         {
@@ -33,7 +40,8 @@ namespace MixologyJournalApp.Model
             {
                 Amount = "",
                 Unit = Unit.CreateEmpty(),
-                Ingredient = Ingredient.CreateEmpty()
+                Ingredient = Ingredient.CreateEmpty(),
+                Brand = null
             };
             return usage;
         }
@@ -48,7 +56,8 @@ namespace MixologyJournalApp.Model
             {
                 Amount = Amount,
                 Ingredient = Ingredient.Clone(),
-                Unit = Unit.Clone()
+                Unit = Unit.Clone(),
+                Brand = Brand
             };
             return clone;
         }

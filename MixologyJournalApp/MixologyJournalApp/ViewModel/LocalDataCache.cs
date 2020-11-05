@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class LocalDataCache: INotifyPropertyChanged, IDisposable
+    internal class LocalDataCache : INotifyPropertyChanged, IDisposable
     {
-        private const int InitStepsCount = 5 + ModelCache.InitStepsCount;
+        private const int InitStepsCount = 6 + ModelCache.InitStepsCount;
         private readonly App _app;
 
         private readonly ModelCache _modelCache;
@@ -24,6 +24,8 @@ namespace MixologyJournalApp.ViewModel
         public ObservableCollection<IngredientViewModel> AvailableIngredients { get; } = new ObservableCollection<IngredientViewModel>();
 
         public ObservableCollection<UnitViewModel> AvailableUnits { get; } = new ObservableCollection<UnitViewModel>();
+
+        public ObservableCollection<CategoryViewModel> TopLevelCategories { get; } = new ObservableCollection<CategoryViewModel>();
 
         private double _initStepsCompleted = 0.0;
         public double InitProgress
@@ -49,7 +51,7 @@ namespace MixologyJournalApp.ViewModel
 
         private void ModelCache_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            switch(e.PropertyName)
+            switch (e.PropertyName)
             {
                 case nameof(ModelCache.InitProgress):
                     OnPropertyChanged(nameof(InitProgress));
@@ -85,6 +87,9 @@ namespace MixologyJournalApp.ViewModel
             UpdateDrinks();
 
             InitProgress = 5.0;
+            UpdateCategories();
+
+            InitProgress = 6.0;
         }
 
         public async Task<Boolean> UploadRecentItems()
@@ -129,6 +134,16 @@ namespace MixologyJournalApp.ViewModel
             foreach (UnitViewModel u in units.OrderBy(i => i.Name))
             {
                 AvailableUnits.Add(u);
+            }
+        }
+
+        private void UpdateCategories()
+        {
+            List<CategoryViewModel> categories = _modelCache.TopLevelCategories.Select(c => new CategoryViewModel(c)).ToList();
+            TopLevelCategories.Clear();
+            foreach (CategoryViewModel c in categories.OrderBy(i => i.Name))
+            {
+                TopLevelCategories.Add(c);
             }
         }
 

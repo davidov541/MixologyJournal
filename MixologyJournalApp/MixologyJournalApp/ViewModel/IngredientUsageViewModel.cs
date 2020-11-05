@@ -1,45 +1,14 @@
 ﻿using MixologyJournalApp.Model;
 using System;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace MixologyJournalApp.ViewModel
 {
-    internal class IngredientUsageViewModel : INotifyPropertyChanged
+    internal class IngredientUsageViewModel : INotifyPropertyChanged, ICloneable
     {
-        internal struct State
-        {
-            public IngredientViewModel Ingredient
-            {
-                get;
-                set;
-            }
-
-            public String Amount
-            {
-                get;
-                set;
-            }
-
-            public UnitViewModel Unit
-            {
-                get;
-                set;
-            }
-
-            internal State(IngredientUsageViewModel viewModel)
-            {
-                Ingredient = viewModel.Ingredient;
-                Amount = viewModel.Amount;
-                Unit = viewModel.Unit;
-            }
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly IngredientUsage _model;
-        private readonly LocalDataCache _cache;
-        private readonly App _app;
 
         private IngredientViewModel _ingredient;
         public IngredientViewModel Ingredient
@@ -65,6 +34,20 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return Amount + " " + _unit.ToString();
+            }
+        }
+
+        public String Brand
+        {
+            get
+            {
+                return _model.Brand;
+            }
+            set
+            {
+                _model.Brand = value;
+                OnPropertyChanged(nameof(Brand));
+                OnPropertyChanged(nameof(FullDescription));
             }
         }
 
@@ -101,22 +84,6 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ObservableCollection<IngredientViewModel> AvailableIngredients
-        {
-            get
-            {
-                return _cache.AvailableIngredients;
-            }
-        }
-
-        public ObservableCollection<UnitViewModel> AvailableUnits
-        {
-            get
-            {
-                return _cache.AvailableUnits;
-            }
-        }
-
         public String FullDescription
         {
             get
@@ -125,14 +92,16 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public IngredientUsageViewModel(IngredientUsage model, App app)
+        public IngredientUsageViewModel(IngredientUsage model)
         {
             _model = model;
-            _app = app;
-            _cache = _app.Cache;
 
             Ingredient = new IngredientViewModel(_model.Ingredient);
             Unit = new UnitViewModel(_model.Unit);
+        }
+
+        private IngredientUsageViewModel(IngredientUsageViewModel other): this(other._model.Clone() as IngredientUsage)
+        {
         }
 
         private void OnPropertyChanged(String propertyName)
@@ -146,14 +115,39 @@ namespace MixologyJournalApp.ViewModel
             {
                 return String.Empty;
             }
-            return String.Format("{0} {1}s of {2}", Amount, Unit.Name, Ingredient.Name);
+            else if (Double.Parse(Amount) == 1.0)
+            {
+                return String.Format(Unit.Format, Unit.SingularArticle, Unit.Name, GetIngredientDescription(Ingredient.Name, Brand));
+            }
+            else
+            {
+                return String.Format(Unit.Format, Amount, Unit.Plural, GetIngredientDescription(Ingredient.Plural, Brand));
+            }
         }
 
-        public void RestoreFromState(State state)
+        private static String GetIngredientDescription(String name, String brand)
         {
-            Ingredient = state.Ingredient;
-            Unit = state.Unit;
-            Amount = state.Amount;
+            if (String.IsNullOrEmpty(brand))
+            {
+                return name;
+            }
+            else
+            {
+                return String.Format("{0} {1}", brand, name);
+            }
+        }
+
+        public void RestoreFromState(IngredientUsageViewModel other)
+        {
+            Ingredient = other.Ingredient;
+            Unit = other.Unit;
+            Amount = other.Amount;
+            Brand = other.Brand;
+        }
+
+        public object Clone()
+        {
+            return new IngredientUsageViewModel(this);
         }
     }
 }

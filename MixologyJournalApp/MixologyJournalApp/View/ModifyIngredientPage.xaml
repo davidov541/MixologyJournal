@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
              mc:Ignorable="d"
+             x:DataType="viewmodel:ModifyIngredientPageViewModel"
              x:Class="MixologyJournalApp.View.ModifyIngredientPage">
     <ContentPage.Content>
         <AbsoluteLayout>
@@ -16,10 +18,24 @@
                         ItemsSource="{Binding AvailableUnits}" 
                         Title="Unit" 
                         SelectedItem="{Binding Unit}" />
+                <Picker x:Name="categoryPicker" 
+                        ItemsSource="{Binding Categories}" 
+                        Title="Ingredient Type" 
+                        SelectedItem="{Binding ChosenCategory}" />
+                <Picker x:Name="subcategoryPicker" 
+                        ItemsSource="{Binding Subcategories}" 
+                        IsVisible="{Binding ShowSubcategory}"
+                        Title="Ingredient Subtype" 
+                        SelectedItem="{Binding ChosenSubcategory}" />
                 <Picker x:Name="ingredientPicker" 
                         ItemsSource="{Binding AvailableIngredients}" 
+                        IsVisible="{Binding ShowIngredient}"
                         Title="Ingredient" 
                         SelectedItem="{Binding Ingredient}" />
+                <Entry x:Name="brandEntry"
+                       Keyboard="Text"
+                       Text="{Binding Brand}" 
+                       Placeholder="Brand (Optional)" />
             </StackLayout>
             <Button x:Name="cancelButton" 
                     Image="@drawable/cancel_48"

@@ -24,29 +24,36 @@ namespace MixologyJournalApp.Droid.Platform
 
         public async Task<String> GetResult(String path)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                String fullPath = _basePath + "/" + path;
-                HttpRequestMessage request = new HttpRequestMessage()
+                using (HttpClient client = new HttpClient())
                 {
-                    RequestUri = new Uri(fullPath),
-                    Method = HttpMethod.Get,
-                };
-                if (_authentication.IsAuthenticated)
-                {
-                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _authentication.User.AuthToken);
-                }
-                request.Headers.Add("apiversion", "1");
-                HttpResponseMessage response = await client.SendAsync(request);
+                    String fullPath = _basePath + "/" + path;
+                    HttpRequestMessage request = new HttpRequestMessage()
+                    {
+                        RequestUri = new Uri(fullPath),
+                        Method = HttpMethod.Get,
+                    };
+                    if (_authentication.IsAuthenticated)
+                    {
+                        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _authentication.User.AuthToken);
+                    }
+                    request.Headers.Add("apiversion", "1");
+                    HttpResponseMessage response = await client.SendAsync(request);
 
-                if (!response.IsSuccessStatusCode)
-                {
-                    String message = "Request failed. See below for the error message.\n" + response.ReasonPhrase + "\n" + await response.Content.ReadAsStringAsync();
-                    Console.WriteLine(message);
-                    throw new HttpRequestException(message);
-                }
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        String message = "Request failed. See below for the error message.\n" + response.ReasonPhrase + "\n" + await response.Content.ReadAsStringAsync();
+                        Console.WriteLine(message);
+                        throw new HttpRequestException(message);
+                    }
 
-                return await response.Content.ReadAsStringAsync();
+                    return await response.Content.ReadAsStringAsync();
+                }
+            }
+            catch (Exception)
+            {
+                throw new HttpRequestException();
             }
         }
 
@@ -62,30 +69,40 @@ namespace MixologyJournalApp.Droid.Platform
 
         private async Task<QueryResult> RunQuery(string path, object body, HttpMethod method)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                String fullPath = _basePath + "/" + path;
-                HttpRequestMessage request = new HttpRequestMessage()
+                using (HttpClient client = new HttpClient())
                 {
-                    RequestUri = new Uri(fullPath),
-                    Method = method,
-                    Content = new StringContent(JsonConvert.SerializeObject(body))
+                    String fullPath = _basePath + "/" + path;
+                    HttpRequestMessage request = new HttpRequestMessage()
+                    {
+                        RequestUri = new Uri(fullPath),
+                        Method = method,
+                        Content = new StringContent(JsonConvert.SerializeObject(body))
+                    };
+                    if (_authentication.IsAuthenticated)
+                    {
+                        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _authentication.User.AuthToken);
+                    }
+                    request.Headers.Add("apiversion", "1");
+                    HttpResponseMessage response = await client.SendAsync(request);
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        Console.WriteLine("Request failed. See below for the error message.");
+                        Console.WriteLine(response.ReasonPhrase);
+                        Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    }
+
+                    return await QueryResult.Create(response);
+                }
+            }
+            catch (Exception)
+            {
+                return new QueryResult()
+                {
+                    Result = false
                 };
-                if (_authentication.IsAuthenticated)
-                {
-                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _authentication.User.AuthToken);
-                }
-                request.Headers.Add("apiversion", "1");
-                HttpResponseMessage response = await client.SendAsync(request);
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    Console.WriteLine("Request failed. See below for the error message.");
-                    Console.WriteLine(response.ReasonPhrase);
-                    Console.WriteLine(await response.Content.ReadAsStringAsync());
-                }
-
-                return await QueryResult.Create(response);
             }
         }
 

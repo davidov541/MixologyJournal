@@ -22,6 +22,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public String Plural
+        {
+            get
+            {
+                return _model.Plural;
+            }
+        }
+
         internal Ingredient Model
         {
             get
