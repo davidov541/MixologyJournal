@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.Platform;
 using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -9,7 +10,8 @@ namespace MixologyJournalApp.ViewModel
         internal enum ItemType
         {
             Login,
-            Description
+            Description,
+            Image
         }
 
         public String Caption
@@ -30,6 +32,12 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
+        public ImageSource ImageSource
+        {
+            get;
+            private set;
+        }
+
         public SetupPageItem(String caption)
         {
             Caption = caption;
@@ -41,6 +49,13 @@ namespace MixologyJournalApp.ViewModel
             Caption = caption;
             Type = ItemType.Login;
             LoginMethods = loginMethods;
+        }
+
+        public SetupPageItem(String caption, ImageSource imageSource)
+        {
+            Caption = caption;
+            Type = ItemType.Image;
+            ImageSource = imageSource;
         }
     }
 }

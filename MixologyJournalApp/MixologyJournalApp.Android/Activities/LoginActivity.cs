@@ -34,21 +34,21 @@ namespace MixologyJournalApp.Droid
 
         protected override async void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
-
-            SetContentView(Resource.Layout.LoginScreen);
-            TextView captionText = FindViewById<TextView>(Resource.Id.CaptionText);
-
-            _auth0Client = new Auth0Client(new Auth0ClientOptions
-            {
-                Domain = AppConfigManager.Settings["Auth0Domain"],
-                ClientId = AppConfigManager.Settings["ClientID"],
-                Scope = "openid profile email offline_access permissions read:recipes delete:recipes modify:recipes",
-                LoadProfile = true
-            });
-
             try
             {
+                base.OnCreate(bundle);
+
+                SetContentView(Resource.Layout.LoginScreen);
+                TextView captionText = FindViewById<TextView>(Resource.Id.CaptionText);
+
+                _auth0Client = new Auth0Client(new Auth0ClientOptions
+                {
+                    Domain = AppConfigManager.Settings["Auth0Domain"],
+                    ClientId = AppConfigManager.Settings["ClientID"],
+                    Scope = "openid profile email offline_access permissions read:recipes delete:recipes modify:recipes",
+                    LoadProfile = true
+                });
+                
                 Intent result = null;
                 switch (Intent.GetStringExtra(ModeKey))
                 {
@@ -74,6 +74,7 @@ namespace MixologyJournalApp.Droid
             catch (Exception)
             {
                 SetResult(Android.App.Result.Ok, null);
+                Console.Error.WriteLine("Uncaught Exception: \n" + e.ToString());
                 Finish();
             }
        }

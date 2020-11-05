@@ -33,7 +33,7 @@ namespace MixologyJournalApp.Model
             get;
             set;
         }
-
+      
         public static Unit CreateEmpty()
         {
             Unit unit = new Unit

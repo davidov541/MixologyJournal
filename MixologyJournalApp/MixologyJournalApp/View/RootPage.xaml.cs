@@ -31,7 +31,7 @@ namespace MixologyJournalApp.View
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            _master.ListView.ItemSelected -= ListView_ItemSelected;
+            // _master.ListView.ItemSelected -= ListView_ItemSelected;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

@@ -19,24 +19,32 @@ namespace MixologyJournalApp.Droid
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            try
+            {
+                TabLayoutResource = Resource.Layout.Tabbar;
+                ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(savedInstanceState);
+                base.OnCreate(savedInstanceState);
 
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
+                Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+                global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+                global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 
-            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+                CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
-            _app = App.Create(new AndroidPlatform(this));
+                _app = App.Create(new AndroidPlatform(this));
 
-            await _app.InitAsync();
+                await _app.InitAsync();
 
-            LoadApplication(_app);
+                LoadApplication(_app);
 
-            await _app.LoadAsync();
+                await _app.LoadAsync();
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine("Uncaught Exception: \n" + e.ToString());
+                throw;
+            }
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
