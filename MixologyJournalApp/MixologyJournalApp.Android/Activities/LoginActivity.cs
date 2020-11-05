@@ -71,7 +71,7 @@ namespace MixologyJournalApp.Droid
                 SetResult(Android.App.Result.Ok, result);
                 Finish();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 SetResult(Android.App.Result.Ok, null);
                 Console.Error.WriteLine("Uncaught Exception: \n" + e.ToString());
