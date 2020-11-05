@@ -1,14 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<view:CreateContentPage  xmlns:view="clr-namespace:MixologyJournalApp.View"
-                         xmlns="http://xamarin.com/schemas/2014/forms"
-                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                         xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                         xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
-                         mc:Ignorable="d"
-                         x:Class="MixologyJournalApp.View.CreateRecipePage"
-                         x:Name="rootPage"
-                         Visual="Material">
+<view:CreateContentPage xmlns:view="clr-namespace:MixologyJournalApp.View"
+                        xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
+                        xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
+                        mc:Ignorable="d"
+                        x:Class="MixologyJournalApp.View.CreateRecipePage"
+                        x:DataType="viewmodel:RecipeViewModel"
+                        x:Name="rootPage"
+                        Visual="Material">
     <ContentPage.Resources>
         <controls:IsRunningToTintColorConverter x:Key="runningConverter" />
         <controls:InvertBooleanConverter x:Key="invertConverter" />
@@ -17,7 +19,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -46,8 +48,7 @@
         <AbsoluteLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
                 <StackLayout Orientation="Vertical"
-                             Margin="10,5"
-                             VerticalOptions="Fill">
+                             Margin="10,5">
                     <controls:EditableImage x:Name="EditableImage"
                                             Image="{Binding Image}"
                                             UpdateImageCommand="{Binding ChangeImageCommand, Source={x:Reference rootPage}}" />
@@ -59,10 +60,10 @@
                     <Label Text="Ingredients" Style="{StaticResource FormHeaderText}" />
                     <StackLayout BindableLayout.ItemsSource="{Binding IngredientUsages}">
                         <BindableLayout.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="viewmodel:IngredientUsageViewModel">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="2.5*" />
@@ -97,10 +98,10 @@
                     <Label Text="Steps" Style="{StaticResource FormHeaderText}" />
                     <StackLayout BindableLayout.ItemsSource="{Binding Steps}">
                         <BindableLayout.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="viewmodel:StepViewModel">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />

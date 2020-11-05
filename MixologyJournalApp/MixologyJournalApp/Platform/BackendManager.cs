@@ -95,6 +95,24 @@ namespace MixologyJournalApp.Platform
             return new List<Unit>();
         }
 
+        internal async Task<List<Category>> UpdateCategories()
+        {
+            if (_canAccessRemote)
+            {
+                try
+                {
+                    String jsonResult = await _backend.GetResult("/insecure/categories");
+                    List<Category> categories = JsonConvert.DeserializeObject<List<Category>>(jsonResult).ToList();
+                    return categories;
+                }
+                catch (HttpRequestException)
+                {
+                    WarnAboutRemoteAccessibility();
+                }
+            }
+            return new List<Category>();
+        }
+
         internal async Task<Boolean> UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
         {
             Boolean finalResult = false;

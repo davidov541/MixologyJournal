@@ -7,6 +7,7 @@ using Auth0.OidcClient;
 using IdentityModel.OidcClient;
 using IdentityModel.OidcClient.Browser;
 using IdentityModel.OidcClient.Results;
+using Java.Net;
 using MixologyJournalApp.Model;
 using System;
 using System.Linq;
@@ -47,7 +48,7 @@ namespace MixologyJournalApp.Droid
                     Scope = "openid profile email offline_access permissions read:recipes delete:recipes modify:recipes",
                     LoadProfile = true
                 });
-
+                
                 Intent result = null;
                 switch (Intent.GetStringExtra(ModeKey))
                 {
@@ -70,12 +71,13 @@ namespace MixologyJournalApp.Droid
                 SetResult(Android.App.Result.Ok, result);
                 Finish();
             }
-            catch (Exception e)
+            catch (Exception)
             {
+                SetResult(Android.App.Result.Ok, null);
                 Console.Error.WriteLine("Uncaught Exception: \n" + e.ToString());
-                throw;
+                Finish();
             }
-        }
+       }
 
         protected override void OnNewIntent(Intent intent)
         {

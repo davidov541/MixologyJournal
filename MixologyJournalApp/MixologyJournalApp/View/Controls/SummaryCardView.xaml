@@ -4,8 +4,10 @@
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
+       xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
        mc:Ignorable="d"
        x:Class="MixologyJournalApp.View.Controls.SummaryCardView"
+       x:DataType="viewmodel:IPictureCreationInfo"
        Style="{StaticResource Card}"
        BackgroundColor="{Binding Type, Converter={StaticResource CardColorConverter}}">
     <Frame.GestureRecognizers>
@@ -18,7 +20,7 @@
         <StackLayout>
             <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" Style="{StaticResource CardTypeCaption}" />
             <Image x:Name="imgCard" Source="{Binding Image}"  HorizontalOptions="Fill" Aspect="AspectFill" InputTransparent="True" Opacity="1.0" BackgroundColor="Transparent" />
-            <StackLayout Margin="10" VerticalOptions="FillAndExpand">
+            <StackLayout Margin="10">
                 <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
                 <Label Text="{Binding IngredientList}" Style="{StaticResource CardContentText}"/>
             </StackLayout>

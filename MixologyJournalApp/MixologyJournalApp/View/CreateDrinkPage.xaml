@@ -5,8 +5,10 @@
                         xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                         xmlns:controls="clr-namespace:MixologyJournalApp.View.Controls"
+                        xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
                         mc:Ignorable="d"
                         x:Class="MixologyJournalApp.View.CreateDrinkPage"
+                        x:DataType="viewmodel:DrinkViewModel"
                         x:Name="rootPage"
                         Visual="Material">
     <ContentPage.Resources>
@@ -17,7 +19,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -46,8 +48,7 @@
         <AbsoluteLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
                 <StackLayout Orientation="Vertical"
-                             Margin="10,5"
-                             VerticalOptions="FillAndExpand">
+                             Margin="10,5">
                     <controls:EditableImage x:Name="EditableImage"
                                             Image="{Binding Image}"
                                             UpdateImageCommand="{Binding ChangeImageCommand, Source={x:Reference rootPage}}" />
@@ -59,7 +60,7 @@
                     <Label Text="Ingredients" Style="{StaticResource FormHeaderText}" />
                     <StackLayout BindableLayout.ItemsSource="{Binding IngredientUsages}">
                         <BindableLayout.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="viewmodel:IngredientUsageViewModel">
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding FullDescription}"
                                            VerticalTextAlignment="Center"
@@ -84,10 +85,10 @@
                     <Label Text="Steps" Style="{StaticResource FormHeaderText}" />
                     <StackLayout BindableLayout.ItemsSource="{Binding Steps}">
                         <BindableLayout.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="viewmodel:StepViewModel">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />

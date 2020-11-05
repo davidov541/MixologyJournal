@@ -3,15 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodel="clr-namespace:MixologyJournalApp.ViewModel"
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.LoadingPage"
+             x:DataType="viewmodel:LocalDataCache"
              BackgroundColor="Black">
     <ContentPage.Content>
         <AbsoluteLayout>
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
                 <Image VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" 
-                   Source="@drawable/SplashScreen"/>
+                       HorizontalOptions="CenterAndExpand" 
+                       Source="@drawable/SplashScreen"/>
                 <ProgressBar Progress="{Binding InitProgress}" VerticalOptions="Center" Margin="10,0" />
             </StackLayout>
             <ActivityIndicator AbsoluteLayout.LayoutBounds="0.525,0.75,0.1,0.1" AbsoluteLayout.LayoutFlags="All" Color="White" IsRunning="True" />

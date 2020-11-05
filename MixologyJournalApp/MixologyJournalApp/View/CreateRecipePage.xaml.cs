@@ -52,7 +52,7 @@ namespace MixologyJournalApp.View
         private async void ModifyIngredientButton_Clicked(object sender, EventArgs e)
         {
             IngredientUsageViewModel viewModel = (sender as ImageButton).BindingContext as IngredientUsageViewModel;
-            await Navigation.PushModalAsync(new ModifyIngredientPage(viewModel), true);
+            await Navigation.PushModalAsync(new ModifyIngredientPage(viewModel, _app), true);
         }
     }
 }

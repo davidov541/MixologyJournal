@@ -27,13 +27,21 @@ namespace MixologyJournalApp.Model
             set;
         }
 
+        [JsonProperty("format")]
+        public String Format
+        {
+            get;
+            set;
+        }
+      
         public static Unit CreateEmpty()
         {
             Unit unit = new Unit
             {
                 Id = "",
                 Name = "",
-                Plural = ""
+                Plural = "",
+                Format = "{0} {1} of {2}"
             };
             return unit;
         }
@@ -48,7 +56,8 @@ namespace MixologyJournalApp.Model
             {
                 Id = Id,
                 Name = Name,
-                Plural = Plural
+                Plural = Plural,
+                Format = Format
             };
             return clone;
         }

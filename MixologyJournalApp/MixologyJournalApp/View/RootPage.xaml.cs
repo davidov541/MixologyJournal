@@ -20,6 +20,11 @@ namespace MixologyJournalApp.View
             Master = _master;
             Detail = new NavigationPage(new RecipeListPage(_app));
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             _master.ListView.ItemSelected += ListView_ItemSelected;
         }
 

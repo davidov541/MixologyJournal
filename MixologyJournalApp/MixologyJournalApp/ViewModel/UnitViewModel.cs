@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.Model;
 using System;
 using System.ComponentModel;
+using System.Linq;
 
 namespace MixologyJournalApp.ViewModel
 {
@@ -8,13 +9,11 @@ namespace MixologyJournalApp.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private readonly Unit _model;
-
         public String Name
         {
             get
             {
-                return _model.Name;
+                return Model.Name;
             }
         }
 
@@ -22,7 +21,31 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _model.Plural;
+                return Model.Plural;
+            }
+        }
+
+        public String Format
+        {
+            get
+            {
+                return Model.Format;
+            }
+        }
+
+        private readonly Char[] Vowels = new Char[] { 'a', 'e', 'i', 'o', 'u' };
+        public String SingularArticle
+        {
+            get
+            {
+                if (Vowels.Contains(Model.Name.ToLower()[0]))
+                {
+                    return "An";
+                }
+                else
+                {
+                    return "A";
+                }
             }
         }
 
@@ -30,21 +53,15 @@ namespace MixologyJournalApp.ViewModel
         {
             get
             {
-                return _model.Id;
+                return Model.Id;
             }
         }
 
-        internal Unit Model
-        {
-            get
-            {
-                return _model;
-            }
-        }
+        internal Unit Model { get; }
 
         public UnitViewModel(Unit model)
         {
-            _model = model;
+            Model = model;
         }
 
         public override string ToString()

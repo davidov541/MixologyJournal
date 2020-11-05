@@ -1,5 +1,4 @@
-﻿using MixologyJournalApp.Platform;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +12,7 @@ namespace MixologyJournalApp.Model
     [JsonObject(MemberSerialization.OptIn)]
     internal class ModelCache : IDisposable, INotifyPropertyChanged
     {
-        internal const int InitStepsCount = 4;
+        internal const int InitStepsCount = 5;
 
         private List<Recipe> _recipes = new List<Recipe>();
         [JsonProperty("recipes")]
@@ -29,6 +28,20 @@ namespace MixologyJournalApp.Model
             }
         }
 
+        private List<Recipe> _deletedRecipes = new List<Recipe>();
+        [JsonProperty("deleted_recipes")]
+        internal IEnumerable<Recipe> DeletedRecipes
+        {
+            get
+            {
+                return _deletedRecipes;
+            }
+            set
+            {
+                _deletedRecipes = new List<Recipe>(value);
+            }
+        }
+
         private List<Drink> _drinks = new List<Drink>();
         [JsonProperty("drinks")]
         public IEnumerable<Drink> Drinks
@@ -40,6 +53,20 @@ namespace MixologyJournalApp.Model
             set
             {
                 _drinks = new List<Drink>(value);
+            }
+        }
+
+        private List<Drink> _deletedDrinks = new List<Drink>();
+        [JsonProperty("deleted_drinks")]
+        internal IEnumerable<Drink> DeletedDrinks
+        {
+            get
+            {
+                return _deletedDrinks;
+            }
+            set
+            {
+                _deletedDrinks = new List<Drink>(value);
             }
         }
 
@@ -68,6 +95,20 @@ namespace MixologyJournalApp.Model
             set
             {
                 _units = new List<Unit>(value);
+            }
+        }
+
+        private List<Category> _topLevelCategories = new List<Category>();
+        [JsonProperty("categories")]
+        public IEnumerable<Category> TopLevelCategories
+        {
+            get
+            {
+                return _topLevelCategories;
+            }
+            set
+            {
+                _topLevelCategories = new List<Category>(value);
             }
         }
 
@@ -131,7 +172,7 @@ namespace MixologyJournalApp.Model
 
         public async Task Init()
         {
-            if (DateTime.UtcNow.Subtract(LastLoadedTime).TotalMilliseconds > TimeSpan.FromHours(1).TotalMilliseconds)
+            if (true || DateTime.UtcNow.Subtract(LastLoadedTime).TotalMilliseconds > TimeSpan.FromHours(1).TotalMilliseconds)
             {
                 InitProgress = 0.0;
                 await UpdateAvailableUnits();
@@ -145,9 +186,12 @@ namespace MixologyJournalApp.Model
                 InitProgress = 3.0;
                 await UpdateDrinks();
 
+                InitProgress = 4.0;
+                await UpdateCategories();
+
                 LastLoadedTime = DateTime.UtcNow;
             }
-            InitProgress = 4.0;
+            InitProgress = 5.0;
         }
 
         internal async Task<Boolean> UploadRecentItems()
@@ -168,6 +212,28 @@ namespace MixologyJournalApp.Model
                 foreach (Drink drink in Drinks.Where(d => !d.IsFavoriteUploaded))
                 {
                     result = result && await UpdateFavoriteDrink(drink, drink.IsFavorite);
+                }
+
+                List<Recipe> deletedRecipes = new List<Recipe>(DeletedRecipes);
+                foreach (Recipe recipe in deletedRecipes)
+                {
+                    Boolean removeResult = await DeleteRecipe(recipe);
+                    result = result && removeResult;
+                    if (removeResult)
+                    {
+                        _deletedRecipes.Remove(recipe);
+                    }
+                }
+
+                List<Drink> deletedDrinks = new List<Drink>(DeletedDrinks);
+                foreach (Drink drink in deletedDrinks)
+                {
+                    Boolean removeResult = await DeleteDrink(drink);
+                    result = result && removeResult;
+                    if (removeResult)
+                    {
+                        _deletedDrinks.Remove(drink);
+                    }
                 }
             }
             catch (HttpRequestException)
@@ -272,7 +338,8 @@ namespace MixologyJournalApp.Model
 
             if (GetUseRemote() && recipeModels.Any())
             {
-                _recipes.Clear();
+                IEnumerable<String> newIds = recipeModels.Select(model => model.Id);
+                _recipes.RemoveAll(d => newIds.Contains(d.Id));
             }
 
             foreach (Recipe r in recipeModels.OrderBy(i => i.Name))
@@ -289,7 +356,8 @@ namespace MixologyJournalApp.Model
 
             if (GetUseRemote() && drinkModels.Any())
             {
-                _drinks.Clear();
+                IEnumerable<String> newIds = drinkModels.Select(model => model.Id);
+                _drinks.RemoveAll(d => newIds.Contains(d.Id));
             }
 
             foreach (Drink d in drinkModels.OrderBy(i => i.Name))
@@ -330,6 +398,27 @@ namespace MixologyJournalApp.Model
             }
         }
 
+        private async Task UpdateCategories()
+        {
+            List<Category> categories = await _app.PlatformInfo.Backend.UpdateCategories();
+
+            if (GetUseRemote() && categories.Any())
+            {
+                _topLevelCategories.Clear();
+            }
+
+            foreach (Category c in categories.OrderBy(i => i.Name))
+            {
+                _topLevelCategories.Add(c);
+            }
+
+            Dictionary<String, Ingredient> ingreds = _ingredients.ToDictionary(i => i.Id);
+            foreach (Category c in _topLevelCategories)
+            {
+                c.Init(ingreds);
+            }
+        }
+
         internal async Task<Boolean> UpdateFavoriteDrink(Drink drink, Boolean isFavorite)
         {
             Boolean finalResult = true;
@@ -349,6 +438,17 @@ namespace MixologyJournalApp.Model
             if (GetUseRemote())
             {
                 finalResult = await _app.PlatformInfo.Backend.DeleteRecipe(recipe);
+                if (!finalResult)
+                {
+                    _deletedRecipes.Add(recipe);
+                }
+            }
+            else
+            {
+                if (_app.PlatformInfo.Authentication.IsUsingRemote)
+                {
+                    _deletedRecipes.Add(recipe);
+                }
             }
 
             _recipes.Remove(recipe);
@@ -364,6 +464,17 @@ namespace MixologyJournalApp.Model
             if (GetUseRemote())
             {
                 finalResult = await _app.PlatformInfo.Backend.DeleteDrink(drink);
+                if (!finalResult)
+                {
+                    _deletedDrinks.Add(drink);
+                }
+            }
+            else
+            {
+                if (_app.PlatformInfo.Authentication.IsUsingRemote)
+                {
+                    _deletedDrinks.Add(drink);
+                }
             }
 
             _drinks.Remove(drink);

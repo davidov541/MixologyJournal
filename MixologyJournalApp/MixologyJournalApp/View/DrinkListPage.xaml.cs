@@ -20,7 +20,6 @@ namespace MixologyJournalApp.View
         {
             _app = app;
             _viewModel = new DrinkListPageViewModel(_app);
-            _viewModel.PropertyChanged += ViewModel_PropertyChanged;
             BindingContext = _viewModel;
             _selectionCommand = new Command(ItemSelected);
 
@@ -29,10 +28,15 @@ namespace MixologyJournalApp.View
             UpdateDrinkList();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            UpdateDrinkList();
+        }
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            _viewModel.PropertyChanged -= ViewModel_PropertyChanged;
         }
 
         private void UpdateDrinkList()
