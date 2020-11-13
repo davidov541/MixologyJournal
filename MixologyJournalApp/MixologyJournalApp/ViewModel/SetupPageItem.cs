@@ -11,7 +11,8 @@ namespace MixologyJournalApp.ViewModel
         {
             Login,
             Description,
-            Image
+            Image,
+            Initial
         }
 
         public String Caption
@@ -38,10 +39,10 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
-        public SetupPageItem(String caption)
+        public SetupPageItem(String caption, ItemType type = ItemType.Description)
         {
             Caption = caption;
-            Type = ItemType.Description;
+            Type = type;
         }
 
         public SetupPageItem(String caption, IEnumerable<ILoginMethod> loginMethods)

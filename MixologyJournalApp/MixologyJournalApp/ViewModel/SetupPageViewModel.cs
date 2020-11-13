@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MixologyJournalApp.ViewModel
@@ -40,6 +41,7 @@ namespace MixologyJournalApp.ViewModel
                 OnPropertyChanged(nameof(LoginMethods));
                 OnPropertyChanged(nameof(ShowNext));
                 OnPropertyChanged(nameof(ShowPrevious));
+                OnPropertyChanged(nameof(InitialButtonsVisible));
             }
         }
 
@@ -83,6 +85,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public Boolean InitialButtonsVisible
+        {
+            get
+            {
+                return CurrentItem.Type == SetupPageItem.ItemType.Initial;
+            }
+        }
+
         public IEnumerable<ILoginMethod> LoginMethods
         {
             get
@@ -107,6 +117,30 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public ICommand PreviousCommand
+        {
+            get
+            {
+                return new Command(GoToPrevious);
+            }
+        }
+
+        public ICommand NextCommand
+        {
+            get
+            {
+                return new Command(GoToNext);
+            }
+        }
+
+        public ICommand SkipCommand
+        {
+            get
+            {
+                return new Command(() => Position = PageItems.Count - 1);
+            }
+        }
+
         public SetupPageViewModel(IPlatform platform)
         {
             _platform = platform;
@@ -114,8 +148,8 @@ namespace MixologyJournalApp.ViewModel
 
             PageItems = new ObservableCollection<SetupPageItem>()
             {
-                new SetupPageItem("Welcome to Mixology Journal!\n\nYou've taken your first step to\nimproving your cocktail making skills.", ImageSource.FromFile("gt_chalk_transparent.png")),
-                new SetupPageItem("With Mixology Journal, you can log every variation of a recipe you create.\n\nWhen you find a favorite variation, you can keep that for use later."),
+                new SetupPageItem("Welcome to Mixology Journal!\n\nYou've taken your first step to\nimproving your cocktail making skills.", SetupPageItem.ItemType.Initial),
+                new SetupPageItem("With Mixology Journal, you can log every variation of a recipe you create.\n\nWhen you find a favorite variation, you can keep that for use later.", ImageSource.FromFile("gt_chalk_transparent.png")),
                 new SetupPageItem("First, add recipes for cocktails that you like to make often.\n\nThese can be from books, your notes, or from your head."),
                 new SetupPageItem("Then, when you create drinks based on those recipes, you can log how it turned out.\n\nThis might include new brands or ingredients, or different amounts."),
                 new SetupPageItem("Using this, you can track variations in how you make a recipe that make a drink taste better or worse.\n\nThat way, you can continue improving and refining your recipes."),
@@ -132,6 +166,16 @@ namespace MixologyJournalApp.ViewModel
         private async void Authentication_LoginEnabled(object sender, EventArgs e)
         {
             await (Application.Current as App).StartApp();
+        }
+
+        internal void GoToPrevious()
+        {
+            Position = Math.Max(0, Position - 1);
+        }
+
+        internal void GoToNext()
+        {
+            Position = Math.Min(PageItems.Count - 1, Position + 1);
         }
     }
 }
