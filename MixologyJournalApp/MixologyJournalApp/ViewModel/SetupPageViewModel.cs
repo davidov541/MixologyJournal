@@ -38,6 +38,8 @@ namespace MixologyJournalApp.ViewModel
                 OnPropertyChanged(nameof(ImageVisible));
                 OnPropertyChanged(nameof(LoginButtonsVisible));
                 OnPropertyChanged(nameof(LoginMethods));
+                OnPropertyChanged(nameof(ShowNext));
+                OnPropertyChanged(nameof(ShowPrevious));
             }
         }
 
@@ -86,6 +88,22 @@ namespace MixologyJournalApp.ViewModel
             get
             {
                 return CurrentItem.LoginMethods;
+            }
+        }
+
+        public Boolean ShowNext
+        {
+            get
+            {
+                return _position != PageItems.Count - 1;
+            }
+        }
+
+        public Boolean ShowPrevious
+        {
+            get
+            {
+                return _position != 0;
             }
         }
 

@@ -27,16 +27,36 @@ namespace MixologyJournalApp.View
             switch (e.Direction)
             {
                 case SwipeDirection.Right:
-                    _viewModel.Position = Math.Max(0, _viewModel.Position - 1);
+                    GoToPrevious();
                     break;
                 case SwipeDirection.Left:
-                    _viewModel.Position = Math.Min(_viewModel.PageItems.Count - 1, _viewModel.Position + 1);
+                    GoToNext();
                     break;
                 case SwipeDirection.Up:
                 case SwipeDirection.Down:
                 default:
                     break;
             }
+        }
+
+        private void goLeftButton_Clicked(object sender, EventArgs e)
+        {
+            GoToPrevious();
+        }
+
+        private void goRightButton_Clicked(object sender, EventArgs e)
+        {
+            GoToNext();
+        }
+
+        private void GoToPrevious()
+        {
+            _viewModel.Position = Math.Max(0, _viewModel.Position - 1);
+        }
+
+        private void GoToNext()
+        {
+            _viewModel.Position = Math.Min(_viewModel.PageItems.Count - 1, _viewModel.Position + 1);
         }
     }
 }
