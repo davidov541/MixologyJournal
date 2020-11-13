@@ -35,11 +35,11 @@
                    VerticalOptions="FillAndExpand"
                    Aspect="Fill"
                    Source="blackboard_background.jpg" />
-            <StackLayout Orientation="Vertical" Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalOptions="Center">
+            <StackLayout Orientation="Vertical" Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="Center">
                 <Image Source="{Binding ImageSource}"
                        Aspect="AspectFill"
                        IsVisible="{Binding ImageVisible}"
-                       Margin="0,10,0,0"/>
+                       Margin="50,10,50,0"/>
                 <Label Text="{Binding Caption}"
                        Margin="10,20,10,20"
                        Style="{StaticResource Key=SetupWizardText}"
