@@ -73,12 +73,16 @@
                             WidthRequest="250"
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="FillAndExpand"
+                            BorderWidth="1"
+                            BorderColor="White"
                             Command="{Binding NextCommand}" />
                     <Button Text="Let's Make Some Drinks Already!"
                             HeightRequest="50"
                             WidthRequest="250"
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="FillAndExpand"
+                            BorderWidth="1"
+                            BorderColor="White"
                             Command="{Binding SkipCommand}" />
                 </StackLayout>
             </StackLayout>

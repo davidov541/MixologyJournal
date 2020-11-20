@@ -342,7 +342,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarMixologyJournalAppAndroidHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionMixologyJournalAppAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadUnhandledDeviceExceptionMixologyJournalAppAndroidHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarMixologyJournalAppAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
