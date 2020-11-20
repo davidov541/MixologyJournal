@@ -38,7 +38,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <BoxView Style="{StaticResource CardDivider}"  />
-            <Label Text="{Binding Path=FormattedSteps}" 
+            <Label Text="{Binding Path=StepText}" 
                     Style="{StaticResource CardContentText}" />
             <BoxView Style="{StaticResource CardDivider}" IsVisible="{Binding HasReview}" />
             <Label Text="{Binding Path=Rating}"

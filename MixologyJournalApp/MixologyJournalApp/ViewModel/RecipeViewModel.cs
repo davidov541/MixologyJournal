@@ -40,21 +40,6 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public String FormattedSteps
-        {
-            get
-            {
-                int stepNum = 1;
-                String result = "";
-                foreach (String step in _model.Steps)
-                {
-                    result += stepNum.ToString() + ". " + step + "\n";
-                    stepNum++;
-                }
-                return result;
-            }
-        }
-
         public String IngredientList
         {
             get
@@ -75,7 +60,11 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
-        public ObservableCollection<StepViewModel> Steps { get; } = new ObservableCollection<StepViewModel>();
+        public String StepText
+        {
+            get;
+            set;
+        }
 
         public ObservableCollection<IngredientUsageViewModel> IngredientUsages { get; } = new ObservableCollection<IngredientUsageViewModel>();
 
@@ -91,19 +80,13 @@ namespace MixologyJournalApp.ViewModel
             private set;
         }
 
-        public ICommand AddStepCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand DeleteStepCommand
-        {
-            get;
-            private set;
-        }
-
         public ICommand DeleteCommand
+        {
+            get;
+            private set;
+        }
+
+        public ICommand UpdateStepsCommand
         {
             get;
             private set;
@@ -219,12 +202,7 @@ namespace MixologyJournalApp.ViewModel
 
             InitCommands();
 
-            IEnumerable<StepViewModel> steps = _model.Steps.Select((s, i) => new StepViewModel(s, i));
-            foreach (StepViewModel s in steps)
-            {
-                s.PropertyChanged += StepChanged;
-                Steps.Add(s);
-            }
+            StepText = String.Join("\n", _model.Steps);
 
             IEnumerable<IngredientUsageViewModel> usages = _model.Ingredients.Select(u => new IngredientUsageViewModel(u));
             foreach (IngredientUsageViewModel u in usages)
@@ -239,11 +217,6 @@ namespace MixologyJournalApp.ViewModel
         {
             switch (e.PropertyName)
             {
-                case nameof(Steps):
-                    OnPropertyChanged(nameof(FormattedSteps));
-
-                    (DeleteStepCommand as Command).ChangeCanExecute();
-                    break;
                 case nameof(IngredientUsages):
                     (DeleteIngredientCommand as Command).ChangeCanExecute();
                     break;
@@ -270,24 +243,6 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return IngredientUsages.Count > 1;
                 });
-            AddStepCommand = new Command(
-                execute: () =>
-                {
-                    AddStep();
-                },
-                canExecute: () =>
-                {
-                    return true;
-                });
-            DeleteStepCommand = new Command(
-                execute: (step) =>
-                {
-                    DeleteStep(step as StepViewModel);
-                },
-                canExecute: (step) =>
-                {
-                    return Steps.Count > 1;
-                });
             DeleteCommand = new Command(
                 execute: async () =>
                 {
@@ -297,19 +252,20 @@ namespace MixologyJournalApp.ViewModel
                 {
                     return CanBeDeleted;
                 });
+            UpdateStepsCommand = new Command(
+                execute: () =>
+                {
+                    UpdateSteps();
+                },
+                canExecute: () =>
+                {
+                    return true;
+                });
         }
 
         private void OnPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void StepChanged(object sender, PropertyChangedEventArgs e)
-        {
-            StepViewModel vm = sender as StepViewModel;
-            _model.Steps[vm.Index] = vm.Text;
-
-            OnPropertyChanged(nameof(Steps));
         }
 
         public async Task<bool> SaveNew()
@@ -318,24 +274,6 @@ namespace MixologyJournalApp.ViewModel
             Boolean result = await _app.Cache.CreateRecipe(this, _model);
             ProcessIsRunning = false;
             return result;
-        }
-
-        public void AddStep()
-        {
-            _model.Steps.Add("");
-            StepViewModel stepvm = new StepViewModel("", Steps.Count);
-            stepvm.PropertyChanged += StepChanged;
-            Steps.Add(stepvm);
-            OnPropertyChanged(nameof(Steps));
-        }
-
-        public void DeleteStep(StepViewModel step)
-        {
-            int index = step.Index;
-            Steps.Remove(step);
-            _model.Steps.RemoveAt(index);
-
-            OnPropertyChanged(nameof(Steps));
         }
 
         public void AddIngredient()
@@ -355,6 +293,11 @@ namespace MixologyJournalApp.ViewModel
             _model.Ingredients.RemoveAt(index);
 
             OnPropertyChanged(nameof(IngredientUsages));
+        }
+
+        private void UpdateSteps()
+        {
+            _model.Steps = this.StepText.Split('\n').ToList();
         }
 
         public Drink CreateDerivedDrink()

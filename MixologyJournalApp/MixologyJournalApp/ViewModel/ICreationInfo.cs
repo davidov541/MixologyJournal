@@ -15,7 +15,7 @@ namespace MixologyJournalApp.ViewModel
             get;
         }
 
-        String FormattedSteps
+        String StepText
         {
             get;
         }

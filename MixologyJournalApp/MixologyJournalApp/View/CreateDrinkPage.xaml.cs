@@ -52,6 +52,7 @@ namespace MixologyJournalApp.View
 
         private async void CreateButton_Clicked(object sender, EventArgs e)
         {
+            _vm.UpdateStepsCommand.Execute(null);
             bool result = await _vm.SaveNew();
             if (!result)
             {
@@ -66,15 +67,9 @@ namespace MixologyJournalApp.View
             await Navigation.PopToRootAsync();
         }
 
-        private void AddStepButton_Clicked(object sender, EventArgs e)
+        private void Entry_Unfocused(object sender, FocusEventArgs e)
         {
-            _vm.AddStep();
-        }
-
-        private void DeleteStepButton_Clicked(object sender, EventArgs e)
-        {
-            StepViewModel vm = (sender as Button).BindingContext as StepViewModel;
-            _vm.DeleteStep(vm);
+            _vm.UpdateStepsCommand.Execute(null);
         }
 
         private async void ModifyIngredientButton_Clicked(object sender, EventArgs e)

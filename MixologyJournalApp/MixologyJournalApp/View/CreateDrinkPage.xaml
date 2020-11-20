@@ -83,33 +83,15 @@
                     <BoxView Style="{StaticResource CardDivider}"  />
 
                     <Label Text="Steps" Style="{StaticResource FormHeaderText}" />
-                    <StackLayout BindableLayout.ItemsSource="{Binding Steps}">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate x:DataType="viewmodel:StepViewModel">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Entry Grid.Row="0" 
-                                           Grid.Column="0" 
-                                           Text="{Binding Path=Text, Mode=TwoWay}" />
-                                    <controls:DeleteButton Grid.Row="0" 
-                                                           Grid.Column="1" 
-                                                           x:Name="deleteStepButton"
-                                                           Command="{Binding Path=BindingContext.DeleteStepCommand, Source={x:Reference rootPage}}"
-                                                           CommandParameter="{Binding}" />
-                                </Grid>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </StackLayout>
-                    <ImageButton x:Name="addStepButton" 
-                                 Style="{StaticResource AddButton}"
-                                 Command="{Binding AddStepCommand}"/>
-                    
+                    <Editor x:Name="stepsText" 
+                            IsTextPredictionEnabled="True" 
+                            Keyboard="Text" 
+                            Placeholder="Steps"
+                            Text="{Binding Path=StepText, Mode=TwoWay}"
+                            IsSpellCheckEnabled="True"
+                            AutoSize="TextChanges"
+                            Unfocused="Entry_Unfocused"/>
+
                     <BoxView Style="{StaticResource CardDivider}"  />
 
                     <Label Text="Review" Style="{StaticResource FormHeaderText}" />
