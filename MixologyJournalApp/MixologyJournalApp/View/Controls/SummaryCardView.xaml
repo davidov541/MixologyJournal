@@ -18,12 +18,7 @@
     </Frame.Resources>
     <Frame.Content>
         <StackLayout>
-            <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" Style="{StaticResource CardTypeCaption}" />
-            <Image x:Name="imgCard" Source="{Binding Image}"  HorizontalOptions="Fill" Aspect="AspectFill" InputTransparent="True" Opacity="1.0" BackgroundColor="Transparent" />
-            <StackLayout Margin="10">
-                <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
-                <Label Text="{Binding IngredientList}" Style="{StaticResource CardContentText}"/>
-            </StackLayout>
+            <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
         </StackLayout>
     </Frame.Content>
 </Frame>

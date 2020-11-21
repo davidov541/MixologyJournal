@@ -23,7 +23,6 @@ namespace MixologyJournalApp.View.Controls
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
-            imgCard.HeightRequest = imgCard.Width / 16 * 9;
         }
 
         private void Card_Tapped(object sender, EventArgs e)
