@@ -9,7 +9,8 @@
        x:Class="MixologyJournalApp.View.Controls.SummaryCardView"
        x:DataType="viewmodel:IPictureCreationInfo"
        Style="{StaticResource Card}"
-       BackgroundColor="{Binding Type, Converter={StaticResource CardColorConverter}}">
+       BackgroundColor="{Binding Type, Converter={StaticResource CardColorConverter}}"
+       IsVisible="{Binding IsDisplayed}">
     <Frame.GestureRecognizers>
         <TapGestureRecognizer Tapped="Card_Tapped"/>
     </Frame.GestureRecognizers>

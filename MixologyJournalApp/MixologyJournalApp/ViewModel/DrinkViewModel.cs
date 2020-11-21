@@ -56,6 +56,20 @@ namespace MixologyJournalApp.ViewModel
             set;
         }
 
+        private Boolean _isDisplayed = true;
+        public Boolean IsDisplayed
+        {
+            get
+            {
+                return _isDisplayed;
+            }
+            private set
+            {
+                _isDisplayed = value;
+                OnPropertyChanged(nameof(IsDisplayed));
+            }
+        }
+
         public Boolean HasReview
         {
             get
@@ -397,6 +411,11 @@ namespace MixologyJournalApp.ViewModel
                 OnPropertyChanged(nameof(Image));
             }
             ProcessIsRunning = false;
+        }
+
+        public void ApplySearchParameter(String searchTerm)
+        {
+            IsDisplayed = Name.Contains(searchTerm);
         }
     }
 }

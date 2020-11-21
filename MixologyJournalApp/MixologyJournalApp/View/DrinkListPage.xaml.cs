@@ -67,5 +67,13 @@ namespace MixologyJournalApp.View
             CreateDrinkPage drinkPage = new CreateDrinkPage(_app);
             await Navigation.PushAsync(drinkPage);
         }
+
+        private void DrinkSearchEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            foreach (DrinkViewModel recipe in _viewModel.Drinks)
+            {
+                recipe.ApplySearchParameter(e.NewTextValue);
+            }
+        }
     }
 }

@@ -40,6 +40,11 @@ namespace MixologyJournalApp.ViewModel
             get;
         }
 
+        Boolean IsDisplayed
+        {
+            get;
+        }
+
         CreationType Type
         {
             get;

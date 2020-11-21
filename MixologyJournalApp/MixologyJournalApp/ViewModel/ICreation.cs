@@ -29,5 +29,7 @@ namespace MixologyJournalApp.ViewModel
         {
             get;
         }
+
+        void ApplySearchParameter(String searchTerm);
     }
 }

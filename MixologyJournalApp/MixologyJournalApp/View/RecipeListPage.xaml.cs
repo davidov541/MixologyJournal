@@ -59,5 +59,13 @@ namespace MixologyJournalApp.View
             CreateRecipePage recipePage = new CreateRecipePage(_app, new RecipeViewModel(_app));
             await Navigation.PushAsync(recipePage);
         }
+
+        private void RecipeSearchEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            foreach (RecipeViewModel recipe in _viewModel.Recipes)
+            {
+                recipe.ApplySearchParameter(e.NewTextValue);
+            }
+        }
     }
 }

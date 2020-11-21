@@ -66,6 +66,20 @@ namespace MixologyJournalApp.ViewModel
             set;
         }
 
+        private Boolean _isDisplayed = true;
+        public Boolean IsDisplayed
+        {
+            get
+            {
+                return _isDisplayed;
+            }
+            private set
+            {
+                _isDisplayed = value;
+                OnPropertyChanged(nameof(IsDisplayed));
+            }
+        }
+
         public ObservableCollection<IngredientUsageViewModel> IngredientUsages { get; } = new ObservableCollection<IngredientUsageViewModel>();
 
         public ICommand AddIngredientCommand
@@ -344,6 +358,11 @@ namespace MixologyJournalApp.ViewModel
                 OnPropertyChanged(nameof(Image));
             }
             ProcessIsRunning = false;
+        }
+
+        public void ApplySearchParameter(String searchTerm)
+        {
+            IsDisplayed = Name.Contains(searchTerm);
         }
     }
 }
