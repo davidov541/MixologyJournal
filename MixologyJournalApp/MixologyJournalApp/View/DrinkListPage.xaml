@@ -13,6 +13,7 @@
 
         <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="SizeProportional">
+            <Entry Style="{StaticResource SearchBox}" />
             <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always">
                 <StackLayout x:Name="RecipeListLayout" Orientation="Vertical" />
             </ScrollView>

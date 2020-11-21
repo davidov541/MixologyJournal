@@ -63,6 +63,13 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontFamily" Value="{StaticResource ChalkFont}" />
             </Style>
+            <Style TargetType="Entry" x:Key="SearchBox">
+                <Setter Property="Placeholder" Value="Search" />
+                <Setter Property="ReturnType" Value="Search" />
+                <Setter Property="IsSpellCheckEnabled" Value="True" />
+                <Setter Property="IsTextPredictionEnabled" Value="True" />
+                <Setter Property="Keyboard" Value="Plain" />
+            </Style>
 
             <!-- Card Styles -->
             <Color x:Key="RecipeCardBackground">#00B2D6</Color>
