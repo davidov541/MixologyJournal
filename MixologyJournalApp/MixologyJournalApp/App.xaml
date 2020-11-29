@@ -69,6 +69,7 @@
                 <Setter Property="IsSpellCheckEnabled" Value="True" />
                 <Setter Property="IsTextPredictionEnabled" Value="True" />
                 <Setter Property="Keyboard" Value="Plain" />
+                <Setter Property="BackgroundColor" Value="LightGray" />
             </Style>
 
             <!-- Card Styles -->
