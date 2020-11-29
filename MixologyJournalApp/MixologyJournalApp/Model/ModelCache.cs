@@ -122,7 +122,7 @@ namespace MixologyJournalApp.Model
         private Boolean _canAccessRemote = true;
         private Boolean GetUseRemote()
         {
-            return _app.PlatformInfo.Authentication.IsAuthenticated && _canAccessRemote;
+            return _canAccessRemote;
         }
 
         private double _initProgress = 0.0;
@@ -412,7 +412,9 @@ namespace MixologyJournalApp.Model
                 _topLevelCategories.Add(c);
             }
 
-            Dictionary<String, Ingredient> ingreds = _ingredients.ToDictionary(i => i.Id);
+            IEnumerable<Ingredient> uniqueIngreds = _ingredients.Distinct(new IngredientComparer());
+
+            Dictionary<String, Ingredient> ingreds = uniqueIngreds.ToDictionary(i => i.Id);
             foreach (Category c in _topLevelCategories)
             {
                 c.Init(ingreds);
