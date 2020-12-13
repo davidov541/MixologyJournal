@@ -49,7 +49,7 @@
                              IsVisible="{Binding LoginButtonsVisible}"
                              BindableLayout.ItemsSource="{Binding LoginMethods}">
                     <BindableLayout.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="platform:ILoginMethod">
                             <Button Text="{Binding Name, StringFormat='Use {0}'}"
                                     ImageSource="{Binding Icon}"
                                     HeightRequest="50"
