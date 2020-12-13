@@ -7,7 +7,6 @@ using Auth0.OidcClient;
 using IdentityModel.OidcClient;
 using IdentityModel.OidcClient.Browser;
 using IdentityModel.OidcClient.Results;
-using Java.Net;
 using MixologyJournalApp.Model;
 using System;
 using System.Linq;
@@ -71,7 +70,7 @@ namespace MixologyJournalApp.Droid
                 SetResult(Android.App.Result.Ok, result);
                 Finish();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 SetResult(Android.App.Result.Ok, null);
                 Console.Error.WriteLine("Uncaught Exception: \n" + e.ToString());
