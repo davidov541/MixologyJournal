@@ -362,7 +362,7 @@ namespace MixologyJournalApp.ViewModel
 
         public void ApplySearchParameter(String searchTerm)
         {
-            IsDisplayed = Name.Contains(searchTerm);
+            IsDisplayed = Name.ToLowerInvariant().Contains(searchTerm.ToLowerInvariant());
         }
     }
 }
