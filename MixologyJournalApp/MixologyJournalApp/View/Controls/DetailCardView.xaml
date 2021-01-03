@@ -8,8 +8,7 @@
        mc:Ignorable="d"
        x:Class="MixologyJournalApp.View.Controls.DetailCardView"
        x:DataType="viewmodel:IPictureCreation"
-       Style="{StaticResource Card}"
-       BackgroundColor="{Binding Type, Converter={StaticResource CardColorConverter}}">
+       Style="{StaticResource Card}">
     <Frame.GestureRecognizers>
         <TapGestureRecognizer Tapped="Card_Tapped"/>
     </Frame.GestureRecognizers>
@@ -18,14 +17,17 @@
     </Frame.Resources>
     <Frame.Content>
         <StackLayout>
-            <Label Text="{Binding Type, Converter={StaticResource CreationNameConverter}}" 
-                   Style="{StaticResource CardTypeCaption}" />
-            <Grid>
+            <Grid BackgroundColor="{Binding Type, Converter={StaticResource CardColorConverter}}">
                 <Image x:Name="imgCard" 
                        Source="{Binding Image}"
                        Aspect="AspectFit"
                        InputTransparent="True" />
             </Grid>
+            <Label Text="{Binding Path=StepText}" 
+                   Style="{StaticResource CardContentText}" />
+            <BoxView Style="{StaticResource CardDivider}"  />
+            <Label Text="Ingredients: "
+                   Style="{StaticResource CardContentText}" />
             <ListView x:Name="ingredientUsageList"
                       Style="{StaticResource ContentList}"
                       ItemsSource="{Binding IngredientUsages}">
@@ -37,9 +39,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <BoxView Style="{StaticResource CardDivider}"  />
-            <Label Text="{Binding Path=StepText}" 
-                    Style="{StaticResource CardContentText}" />
             <BoxView Style="{StaticResource CardDivider}" IsVisible="{Binding HasReview}" />
             <Label Text="{Binding Path=Rating}"
                     Style="{StaticResource CardContentText}"

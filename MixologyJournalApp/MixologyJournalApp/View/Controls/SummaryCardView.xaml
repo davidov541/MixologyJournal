@@ -18,7 +18,7 @@
         <controls:CreationTypeToNameConverter x:Key="CreationNameConverter" />
     </Frame.Resources>
     <Frame.Content>
-        <StackLayout>
+        <StackLayout Margin="10,10,10,10">
             <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
         </StackLayout>
     </Frame.Content>

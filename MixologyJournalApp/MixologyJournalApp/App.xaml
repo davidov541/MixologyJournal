@@ -83,12 +83,13 @@
             </Style>
             <Style TargetType="ListView" x:Key="ContentList">
                 <Setter Property="RowHeight" Value="40" />
-                <Setter Property="Margin" Value="0,0,0,10" />
+                <Setter Property="Margin" Value="10,0,10,10" />
                 <Setter Property="VerticalScrollBarVisibility" Value="Never" />
                 <Setter Property="SeparatorColor" Value="Transparent" />
                 <Setter Property="InputTransparent" Value="True" />
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource ContentText}" x:Key="CardContentText">
+                <Setter Property="Margin" Value="10,0,10,0" />
             </Style>
             <Style TargetType="Label"  x:Key="FormHeaderText">
                 <Setter Property="Margin" Value="0,15,0,0" />
@@ -101,16 +102,20 @@
             <Style TargetType="StackLayout" x:Key="CardActionLayout">
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="Spacing" Value="30" />
+                <Setter Property="Margin" Value="10,0,10,10" />
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource CardContentText}" x:Key="CardTitle">
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="Opacity" Value="1.0" />
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="10,0,10,0" />
             </Style>
             <Style TargetType="Frame" x:Key="Card">
                 <Setter Property="Visual" Value="Material" />
                 <Setter Property="Margin" Value="10,0,10,0" />
                 <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="Padding" Value="0" />
             </Style>
             <Style TargetType="Label" BasedOn="{StaticResource CardContentText}" x:Key="CardTypeCaption">
                 <Setter Property="HorizontalTextAlignment" Value="End" />
