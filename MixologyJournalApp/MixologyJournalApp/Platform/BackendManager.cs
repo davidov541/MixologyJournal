@@ -215,7 +215,7 @@ namespace MixologyJournalApp.Platform
             {
                 String remotePath = result.Content["filePath"];
                 String sasPath = result.Content["fileSAS"];
-                return new PictureInfo(remotePath, sasPath);
+                return PictureInfo.CreateRemotePicture(remotePath, sasPath);
             }
             return new PictureInfo();
         }

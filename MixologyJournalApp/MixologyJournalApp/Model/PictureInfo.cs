@@ -9,11 +9,21 @@ namespace MixologyJournalApp.Model
     {
         private const String DefaultIconPath = "creation-pics/default.png";
 
+        private String _path;
         [JsonProperty("path")]
         public String Path
         {
-            get;
-            set;
+            get
+            {
+                return _path;
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                {
+                    _path = value;
+                }
+            }
         }
 
         [JsonProperty("url")]
@@ -27,7 +37,11 @@ namespace MixologyJournalApp.Model
         {
             get
             {
-                if (String.IsNullOrEmpty(Path) || Path.Equals("null") || Path.Equals(DefaultIconPath))
+                if (String.IsNullOrEmpty(Path) || Path.Equals("null"))
+                {
+                    return ImageSource.FromFile(Url);
+                }
+                else if (Path.Equals(DefaultIconPath))
                 {
                     return ImageSource.FromFile("@drawable/DefaultContentPic.png");
                 }
@@ -40,15 +54,25 @@ namespace MixologyJournalApp.Model
             }
         }
 
+        public static PictureInfo CreateRemotePicture(String path, String url)
+        {
+            PictureInfo info = new PictureInfo();
+            info.Path = path;
+            info.Url = url;
+            return info;
+        }
+
+        public static PictureInfo CreateLocalPicture(String url)
+        {
+            PictureInfo info = new PictureInfo();
+            info._path = null;
+            info.Url = url;
+            return info;
+        }
+
         public PictureInfo()
         {
             Path = DefaultIconPath;
-        }
-
-        public PictureInfo(String path, String url) : this()
-        {
-            Path = path;
-            Url = url;
         }
     }
 }
