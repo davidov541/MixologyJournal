@@ -94,7 +94,11 @@ namespace MixologyJournalApp.ViewModel
 
         public async Task<Boolean> UploadRecentItems()
         {
-            return await _modelCache.UploadRecentItems();
+            if (_app.PlatformInfo.Authentication.IsUsingRemote)
+            {
+                return await _modelCache.UploadRecentItems();
+            }
+            return true;
         }
 
         private void UpdateRecipes()
