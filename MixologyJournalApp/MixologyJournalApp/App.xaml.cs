@@ -65,7 +65,7 @@ namespace MixologyJournalApp
             await Cache.Init();
             Properties[_hasBeenSetupKey] = true.ToString();
             await SavePropertiesAsync();
-            MainPage = new RootPage(this);
+            MainPage = new NavigationPage(new RecipeListPage(this));
 
             PlatformInfo.Authentication.LoginEnabled += Authentication_LoginEnabled;
             PlatformInfo.Authentication.LoggingOff += Authentication_LoggingOff;
@@ -83,7 +83,7 @@ namespace MixologyJournalApp
 
         internal async Task PopToRoot()
         {
-            await (MainPage as RootPage).Detail.Navigation.PopToRootAsync();
+            await (MainPage as NavigationPage).PopToRootAsync();
         }
 
         protected override void OnSleep()

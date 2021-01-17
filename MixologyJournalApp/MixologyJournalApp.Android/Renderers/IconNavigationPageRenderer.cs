@@ -6,10 +6,10 @@ using MixologyJournalApp.View;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android.AppCompat;
 
-[assembly: ExportRenderer(typeof(RootPage), typeof(IconNavigationPageRenderer))]
+[assembly: ExportRenderer(typeof(NavigationPage), typeof(IconNavigationPageRenderer))]
 namespace MixologyJournalApp.Droid.Renderers
 {
-    public class IconNavigationPageRenderer : MasterDetailPageRenderer
+    public class IconNavigationPageRenderer : NavigationPageRenderer
     {
         public IconNavigationPageRenderer(Context context) : base(context)
         {
@@ -19,7 +19,7 @@ namespace MixologyJournalApp.Droid.Renderers
         {
             base.OnLayout(changed, left, top, right, bottom);
 
-            Page currentPage = ((NavigationPage)((MasterDetailPage)Application.Current.MainPage).Detail).CurrentPage;
+            Page currentPage = ((NavigationPage)Application.Current.MainPage).CurrentPage;
 
             if (currentPage is CreateDrinkPage || currentPage is CreateRecipePage)
             {
