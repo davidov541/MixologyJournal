@@ -154,7 +154,6 @@ namespace MixologyJournalApp.ViewModel
                 new SetupPageItem("Then, when you create drinks based on those recipes, you can log how it turned out.\n\nThis might include new brands or ingredients, or different amounts.", ImageSource.FromFile("setup_page_4.png")),
                 new SetupPageItem("Using this, you can track variations in how you make a recipe that make a drink taste better or worse.\n\nThat way, you can continue improving and refining your recipes.", ImageSource.FromFile("setup_page_5.png")),
                 new SetupPageItem("Once you find a variation you like most, you can favorite it.\nThis variation will be shown to you when you look at the recipe by default.\n\nThat way, when you go back to create the recipe again, you'll start with your best possible variation!"),
-                new SetupPageItem("You can choose to save your recipes and drinks locally, or store them in the cloud, secured with your Google account or a custom account.\n\nIf you save your data in the cloud, you will be able to access it on other devices and platforms!", _platform.Authentication.LoginMethods)
             };
         }
 
