@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="MixologyJournalApp.View.RecipeListPage"
              x:DataType="viewmodel:RecipeListPageViewModel"
-             Title="Recipe List"
+             Title="Mixology Journal"
              Visual="Material">
     <AbsoluteLayout>
         <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
