@@ -12,6 +12,7 @@
     <AbsoluteLayout>
         <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="SizeProportional">
+            <ProgressBar x:Name="initProgressBar" Progress="{Binding InitProgress}" IsVisible="{Binding InitProgress, Converter={StaticResource ProgressBarConverter}}" />
             <Entry x:Name="RecipeSearchEntry" 
                    Style="{StaticResource SearchBox}"
                    TextChanged="RecipeSearchEntry_TextChanged"/>

@@ -39,7 +39,7 @@ namespace MixologyJournalApp
             await PlatformInfo.Authentication.Init(setupMode);
             if (!setupMode)
             {
-                MainPage = new LoadingPage(Cache);
+                MainPage = new NavigationPage(new RecipeListPage(this)); // new LoadingPage(Cache);
             }
             else
             {
@@ -58,14 +58,13 @@ namespace MixologyJournalApp
 
         internal async Task StartApp()
         {
-            if (!(MainPage is LoadingPage))
+            if (!(MainPage is NavigationPage))
             {
-                await MainPage.Navigation.PushModalAsync(new LoadingPage(Cache));
+                MainPage = new NavigationPage(new RecipeListPage(this));
             }
             await Cache.Init();
             Properties[_hasBeenSetupKey] = true.ToString();
             await SavePropertiesAsync();
-            MainPage = new NavigationPage(new RecipeListPage(this));
 
             PlatformInfo.Authentication.LoginEnabled += Authentication_LoginEnabled;
             PlatformInfo.Authentication.LoggingOff += Authentication_LoggingOff;

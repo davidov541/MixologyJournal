@@ -20,6 +20,14 @@ namespace MixologyJournalApp.ViewModel
             }
         }
 
+        public double InitProgress
+        {
+            get
+            {
+                return _cache.InitProgress;
+            }
+        }
+
         public ObservableCollection<RecipeViewModel> Recipes
         {
             get
@@ -33,6 +41,17 @@ namespace MixologyJournalApp.ViewModel
             _app = app;
             _cache = _app.Cache;
             _cache.Recipes.CollectionChanged += Recipes_CollectionChanged;
+            _cache.PropertyChanged += Cache_PropertyChanged;
+        }
+
+        private void Cache_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch(e.PropertyName)
+            {
+                case nameof(LocalDataCache.InitProgress):
+                    OnPropertyChanged(nameof(InitProgress));
+                    break;
+            }
         }
 
         private void Recipes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

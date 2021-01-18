@@ -1,6 +1,7 @@
 ﻿using MixologyJournalApp.View.Controls;
 using MixologyJournalApp.ViewModel;
 using System;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -20,11 +21,17 @@ namespace MixologyJournalApp.View
         {
             _app = app;
             _viewModel = new RecipeListPageViewModel(_app);
+            _viewModel.Recipes.CollectionChanged += Recipes_CollectionChanged;
             BindingContext = _viewModel;
             _selectionCommand = new Command(ItemSelected);
 
             InitializeComponent();
 
+            UpdateRecipeList();
+        }
+
+        private void Recipes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
             UpdateRecipeList();
         }
 

@@ -8,6 +8,7 @@
              x:Class="MixologyJournalApp.App">
     <Application.Resources>
         <controls:CreationTypeToBackgroundColorConverter x:Key="CardColorConverter" />
+        <controls:ProgressBarCompleteConverter x:Key="ProgressBarConverter" />
         <ResourceDictionary>
             <OnPlatform x:TypeArguments="x:String" x:Key="ChalkFont">
                 <On Platform="Android" Value="Filmcryptic.ttf#Film Cryptic" />
