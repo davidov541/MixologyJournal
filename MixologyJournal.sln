@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.202
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixologyJournalApp.Android", "MixologyJournalApp\MixologyJournalApp.Android\MixologyJournalApp.Android.csproj", "{16B4A677-94FA-4F89-BE9D-8373E928F0D4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MixologyJournalApp", "MixologyJournalApp\MixologyJournalApp\MixologyJournalApp.csproj", "{15F9BD31-F854-4516-9EAC-0A4B36D2A16B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixologyJournalApp.MAUI", "MixologyJournalApp.MAUI\MixologyJournalApp.MAUI.csproj", "{B28B6B81-1256-43E5-BCBD-47F0021056D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,36 @@ Global
 		{15F9BD31-F854-4516-9EAC-0A4B36D2A16B}.Release|x64.Build.0 = Release|Any CPU
 		{15F9BD31-F854-4516-9EAC-0A4B36D2A16B}.Release|x86.ActiveCfg = Release|Any CPU
 		{15F9BD31-F854-4516-9EAC-0A4B36D2A16B}.Release|x86.Build.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|ARM.Build.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|ARM.Deploy.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|ARM64.Deploy.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|x64.Build.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|x86.Build.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|ARM.Build.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|ARM.Deploy.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|ARM64.Build.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|ARM64.Deploy.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|x64.ActiveCfg = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|x64.Build.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|x64.Deploy.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|x86.ActiveCfg = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|x86.Build.0 = Release|Any CPU
+		{B28B6B81-1256-43E5-BCBD-47F0021056D8}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
