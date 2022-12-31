@@ -28,10 +28,17 @@ internal class LocalDatabase
         if (this._database is null)
         {
             this._database = new SQLiteAsyncConnection(DatabasePath, Flags);
-            CreateTableResult result = await this._database.CreateTableAsync<Unit>();
-            foreach (Unit unit in Unit.InitialUnits) {
-                await this._database.InsertOrReplaceAsync(unit);
-            }
+            await this.SetupInitialValues(InitialModels.Units);
+            await this.SetupInitialValues(InitialModels.Ingredients);
+        }
+    }
+
+    private async Task SetupInitialValues<T>(List<T> initialValues) where T: new()
+    {
+        CreateTableResult result = await this._database.CreateTableAsync<T>();
+        foreach (T unit in initialValues)
+        {
+            await this._database.InsertOrReplaceAsync(unit);
         }
     }
 

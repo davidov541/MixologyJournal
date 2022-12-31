@@ -4,37 +4,6 @@ namespace MixologyJournalApp.MAUI.Model
 {
     internal class Unit
     {
-        public static List<Unit> InitialUnits
-        {
-            get
-            {
-                return new List<Unit>
-                {
-                    new Unit
-                    {
-                        Id = 1,
-                        Name = "Ounce",
-                        Plural = "Ounces",
-                        Format = "{0} {1} of {2}"
-                    },
-                    new Unit
-                    {
-                        Id = 2,
-                        Name = "Dash",
-                        Plural = "Dashes",
-                        Format = "{0} {1} of {2}"
-                    },
-                    new Unit
-                    {
-                        Id = -1,
-                        Name = "Slice",
-                        Plural = "Slices",
-                        Format = "{0} {2} {1}"
-                    }
-                };
-            }
-        }
-
         [PrimaryKey]
         public int Id
         {

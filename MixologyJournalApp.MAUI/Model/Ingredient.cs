@@ -14,7 +14,7 @@
             set;
         }
 
-        public String Id
+        public int Id
         {
             get;
             set;
@@ -25,7 +25,7 @@
             Ingredient ingredient = new Ingredient
             {
                 Name = "",
-                Id = "",
+                Id = 0,
                 Plural = ""
             };
             return ingredient;

@@ -6,7 +6,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
     internal class IngredientViewModel
     {
         private readonly Ingredient _model;
-        public String Id
+        public int Id
         {
             get
             {
@@ -50,12 +50,12 @@ namespace MixologyJournalApp.MAUI.ViewModel
 
         public override bool Equals(object obj)
         {
-            return obj is IngredientViewModel other && other.Id.Equals(Id);
+            return obj is IngredientViewModel other && other.Id == this.Id;
         }
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
+            return Id;
         }
     }
 }
