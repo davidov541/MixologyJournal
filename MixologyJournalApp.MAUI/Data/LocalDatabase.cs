@@ -35,10 +35,10 @@ internal class LocalDatabase
         }
     }
 
-    internal async Task<List<Unit>> GetUnitsAsync()
+    internal async Task<List<T>> GetItemsAsync<T>() where T : new()
     {
         await Init();
-        return await this._database.Table<Unit>().ToListAsync();
+        return await this._database.Table<T>().ToListAsync();
     }
 
     //public async Task<List<TodoItem>> GetItemsNotDoneAsync()

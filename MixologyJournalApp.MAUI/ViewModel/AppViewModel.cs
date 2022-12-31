@@ -23,7 +23,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
         {
             if (!this._hasBeenInitialized)
             {
-                List<Unit> items = await this._database.GetUnitsAsync();
+                List<Unit> items = await this._database.GetItemsAsync<Unit>();
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     foreach (Unit item in items)
