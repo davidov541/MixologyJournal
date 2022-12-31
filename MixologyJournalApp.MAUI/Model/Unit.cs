@@ -2,7 +2,7 @@
 
 namespace MixologyJournalApp.MAUI.Model
 {
-    public class Unit
+    internal class Unit
     {
         public static List<Unit> InitialUnits
         {

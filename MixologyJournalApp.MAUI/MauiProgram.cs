@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using MixologyJournalApp.MAUI.Data;
+using MixologyJournalApp.MAUI.ViewModel;
 using MixologyJournalApp.MAUI.Views;
 
 namespace MixologyJournalApp.MAUI
@@ -21,7 +21,7 @@ namespace MixologyJournalApp.MAUI
 		builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<MainPage>();
-            builder.Services.AddSingleton<LocalDatabase>();
+            builder.Services.AddSingleton<AppViewModel>();
 
             return builder.Build();
         }
