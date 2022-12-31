@@ -1,24 +1,48 @@
-﻿namespace MixologyJournalApp.MAUI.Views
+﻿using MixologyJournalApp.MAUI.Data;
+using MixologyJournalApp.MAUI.Model;
+using System.Collections.ObjectModel;
+
+namespace MixologyJournalApp.MAUI.Views
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private LocalDatabase _database = null;
+        public ObservableCollection<Unit> Units { get; set; } = new();
+        public ObservableCollection<Unit> TestUnits { 
+            get {
+                return new ObservableCollection<Unit>
+                {
+                    new Unit
+                    {
+                        Name = "Test Unit"
+                    },
+                    new Unit
+                    {
+                        Name = "Test Unit 2"
+                    }
+                };
+            }
+        }
 
         public MainPage()
         {
             InitializeComponent();
+            this._database = new LocalDatabase();
+            BindingContext = this;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        protected override async void OnNavigatedTo(NavigatedToEventArgs args)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            base.OnNavigatedTo(args);
+            List<Unit> items = await this._database.GetUnitsAsync();
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                this.Units.Clear();
+                foreach (Unit item in items)
+                {
+                    this.Units.Add(item);
+                }
+            });
         }
     }
 }
