@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace MixologyJournalApp.MAUI.ViewModel
 {
-    internal class IngredientUsageViewModel : INotifyPropertyChanged, ICloneable
+    public class IngredientUsageViewModel : INotifyPropertyChanged, ICloneable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -91,7 +91,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
             }
         }
 
-        public IngredientUsageViewModel(IngredientUsage model)
+        internal IngredientUsageViewModel(IngredientUsage model)
         {
             _model = model;
 

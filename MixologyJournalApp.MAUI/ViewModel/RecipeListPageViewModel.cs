@@ -26,10 +26,10 @@ namespace MixologyJournalApp.MAUI.ViewModel
         //    }
         //}
 
-        public ObservableCollection<UnitViewModel> Units
+        public ObservableCollection<RecipeViewModel> Recipes
         {
             get {
-                return this._viewModel.Units;
+                return this._viewModel.Recipes;
             }
         }
 

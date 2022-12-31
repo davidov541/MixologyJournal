@@ -3,7 +3,7 @@ using System;
 
 namespace MixologyJournalApp.MAUI.ViewModel
 {
-    internal class IngredientViewModel
+    public class IngredientViewModel
     {
         private readonly Ingredient _model;
         public int Id
@@ -38,7 +38,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
             }
         }
 
-        public IngredientViewModel(Ingredient model)
+        internal IngredientViewModel(Ingredient model)
         {
             _model = model;
         }

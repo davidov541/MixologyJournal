@@ -4,7 +4,7 @@ namespace MixologyJournalApp.MAUI.Model
 {
     internal class Unit
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int Id
         {
             get;

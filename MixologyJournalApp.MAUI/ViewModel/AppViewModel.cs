@@ -16,6 +16,12 @@ namespace MixologyJournalApp.MAUI.ViewModel
             private set;
         } = new();
 
+        public ObservableCollection<RecipeViewModel> Recipes
+        {
+            get;
+            private set;
+        } = new();
+
         public bool Initializing
         {
             get;
@@ -40,6 +46,14 @@ namespace MixologyJournalApp.MAUI.ViewModel
                     foreach (Unit item in items)
                     {
                         this.Units.Add(new UnitViewModel(item));
+                    }
+                });
+                List<Recipe> recipes = await this._database.GetItemsAsync<Recipe>();
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    foreach (Recipe item in recipes)
+                    {
+                        this.Recipes.Add(new RecipeViewModel(item));
                     }
                 });
                 this._hasBeenInitialized = true;

@@ -11,7 +11,7 @@
             VerticalOptions="Center">
             <CollectionView 
                   VerticalOptions="Fill"
-                  ItemsSource="{Binding Units}"
+                  ItemsSource="{Binding Recipes}"
                   SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Unit">

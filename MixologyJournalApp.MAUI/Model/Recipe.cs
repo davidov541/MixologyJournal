@@ -1,4 +1,6 @@
-﻿namespace MixologyJournalApp.MAUI.Model
+﻿using SQLite;
+
+namespace MixologyJournalApp.MAUI.Model
 {
     internal class Recipe
     {
@@ -8,25 +10,22 @@
             set;
         }
 
+        [Ignore]
         public List<String> Steps
         {
             get;
             set;
         }
 
-        public String Id
+        [PrimaryKey, AutoIncrement]
+        public int Id
         {
             get;
             set;
         }
 
+        [Ignore]
         public List<IngredientUsage> Ingredients
-        {
-            get;
-            set;
-        }
-
-        public Boolean IsBuiltIn
         {
             get;
             set;

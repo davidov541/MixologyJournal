@@ -1,7 +1,16 @@
-﻿namespace MixologyJournalApp.MAUI.Model
+﻿using SQLite;
+
+namespace MixologyJournalApp.MAUI.Model
 {
     internal class IngredientUsage
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id
+        {
+            get;
+            set;
+        }
+
         public Ingredient Ingredient
         {
             get;
@@ -30,6 +39,7 @@
         {
             IngredientUsage usage = new IngredientUsage
             {
+                Id = 0,
                 Amount = "",
                 Unit = Unit.CreateEmpty(),
                 Ingredient = Ingredient.CreateEmpty(),
@@ -46,6 +56,7 @@
         {
             IngredientUsage clone = new IngredientUsage
             {
+                Id = Id,
                 Amount = Amount,
                 Ingredient = Ingredient.Clone(),
                 Unit = Unit.Clone(),

@@ -2,7 +2,7 @@
 
 namespace MixologyJournalApp.MAUI.ViewModel
 {
-    internal class StepViewModel: INotifyPropertyChanged
+    public class StepViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

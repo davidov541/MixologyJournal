@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace MixologyJournalApp.MAUI.ViewModel
 {
-    internal class RecipeViewModel : INotifyPropertyChanged
+    public class RecipeViewModel : INotifyPropertyChanged
     {
         private readonly Recipe _model;
         private readonly App _app;
@@ -22,14 +22,6 @@ namespace MixologyJournalApp.MAUI.ViewModel
             {
                 _model.Name = value;
                 OnPropertyChanged(nameof(Name));
-            }
-        }
-
-        public String Id
-        {
-            get
-            {
-                return _model.Id;
             }
         }
 
@@ -164,14 +156,14 @@ namespace MixologyJournalApp.MAUI.ViewModel
             }
         }
 
-        public RecipeViewModel(App app) : this(Recipe.CreateEmptyRecipe(), app)
-        {
-        }
+        //public RecipeViewModel(App app) : this(Recipe.CreateEmptyRecipe(), app)
+        //{
+        //}
 
-        public RecipeViewModel(Recipe model, App app)
+        internal RecipeViewModel(Recipe model)
         {
             _model = model;
-            _app = app;
+            _app = null;
 
             InitCommands();
 
