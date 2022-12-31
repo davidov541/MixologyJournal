@@ -23,6 +23,13 @@ namespace MixologyJournalApp.MAUI.Model
                         Name = "Dash",
                         Plural = "Dashes",
                         Format = "{0} {1} of {2}"
+                    },
+                    new Unit
+                    {
+                        Id = -1,
+                        Name = "Slice",
+                        Plural = "Slices",
+                        Format = "{0} {2} {1}"
                     }
                 };
             }
