@@ -10,7 +10,17 @@ namespace MixologyJournalApp.MAUI.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         private LocalDatabase _database = null;
 
-        public ObservableCollection<UnitViewModel> Units { get; set; } = new();
+        public ObservableCollection<UnitViewModel> Units 
+        { 
+            get;
+            private set;
+        } = new();
+
+        public bool Initializing
+        {
+            get;
+            private set;
+        }
 
         private bool _hasBeenInitialized = false;
 
@@ -21,8 +31,9 @@ namespace MixologyJournalApp.MAUI.ViewModel
 
         internal async Task InitializeAsync() 
         {
-            if (!this._hasBeenInitialized)
+            if (!this._hasBeenInitialized && !this.Initializing)
             {
+                this.Initializing = true;
                 List<Unit> items = await this._database.GetItemsAsync<Unit>();
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
@@ -32,6 +43,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
                     }
                 });
                 this._hasBeenInitialized = true;
+                this.Initializing = false;
             }
         }
     }
