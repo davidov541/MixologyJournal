@@ -1,4 +1,4 @@
-﻿namespace MixologyJournalApp.MAUI
+﻿namespace MixologyJournalApp.MAUI.Views
 {
     public partial class MainPage : ContentPage
     {
