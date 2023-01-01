@@ -18,6 +18,18 @@ namespace MixologyJournalApp.MAUI.Model
             set;
         }
 
+        public String StepsString
+        {
+            get
+            {
+                return String.Join("||", this.Steps);
+            }
+            set
+            {
+                this.Steps = new List<String>(value.Split("||"));
+            }
+        }
+
         [PrimaryKey, AutoIncrement]
         public int Id
         {

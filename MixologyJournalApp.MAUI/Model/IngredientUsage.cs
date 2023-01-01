@@ -11,13 +11,27 @@ namespace MixologyJournalApp.MAUI.Model
             set;
         }
 
+        [Ignore]
         public Ingredient Ingredient
         {
             get;
             set;
         }
 
+        public int IngredientId
+        {
+            get;
+            set;
+        }
+
+        [Ignore]
         public Unit Unit
+        {
+            get;
+            set;
+        }
+
+        public int UnitId
         {
             get;
             set;
