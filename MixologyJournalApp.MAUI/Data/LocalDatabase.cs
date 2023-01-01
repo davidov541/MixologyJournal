@@ -3,7 +3,7 @@ using SQLite;
 
 namespace MixologyJournalApp.MAUI.Data;
 
-internal class LocalDatabase
+internal class LocalDatabase: IStateSaver
 {
     private const string DatabaseFilename = "MJSQLite.db3";
 
@@ -23,30 +23,36 @@ internal class LocalDatabase
     {
     }
 
-    private async Task Init()
+    private async Task InitAsync()
     {
         if (this._database is null)
         {
             this._database = new SQLiteAsyncConnection(DatabasePath, Flags);
-            await this.SetupInitialValues(InitialModels.Units);
-            await this.SetupInitialValues(InitialModels.Ingredients);
-            await this.SetupInitialValues(InitialModels.Recipes);
+            await this.SetupInitialValuesAsync(InitialModels.Units);
+            await this.SetupInitialValuesAsync(InitialModels.Ingredients);
+            await this.SetupInitialValuesAsync(InitialModels.Recipes);
         }
     }
 
-    private async Task SetupInitialValues<T>(List<T> initialValues) where T: new()
+    private async Task SetupInitialValuesAsync<T>(List<T> initialValues) where T: ICanSave, new()
     {
         CreateTableResult result = await this._database.CreateTableAsync<T>();
         foreach (T value in initialValues)
         {
-            await this._database.InsertOrReplaceAsync(value);
+            await value.SaveAsync(this);
         }
     }
 
     internal async Task<List<T>> GetItemsAsync<T>() where T : new()
     {
-        await Init();
+        await InitAsync();
         return await this._database.Table<T>().ToListAsync();
+    }
+
+    public async Task InsertOrReplaceAsync<T>(T value) where T : new()
+    {
+        await InitAsync();
+        await this._database.InsertOrReplaceAsync(value);
     }
 
     //public async Task<List<TodoItem>> GetItemsNotDoneAsync()

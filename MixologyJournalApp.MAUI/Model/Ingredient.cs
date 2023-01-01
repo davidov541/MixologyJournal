@@ -1,8 +1,9 @@
-﻿using SQLite;
+﻿using MixologyJournalApp.MAUI.Data;
+using SQLite;
 
 namespace MixologyJournalApp.MAUI.Model
 {
-    internal class Ingredient
+    internal class Ingredient: ICanSave
     {
         public String Name
         {
@@ -47,6 +48,11 @@ namespace MixologyJournalApp.MAUI.Model
                 Plural = Plural
             };
             return clone;
+        }
+
+        public async Task SaveAsync(IStateSaver stateSaver)
+        {
+            await stateSaver.InsertOrReplaceAsync(this);
         }
     }
 }

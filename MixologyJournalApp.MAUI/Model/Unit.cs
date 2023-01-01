@@ -1,8 +1,9 @@
-﻿using SQLite;
+﻿using MixologyJournalApp.MAUI.Data;
+using SQLite;
 
 namespace MixologyJournalApp.MAUI.Model
 {
-    internal class Unit
+    internal class Unit: ICanSave
     {
         [PrimaryKey, AutoIncrement]
         public int Id
@@ -55,6 +56,11 @@ namespace MixologyJournalApp.MAUI.Model
                 Format = Format
             };
             return clone;
+        }
+
+        public async Task SaveAsync(IStateSaver stateSaver)
+        {
+            await stateSaver.InsertOrReplaceAsync(this);
         }
     }
 }

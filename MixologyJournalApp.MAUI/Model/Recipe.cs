@@ -1,8 +1,9 @@
-﻿using SQLite;
+﻿using MixologyJournalApp.MAUI.Data;
+using SQLite;
 
 namespace MixologyJournalApp.MAUI.Model
 {
-    internal class Recipe
+    internal class Recipe: ICanSave
     {
         public String Name
         {
@@ -45,6 +46,11 @@ namespace MixologyJournalApp.MAUI.Model
         {
             Steps = new List<String>();
             Ingredients = new List<IngredientUsage>();
+        }
+
+        public async Task SaveAsync(IStateSaver stateSaver)
+        {
+            await stateSaver.InsertOrReplaceAsync(this);
         }
     }
 }
