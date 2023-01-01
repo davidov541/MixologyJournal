@@ -12,7 +12,9 @@
             <CollectionView 
                   VerticalOptions="Fill"
                   ItemsSource="{Binding Recipes}"
-                  SelectionMode="Single">
+                  SelectionMode="Single"
+                  SelectionChanged="CollectionView_SelectionChanged"
+                  x:Name="RecipeList">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Unit">
                         <Grid ColumnDefinitions="*, Auto" Padding="20">

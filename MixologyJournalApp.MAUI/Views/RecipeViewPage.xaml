@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MixologyJournalApp.MAUI.Views.RecipeViewPage"
+             Title="{Binding Name}"
+             xmlns:viewmodels="clr-namespace:MixologyJournalApp.MAUI.ViewModel"
+             x:DataType="viewmodels:RecipeViewModel">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Label Text="{Binding Name}" />
+            <Label Text="{Binding FormattedSteps}" />
+            <Button Text="Back"
+                    Clicked="OnBackClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

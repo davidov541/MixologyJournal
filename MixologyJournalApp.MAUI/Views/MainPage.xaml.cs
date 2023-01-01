@@ -1,7 +1,5 @@
-﻿using MixologyJournalApp.MAUI.Data;
-using MixologyJournalApp.MAUI.Model;
-using MixologyJournalApp.MAUI.ViewModel;
-using System.Collections.ObjectModel;
+﻿using MixologyJournalApp.MAUI.ViewModel;
+
 
 namespace MixologyJournalApp.MAUI.Views
 {
@@ -19,7 +17,21 @@ namespace MixologyJournalApp.MAUI.Views
         protected override async void OnNavigatedTo(NavigatedToEventArgs args)
         {
             base.OnNavigatedTo(args);
+            this.RecipeList.SelectedItem = null;
             await this._viewModel.InitializeAsync();
+        }
+
+        private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.CurrentSelection.FirstOrDefault() is not RecipeViewModel recipe)
+            {
+                return;
+            }
+
+            await Shell.Current.GoToAsync(nameof(RecipeViewPage), true, new Dictionary<string, object>
+            {
+                ["Recipe"] = recipe
+            });
         }
     }
 }
