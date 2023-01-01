@@ -3,11 +3,11 @@
 
 namespace MixologyJournalApp.MAUI.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class RecipeListPage : ContentPage
     {
         private RecipeListPageViewModel _viewModel;
 
-        public MainPage(AppViewModel viewModel)
+        public RecipeListPage(AppViewModel viewModel)
         {
             InitializeComponent();
             this._viewModel = new RecipeListPageViewModel(viewModel);

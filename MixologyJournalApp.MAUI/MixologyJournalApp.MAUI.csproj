@@ -55,6 +55,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\RecipeListPage.xaml.cs">
+	    <DependentUpon>RecipeListPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\RecipeViewPage.xaml.cs">
 	    <DependentUpon>RecipeViewPage.xaml</DependentUpon>
 	  </Compile>

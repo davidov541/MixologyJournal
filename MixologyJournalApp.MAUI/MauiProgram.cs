@@ -20,7 +20,7 @@ namespace MixologyJournalApp.MAUI
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<RecipeListPage>();
             builder.Services.AddTransient<RecipeViewPage>();
             builder.Services.AddSingleton<AppViewModel>();
 
