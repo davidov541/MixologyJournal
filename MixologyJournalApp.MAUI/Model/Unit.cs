@@ -5,8 +5,8 @@ namespace MixologyJournalApp.MAUI.Model
 {
     internal class Unit: ICanSave
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id
+        [PrimaryKey]
+        public String Id
         {
             get;
             set;
@@ -34,7 +34,6 @@ namespace MixologyJournalApp.MAUI.Model
         {
             Unit unit = new Unit
             {
-                Id = 0,
                 Name = "",
                 Plural = "",
                 Format = "{0} {1} of {2}"
@@ -44,6 +43,7 @@ namespace MixologyJournalApp.MAUI.Model
 
         public Unit()
         {
+            Id = Guid.NewGuid().ToString();
         }
 
         public Unit Clone()

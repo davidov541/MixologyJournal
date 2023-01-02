@@ -1,11 +1,12 @@
-﻿using SQLite;
+﻿using MixologyJournalApp.MAUI.Data;
+using SQLite;
 
 namespace MixologyJournalApp.MAUI.Model
 {
-    internal class IngredientUsage
+    internal class IngredientUsage: ICanSave
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id
+        [PrimaryKey]
+        public String Id
         {
             get;
             set;
@@ -53,7 +54,6 @@ namespace MixologyJournalApp.MAUI.Model
         {
             IngredientUsage usage = new IngredientUsage
             {
-                Id = 0,
                 Amount = "",
                 Unit = Unit.CreateEmpty(),
                 Ingredient = Ingredient.CreateEmpty(),
@@ -64,6 +64,7 @@ namespace MixologyJournalApp.MAUI.Model
 
         public IngredientUsage()
         {
+            Id = Guid.NewGuid().ToString();
         }
 
         public IngredientUsage Clone()
@@ -77,6 +78,11 @@ namespace MixologyJournalApp.MAUI.Model
                 Brand = Brand
             };
             return clone;
+        }
+
+        public async Task SaveAsync(IStateSaver stateSaver)
+        {
+            await stateSaver.InsertOrReplaceAsync(this);
         }
     }
 }

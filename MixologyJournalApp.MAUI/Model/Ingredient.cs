@@ -17,8 +17,8 @@ namespace MixologyJournalApp.MAUI.Model
             set;
         }
 
-        [PrimaryKey, AutoIncrement]
-        public int Id
+        [PrimaryKey]
+        public String Id
         {
             get;
             set;
@@ -29,7 +29,6 @@ namespace MixologyJournalApp.MAUI.Model
             Ingredient ingredient = new Ingredient
             {
                 Name = "",
-                Id = 0,
                 Plural = ""
             };
             return ingredient;
@@ -37,6 +36,7 @@ namespace MixologyJournalApp.MAUI.Model
 
         public Ingredient()
         {
+            Id = Guid.NewGuid().ToString();
         }
 
         public Ingredient Clone()

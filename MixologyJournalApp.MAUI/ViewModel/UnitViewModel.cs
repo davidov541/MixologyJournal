@@ -47,7 +47,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
             }
         }
 
-        private int Id
+        private String Id
         {
             get
             {
@@ -77,7 +77,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
 
         public override int GetHashCode()
         {
-            return Id;
+            return Id.GetHashCode();
         }
     }
 }

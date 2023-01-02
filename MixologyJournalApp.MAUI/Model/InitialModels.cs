@@ -10,21 +10,21 @@
                 {
                     new Unit
                     {
-                        Id = 1,
+                        Id = "BuiltIn-1",
                         Name = "Ounce",
                         Plural = "Ounces",
                         Format = "{0} {1} of {2}"
                     },
                     new Unit
                     {
-                        Id = 2,
+                        Id = "BuiltIn-2",
                         Name = "Dash",
                         Plural = "Dashes",
                         Format = "{0} {1} of {2}"
                     },
                     new Unit
                     {
-                        Id = -1,
+                        Id = "BuiltIn-3",
                         Name = "Slice",
                         Plural = "Slices",
                         Format = "{0} {2} {1}"
@@ -41,19 +41,19 @@
                 {
                     new Ingredient
                     {
-                        Id = 1,
+                        Id = "BuiltIn-1",
                         Name = "Whisky",
                         Plural = "Whisky"
                     },
                     new Ingredient
                     {
-                        Id = -1,
+                        Id = "BuiltIn-2",
                         Name = "Simple Syrup",
                         Plural = "Simple Syrup"
                     },
                     new Ingredient
                     {
-                        Id = -2,
+                        Id = "BuiltIn-3",
                         Name = "Angostura Bitters",
                         Plural = "Angostura Bitters"
                     }
@@ -69,7 +69,7 @@
                 {
                     new Recipe
                     {
-                        Id = 1,
+                        Id = "BuiltIn-1",
                         Name = "Old-Fashioned",
                         Steps = new List<String>
                         {
@@ -81,7 +81,7 @@
                         {
                             new IngredientUsage
                             {
-                                Id = 1,
+                                Id = "BuiltIn-OldFashioned-1",
                                 Ingredient = Ingredients[0],
                                 Unit = Units[0],
                                 Brand = null,
@@ -89,7 +89,7 @@
                             },
                             new IngredientUsage
                             {
-                                Id = 1,
+                                Id = "BuiltIn-OldFashioned-2",
                                 Ingredient = Ingredients[1],
                                 Unit = Units[0],
                                 Brand = null,
@@ -97,7 +97,7 @@
                             },
                             new IngredientUsage
                             {
-                                Id = 1,
+                                Id = "BuiltIn-OldFashioned-3",
                                 Ingredient = Ingredients[2],
                                 Unit = Units[1],
                                 Brand = null,

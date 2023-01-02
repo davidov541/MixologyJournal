@@ -30,8 +30,8 @@ namespace MixologyJournalApp.MAUI.Model
             }
         }
 
-        [PrimaryKey, AutoIncrement]
-        public int Id
+        [PrimaryKey]
+        public String Id
         {
             get;
             set;
@@ -58,11 +58,16 @@ namespace MixologyJournalApp.MAUI.Model
         {
             Steps = new List<String>();
             Ingredients = new List<IngredientUsage>();
+            Id = Guid.NewGuid().ToString();
         }
 
         public async Task SaveAsync(IStateSaver stateSaver)
         {
             await stateSaver.InsertOrReplaceAsync(this);
-        }
+            foreach (IngredientUsage usage in Ingredients)
+            {
+                await usage.SaveAsync(stateSaver);
+            }
+        }  
     }
 }

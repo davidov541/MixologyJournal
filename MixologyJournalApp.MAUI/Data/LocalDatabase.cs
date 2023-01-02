@@ -3,7 +3,7 @@ using SQLite;
 
 namespace MixologyJournalApp.MAUI.Data;
 
-internal class LocalDatabase: IStateSaver
+internal class LocalDatabase : IStateSaver
 {
     private const string DatabaseFilename = "MJSQLite.db3";
 
@@ -34,9 +34,8 @@ internal class LocalDatabase: IStateSaver
         }
     }
 
-    private async Task SetupInitialValuesAsync<T>(List<T> initialValues) where T: ICanSave, new()
+    private async Task SetupInitialValuesAsync<T>(List<T> initialValues) where T : ICanSave, new()
     {
-        CreateTableResult result = await this._database.CreateTableAsync<T>();
         foreach (T value in initialValues)
         {
             await value.SaveAsync(this);
@@ -52,6 +51,10 @@ internal class LocalDatabase: IStateSaver
     public async Task InsertOrReplaceAsync<T>(T value) where T : new()
     {
         await InitAsync();
+        if (!this._database.TableMappings.Where(t => t.TableName == nameof(T)).Any())
+        {
+            await this._database.CreateTableAsync<T>();
+        }
         await this._database.InsertOrReplaceAsync(value);
     }
 
