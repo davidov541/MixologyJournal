@@ -2,11 +2,13 @@
 using SQLite;
 using System.Linq.Expressions;
 
+
 namespace MixologyJournalApp.MAUI.Data;
 
 internal class LocalDatabase : IStateSaver
 {
     private const string DatabaseFilename = "MJSQLite.db3";
+    private const string InitialDatabaseFilename = "InitialData.db";
 
     private const SQLite.SQLiteOpenFlags Flags =
         // open the database in read/write mode
@@ -17,6 +19,7 @@ internal class LocalDatabase : IStateSaver
         SQLite.SQLiteOpenFlags.SharedCache;
 
     private static string DatabasePath => Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
+    private static string InitialDatabasePath => Path.Combine(FileSystem.CacheDirectory, InitialDatabaseFilename);
 
     private SQLiteAsyncConnection _database = null;
 
@@ -28,15 +31,25 @@ internal class LocalDatabase : IStateSaver
     {
         if (this._database is null)
         {
+            using (Stream copyStream = await FileSystem.OpenAppPackageFileAsync("InitialData.db"))
+            {
+                using (Stream copyToStream = new FileStream(InitialDatabasePath, FileMode.Create))
+                {
+                    await copyStream.CopyToAsync(copyToStream);
+                }
+            }
             this._database = new SQLiteAsyncConnection(DatabasePath, Flags);
-            await this.SetupInitialValuesAsync(InitialModels.Units);
-            await this.SetupInitialValuesAsync(InitialModels.Ingredients);
-            await this.SetupInitialValuesAsync(InitialModels.Recipes);
+            SQLiteAsyncConnection initialDatabase = new SQLiteAsyncConnection(InitialDatabasePath, SQLiteOpenFlags.ReadOnly);
+            await this.SetupInitialValuesAsync<Unit>(initialDatabase);
+            await this.SetupInitialValuesAsync<Ingredient>(initialDatabase);
+            await this.SetupInitialValuesAsync<IngredientUsage>(initialDatabase);
+            await this.SetupInitialValuesAsync<Recipe>(initialDatabase);
         }
     }
 
-    private async Task SetupInitialValuesAsync<T>(List<T> initialValues) where T : ICanSave, new()
+    private async Task SetupInitialValuesAsync<T>(SQLiteAsyncConnection initialDatabase) where T : ICanSave, new()
     {
+        IEnumerable<T> initialValues = await initialDatabase.Table<T>().ToListAsync();
         foreach (T value in initialValues)
         {
             await value.SaveAsync(this);
@@ -59,7 +72,7 @@ internal class LocalDatabase : IStateSaver
         await this._database.InsertOrReplaceAsync(value);
     }
 
-    public async Task<List<T>> GetFilteredItemsAsync<T>(Expression<Func<T, bool>> condition) where T: new()
+    public async Task<List<T>> GetFilteredItemsAsync<T>(Expression<Func<T, bool>> condition) where T : new()
     {
         await InitAsync();
         return await this._database.Table<T>().Where(condition).ToListAsync();
