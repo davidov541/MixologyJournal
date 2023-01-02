@@ -12,27 +12,43 @@ namespace MixologyJournalApp.MAUI.Model
             set;
         }
 
+        private Ingredient _ingredient;
         [Ignore]
         public Ingredient Ingredient
         {
-            get;
-            set;
+            get
+            {
+                return this._ingredient;
+            }
+            set
+            {
+                this._ingredient = value;
+                this.IngredientId = value.Id;
+            }
         }
 
-        public int IngredientId
+        public String IngredientId
         {
             get;
             set;
         }
 
+        private Unit _unit;
         [Ignore]
         public Unit Unit
         {
-            get;
-            set;
+            get
+            {
+                return this._unit;
+            }
+            set
+            {
+                this._unit = value;
+                this.UnitId = value.Id;
+            }
         }
 
-        public int UnitId
+        public String UnitId
         {
             get;
             set;
