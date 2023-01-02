@@ -111,5 +111,11 @@ namespace MixologyJournalApp.MAUI.Model
         {
             await stateSaver.InsertOrReplaceAsync(this);
         }
+
+        internal void Load(IAppCache cache)
+        {
+            this.Ingredient = cache.GetIngredientById(this.IngredientId);
+            this.Unit = cache.GetUnitById(this.UnitId);
+        }
     }
 }

@@ -85,7 +85,8 @@
                                 Ingredient = Ingredients[0],
                                 Unit = Units[0],
                                 Brand = null,
-                                Amount = "2"
+                                Amount = "2",
+                                OwnerId = "BuiltIn-1"
                             },
                             new IngredientUsage
                             {
@@ -93,7 +94,8 @@
                                 Ingredient = Ingredients[1],
                                 Unit = Units[0],
                                 Brand = null,
-                                Amount = "0.5"
+                                Amount = "0.5",
+                                OwnerId = "BuiltIn-1"
                             },
                             new IngredientUsage
                             {
@@ -101,7 +103,8 @@
                                 Ingredient = Ingredients[2],
                                 Unit = Units[1],
                                 Brand = null,
-                                Amount = "2"
+                                Amount = "2",
+                                OwnerId = "BuiltIn-1"
                             }
                         }
                     }

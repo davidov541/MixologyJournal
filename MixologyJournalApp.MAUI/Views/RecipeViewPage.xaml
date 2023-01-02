@@ -10,6 +10,20 @@
                              Spacing="10"
                              VerticalOptions="StartAndExpand">
             <Label Text="{Binding Name}" />
+            <CollectionView 
+                  VerticalOptions="Fill"
+                  ItemsSource="{Binding IngredientUsages}"
+                  SelectionMode="None"
+                  x:Name="RecipeList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:IngredientUsageViewModel">
+                        <Grid ColumnDefinitions="*, Auto" Padding="20">
+                            <Label Text="{Binding FullDescription}"
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <Label Text="{Binding FormattedSteps}" />
             <Button Text="Back"
                     Clicked="OnBackClicked" />

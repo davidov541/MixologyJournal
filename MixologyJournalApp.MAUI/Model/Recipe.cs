@@ -68,6 +68,16 @@ namespace MixologyJournalApp.MAUI.Model
             {
                 await usage.SaveAsync(stateSaver);
             }
-        }  
+        }
+
+        internal async Task LoadAsync(IAppCache cache, IStateSaver stateSaver)
+        {
+            IEnumerable<IngredientUsage> ingredients = await stateSaver.GetFilteredItemsAsync<IngredientUsage>(i => i.OwnerId == this.Id);
+            foreach (IngredientUsage ingredient in ingredients)
+            {
+                ingredient.Load(cache);
+            }
+            this.Ingredients.AddRange(ingredients);
+        }
     }
 }

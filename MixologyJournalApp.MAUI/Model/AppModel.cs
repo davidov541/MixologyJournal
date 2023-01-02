@@ -54,10 +54,10 @@ namespace MixologyJournalApp.MAUI.Model
             {
                 this.Initializing = true;
 
-                List<Unit> items = await this._database.LoadAllModels<Unit>();
-                foreach (Unit item in items)
+                List<Unit> units = await this._database.LoadAllModels<Unit>();
+                foreach (Unit unit in units)
                 {
-                    this.Units.Add(item);
+                    this.Units.Add(unit);
                 }
 
                 List<Ingredient> ingredients = await this._database.LoadAllModels<Ingredient>();
@@ -67,9 +67,10 @@ namespace MixologyJournalApp.MAUI.Model
                 }
  
                 List<Recipe> recipes = await this._database.LoadAllModels<Recipe>();
-                foreach (Recipe item in recipes)
+                foreach (Recipe recipe in recipes)
                 {
-                    this.Recipes.Add(item);
+                    await recipe.LoadAsync(this, this._database);
+                    this.Recipes.Add(recipe);
                 }
 
                 this._hasBeenInitialized = true;

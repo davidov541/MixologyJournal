@@ -1,5 +1,6 @@
 ﻿using MixologyJournalApp.MAUI.Model;
 using SQLite;
+using System.Linq.Expressions;
 
 namespace MixologyJournalApp.MAUI.Data;
 
@@ -58,14 +59,11 @@ internal class LocalDatabase : IStateSaver
         await this._database.InsertOrReplaceAsync(value);
     }
 
-    //public async Task<List<TodoItem>> GetItemsNotDoneAsync()
-    //{
-    //    await Init();
-    //    return await Database.Table<TodoItem>().Where(t => t.Done).ToListAsync();
-
-    //    // SQL queries are also possible
-    //    //return await Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-    //}
+    public async Task<List<T>> GetFilteredItemsAsync<T>(Expression<Func<T, bool>> condition) where T: new()
+    {
+        await InitAsync();
+        return await this._database.Table<T>().Where(condition).ToListAsync();
+    }
 
     //public async Task<TodoItem> GetItemAsync(int id)
     //{
