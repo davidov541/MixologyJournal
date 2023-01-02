@@ -42,7 +42,7 @@ internal class LocalDatabase : IStateSaver
         }
     }
 
-    internal async Task<List<T>> GetItemsAsync<T>() where T : new()
+    internal async Task<List<T>> LoadAllModels<T>() where T : new()
     {
         await InitAsync();
         return await this._database.Table<T>().ToListAsync();

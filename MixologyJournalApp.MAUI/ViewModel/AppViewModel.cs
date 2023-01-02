@@ -40,7 +40,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
             if (!this._hasBeenInitialized && !this.Initializing)
             {
                 this.Initializing = true;
-                List<Unit> items = await this._database.GetItemsAsync<Unit>();
+                List<Unit> items = await this._database.LoadAllModels<Unit>();
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     foreach (Unit item in items)
@@ -48,7 +48,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
                         this.Units.Add(new UnitViewModel(item));
                     }
                 });
-                List<Recipe> recipes = await this._database.GetItemsAsync<Recipe>();
+                List<Recipe> recipes = await this._database.LoadAllModels<Recipe>();
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     foreach (Recipe item in recipes)
