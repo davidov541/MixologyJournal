@@ -1,6 +1,6 @@
-﻿using MixologyJournalApp.MAUI.Data;
-using MixologyJournalApp.MAUI.Model;
+﻿using MixologyJournalApp.MAUI.Model;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 
 namespace MixologyJournalApp.MAUI.ViewModel
@@ -8,10 +8,10 @@ namespace MixologyJournalApp.MAUI.ViewModel
     public class AppViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private LocalDatabase _database = null;
+        private AppModel _model = null;
 
-        public ObservableCollection<UnitViewModel> Units 
-        { 
+        public ObservableCollection<UnitViewModel> Units
+        {
             get;
             private set;
         } = new();
@@ -24,41 +24,75 @@ namespace MixologyJournalApp.MAUI.ViewModel
 
         public bool Initializing
         {
-            get;
-            private set;
+            get
+            {
+                return this._model.Initializing;
+            }
         }
-
-        private bool _hasBeenInitialized = false;
 
         public AppViewModel()
         {
-            this._database = new LocalDatabase();
+            this._model = new AppModel();
+            this._model.PropertyChanged += Model_PropertyChanged;
+            this._model.Recipes.CollectionChanged += Recipes_CollectionChanged;
+            this._model.Units.CollectionChanged += Units_CollectionChanged;
         }
 
-        internal async Task InitializeAsync() 
+        private void Recipes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if (!this._hasBeenInitialized && !this.Initializing)
+            MainThread.BeginInvokeOnMainThread(() =>
             {
-                this.Initializing = true;
-                List<Unit> items = await this._database.LoadAllModels<Unit>();
-                MainThread.BeginInvokeOnMainThread(() =>
+                switch (e.Action)
                 {
-                    foreach (Unit item in items)
-                    {
-                        this.Units.Add(new UnitViewModel(item));
-                    }
-                });
-                List<Recipe> recipes = await this._database.LoadAllModels<Recipe>();
-                MainThread.BeginInvokeOnMainThread(() =>
+                    case NotifyCollectionChangedAction.Add:
+                        foreach (Recipe recipe in e.NewItems.OfType<Recipe>())
+                        {
+                            this.Recipes.Add(new RecipeViewModel(recipe));
+                        }
+                        break;
+                    case NotifyCollectionChangedAction.Remove:
+                    case NotifyCollectionChangedAction.Reset:
+                    case NotifyCollectionChangedAction.Replace:
+                    case NotifyCollectionChangedAction.Move:
+                        break;
+                }
+            });
+        }
+
+        private void Units_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                switch (e.Action)
                 {
-                    foreach (Recipe item in recipes)
-                    {
-                        this.Recipes.Add(new RecipeViewModel(item));
-                    }
-                });
-                this._hasBeenInitialized = true;
-                this.Initializing = false;
+                    case NotifyCollectionChangedAction.Add:
+                        foreach (Unit unit in e.NewItems.OfType<Unit>())
+                        {
+                            this.Units.Add(new UnitViewModel(unit));
+                        }
+                        break;
+                    case NotifyCollectionChangedAction.Remove:
+                    case NotifyCollectionChangedAction.Reset:
+                    case NotifyCollectionChangedAction.Replace:
+                    case NotifyCollectionChangedAction.Move:
+                        break;
+                }
+            });
+        }
+
+        private void Model_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case nameof(AppModel.Initializing):
+                    this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Initializing)));
+                    break;
             }
+        }
+
+        internal async Task InitializeAsync()
+        {
+            await this._model.InitializeAsync();
         }
     }
 }
