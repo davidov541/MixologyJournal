@@ -288,7 +288,7 @@ namespace MixologyJournalApp.MAUI.ViewModel
 
         public void AddIngredient()
         {
-            IngredientUsage usage = IngredientUsage.CreateEmpty();
+            IngredientUsage usage = IngredientUsage.CreateEmpty(this._model.Id);
             IngredientUsageViewModel viewModel = new IngredientUsageViewModel(usage);
             IngredientUsages.Add(viewModel);
             _model.Ingredients.Add(usage);

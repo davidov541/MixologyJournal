@@ -50,9 +50,15 @@ namespace MixologyJournalApp.MAUI.Model
             set;
         }
 
-        public static IngredientUsage CreateEmpty()
+        public String OwnerId
         {
-            IngredientUsage usage = new IngredientUsage
+            get;
+            set;
+        }
+
+        public static IngredientUsage CreateEmpty(String ownerId)
+        {
+            IngredientUsage usage = new IngredientUsage(ownerId)
             {
                 Amount = "",
                 Unit = Unit.CreateEmpty(),
@@ -67,9 +73,14 @@ namespace MixologyJournalApp.MAUI.Model
             Id = Guid.NewGuid().ToString();
         }
 
+        public IngredientUsage(string ownerId): this()
+        {
+            OwnerId = ownerId;
+        }
+
         public IngredientUsage Clone()
         {
-            IngredientUsage clone = new IngredientUsage
+            IngredientUsage clone = new IngredientUsage(OwnerId)
             {
                 Id = Id,
                 Amount = Amount,

@@ -49,7 +49,7 @@ namespace MixologyJournalApp.MAUI.Model
             Recipe recipe = new Recipe();
 
             recipe.Steps.Add("");
-            recipe.Ingredients.Add(IngredientUsage.CreateEmpty());
+            recipe.Ingredients.Add(IngredientUsage.CreateEmpty(recipe.Id));
 
             return recipe;
         }
