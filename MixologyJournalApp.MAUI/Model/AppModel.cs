@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace MixologyJournalApp.MAUI.Model
 {
-    internal class AppModel : INotifyPropertyChanged
+    internal class AppModel : INotifyPropertyChanged, IAppCache
     {
         private LocalDatabase _database = null;
         private bool _hasBeenInitialized = false;
@@ -37,6 +37,12 @@ namespace MixologyJournalApp.MAUI.Model
             private set;
         } = new();
 
+        public ObservableCollection<Ingredient> Ingredients
+        {
+            get;
+            private set;
+        } = new();
+
         internal AppModel()
         {
             this._database = new LocalDatabase();
@@ -47,19 +53,58 @@ namespace MixologyJournalApp.MAUI.Model
             if (!this._hasBeenInitialized && !this.Initializing)
             {
                 this.Initializing = true;
+
                 List<Unit> items = await this._database.LoadAllModels<Unit>();
                 foreach (Unit item in items)
                 {
                     this.Units.Add(item);
                 }
+
+                List<Ingredient> ingredients = await this._database.LoadAllModels<Ingredient>();
+                foreach (Ingredient ingredient in ingredients)
+                {
+                    this.Ingredients.Add(ingredient);
+                }
+ 
                 List<Recipe> recipes = await this._database.LoadAllModels<Recipe>();
                 foreach (Recipe item in recipes)
                 {
                     this.Recipes.Add(item);
                 }
+
                 this._hasBeenInitialized = true;
                 this.Initializing = false;
             }
+        }
+
+        public Recipe GetRecipeById(string id)
+        {
+            Recipe match = this.Recipes.SingleOrDefault(r => r.Id == id);
+            if (match == null)
+            {
+                throw new KeyNotFoundException($"ID {id} was not found in the list of recipes for this app.");
+            }
+            return match;
+        }
+
+        public Unit GetUnitById(string id)
+        {
+            Unit match = this.Units.SingleOrDefault(r => r.Id == id);
+            if (match == null)
+            {
+                throw new KeyNotFoundException($"ID {id} was not found in the list of units for this app.");
+            }
+            return match;
+        }
+
+        public Ingredient GetIngredientById(string id)
+        {
+            Ingredient match = this.Ingredients.SingleOrDefault(r => r.Id == id);
+            if (match == null)
+            {
+                throw new KeyNotFoundException($"ID {id} was not found in the list of ingredients for this app.");
+            }
+            return match;
         }
     }
 }

@@ -8,7 +8,6 @@ namespace MixologyJournalApp.MAUI.ViewModel
     public class RecipeViewModel : INotifyPropertyChanged
     {
         private readonly Recipe _model;
-        private readonly App _app;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -163,7 +162,6 @@ namespace MixologyJournalApp.MAUI.ViewModel
         internal RecipeViewModel(Recipe model)
         {
             _model = model;
-            _app = null;
 
             InitCommands();
 
