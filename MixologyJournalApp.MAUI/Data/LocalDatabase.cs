@@ -64,29 +64,4 @@ internal class LocalDatabase : IStateSaver
         await InitAsync();
         return await this._database.Table<T>().Where(condition).ToListAsync();
     }
-
-    //public async Task<TodoItem> GetItemAsync(int id)
-    //{
-    //    await Init();
-    //    return await Database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
-    //}
-
-    //public async Task<int> SaveItemAsync(TodoItem item)
-    //{
-    //    await Init();
-    //    if (item.ID != 0)
-    //    {
-    //        return await Database.UpdateAsync(item);
-    //    }
-    //    else
-    //    {
-    //        return await Database.InsertAsync(item);
-    //    }
-    //}
-
-    //public async Task<int> DeleteItemAsync(TodoItem item)
-    //{
-    //    await Init();
-    //    return await Database.DeleteAsync(item);
-    //}
 }
